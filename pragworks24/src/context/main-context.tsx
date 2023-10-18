@@ -1,5 +1,5 @@
 // Redux Imports
-import { createSlice, createReducer } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 // Data Imports
 import ProductType from "../types/00_Produto"; // import the product interface
@@ -37,6 +37,11 @@ const initialState = {
     activeSolution: null as SolutionType | null,
     solutionClasses: ["atendimento", "publicidade", "inspecao", "transporte"],
     activeSolutionClass: "atendimento",
+
+    availableAbouts: [],
+    activeAbout: null,
+    aboutClasses: [],
+    activeAboutClass: "",
 
     cartItems: [] as ProductType[],
     cartTotal: 0,
@@ -127,7 +132,7 @@ export const mainSlice = createSlice({
             console.log("Checkout Help is toggled: " + (state.checkoutHelpIsOpen ? "open" : "closed"));
         },
         setActiveSection: (state, action) => {
-            state.activeSection = action.payload.activeSection;
+            state.activeSection = action.payload;
             console.log("Active Section: " + state.activeSection);
         },
         toggleProductDetails: (state) => {

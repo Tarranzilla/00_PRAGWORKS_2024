@@ -29,6 +29,8 @@ function App() {
 
     const { scrollYProgress } = useScroll();
 
+    const activeSection = useSelector((state: any) => state.activeSection);
+
     return (
         <>
             <AnimatePresence mode="popLayout">
@@ -39,19 +41,34 @@ function App() {
                         <h1 className="Nav_Logotype">Human Robotics</h1>
                     </a>
                     <div className="Nav_Links_Container">
-                        <a href="#inicio" className="Nav_Link hoverable undecorated">
+                        <a
+                            href="#inicio"
+                            className={activeSection === 1 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
+                        >
                             Início
                         </a>
-                        <a href="#produtos" className="Nav_Link hoverable undecorated">
+                        <a
+                            href="#produtos"
+                            className={activeSection === 2 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
+                        >
                             Produtos
                         </a>
-                        <a href="#solucoes" className="Nav_Link hoverable undecorated">
+                        <a
+                            href="#solucoes"
+                            className={activeSection === 3 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
+                        >
                             Soluções
                         </a>
-                        <a href="#sobre" className="Nav_Link hoverable undecorated">
+                        <a
+                            href="#sobre"
+                            className={activeSection === 4 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
+                        >
                             Sobre
                         </a>
-                        <a href="#contato" className="Nav_Link hoverable undecorated">
+                        <a
+                            href="#contato"
+                            className={activeSection === 5 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
+                        >
                             Contato
                         </a>
                     </div>
@@ -71,7 +88,13 @@ function App() {
                                 <i className="material-icons hoverable">shopping_cart</i>
                             </a>
                         </div>
-                        <a href="#menu" className="Nav_Menu_Btn hoverable undecorated" title="Menu">
+                        <a
+                            href="#menu"
+                            className={
+                                activeSection === 6 ? "Nav_Menu_Btn hoverable undecorated Nav_Menu_Btn_Active" : "Nav_Menu_Btn hoverable undecorated"
+                            }
+                            title="Menu"
+                        >
                             <i className="material-icons">menu</i>
                         </a>
                     </div>

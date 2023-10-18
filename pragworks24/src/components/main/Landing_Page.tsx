@@ -1,10 +1,15 @@
 // Vanilla React Imports
 import { useEffect, useState } from "react";
 
+//React Redux Imports
+import { useDispatch } from "react-redux";
+
 //Framer Motion Imports
 import { motion as m, AnimatePresence, useScroll } from "framer-motion";
 
 import { persistor } from "../../main.tsx";
+
+import { setActiveSection } from "../../context/main-context.tsx";
 
 const handleResetButton = () => {
     persistor.purge();
@@ -12,9 +17,8 @@ const handleResetButton = () => {
 };
 
 export default function LandingPage() {
-    {
-        /* Section Classes States and Functions */
-    }
+    const dispatch = useDispatch();
+
     const [activeProduct, setActiveProduct] = useState(1);
     const [activeSolution, setActiveSolution] = useState(1);
     const [activeAbout, setActiveAbout] = useState(1);
@@ -29,12 +33,20 @@ export default function LandingPage() {
         setActiveAbout(id);
     };
 
+    const setActiveSectionFunction = (id: number) => {
+        dispatch(setActiveSection(id));
+    };
+
     return (
         <>
             {/* Início */}
             <m.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                onViewportEnter={() => {
+                    console.log("Início está visível!");
+                    setActiveSectionFunction(1);
+                }}
                 transition={{ duration: 1.0, type: "tween" }}
                 className="LP_Section"
                 id="inicio"
@@ -55,6 +67,10 @@ export default function LandingPage() {
             <m.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                onViewportEnter={() => {
+                    console.log("Produtos está visível!");
+                    setActiveSectionFunction(2);
+                }}
                 transition={{ duration: 1.0, type: "tween" }}
                 className="LP_Section"
                 id="produtos"
@@ -189,6 +205,10 @@ export default function LandingPage() {
             <m.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                onViewportEnter={() => {
+                    console.log("Soluções está visível!");
+                    setActiveSectionFunction(3);
+                }}
                 transition={{ duration: 1.0, type: "tween" }}
                 className="LP_Section"
                 id="solucoes"
@@ -275,6 +295,10 @@ export default function LandingPage() {
             <m.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                onViewportEnter={() => {
+                    console.log("Sobre está visível!");
+                    setActiveSectionFunction(4);
+                }}
                 transition={{ duration: 1.0, type: "tween" }}
                 className="LP_Section"
                 id="sobre"
@@ -405,6 +429,10 @@ export default function LandingPage() {
             <m.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                onViewportEnter={() => {
+                    console.log("Contato está visível!");
+                    setActiveSectionFunction(5);
+                }}
                 transition={{ duration: 1.0, type: "tween" }}
                 className="LP_Section"
                 id="contato"
@@ -434,6 +462,10 @@ export default function LandingPage() {
             <m.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                onViewportEnter={() => {
+                    console.log("Menu está visível!");
+                    setActiveSectionFunction(6);
+                }}
                 transition={{ duration: 1.0, type: "tween" }}
                 className="LP_Section"
                 id="menu"
