@@ -1,6 +1,6 @@
 export default function Icon_Youtube() {
     return (
-        <a className="SocialMedia_Icon Youtube_Btn" href="https://www.youtube.com" target="_blank">
+        <a className="SocialMedia_Icon Youtube_Btn hoverable" href="https://www.youtube.com" target="_blank" title="Acesse nosso canal no Youtube">
             <svg
                 className="Icone_Vetor"
                 height="800px"

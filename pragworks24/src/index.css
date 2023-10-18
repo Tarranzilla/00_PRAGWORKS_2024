@@ -44,26 +44,90 @@ body {
 #root {
 }
 
+.hoverable {
+    transition: all 0.2s ease-in-out;
+}
+
+.undecorated {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.hoverable:hover {
+    transform: scale(1.05);
+}
+
 .Navbar {
     position: sticky;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: var(--gap);
+    padding-inline: var(--small_gap);
+}
+
+.Navbar > * {
+    flex: 1;
+}
+
+.Nav_Logo_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--small_gap);
 }
 
 .Nav_Logo {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: var(--small_gap);
+    justify-content: center;
+}
+
+.Navbar_Logo_Vector {
+    width: 2rem;
+    height: 2rem;
+}
+
+.Navbar_Logo_Path {
+    fill: var(--text-color);
 }
 
 .Nav_Links_Container {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: var(--small_gap);
+}
+
+.Nav_Utility {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: var(--small_gap);
+}
+
+.Nav_Tools_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--small_gap);
+}
+
+.Nav_Tool {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Nav_Menu_Btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .Footer {
@@ -115,4 +179,15 @@ body {
     width: 1.5rem;
     height: 1.5rem;
     fill: var(--text-color);
+}
+
+.Products_Container,
+.Solutions_Container,
+.Abouts_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
 }
