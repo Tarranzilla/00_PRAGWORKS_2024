@@ -283,6 +283,28 @@ body {
     padding: var(--gap);
 }
 
+.Products_Selector,
+.Solutions_Selector,
+.Abouts_Selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
+}
+
+.Product_Type_Selector,
+.Solution_Type_Selector,
+.About_Type_Selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gap);
+    cursor: pointer;
+}
+
 .Product_Card,
 .Solution_Card,
 .About_Card {
