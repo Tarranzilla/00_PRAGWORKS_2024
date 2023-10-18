@@ -1,0 +1,120 @@
+hello, this is the start of the pragworks 2024 project,
+with this project i aim to build a responsive and modular 
+website framework that can be used for any project.
+
+the project will be built using the following technologies:
+- html
+- css
+    - Flexbox
+    - Grid
+- javascript
+- nodeJS
+- Vite
+- React
+    - React Router
+    - Redux
+- MongoDB
+- Wordpress
+- Google Analytics
+- Google Workspace
+
+
+the context of the app will be based on the following structure:
+- Home
+    - Carroussel (Blog Posts & Partners)
+    - Animated Brand Declaration
+- About
+    - Team Members
+    - Partners
+    - Company Values
+    - Company History
+    - Technology Story
+    - FAQ
+    - About Card
+- Contact
+- Blog
+    - Blog Post
+- Services
+    - Service
+    - Service Card
+- Shop
+    - Product
+    - Product Card
+- Cart
+- Checkout
+
+- Account
+    - Login
+    - Register
+    - Profile
+    - Orders
+    - Wishlist
+- Admin
+    - Dashboard
+    - Products
+    - Orders
+    - Customers
+    - Settings
+
+Website Element Structure:
+- Head
+    - Meta Tags
+    - Title
+    - Favicon
+    - Fonts
+    - Stylesheets
+    - Scripts  
+
+- Navbar
+    - Logo
+    - Website Sections & Active Section
+    - Language
+    - Search
+    - Cart
+    - Account
+    - Menu
+
+- Menu
+    - Website Sections & Active Section (Sitemap?)
+    - Terms and Privacy Policy
+    - Language
+    - Website General Config and Reset
+    - Admin
+
+- Modals
+    - Contact Form
+    - Login
+    - Cart
+    - Checkout
+    - Product Detail
+    - Service Detail
+    - Blog Post Detail
+    - Search
+    - Newsletter
+    - Cookie Consent
+    - Terms and Conditions
+    - Privacy Policy
+    - Shipping Policy
+    - Configurations
+    - Coming Soon
+
+- Body
+    - Loading
+    - Maintenance
+    - Landing Page
+    - Secondary Page
+        - 404 & Other Errors
+        - Register
+        - Account Details
+    - Special Page
+        - Admin
+
+- Footer
+    - Social Media Container
+    - Contact Container
+    - Newsletter Container
+    - Sitemap, Terms and Privacy Policy
+
+
+
+- Jota Vê, 18 de Outubro de 2023
