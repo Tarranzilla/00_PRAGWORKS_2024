@@ -61,37 +61,107 @@ function App() {
                 </div>
                 <div className="card_auto_slider" id="auto_slider_partners"></div>
             </div>
+            <div className="Section_Divider" id="SD01"></div>
             <div className="LP_Section" id="produtos">
                 <h1 className="LP_Section_Title">Produtos</h1>
-                <div className="Products_Container">
+                <div className="Products_Container" id="produtos-robos" title="Robôs">
                     <div className="Product_Card">
-                        <h2>RobiOS GO</h2>
+                        <h3>RobiOS</h3>
+                        <h2>GO</h2>
                     </div>
                     <div className="Product_Card">
-                        <h2>RobiOS INSPECTOR</h2>
+                        <h3>RobiOS</h3>
+                        <h2>INSPECTOR</h2>
                     </div>
                     <div className="Product_Card">
-                        <h2>RobiOS CARGO</h2>
+                        <h3>RobiOS</h3>
+                        <h2>CARGO</h2>
                     </div>
                 </div>
+                <div className="Products_Container" id="produtos-softwares" title="Softwares">
+                    <div className="Product_Card">
+                        <h3> </h3>
+                        <h2>RobiOS</h2>
+                    </div>
+                    <div className="Product_Card">
+                        <h3>RobiOS</h3>
+                        <h2>STUDIO</h2>
+                    </div>
+                    <div className="Product_Card">
+                        <h3>RobiOS</h3>
+                        <h2>AVATAR</h2>
+                    </div>
+                </div>
+
+                <div className="Products_Container" id="produtos-servicos" title="Serviços">
+                    <div className="Product_Card">
+                        <h3> </h3>
+                        <h2>Customização</h2>
+                    </div>
+                    <div className="Product_Card">
+                        <h3> </h3>
+                        <h2>Mapeamento de Ambientes</h2>
+                    </div>
+                    <div className="Product_Card">
+                        <h3> </h3>
+                        <h2>Treinamento e Suporte</h2>
+                    </div>
+                </div>
+
+                <div className="Products_Container" id="produtos-experiencias" title="Experiências">
+                    <div className="Product_Card">
+                        <h3> </h3>
+                        <h2>Varejo</h2>
+                    </div>
+                    <div className="Product_Card">
+                        <h3> </h3>
+                        <h2>Indústria</h2>
+                    </div>
+                    <div className="Product_Card">
+                        <h3> </h3>
+                        <h2>Cultura</h2>
+                    </div>
+                </div>
+
+                <div className="Products_Selector">
+                    <button>Robôs</button>
+                    <button>Softwares</button>
+                    <button>Serviços</button>
+                    <button>Experiências</button>
+                </div>
             </div>
+            <div className="Section_Divider" id="SD02"></div>
             <div className="LP_Section" id="solucoes">
                 <h1 className="LP_Section_Title">Soluções</h1>
                 <div className="Solutions_Container">
                     <div className="Solution_Card">
                         <h2>Atendimento</h2>
                     </div>
+                </div>
+                <div className="Solutions_Container">
                     <div className="Solution_Card">
                         <h2>Publicidade</h2>
                     </div>
+                </div>
+                <div className="Solutions_Container">
                     <div className="Solution_Card">
                         <h2>Inspeção</h2>
                     </div>
+                </div>
+                <div className="Solutions_Container">
                     <div className="Solution_Card">
                         <h2>Transporte</h2>
                     </div>
                 </div>
+
+                <div className="Solutions_Selector">
+                    <button>Atendimento</button>
+                    <button>Publicidade</button>
+                    <button>Inspeção</button>
+                    <button>Transporte</button>
+                </div>
             </div>
+            <div className="Section_Divider" id="SD03"></div>
             <div className="LP_Section" id="sobre">
                 <h1 className="LP_Section_Title">Sobre</h1>
                 <div className="Abouts_Container">
@@ -119,8 +189,22 @@ function App() {
                         <h3>Sobre</h3>
                         <h2>A Nossa Equipe</h2>
                     </div>
+                    <div className="About_Card">
+                        <h3>Sobre</h3>
+                        <h2>Blog</h2>
+                    </div>
+                </div>
+                <div className="Abouts_Selector">
+                    <button>Nossa Missão</button>
+                    <button>Equipe</button>
+                    <button>A Fundação</button>
+                    <button>Parceiros</button>
+                    <button>Robótica e o Brasil</button>
+                    <button>História da Robótica</button>
+                    <button>Blog</button>
                 </div>
             </div>
+            <div className="Section_Divider" id="SD04"></div>
             <div className="LP_Section" id="contato">
                 <h1 className="LP_Section_Title">Contato</h1>
                 <div className="Contact_Container">
@@ -139,6 +223,19 @@ function App() {
                     </div>
                 </div>
             </div>
+            <div className="Section_Divider" id="SD05"></div>
+            <div className="LP_Section" id="menu">
+                <h1 className="LP_Section_Title">Menu</h1>
+                <div className="Menu_Container">
+                    <div className="Menu_Main_List">
+                        <h2>Produtos</h2>
+                        <h2>Soluções</h2>
+                        <h2>Sobre</h2>
+                        <h2>Contato</h2>
+                    </div>
+                </div>
+            </div>
+            <div className="Section_Divider" id="SD06"></div>
             <div className="Footer">
                 <div className="Footer_Actions_Container">
                     <a href="#termos-e-condicoes" className="Footer_Action hoverable undecorated" title="Termos e Condições">

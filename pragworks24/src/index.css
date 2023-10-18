@@ -2,6 +2,7 @@
     font-family: sans-serif;
     line-height: 1.5;
     font-weight: 400;
+    font-size: 1.25rem;
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.8);
@@ -14,6 +15,7 @@
     -webkit-text-size-adjust: 100%;
 
     --text-color: rgba(255, 255, 255, 0.8);
+    --background-color: #242424;
 
     --small_gap: 0.5rem;
     --gap: 1rem;
@@ -30,14 +32,15 @@
     outline-offset: -1px;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
 body {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin-block: 3rem;
     min-width: 320px;
-    min-height: 100vh;
     text-align: center;
 }
 
@@ -58,12 +61,18 @@ body {
 }
 
 .Navbar {
-    position: sticky;
+    position: fixed;
+    height: 3rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: var(--gap);
     padding-inline: var(--small_gap);
+    background-color: var(--background-color);
 }
 
 .Navbar > * {
@@ -130,11 +139,23 @@ body {
     justify-content: center;
 }
 
+.Nav_Menu_Btn > * {
+    font-size: 2rem;
+}
+
 .Footer {
+    z-index: 100;
+    height: 3rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    padding: var(--small_gap);
+    background-color: var(--background-color);
 }
 
 .Footer > * {
@@ -145,7 +166,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: var(--small_gap);
 }
 
@@ -164,7 +185,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     gap: var(--small_gap);
 }
 
@@ -181,13 +202,55 @@ body {
     fill: var(--text-color);
 }
 
-.Products_Container,
-.Solutions_Container,
-.Abouts_Container {
+.Section_Divider {
+    width: 100%;
+    height: 25vh;
+    background-color: red;
+}
+
+.LP_Section {
+    scroll-snap-align: start;
+    scroll-margin: 3rem;
+    position: relative;
+    height: calc(100vh - 6rem);
     display: flex;
-    flex-direction: row;
+    flex: 1;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--gap);
     padding: var(--gap);
+
+    overflow-y: auto;
+}
+
+.LP_Section_Title {
+    position: absolute;
+    top: var(--gap);
+    left: var(--small_gap);
+}
+
+.Products_Container,
+.Solutions_Container,
+.Abouts_Container,
+.Menu_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    padding: var(--gap);
+}
+
+.Product_Card,
+.Solution_Card,
+.About_Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
+    border-radius: var(--gap);
 }
