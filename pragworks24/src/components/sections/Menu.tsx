@@ -33,6 +33,9 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
             id="menu"
             key={"menu_key"}
         >
+            <a href="#" className="material-icons Menu_GoUp_Btn hoverable undecorated">
+                keyboard_double_arrow_up
+            </a>
             <h1 className="LP_Section_Title">Menu</h1>
             <div className="Menu_Container">
                 <div className="Menu_Main_List">

@@ -350,8 +350,22 @@ body {
     border-radius: 50%;
 }
 
+.Menu_GoUp_Btn {
+    position: absolute;
+    top: var(--small_gap);
+    right: var(--small_gap);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: var(--small_gap);
+    border-radius: 50%;
+}
+
 .progress-bar {
-    z-index: 101;
+    z-index: 98;
     position: fixed;
     top: 3rem;
     left: 0;

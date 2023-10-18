@@ -1,5 +1,5 @@
 // Vanilla React Imports
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 
 //React Redux Imports
 import { useDispatch } from "react-redux";
@@ -16,7 +16,7 @@ import Section_Sobre from "../sections/Sobre.tsx";
 import Section_Contato from "../sections/Contato.tsx";
 import Section_Menu from "../sections/Menu.tsx";
 
-export default function LandingPage() {
+const LandingPage = forwardRef(function LandingPage(props, ref: any) {
     return (
         <>
             <Section_Inicio />
@@ -33,4 +33,6 @@ export default function LandingPage() {
             <div className="Section_Divider" id="SD06" key={"SD06_key"}></div>
         </>
     );
-}
+});
+
+export default LandingPage;
