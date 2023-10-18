@@ -1,3 +1,6 @@
+// Vanilla React Imports
+import { useEffect, useState } from "react";
+
 //Framer Motion Imports
 import { motion as m, AnimatePresence, useScroll } from "framer-motion";
 
@@ -9,6 +12,23 @@ const handleResetButton = () => {
 };
 
 export default function LandingPage() {
+    {
+        /* Section Classes States and Functions */
+    }
+    const [activeProduct, setActiveProduct] = useState(1);
+    const [activeSolution, setActiveSolution] = useState(1);
+    const [activeAbout, setActiveAbout] = useState(1);
+
+    const setActiveProductClass = (id: number) => {
+        setActiveProduct(id);
+    };
+    const setActiveSolutionClass = (id: number) => {
+        setActiveSolution(id);
+    };
+    const setActiveAboutClass = (id: number) => {
+        setActiveAbout(id);
+    };
+
     return (
         <>
             {/* Início */}
@@ -41,70 +61,125 @@ export default function LandingPage() {
                 key={"produtos_key"}
             >
                 <h1 className="LP_Section_Title">Produtos</h1>
-                <div className="Products_Container" id="produtos-robos" title="Robôs">
-                    <div className="Product_Card">
-                        <h3>RobiOS</h3>
-                        <h2>GO</h2>
-                    </div>
-                    <div className="Product_Card">
-                        <h3>RobiOS</h3>
-                        <h2>INSPECTOR</h2>
-                    </div>
-                    <div className="Product_Card">
-                        <h3>RobiOS</h3>
-                        <h2>CARGO</h2>
-                    </div>
-                </div>
-                <div className="Products_Container" id="produtos-softwares" title="Softwares">
-                    <div className="Product_Card">
-                        <h3> </h3>
-                        <h2>RobiOS</h2>
-                    </div>
-                    <div className="Product_Card">
-                        <h3>RobiOS</h3>
-                        <h2>STUDIO</h2>
-                    </div>
-                    <div className="Product_Card">
-                        <h3>RobiOS</h3>
-                        <h2>AVATAR</h2>
-                    </div>
-                </div>
 
-                <div className="Products_Container" id="produtos-servicos" title="Serviços">
-                    <div className="Product_Card">
-                        <h3> </h3>
-                        <h2>Customização</h2>
-                    </div>
-                    <div className="Product_Card">
-                        <h3> </h3>
-                        <h2>Mapeamento de Ambientes</h2>
-                    </div>
-                    <div className="Product_Card">
-                        <h3> </h3>
-                        <h2>Treinamento e Suporte</h2>
-                    </div>
-                </div>
+                {/* Robôs */}
+                {activeProduct === 1 && (
+                    <m.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="Products_Container"
+                        id="produtos-robos"
+                        title="Robôs"
+                        key="Product_Container_01"
+                    >
+                        <div className="Product_Card">
+                            <h3>RobiOS</h3>
+                            <h2>GO</h2>
+                        </div>
+                        <div className="Product_Card">
+                            <h3>RobiOS</h3>
+                            <h2>INSPECTOR</h2>
+                        </div>
+                        <div className="Product_Card">
+                            <h3>RobiOS</h3>
+                            <h2>CARGO</h2>
+                        </div>
+                    </m.div>
+                )}
 
-                <div className="Products_Container" id="produtos-experiencias" title="Experiências">
-                    <div className="Product_Card">
-                        <h3> </h3>
-                        <h2>Varejo</h2>
-                    </div>
-                    <div className="Product_Card">
-                        <h3> </h3>
-                        <h2>Indústria</h2>
-                    </div>
-                    <div className="Product_Card">
-                        <h3> </h3>
-                        <h2>Cultura</h2>
-                    </div>
-                </div>
+                {/* Softwares */}
+                {activeProduct === 2 && (
+                    <m.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="Products_Container"
+                        id="produtos-softwares"
+                        title="Softwares"
+                        key="Product_Container_02"
+                    >
+                        <div className="Product_Card">
+                            <h3> </h3>
+                            <h2>RobiOS</h2>
+                        </div>
+                        <div className="Product_Card">
+                            <h3>RobiOS</h3>
+                            <h2>STUDIO</h2>
+                        </div>
+                        <div className="Product_Card">
+                            <h3>RobiOS</h3>
+                            <h2>AVATAR</h2>
+                        </div>
+                    </m.div>
+                )}
 
+                {/* Serviços */}
+                {activeProduct === 3 && (
+                    <m.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="Products_Container"
+                        id="produtos-servicos"
+                        title="Serviços"
+                        key="Product_Container_03"
+                    >
+                        <div className="Product_Card">
+                            <h3> </h3>
+                            <h2>Customização</h2>
+                        </div>
+                        <div className="Product_Card">
+                            <h3> </h3>
+                            <h2>Mapeamento de Ambientes</h2>
+                        </div>
+                        <div className="Product_Card">
+                            <h3> </h3>
+                            <h2>Treinamento e Suporte</h2>
+                        </div>
+                    </m.div>
+                )}
+
+                {/* Experiências */}
+                {activeProduct === 4 && (
+                    <m.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="Products_Container"
+                        id="produtos-experiencias"
+                        title="Experiências"
+                        key="Product_Container_04"
+                    >
+                        <div className="Product_Card">
+                            <h3> </h3>
+                            <h2>Varejo</h2>
+                        </div>
+                        <div className="Product_Card">
+                            <h3> </h3>
+                            <h2>Indústria</h2>
+                        </div>
+                        <div className="Product_Card">
+                            <h3> </h3>
+                            <h2>Cultura</h2>
+                        </div>
+                    </m.div>
+                )}
+
+                {/* Seletores */}
                 <div className="Products_Selector">
-                    <button className="Product_Type_Selector hoverable">Robôs</button>
-                    <button className="Product_Type_Selector hoverable">Softwares</button>
-                    <button className="Product_Type_Selector hoverable">Serviços</button>
-                    <button className="Product_Type_Selector hoverable">Experiências</button>
+                    <button className="Product_Type_Selector hoverable" onClick={() => setActiveProductClass(1)}>
+                        Robôs
+                    </button>
+                    <button className="Product_Type_Selector hoverable" onClick={() => setActiveProductClass(2)}>
+                        Softwares
+                    </button>
+                    <button className="Product_Type_Selector hoverable" onClick={() => setActiveProductClass(3)}>
+                        Serviços
+                    </button>
+                    <button className="Product_Type_Selector hoverable" onClick={() => setActiveProductClass(4)}>
+                        Experiências
+                    </button>
                 </div>
             </m.div>
 
@@ -120,32 +195,77 @@ export default function LandingPage() {
                 key={"solucoes_key"}
             >
                 <h1 className="LP_Section_Title">Soluções</h1>
-                <div className="Solutions_Container">
-                    <div className="Solution_Card">
-                        <h2>Atendimento</h2>
-                    </div>
-                </div>
-                <div className="Solutions_Container">
-                    <div className="Solution_Card">
-                        <h2>Publicidade</h2>
-                    </div>
-                </div>
-                <div className="Solutions_Container">
-                    <div className="Solution_Card">
-                        <h2>Inspeção</h2>
-                    </div>
-                </div>
-                <div className="Solutions_Container">
-                    <div className="Solution_Card">
-                        <h2>Transporte</h2>
-                    </div>
-                </div>
 
+                {/* Atendimento */}
+                {activeSolution === 1 && (
+                    <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solutions_Container" key={"SC_01"}>
+                        <div className="Solution_Card">
+                            <h2>Atendimento</h2>
+                        </div>
+                    </m.div>
+                )}
+
+                {/* Publicidade */}
+                {activeSolution === 2 && (
+                    <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solutions_Container" key={"SC_02"}>
+                        <div className="Solution_Card">
+                            <h2>Publicidade</h2>
+                        </div>
+                    </m.div>
+                )}
+
+                {/* Inspeção */}
+                {activeSolution === 3 && (
+                    <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solutions_Container" key={"SC_03"}>
+                        <div className="Solution_Card">
+                            <h2>Inspeção</h2>
+                        </div>
+                    </m.div>
+                )}
+
+                {/* Transporte */}
+                {activeSolution === 4 && (
+                    <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solutions_Container" key={"SC_04"}>
+                        <div className="Solution_Card">
+                            <h2>Transporte</h2>
+                        </div>
+                    </m.div>
+                )}
+
+                {/* Seletores */}
                 <div className="Solutions_Selector">
-                    <button className="Solution_Type_Selector hoverable">Atendimento</button>
-                    <button className="Solution_Type_Selector hoverable">Publicidade</button>
-                    <button className="Solution_Type_Selector hoverable">Inspeção</button>
-                    <button className="Solution_Type_Selector hoverable">Transporte</button>
+                    <button
+                        className="Solution_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveSolutionClass(1);
+                        }}
+                    >
+                        Atendimento
+                    </button>
+                    <button
+                        className="Solution_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveSolutionClass(2);
+                        }}
+                    >
+                        Publicidade
+                    </button>
+                    <button
+                        className="Solution_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveSolutionClass(3);
+                        }}
+                    >
+                        Inspeção
+                    </button>
+                    <button
+                        className="Solution_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveSolutionClass(4);
+                        }}
+                    >
+                        Transporte
+                    </button>
                 </div>
             </m.div>
 
@@ -161,44 +281,121 @@ export default function LandingPage() {
                 key={"sobre_key"}
             >
                 <h1 className="LP_Section_Title">Sobre</h1>
-                <div className="Abouts_Container">
-                    <div className="About_Card">
-                        <h3>Sobre</h3>
-                        <h2>A Human Robotics</h2>
-                    </div>
-                    <div className="About_Card">
-                        <h3>Sobre</h3>
-                        <h2>Nossos Parceiros</h2>
-                    </div>
-                    <div className="About_Card">
-                        <h3>Sobre</h3>
-                        <h2>A Fundação</h2>
-                    </div>
-                    <div className="About_Card">
-                        <h3>Sobre</h3>
-                        <h2>A Robótica e o Brasil</h2>
-                    </div>
-                    <div className="About_Card">
-                        <h3>Sobre</h3>
-                        <h2>A História da Robótica</h2>
-                    </div>
-                    <div className="About_Card">
-                        <h3>Sobre</h3>
-                        <h2>A Nossa Equipe</h2>
-                    </div>
-                    <div className="About_Card">
-                        <h3>Sobre</h3>
-                        <h2>Blog</h2>
-                    </div>
-                </div>
+                <m.div className="Abouts_Container">
+                    {/* Sobre a Human Robotics */}
+                    {activeAbout === 1 && (
+                        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="About_Card" key="AC_01">
+                            <h3>Sobre</h3>
+                            <h2>A Human Robotics</h2>
+                        </m.div>
+                    )}
+
+                    {/* Sobre Nossos Parceiros */}
+                    {activeAbout === 2 && (
+                        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="About_Card" key="AC_02">
+                            <h3>Sobre</h3>
+                            <h2>Nossos Parceiros</h2>
+                        </m.div>
+                    )}
+
+                    {/* Sobre a Fundação */}
+                    {activeAbout === 3 && (
+                        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="About_Card" key="AC_03">
+                            <h3>Sobre</h3>
+                            <h2>A Fundação</h2>
+                        </m.div>
+                    )}
+
+                    {/* Sobre a Robótica e o Brasil */}
+                    {activeAbout === 4 && (
+                        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="About_Card" key="AC_04">
+                            <h3>Sobre</h3>
+                            <h2>A Robótica e o Brasil</h2>
+                        </m.div>
+                    )}
+
+                    {/* Sobre a História da Robótica */}
+                    {activeAbout === 5 && (
+                        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="About_Card" key="AC_05">
+                            <h3>Sobre</h3>
+                            <h2>A História da Robótica</h2>
+                        </m.div>
+                    )}
+
+                    {/* Sobre a Nossa Equipe */}
+                    {activeAbout === 6 && (
+                        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="About_Card" key="AC_06">
+                            <h3>Sobre</h3>
+                            <h2>A Nossa Equipe</h2>
+                        </m.div>
+                    )}
+
+                    {/* Blog */}
+                    {activeAbout === 7 && (
+                        <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="About_Card" key="AC_07">
+                            <h3>Sobre</h3>
+                            <h2>Blog</h2>
+                        </m.div>
+                    )}
+                </m.div>
+
                 <div className="Abouts_Selector">
-                    <button className="About_Type_Selector hoverable">Nossa Missão</button>
-                    <button className="About_Type_Selector hoverable">Equipe</button>
-                    <button className="About_Type_Selector hoverable">A Fundação</button>
-                    <button className="About_Type_Selector hoverable">Parceiros</button>
-                    <button className="About_Type_Selector hoverable">Robótica e o Brasil</button>
-                    <button className="About_Type_Selector hoverable">História da Robótica</button>
-                    <button className="About_Type_Selector hoverable">Blog</button>
+                    <button
+                        className="About_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveAboutClass(1);
+                        }}
+                    >
+                        Nossa Missão
+                    </button>
+                    <button
+                        className="About_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveAboutClass(2);
+                        }}
+                    >
+                        Equipe
+                    </button>
+                    <button
+                        className="About_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveAboutClass(3);
+                        }}
+                    >
+                        A Fundação
+                    </button>
+                    <button
+                        className="About_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveAboutClass(4);
+                        }}
+                    >
+                        Parceiros
+                    </button>
+                    <button
+                        className="About_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveAboutClass(5);
+                        }}
+                    >
+                        Robótica e o Brasil
+                    </button>
+                    <button
+                        className="About_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveAboutClass(6);
+                        }}
+                    >
+                        História da Robótica
+                    </button>
+                    <button
+                        className="About_Type_Selector hoverable"
+                        onClick={() => {
+                            setActiveAboutClass(7);
+                        }}
+                    >
+                        Blog
+                    </button>
                 </div>
             </m.div>
 
