@@ -17,6 +17,7 @@
     --text-color: rgba(255, 255, 255, 0.8);
     --background-color: #242424;
     --btn_color: #6b6b6b;
+    --seleted-color: #008000;
 
     --small_gap: 0.5rem;
     --gap: 1rem;
@@ -50,6 +51,11 @@ body {
 
 .hoverable {
     transition: all 0.2s ease-in-out;
+}
+
+.selected {
+    color: var(--seleted-color);
+    transform: translateY(-0.125rem) !important;
 }
 
 .Btn_Class {
@@ -333,7 +339,8 @@ body {
     flex-direction: row;
     align-items: center;
     gap: var(--gap);
-    padding: var(--small_gap);
+    padding-block: var(--small_gap);
+    padding-inline: var(--gap);
     margin-inline: auto;
     overflow-x: auto;
 }

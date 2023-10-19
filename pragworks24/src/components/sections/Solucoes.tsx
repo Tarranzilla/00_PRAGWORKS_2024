@@ -5,8 +5,28 @@ import { useEffect, useState, forwardRef } from "react";
 import { motion as m, AnimatePresence } from "framer-motion";
 
 //React Redux Imports
-import { useDispatch } from "react-redux";
-import { setActiveSection } from "../../context/main-context.tsx";
+import { useDispatch, useSelector } from "react-redux";
+import { setActiveSection, setActiveSolution, setActiveSolutionClass, toggleSolutionDetails } from "../../context/main-context.tsx";
+
+/*
+
+    const [activeSolution, setActiveSolution] = useState(1);
+
+    const setActiveSolutionClass = (id: number) => {
+        setActiveSolution(id);
+    };
+
+*/
+
+const springTransition = {
+    type: "spring",
+    stiffness: 100,
+    damping: 15,
+    bounce: 0.5,
+    velocity: 50,
+};
+
+const customTransition = springTransition;
 
 const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
     const dispatch = useDispatch();
@@ -14,10 +34,17 @@ const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
         dispatch(setActiveSection(id));
     };
 
-    const [activeSolution, setActiveSolution] = useState(1);
+    const availableSolutions = useSelector((state: any) => state.availableSolutions);
+    const activeSolutionClass = useSelector((state: any) => state.activeSolutionClass);
 
-    const setActiveSolutionClass = (id: number) => {
-        setActiveSolution(id);
+    const toggleActiveSolutionButton = (id: any) => {
+        dispatch(setActiveSolution(id));
+        dispatch(toggleSolutionDetails());
+        console.log("Toggling Solution Details");
+    };
+
+    const handleSetActiveSolutionClass = (activeSolutionClass: any) => {
+        dispatch(setActiveSolutionClass(activeSolutionClass));
     };
 
     return (
@@ -34,73 +61,78 @@ const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
             key={"solucoes_key"}
         >
             <h1 className="LP_Section_Title">Soluções</h1>
+            <AnimatePresence mode="popLayout">
+                {activeSolutionClass === null && (
+                    <m.div initial={{ x: 1000 }} animate={{ x: 0 }} exit={{ x: -1000 }} className="Solution_Card" key={"Solution_Container_NONE"}>
+                        <h3 className="No_Product_Selected_Title">Nenhuma Categoria de Produto Selecionada</h3>
+                    </m.div>
+                )}
 
-            {/* Atendimento */}
-            {activeSolution === 1 && (
-                <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solutions_Container" key={"SC_01"}>
-                    <div className="Solution_Card">
-                        <h2>Atendimento</h2>
-                    </div>
-                </m.div>
-            )}
-
-            {/* Publicidade */}
-            {activeSolution === 2 && (
-                <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solutions_Container" key={"SC_02"}>
-                    <div className="Solution_Card">
-                        <h2>Publicidade</h2>
-                    </div>
-                </m.div>
-            )}
-
-            {/* Inspeção */}
-            {activeSolution === 3 && (
-                <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solutions_Container" key={"SC_03"}>
-                    <div className="Solution_Card">
-                        <h2>Inspeção</h2>
-                    </div>
-                </m.div>
-            )}
-
-            {/* Transporte */}
-            {activeSolution === 4 && (
-                <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solutions_Container" key={"SC_04"}>
-                    <div className="Solution_Card">
-                        <h2>Transporte</h2>
-                    </div>
-                </m.div>
-            )}
+                {availableSolutions.map((solution: any) => {
+                    if (solution.class === activeSolutionClass) {
+                        return (
+                            <m.div
+                                initial={{ x: "100vw" }}
+                                animate={{ x: 0 }}
+                                exit={{ x: "-100vw" }}
+                                transition={customTransition}
+                                className="Solution_Card"
+                                key={solution.domId}
+                            >
+                                <div className="Solution_Video_Fader"></div>
+                                <video className="Solution_Video" src={solution.videoSrc[0]} autoPlay loop muted />
+                                <h3 className="Solution_Title">{solution.name}</h3>
+                                <p className="Solution_Description">{solution.description}</p>
+                                <button
+                                    className="Solution_KnowMore_Button"
+                                    onClick={() => {
+                                        toggleActiveSolutionButton({ id: solution.id });
+                                    }}
+                                >
+                                    <span className="material-icons">info</span>Mais Detalhes
+                                </button>
+                            </m.div>
+                        );
+                    }
+                })}
+            </AnimatePresence>
 
             {/* Seletores */}
             <div className="Solutions_Selector">
                 <button
-                    className="Solution_Type_Selector hoverable"
+                    className={
+                        activeSolutionClass === "atendimento" ? "Solution_Type_Selector hoverable selected" : "Solution_Type_Selector hoverable"
+                    }
                     onClick={() => {
-                        setActiveSolutionClass(1);
+                        handleSetActiveSolutionClass("atendimento");
                     }}
                 >
                     Atendimento
                 </button>
                 <button
-                    className="Solution_Type_Selector hoverable"
+                    className={
+                        activeSolutionClass === "publicidade" ? "Solution_Type_Selector hoverable selected" : "Solution_Type_Selector hoverable"
+                    }
                     onClick={() => {
-                        setActiveSolutionClass(2);
+                        handleSetActiveSolutionClass("publicidade");
                     }}
                 >
                     Publicidade
                 </button>
                 <button
-                    className="Solution_Type_Selector hoverable"
+                    className={activeSolutionClass === "inspecao" ? "Solution_Type_Selector hoverable selected" : "Solution_Type_Selector hoverable"}
                     onClick={() => {
-                        setActiveSolutionClass(3);
+                        handleSetActiveSolutionClass("inspecao");
                     }}
                 >
                     Inspeção
                 </button>
                 <button
-                    className="Solution_Type_Selector hoverable"
+                    className={
+                        activeSolutionClass === "transporte" ? "Solution_Type_Selector hoverable selected" : "Solution_Type_Selector hoverable"
+                    }
                     onClick={() => {
-                        setActiveSolutionClass(4);
+                        handleSetActiveSolutionClass("transporte");
                     }}
                 >
                     Transporte
