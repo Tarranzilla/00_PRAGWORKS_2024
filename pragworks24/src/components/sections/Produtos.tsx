@@ -13,6 +13,8 @@ import Software_Card from "../cards/Software_Card";
 import Service_Card from "../cards/Service_Card";
 import Experience_Card from "../cards/Experience_Card";
 
+import Produtos_Detalhe from "./Produtos_Detalhe";
+
 const easeInOutQuad = [0.455, 0.03, 0.515, 0.955]; // This easing function provides a smooth start and a smooth end to the animation. It's a simple and widely appreciated easing curve.
 const easeInOutCubic = [0.645, 0.045, 0.355, 1]; // This easing function is similar to the quad version but has a slightly more pronounced acceleration towards the middle of the animation.
 const easeInOutExpo = [1, 0, 0, 1]; // This easing function starts and ends very softly, but has a bit more pronounced acceleration in the middle, giving it an interesting feel.
@@ -42,6 +44,7 @@ const Section_Produtos = forwardRef(function Section_Produtos(props, ref: any) {
     };
 
     const availableProducts = useSelector((state: any) => state.availableProducts);
+    const productDetailsIsOpen = useSelector((state: any) => state.productDetailsIsOpen);
 
     return (
         <m.div
@@ -56,6 +59,8 @@ const Section_Produtos = forwardRef(function Section_Produtos(props, ref: any) {
             id="produtos"
             key={"produtos_key"}
         >
+            <AnimatePresence mode="popLayout">{productDetailsIsOpen && <Produtos_Detalhe key="Product_Detail_key" />}</AnimatePresence>
+
             <h1 className="LP_Section_Title">Produtos</h1>
 
             <div className="Type_Header" key={"Product_Type_Header_A"}>

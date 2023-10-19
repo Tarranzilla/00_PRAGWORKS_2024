@@ -437,6 +437,7 @@ body {
     cursor: pointer;
 }
 
+.Close_Btn_B,
 .Map_Close_Btn {
     display: flex;
     flex-direction: row;
@@ -540,7 +541,6 @@ body {
 }
 
 .auto_slider_track {
-    z-index: 120;
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -567,6 +567,68 @@ body {
 
 .Brand_Changing_Word {
     font-size: clamp(2rem, 6vw, 8rem);
+}
+
+/* SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO */
+.Solution_Detail,
+.Product_Detail {
+    z-index: 99;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.Solution_Detail_Header,
+.Product_Detail_Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap);
+    padding: var(--gap);
+    height: 3rem;
+}
+
+.Solution_Detail_Content,
+.Product_Detail_Content {
+    width: 100%;
+    height: calc(100% - 3rem);
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    padding: var(--gap);
+}
+
+.Solution_Detail_Image_Container,
+.Product_Detail_Image_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
+
+    width: 100%;
+    height: 100%;
+}
+
+.Solution_Detail_Text_Container,
+.Product_Detail_Text_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: var(--gap);
+    padding: var(--gap);
+
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
 }
 
 /* SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO */

@@ -119,6 +119,7 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                                 style={{ border: 0 }}
                                 src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDyXfuRSunXyy-YO9HSag0AFrMJexBPcZA&q=Curitiba`}
                                 allowFullScreen
+                                key="mapa_02_iframe"
                             ></iframe>
                         </div>
                     </m.div>
@@ -149,6 +150,7 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                                 style={{ border: 0 }}
                                 src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDyXfuRSunXyy-YO9HSag0AFrMJexBPcZA&q=Curitiba`}
                                 allowFullScreen
+                                key="mapa_02_iframe"
                             ></iframe>
                         </div>
                     </m.div>

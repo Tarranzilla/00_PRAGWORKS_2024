@@ -16,6 +16,16 @@ import Searchbar from "./components/main/Searchbar";
 import Footer from "./components/main/Footer";
 
 function App() {
+    const isLoading = useSelector((state: any) => state.isLoading);
+    const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
+    const cartIsOpen = useSelector((state: any) => state.cartIsOpen);
+    const checkoutHelpIsOpen = useSelector((state: any) => state.checkoutHelpIsOpen);
+    const privacyPolicyIsOpen = useSelector((state: any) => state.privacyPolicyIsOpen);
+    const termsIsOpen = useSelector((state: any) => state.termsIsOpen);
+    const siteMapIsOpen = useSelector((state: any) => state.siteMapIsOpen);
+    const lgpdConsent = useSelector((state: any) => state.lgpdConsent);
+    const searchIsOpen = useSelector((state: any) => state.searchIsOpen);
+
     const isSearchBarOpen = useSelector((state: any) => state.searchIsOpen);
     const { scrollYProgress } = useScroll();
 

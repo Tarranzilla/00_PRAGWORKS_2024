@@ -7,6 +7,7 @@ import { motion as m, AnimatePresence } from "framer-motion";
 //React Redux Imports
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveSection, setActiveSolution, setActiveSolutionClass, toggleSolutionDetails } from "../../context/main-context.tsx";
+import Solucoes_Detalhe from "./Solucoes_Detalhe.tsx";
 
 /*
 
@@ -47,6 +48,8 @@ const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
         dispatch(setActiveSolutionClass(activeSolutionClass));
     };
 
+    const solutionDetailsIsOpen = useSelector((state: any) => state.solutionDetailsIsOpen);
+
     return (
         <m.div
             initial={{ opacity: 0 }}
@@ -60,6 +63,8 @@ const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
             id="solucoes"
             key={"solucoes_key"}
         >
+            <AnimatePresence mode="popLayout">{solutionDetailsIsOpen && <Solucoes_Detalhe key="Solution_Detail_key" />}</AnimatePresence>
+
             <h1 className="LP_Section_Title">Soluções</h1>
             <AnimatePresence mode="popLayout">
                 {activeSolutionClass === null && (
