@@ -102,12 +102,21 @@ body {
     fill: var(--text-color);
 }
 
+.Nav_Logotype {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: clamp(1rem, 2vw, 1.5rem);
+}
+
 .Nav_Links_Container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: var(--small_gap);
+}
+
+.Nav_Link {
+    font-size: clamp(0.75rem, 1vw, 1rem);
 }
 
 .Nav_Link_Active {
@@ -191,6 +200,10 @@ body {
     display: none;
 }
 
+.Footer_Copyright {
+    font-size: clamp(0.75rem, 1vw, 1rem);
+}
+
 .Footer_SocialMedia_Container {
     display: flex;
     flex-direction: row;
@@ -266,10 +279,10 @@ body {
     display: flex;
     flex: 1;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     gap: var(--gap);
-    padding: var(--gap);
+    padding-block: var(--gap);
+    padding-inline: var(--small_gap);
 
     overflow-y: auto;
     overflow-x: hidden;
@@ -286,28 +299,33 @@ body {
 .Abouts_Container,
 .Menu_Container {
     display: flex;
+    flex: 1;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: end;
     gap: var(--gap);
     padding: var(--gap);
+    padding-inline: 0;
+    overflow-x: auto;
 }
 
 .Products_Selector,
 .Solutions_Selector,
 .Abouts_Selector {
+    max-width: calc(100% - 0.125rem);
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
     gap: var(--gap);
     padding: var(--gap);
+    margin-inline: auto;
+    overflow-x: auto;
 }
 
 .Product_Type_Selector,
 .Solution_Type_Selector,
 .About_Type_Selector {
+    width: 25vw;
+    height: 3rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -326,6 +344,20 @@ body {
     gap: var(--gap);
     padding: var(--gap);
     border-radius: var(--gap);
+}
+
+.Product_Card {
+    width: 33vw;
+    min-width: 345px;
+    max-width: 800px;
+    height: calc(100% - 2rem);
+}
+
+.Solution_Card,
+.About_Card {
+    width: 100%;
+    height: 100%;
+    flex: 1;
 }
 
 .Close_Btn {
@@ -352,7 +384,7 @@ body {
 
 .Menu_GoUp_Btn {
     position: absolute;
-    top: var(--small_gap);
+    top: var(--gap);
     right: var(--small_gap);
 
     display: flex;
@@ -376,6 +408,13 @@ body {
     outline: none;
 }
 
+.Mobile_Only {
+    display: none;
+}
+.Desktop_Only {
+    display: flex;
+}
+
 /* SEÇÃO DE INICIO - SEÇÃO DE INICIO - SEÇÃO DE INICIO - SEÇÃO DE INICIO */
 
 .auto_slider_card_container {
@@ -397,4 +436,32 @@ body {
     justify-content: center;
     background-color: var(--text-color);
     flex-shrink: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .Mobile_Only {
+        display: flex;
+    }
+    .Desktop_Only {
+        display: none;
+    }
+
+    .Nav_Links_Container {
+        overflow: hidden;
+        flex: 2;
+    }
+
+    .Nav_Link {
+        font-size: 0.95rem;
+    }
+
+    .Footer_Copyright {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .Nav_Logotype {
+        display: none;
+    }
 }
