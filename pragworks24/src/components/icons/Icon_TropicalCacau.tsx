@@ -1,6 +1,6 @@
 // React Redux Imports
 import { useDispatch } from "react-redux";
-import { setMode } from "../../context/main_context";
+import { setMode } from "../../context/main-context";
 
 export default function Icon_TropicalCacau(props: any) {
     const dispatch = useDispatch();
