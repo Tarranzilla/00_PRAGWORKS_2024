@@ -50,7 +50,7 @@ export default function Service_Card({ product: { id, imgSrc, bgImgSrc, prename,
             </div>
             <div className="Product_Card_Footer">
                 <button
-                    className="Card_Product_Detail_Button"
+                    className="Card_Product_Detail_Button hoverable"
                     onClick={() => {
                         openDetailsButton(id);
                     }}

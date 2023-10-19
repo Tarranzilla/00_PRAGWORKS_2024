@@ -49,7 +49,7 @@ export default function Robot_Card({ product: { id, imgSrc, bgImgSrc, prename, n
                 <p className="Card_Product_Description">{description}</p>
             </div>
             <button
-                className="Card_Product_Detail_Button"
+                className="Card_Product_Detail_Button hoverable"
                 onClick={() => {
                     openDetailsButton(id);
                 }}

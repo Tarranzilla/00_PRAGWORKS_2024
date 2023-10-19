@@ -84,7 +84,7 @@ const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
                                 <h3 className="Solution_Title">{solution.name}</h3>
                                 <p className="Solution_Description">{solution.description}</p>
                                 <button
-                                    className="Solution_KnowMore_Button"
+                                    className="Solution_KnowMore_Button hoverable"
                                     onClick={() => {
                                         toggleActiveSolutionButton({ id: solution.id });
                                     }}
