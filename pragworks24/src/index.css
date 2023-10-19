@@ -24,6 +24,10 @@
     --medium_gap: 1.5rem;
     --large_gap: 2rem;
     --xlarge_gap: 3rem;
+
+    --auto_slider_card_width: 20vh;
+    --bloposts_ammount: 17;
+    --partners_ammount: 12;
 }
 
 * {
@@ -328,6 +332,7 @@ body {
 
 .Abouts_Container {
     padding: 0;
+    overflow-x: hidden;
 }
 
 .Products_Selector,
@@ -490,25 +495,78 @@ body {
 
 /* SEÇÃO DE INICIO - SEÇÃO DE INICIO - SEÇÃO DE INICIO - SEÇÃO DE INICIO */
 
+@keyframes scrollLeft_Experiencias {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--auto_slider_card_width) * var(--bloposts_ammount) * 1));
+    }
+}
+
+@keyframes scrollRight_Parceiros {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--auto_slider_card_width) * var(--partners_ammount) * -1));
+    }
+}
+
+.slider_experiencias {
+    animation: scrollLeft_Experiencias 90s linear infinite;
+    justify-content: end;
+}
+
+.slider_parceiros {
+    animation: scrollRight_Parceiros 90s linear infinite;
+}
+
 .auto_slider_card_container {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
     gap: var(--gap);
     width: 100%;
+    height: calc(var(--auto_slider_card_width) + 1rem);
+    overflow-y: clip;
+    overflow-clip-margin: 20px;
     overflow-x: hidden;
 }
 
+.auto_slider_experiencias {
+    justify-content: end;
+}
+
+.auto_slider_track {
+    z-index: 120;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: var(--gap);
+}
+
 .auto_slider_card {
-    height: 20vh;
-    width: 20vh;
+    height: var(--auto_slider_card_width);
+    width: var(--auto_slider_card_width);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background-color: var(--text-color);
     flex-shrink: 0;
+    cursor: pointer;
+}
+
+.Brand_Fixed_Phrase {
+    font-size: clamp(1.5rem, 3vw, 6rem);
+}
+
+.Brand_Changing_Word {
+    font-size: clamp(2rem, 6vw, 8rem);
 }
 
 /* SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO */
@@ -607,6 +665,14 @@ body {
 .Map_Iframe {
 }
 
+/* TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE */
+
+.LP_Section_Title {
+    display: none;
+}
+
+/* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */
+
 @media screen and (max-width: 700px) {
     .Mobile_Only {
         display: flex;
@@ -622,10 +688,6 @@ body {
 
     .Nav_Link {
         font-size: 0.95rem;
-    }
-
-    .LP_Section_Title {
-        display: none;
     }
 
     .Footer_Copyright {

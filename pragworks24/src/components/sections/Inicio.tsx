@@ -74,28 +74,48 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
             key={"inicio_key"}
         >
             <h1 className="LP_Section_Title">Início</h1>
-            <div className="auto_slider_card_container" id="auto_slider_blogPosts">
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
+            <div className="auto_slider_card_container auto_slider_experiencias" id="auto_slider_blogPosts">
+                <div className="auto_slider_track slider_experiencias">
+                    <div className="auto_slider_card hoverable">Slider Card 1</div>
+                    <div className="auto_slider_card hoverable">Slider Card 2</div>
+                    <div className="auto_slider_card hoverable">Slider Card 3</div>
+                    <div className="auto_slider_card hoverable">Slider Card 4</div>
+                    <div className="auto_slider_card hoverable">Slider Card 5</div>
+                    <div className="auto_slider_card hoverable">Slider Card 6</div>
+                    <div className="auto_slider_card hoverable">Slider Card 7</div>
+                    <div className="auto_slider_card hoverable">Slider Card 8</div>
+                    <div className="auto_slider_card hoverable">Slider Card 9</div>
+                    <div className="auto_slider_card hoverable">Slider Card 10</div>
+                    <div className="auto_slider_card hoverable">Slider Card 11</div>
+                    <div className="auto_slider_card hoverable">Slider Card 12</div>
+                    <div className="auto_slider_card hoverable">Slider Card 13</div>
+                    <div className="auto_slider_card hoverable">Slider Card 14</div>
+                    <div className="auto_slider_card hoverable">Slider Card 15</div>
+                    <div className="auto_slider_card hoverable">Slider Card 16</div>
+                    <div className="auto_slider_card hoverable">Slider Card 17</div>
 
-                {/* Cópias */}
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
+                    {/* Cópias */}
+                    <div className="auto_slider_card hoverable">Slider Card 1B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 2B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 3B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 4B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 5B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 6B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 7B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 8B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 9B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 10B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 11B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 12B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 13B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 14B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 15B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 16B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 17B</div>
+                </div>
             </div>
             <div className="Brand_Declaration">
-                <h2>O Futuro da Robótica é</h2>
+                <h2 className="Brand_Fixed_Phrase">O Futuro da Robótica é</h2>
                 <AnimatePresence mode="popLayout">
                     {text === "Agora" && (
                         <m.h2
@@ -104,7 +124,7 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
                             exit={{ x: "-100vw" }}
                             transition={customTransition}
                             key="Agora_BRAND"
-                            className="Brand_Name"
+                            className="Brand_Changing_Word"
                         >
                             Agora
                         </m.h2>
@@ -116,7 +136,7 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
                             exit={{ x: "-100vw" }}
                             transition={customTransition}
                             key="Interativo_BRAND"
-                            className="Brand_Name"
+                            className="Brand_Changing_Word"
                         >
                             Interativo
                         </m.h2>
@@ -128,7 +148,7 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
                             exit={{ x: "-100vw" }}
                             transition={customTransition}
                             key="Humano_BRAND"
-                            className="Brand_Name"
+                            className="Brand_Changing_Word"
                         >
                             Humano
                         </m.h2>
@@ -136,24 +156,34 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
                 </AnimatePresence>
             </div>
             <div className="auto_slider_card_container" id="auto_slider_partners">
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
+                <div className="auto_slider_track slider_parceiros">
+                    <div className="auto_slider_card hoverable">Slider Card 1</div>
+                    <div className="auto_slider_card hoverable">Slider Card 2</div>
+                    <div className="auto_slider_card hoverable">Slider Card 3</div>
+                    <div className="auto_slider_card hoverable">Slider Card 4</div>
+                    <div className="auto_slider_card hoverable">Slider Card 5</div>
+                    <div className="auto_slider_card hoverable">Slider Card 6</div>
+                    <div className="auto_slider_card hoverable">Slider Card 7</div>
+                    <div className="auto_slider_card hoverable">Slider Card 8</div>
+                    <div className="auto_slider_card hoverable">Slider Card 9</div>
+                    <div className="auto_slider_card hoverable">Slider Card 10</div>
+                    <div className="auto_slider_card hoverable">Slider Card 11</div>
+                    <div className="auto_slider_card hoverable">Slider Card 12</div>
 
-                {/* Cópias */}
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
-                <div className="auto_slider_card">Slider Card</div>
+                    {/* Cópias */}
+                    <div className="auto_slider_card hoverable">Slider Card 1B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 2B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 3B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 4B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 5B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 6B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 7B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 8B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 9B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 10B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 11B</div>
+                    <div className="auto_slider_card hoverable">Slider Card 12B</div>
+                </div>
             </div>
         </m.div>
     );
