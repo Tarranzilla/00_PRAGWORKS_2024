@@ -375,7 +375,7 @@ body {
     width: 33vw;
     min-width: 345px;
     max-width: 800px;
-    height: calc(100% - 2rem);
+    height: 100%;
 }
 
 .Solution_Card,
@@ -594,6 +594,10 @@ body {
 
     .Nav_Link {
         font-size: 0.95rem;
+    }
+
+    .LP_Section_Title {
+        display: none;
     }
 
     .Footer_Copyright {

@@ -19,6 +19,9 @@ import Section_Menu from "../sections/Menu.tsx";
 const LandingPage = forwardRef(function LandingPage(props, ref: any) {
     return (
         <>
+            <div className="Section_Divider Section_Divider_With_Text" id="SD01" key={"SD01_key"}>
+                <h1 className="Section_Divider_Text">Início</h1>
+            </div>
             <Section_Inicio />
             <div className="Section_Divider Section_Divider_With_Text" id="SD01" key={"SD01_key"}>
                 <h1 className="Section_Divider_Text">Produtos</h1>
