@@ -53,11 +53,6 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.selected {
-    color: var(--seleted-color);
-    transform: translateY(-0.125rem) !important;
-}
-
 .Btn_Class {
     background-color: var(--btn_color);
 }
@@ -328,6 +323,11 @@ body {
     gap: var(--gap);
     padding: var(--gap);
     padding-inline: 0;
+    overflow-x: auto;
+}
+
+.Abouts_Container {
+    padding: 0;
 }
 
 .Products_Selector,
@@ -348,6 +348,7 @@ body {
 .Solution_Type_Selector,
 .About_Type_Selector {
     width: 25vw;
+    min-width: max-content;
     height: 2rem;
     display: flex;
     flex-direction: row;
@@ -372,7 +373,7 @@ body {
 
 .Product_Card {
     width: 33vw;
-    min-width: 345px;
+    min-width: 450px;
     max-width: 800px;
     height: 100%;
 }
@@ -475,6 +476,11 @@ body {
     outline: none;
 }
 
+.selected {
+    color: var(--seleted-color);
+    transform: translateY(-0.125rem) !important;
+}
+
 .Mobile_Only {
     display: none;
 }
@@ -540,7 +546,6 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: var(--gap);
 }
 
 .Contact_Location_Btn {
@@ -628,8 +633,12 @@ body {
     }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 450px) {
     .Nav_Logotype {
         display: none;
+    }
+
+    .Product_Card {
+        min-width: 90%;
     }
 }

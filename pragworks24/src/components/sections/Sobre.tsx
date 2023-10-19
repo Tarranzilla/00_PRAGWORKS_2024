@@ -154,7 +154,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
 
             <div className="Abouts_Selector">
                 <button
-                    className="About_Type_Selector hoverable"
+                    className={activeAbout === 1 ? "About_Type_Selector hoverable selected" : "About_Type_Selector hoverable"}
                     onClick={() => {
                         setActiveAboutClass(1);
                     }}
@@ -162,7 +162,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                     Nossa Missão
                 </button>
                 <button
-                    className="About_Type_Selector hoverable"
+                    className={activeAbout === 2 ? "About_Type_Selector hoverable selected" : "About_Type_Selector hoverable"}
                     onClick={() => {
                         setActiveAboutClass(2);
                     }}
@@ -170,7 +170,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                     Equipe
                 </button>
                 <button
-                    className="About_Type_Selector hoverable"
+                    className={activeAbout === 3 ? "About_Type_Selector hoverable selected" : "About_Type_Selector hoverable"}
                     onClick={() => {
                         setActiveAboutClass(3);
                     }}
@@ -178,7 +178,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                     A Fundação
                 </button>
                 <button
-                    className="About_Type_Selector hoverable"
+                    className={activeAbout === 4 ? "About_Type_Selector hoverable selected" : "About_Type_Selector hoverable"}
                     onClick={() => {
                         setActiveAboutClass(4);
                     }}
@@ -186,7 +186,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                     Parceiros
                 </button>
                 <button
-                    className="About_Type_Selector hoverable"
+                    className={activeAbout === 5 ? "About_Type_Selector hoverable selected" : "About_Type_Selector hoverable"}
                     onClick={() => {
                         setActiveAboutClass(5);
                     }}
@@ -194,7 +194,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                     Robótica e o Brasil
                 </button>
                 <button
-                    className="About_Type_Selector hoverable"
+                    className={activeAbout === 6 ? "About_Type_Selector hoverable selected" : "About_Type_Selector hoverable"}
                     onClick={() => {
                         setActiveAboutClass(6);
                     }}
@@ -202,7 +202,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                     História da Robótica
                 </button>
                 <button
-                    className="About_Type_Selector hoverable"
+                    className={activeAbout === 7 ? "About_Type_Selector hoverable selected" : "About_Type_Selector hoverable"}
                     onClick={() => {
                         setActiveAboutClass(7);
                     }}

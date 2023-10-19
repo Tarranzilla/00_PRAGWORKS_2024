@@ -55,7 +55,8 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                         <h3 className="Contact_Info_Title">
                             Escritório
                             <button className="Contact_Location_Btn hoverable" onClick={toggleMap1}>
-                                <span className="material-icons">map</span>Ver Mapa
+                                <span className="material-icons">map</span>
+                                {map1isOpen ? "Ocultar Mapa" : "Ver Mapa"}
                             </button>
                         </h3>
                         <p className="Contact_Info_Item_Detail">Curitiba, Paraná, Brasil.</p>
@@ -65,7 +66,8 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                         <h3 className="Contact_Info_Title">
                             Laboratório
                             <button className="Contact_Location_Btn hoverable" onClick={toggleMap2}>
-                                <span className="material-icons">map</span>Ver Mapa
+                                <span className="material-icons">map</span>
+                                {map2isOpen ? "Ocultar Mapa" : "Ver Mapa"}
                             </button>
                         </h3>
                         <p className="Contact_Info_Item_Detail">Curitiba, Paraná, Brasil. </p>
