@@ -9,7 +9,7 @@ const TodosOsProdutos: ProductType[] = [
         name: "GO",
         type: "Robô Autônomo Móvel",
         class: "robos",
-        description: "Um robô capaz de interagir e se locomover de forma autônoma e inteligente.",
+        description: "Um robô interativo capaz de se locomover de forma autônoma e inteligente.",
         fullDescription: [
             "Um robô autônomo móvel com câmera 4K para telepresença, câmeras fish-eye para navegação, câmera 3D (infravermelho e RGB), LIDAR + sensores ultrasônicos, tela de 10.1 polegadas touch e full HD, auto-falante 40w full range, computador interno (Intel NUC), motores silenciosos e bateria com autonomia de 3 a 5 horas, também com capacidade de auto recarga.",
         ],
@@ -82,7 +82,7 @@ const TodosOsProdutos: ProductType[] = [
         name: "INSPECTOR",
         type: "Robô Autônomo Móvel",
         class: "robos",
-        description: "Um robô para a inspeção de ambientes, produtos e equipamentos.",
+        description: "Um robô interativo para a inspeção de ambientes, produtos e equipamentos.",
         fullDescription: [""],
         bgImgSrc: "/robots_backgrounds/fundo_inspector.png",
         imgSrc: [
@@ -157,7 +157,7 @@ const TodosOsProdutos: ProductType[] = [
         name: "CARGO",
         type: "Robô Autônomo Móvel",
         class: "robos",
-        description: "Um robô que lhe permite armazenar e transportar objetos e ferramentas.",
+        description: "Um robô interativo que lhe permite armazenar e transportar objetos e ferramentas.",
         fullDescription: [
             "Um robô autônomo, ainda em desenvolvimento - projetado para realizar entregas em espaços internos, com capacidade de carga de até 50kg e autonomia de até 8 horas.",
             "O surgimento da Internet Industrial das Coisas (IIoT) e o advento de uma rede de sistemas conectados estão ajudando as indústrias a realizar uma infinidade de tarefas, como agendamento de materiais, seleção, pedidos, embalagem, segurança de armazém e inspeção, além de melhorar significativamente a eficiência operacional.",

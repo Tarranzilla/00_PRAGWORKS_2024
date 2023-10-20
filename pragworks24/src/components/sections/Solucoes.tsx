@@ -9,16 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { setActiveSection, setActiveSolution, setActiveSolutionClass, toggleSolutionDetails } from "../../context/main-context.tsx";
 import Solucoes_Detalhe from "./Solucoes_Detalhe.tsx";
 
-/*
-
-    const [activeSolution, setActiveSolution] = useState(1);
-
-    const setActiveSolutionClass = (id: number) => {
-        setActiveSolution(id);
-    };
-
-*/
-
 const springTransition = {
     type: "spring",
     stiffness: 100,
@@ -84,10 +74,8 @@ const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
                                 className="Solution_Card"
                                 key={solution.domId}
                             >
-                                <div className="Solution_Video_Fader"></div>
-                                <video className="Solution_Video" src={solution.videoSrc[0]} autoPlay loop muted />
-                                <h3 className="Solution_Title">{solution.name}</h3>
-                                <p className="Solution_Description">{solution.description}</p>
+                                <h1 className="Solution_Title">{solution.name}</h1>
+                                <h4 className="Solution_Description">{solution.description}</h4>
                                 <button
                                     className="Solution_KnowMore_Button hoverable"
                                     onClick={() => {
@@ -96,6 +84,8 @@ const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
                                 >
                                     <span className="material-icons">info</span>Mais Detalhes
                                 </button>
+                                <div className="Solution_Video_Fader"></div>
+                                <video className="Solution_Video" src={solution.videoSrc[0]} autoPlay loop muted />
                             </m.div>
                         );
                     }

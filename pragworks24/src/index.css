@@ -370,10 +370,56 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: var(--gap);
     padding: var(--gap);
     border-radius: var(--gap);
+    position: relative;
+    overflow: hidden;
+}
+
+.Product_Bg_Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.Software_Prename {
+    height: 1.5rem;
+}
+
+.Product_Card_Body {
+    position: absolute;
+    bottom: var(--gap);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    gap: var(--small_gap);
+    width: 80%;
+    max-width: 360px;
+    margin-inline: auto;
+    z-index: 50;
+}
+
+.Product_Card_Body_Background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 70%;
+    width: 100%;
+    background-image: linear-gradient(transparent, var(--background-color));
+}
+
+.Solution_Card,
+.About_Card {
+    width: 100%;
+    height: 100%;
+    flex: 1;
 }
 
 .Product_Card {
@@ -381,6 +427,25 @@ body {
     min-width: 450px;
     max-width: 800px;
     height: 100%;
+}
+
+.Solution_Card {
+    padding: 0;
+    justify-content: end;
+}
+
+.Solution_Title {
+    font-size: clamp(2rem, 5vw, 8rem);
+}
+
+.Solution_Video_Fader {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-image: linear-gradient(transparent, var(--background-color));
 }
 
 .Card_Product_Detail_Button {
@@ -396,6 +461,7 @@ body {
 }
 
 .Solution_KnowMore_Button {
+    z-index: 2;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -405,13 +471,7 @@ body {
     padding-block: var(--small_gap);
     border-radius: var(--gap);
     cursor: pointer;
-}
-
-.Solution_Card,
-.About_Card {
-    width: 100%;
-    height: 100%;
-    flex: 1;
+    margin-bottom: var(--gap);
 }
 
 .Info_Icon {
@@ -611,6 +671,21 @@ body {
 }
 
 /* SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO */
+
+.Solution_Video {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+.Solution_Description {
+    z-index: 2;
+    margin-top: auto;
+    max-width: 800px;
+}
+
 .Solution_Detail,
 .Product_Detail {
     z-index: 99;

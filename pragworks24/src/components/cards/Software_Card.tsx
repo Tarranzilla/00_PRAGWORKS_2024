@@ -37,18 +37,16 @@ export default function Software_Card({ product: { id, imgSrc, bgImgSrc, prename
 
     return (
         <div className="Product_Card Software_Card" id={domId}>
+            <div className="Product_Card_Header">
+                <h4 className="Card_Product_Prename Software_Prename">{prename}</h4>
+                <h1 className="Card_Product_Name Software_Name">{name}</h1>
+                <h4 className="Card_Product_Type Sofware_Type">{type}</h4>
+            </div>
             <img className="Card_Product_Image Product_Bg_Image" src={bgImgSrc}></img>
             <img className="Card_Product_Image Product_Main_Image" src={imgSrc[0]}></img>
-            <div className="Product_Description_Background"></div>
-            <div className="Product_Card_Header">
-                <h3 className="Card_Product_Prename Software_Prename">{prename}</h3>
-                <h3 className="Card_Product_Name Software_Name">{name}</h3>
-                <h3 className="Card_Product_Type Sofware_Type">{type}</h3>
-            </div>
+
             <div className="Product_Card_Body">
                 <p className="Card_Product_Description">{description}</p>
-            </div>
-            <div className="Product_Card_Footer">
                 <button
                     className="Card_Product_Detail_Button hoverable"
                     onClick={() => {
@@ -59,6 +57,8 @@ export default function Software_Card({ product: { id, imgSrc, bgImgSrc, prename
                     Mais Detalhes
                 </button>
             </div>
+
+            <div className="Product_Card_Body_Background"></div>
         </div>
     );
 }
