@@ -446,6 +446,26 @@ body {
     cursor: pointer;
 }
 
+.Previous_Btn,
+.Next_Btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+}
+
+.Previous_Btn {
+    bottom: var(--gap);
+    left: var(--gap);
+}
+
+.Next_Btn {
+    bottom: var(--gap);
+    right: var(--gap);
+}
+
 .Search_Btn {
     display: flex;
     flex-direction: row;
@@ -454,6 +474,27 @@ body {
     cursor: pointer;
     padding: var(--small_gap);
     border-radius: 50%;
+}
+
+.ScheduleDemo_Btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: var(--small_gap);
+    border-radius: var(--gap);
+    height: 100%;
+}
+
+.AddToCart_Btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: var(--small_gap);
+    border-radius: var(--gap);
 }
 
 .Menu_GoUp_Btn {
@@ -607,14 +648,32 @@ body {
 .Solution_Detail_Image_Container,
 .Product_Detail_Image_Container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: var(--gap);
     padding: var(--gap);
 
     width: 100%;
     height: 100%;
+    position: relative;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.Solution_Detail_Image_Block,
+.Product_Detail_Image_Block {
+    scroll-snap-align: start;
+    scroll-margin-inline: var(--gap);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
 }
 
 .Solution_Detail_Text_Container,
@@ -629,6 +688,33 @@ body {
     width: 100%;
     height: 100%;
     overflow-y: auto;
+}
+
+.Solution_Partner_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.Solution_Partner {
+    width: 20vh;
+    height: 20vh;
+}
+
+.Product_Detail_Footer,
+.Solution_Detail_Footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
 }
 
 /* SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO */

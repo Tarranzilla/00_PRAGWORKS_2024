@@ -79,23 +79,23 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                         {activeSolution.imgSrc.map(
                             (imgSrc, index) =>
                                 index === currentImageIndex && (
-                                    <m.img
+                                    <m.div
+                                        className="Solution_Detail_Image_Block"
                                         key={index}
-                                        className="Solution_Detail_Image"
-                                        src={imgSrc}
-                                        alt={activeSolution.name}
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
-                                    />
+                                    >
+                                        <m.img className="Solution_Detail_Image" src={imgSrc} alt={activeSolution.name} />
+                                    </m.div>
                                 )
                         )}
                     </AnimatePresence>
-                    <button className="Product_Detail_Image_Previous_Btn" onClick={handlePrevClick}>
-                        <span className="material-icons">west</span>
+                    <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
+                        <span className="material-icons Previous_Btn_Icon">west</span>
                     </button>
-                    <button className="Product_Detail_Image_Next_Btn" onClick={handleNextClick}>
-                        <span className="material-icons">east</span>
+                    <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
+                        <span className="material-icons Next_Btn_Icon">east</span>
                     </button>
                 </div>
 
@@ -127,16 +127,16 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                                     )
                             )}
                         </AnimatePresence>
-                        <button className="Product_Detail_Image_Previous_Btn" onClick={handlePrevClick2}>
-                            <span className="material-icons">west</span>
+                        <button className="Previous_Btn" onClick={handlePrevClick2}>
+                            <span className="material-icons Previous_Btn_Icon">west</span>
                         </button>
-                        <button className="Product_Detail_Image_Next_Btn" onClick={handleNextClick2}>
-                            <span className="material-icons">east</span>
+                        <button className="Next_Btn" onClick={handleNextClick2}>
+                            <span className="material-icons Next_Btn_Icon">east</span>
                         </button>
                     </div>
 
                     <div className="Solution_Detail_Footer">
-                        <button className="Card_ScheduleDemo_Button" onClick={toggleFinishOrderButton}>
+                        <button className="ScheduleDemo_Btn" onClick={toggleFinishOrderButton}>
                             Agendar Demonstração
                         </button>
                     </div>

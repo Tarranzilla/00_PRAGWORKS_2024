@@ -6,7 +6,7 @@ import { motion as m, AnimatePresence } from "framer-motion";
 
 //React Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, toggleProductDetails, toggleCart, toggleSolutionDetails, setActiveSolution } from "../../context/main-context";
+import { addToCart, toggleProductDetails, toggleCart, toggleSolutionDetails, setActiveProduct } from "../../context/main-context";
 
 // Product Type Import
 import ProductType from "../../types/00_Produto";
@@ -15,9 +15,9 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     const dispatch = useDispatch();
 
     const openDetailsButton = (id) => {
-        console.log("Opening Solution details");
-        dispatch(toggleSolutionDetails());
-        dispatch(setActiveSolution({ id: id }));
+        console.log("Opening Product details");
+        dispatch(toggleProductDetails());
+        dispatch(setActiveProduct({ id: id }));
     };
 
     const activeProduct = useSelector((state: any) => state.activeProduct);
@@ -53,9 +53,30 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     const demoMessage = `Olá, eu gostaria de fazer uma solicitação de demonstração para o seguinte produto:\n\n${activeProduct.name}\n\n`;
     const demoPhoneNumber = "+5541999977955"; // Replace with your desired WhatsApp number
 
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
+
+    const [isAutoPlayActive, setIsAutoPlayActive] = useState(true);
+
     const toggleFinishOrderButton = () => {
         const whatsappUrl = `https://wa.me/${demoPhoneNumber}/?text=${encodeURIComponent(demoMessage)}`;
         window.open(whatsappUrl, "_blank");
+    };
+
+    const handleNextClick = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % activeProduct.imgSrc.length);
+    };
+
+    const handlePrevClick = () => {
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + activeProduct.imgSrc.length) % activeProduct.imgSrc.length);
+    };
+
+    const handleNextClick2 = () => {
+        setCurrentPartnerIndex((prevIndex) => (prevIndex + 1) % activeProduct.partners.length);
+    };
+
+    const handlePrevClick2 = () => {
+        setCurrentPartnerIndex((prevIndex) => (prevIndex - 1 + activeProduct.partners.length) % activeProduct.partners.length);
     };
 
     return (
@@ -69,30 +90,30 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
             </div>
             <div className="Product_Detail_Content">
                 <div className="Product_Detail_Image_Container">
-                    <div className="Product_Detail_Image_Block" id="detail_image_01">
-                        <a href="#detail_image_02" className="Product_Detail_Image_Next_Btn">
-                            <span className="material-icons">east</span>
-                        </a>
-                        <img className="Product_Detail_Image" src={activeProduct.imgSrc[1]}></img>
-                    </div>
-
-                    <div className="Product_Detail_Image_Block" id="detail_image_02">
-                        <a href="#detail_image_01" className="Product_Detail_Image_Previous_Btn">
-                            <span className="material-icons">west</span>
-                        </a>
-                        <a href="#detail_image_03" className="Product_Detail_Image_Next_Btn">
-                            <span className="material-icons">east</span>
-                        </a>
-                        <img className="Product_Detail_Image" src={activeProduct.imgSrc[2]}></img>
-                    </div>
-
-                    <div className="Product_Detail_Image_Block" id="detail_image_03">
-                        <a href="#detail_image_01" className="Product_Detail_Image_Previous_Btn">
-                            <span className="material-icons">west</span>
-                        </a>
-                        <img className="Product_Detail_Image" src={activeProduct.imgSrc[1]}></img>
-                    </div>
+                    <AnimatePresence mode="wait">
+                        {activeProduct.imgSrc.map(
+                            (imgSrc, index) =>
+                                index === currentImageIndex && (
+                                    <m.div
+                                        className="Product_Detail_Image_Block"
+                                        key={index}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    >
+                                        <m.img className="Product_Detail_Image" src={imgSrc} alt={activeProduct.name} />
+                                    </m.div>
+                                )
+                        )}
+                    </AnimatePresence>
+                    <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
+                        <span className="material-icons Previous_Btn_Icon">west</span>
+                    </button>
+                    <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
+                        <span className="material-icons Next_Btn_Icon">east</span>
+                    </button>
                 </div>
+
                 <div className="Product_Detail_Text_Container">
                     <div className="Product_Detail_Text_Item">
                         <div className="Product_Detail_Text_Item_Header">
@@ -189,7 +210,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
 
                     <div className="Product_Detail_Footer">
                         <button
-                            className="Card_AddToCart_Button"
+                            className="AddToCart_Btn hoverable"
                             onClick={() => {
                                 addToCartButton(activeProduct.id, 1);
                                 if (!cartIsOpen) dispatch(toggleCart());
@@ -200,7 +221,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                             </div>
                             <div className="AddToCartRight">Solicitar uma Cotação {itemTotalQuantity > 0 && `(${itemTotalQuantity})`}</div>
                         </button>
-                        <button className="Card_ScheduleDemo_Button" onClick={toggleFinishOrderButton}>
+                        <button className="ScheduleDemo_Btn hoverable" onClick={toggleFinishOrderButton}>
                             Agendar Demonstração
                         </button>
                     </div>
