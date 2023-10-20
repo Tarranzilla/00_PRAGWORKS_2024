@@ -16,6 +16,16 @@ const springTransition = {
     velocity: 50,
 };
 
+import fotoEquipe from "../../assets/sobre/Equipe_HR.png";
+
+import fotoAlexandria from "../../assets/sobre/alexandria.webp";
+import fotoAlexandria2 from "../../assets/sobre/alexandria_02.jpg";
+import fotoDaVinci from "../../assets/sobre/davinci.jpg";
+import fotoRUR from "../../assets/sobre/rur.jpg";
+
+import fotoGIRINO from "../../assets/sobre/GIRINO.png";
+import fotoCHICO from "../../assets/sobre/ROBOCHICO.png";
+
 const customTransition = springTransition;
 
 const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
@@ -55,8 +65,46 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_01"
                         >
-                            <h3>Sobre</h3>
-                            <h2>A Human Robotics</h2>
+                            <div className="About_Card_Header">
+                                <h3>Sobre</h3>
+                                <h2>A Human Robotics</h2>
+                            </div>
+
+                            <div className="About_Card_Content">
+                                <div className="About_Card_Image_Container">
+                                    <div className="About_Card_Img_Block">
+                                        <img className="About_Card_Img" src={fotoEquipe}></img>
+                                    </div>
+                                </div>
+
+                                <div className="About_Card_Text_Container">
+                                    <p className="Sobre_Header_Text">
+                                        <strong>
+                                            Somos a vanguarda da robótica e da inteligência artificial no Brasil, criando soluções inovadoras e
+                                            personalizadas para atender às necessidades de nossos clientes em setores como Varejo, Indústria e
+                                            Cultura.
+                                        </strong>
+                                    </p>
+                                    <p className="Sobre_Description_Text">
+                                        Inspirados pela Subjetividade que a nossa Cultura tem a oferecer e na Precisão que nossas Tecnologias
+                                        desbloqueiam, confecionamos assistentes virtuais e robôs que se destacam pela sua capacidade de interagir com
+                                        as pessoas.
+                                    </p>
+
+                                    <p className="Sobre_Header_Text">
+                                        Temos uma visão clara e ambiciosa para o futuro. Nossa meta é liderar a transformação tecnológica no Brasil,
+                                        sendo a vanguarda das tecnologias de atendimento, educação, interação, inspeção e transporte em bases
+                                        robóticas.
+                                    </p>
+                                    <p className="Sobre_Header_Text">
+                                        Nossa missão é tornar a robótica mais humana, mais acessível e mais presente na vida das pessoas.
+                                    </p>
+
+                                    <p className="Sobre_Header_Text">
+                                        <strong>Junte-se a nós nesta jornada por uma transformação tecnológica mais humana!</strong>
+                                    </p>
+                                </div>
+                            </div>
                         </m.div>
                     )}
 
@@ -70,8 +118,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_02"
                         >
-                            <h3>Sobre</h3>
-                            <h2>Nossos Parceiros</h2>
+                            <div className="About_Card_Header">
+                                <h3>Sobre</h3>
+                                <h2>Nossos Parceiros</h2>
+                            </div>
                         </m.div>
                     )}
 
@@ -85,8 +135,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_03"
                         >
-                            <h3>Sobre</h3>
-                            <h2>A Fundação</h2>
+                            <div className="About_Card_Header">
+                                <h3>Sobre</h3>
+                                <h2>A Fundação</h2>
+                            </div>
                         </m.div>
                     )}
 
@@ -100,8 +152,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_04"
                         >
-                            <h3>Sobre</h3>
-                            <h2>A Robótica e o Brasil</h2>
+                            <div className="About_Card_Header">
+                                <h3>Sobre</h3>
+                                <h2>A Robótica e o Brasil</h2>
+                            </div>
                         </m.div>
                     )}
 
@@ -115,8 +169,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_05"
                         >
-                            <h3>Sobre</h3>
-                            <h2>A História da Robótica</h2>
+                            <div className="About_Card_Header">
+                                <h3>Sobre</h3>
+                                <h2>A História da Robótica</h2>
+                            </div>
                         </m.div>
                     )}
 
@@ -130,8 +186,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_06"
                         >
-                            <h3>Sobre</h3>
-                            <h2>A Nossa Equipe</h2>
+                            <div className="About_Card_Header">
+                                <h3>Sobre</h3>
+                                <h2>A Nossa Equipe</h2>
+                            </div>
                         </m.div>
                     )}
 
@@ -145,8 +203,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_07"
                         >
-                            <h3>Sobre</h3>
-                            <h2>Blog</h2>
+                            <div className="About_Card_Header">
+                                <h3>Sobre</h3>
+                                <h2>Blog</h2>
+                            </div>
                         </m.div>
                     )}
                 </AnimatePresence>

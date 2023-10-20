@@ -13,9 +13,28 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
     const activeSolution = useSelector((state: any) => state.activeSolution);
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
 
     const [isAutoPlayActive, setIsAutoPlayActive] = useState(true);
+
+    let index = 0;
+    let intervalId: number;
+
+    const currentPartners = activeSolution.partners;
+    const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
+
+    const animatePartner = () => {
+        setCurrentPartnerIndex((prevIndex) => (prevIndex + 1) % currentPartners.length);
+    };
+
+    const handleVisibilityChange = () => {
+        if (document.hidden) {
+            // Page is not visible, clear the interval
+            clearInterval(intervalId);
+        } else {
+            // Page is visible, restart the interval
+            intervalId = setInterval(animatePartner, 2000);
+        }
+    };
 
     const demoMessage = `Olá, eu gostaria de fazer uma solicitação de demonstração para a seguinte Solução:\n\n${activeSolution.name}\n\n`;
     const demoPhoneNumber = "+5541999977955"; // Replace with your desired WhatsApp number
@@ -45,22 +64,20 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
         dispatch(toggleSolutionDetails());
     };
 
-    // Auto-play effect using setInterval
     useEffect(() => {
-        let intervalId;
+        // Start the animation loop
+        intervalId = setInterval(animatePartner, 2000);
 
-        if (isAutoPlayActive) {
-            intervalId = setInterval(() => {
-                setCurrentPartnerIndex((prevIndex) => (prevIndex + 1) % activeSolution.partners.length);
-            }, 3000); // Change image every 3 seconds
-        }
+        // Add visibility change event listener
+        document.addEventListener("visibilitychange", handleVisibilityChange);
 
+        // Cleanup function
         return () => {
-            if (intervalId) {
-                clearInterval(intervalId);
-            }
+            clearInterval(intervalId);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
+            index = 0; // Reset the index
         };
-    }, [isAutoPlayActive, activeSolution.partners.length]);
+    }, []); // Run once on mount
 
     return (
         <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solution_Detail Product_Detail">
@@ -122,7 +139,7 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
                                         >
-                                            <img src={partner.imgSrc} alt={partner.name} />
+                                            <img className="Solution_Partner_Img" src={partner.imgSrc} alt={partner.name} />
                                         </m.div>
                                     )
                             )}
