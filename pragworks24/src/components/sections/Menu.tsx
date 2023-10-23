@@ -99,7 +99,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
             <div className="Menu_Container">
                 <div className="Menu_Main_List">
                     <div className="Main_List_Header">
-                        <a href="#" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
+                        <a href="#" className="Menu_Link Header_Link hoverable undecorated" onClick={toggleMenuButton}>
                             <span className="material-icons LP_Links_Icon">flag_circle</span>
                             <p>Início</p>
                         </a>
@@ -211,23 +211,26 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 <p>Configurações</p>
                             </div>
                         </div>
-                        <div className="LP_Links_Horizontal_Organizer Config_Organizer">
-                            <div className="LP_Links_Line_Container">
-                                <div className="LP_Links_Line"></div>
+                        <div className="List_Horizontal_Organizer Config_Organizer">
+                            <div className="List_Line_Container">
+                                <div className="List_Line"></div>
                             </div>
                             <div className="Configurations_Links">
                                 <a href="#Idioma" className="Menu_Link Config_Link" onClick={toggleLanguageButton}>
-                                    Idioma:{" "}
+                                    <span className="Config_Option_Title">Idioma:</span>
                                     <span className={language === "pt-br" ? "Config_Option active" : "Config_Option hoverable"}>Português</span>
                                     <span className={language === "en" ? "Config_Option active" : "Config_Option hoverable"}>English</span>
                                 </a>
                                 <a href="#Moeda" className="Menu_Link Config_Link" onClick={toggleCurrencyButton}>
-                                    Moeda:{" "}
-                                    <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option hoverable"}>Real (R$)</span>{" "}
+                                    <span className="Config_Option_Title">Moeda:</span>
+                                    <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option hoverable"}>
+                                        Real (R$)
+                                    </span>{" "}
                                     <span className={currencyType === "USD" ? "Config_Option active" : "Config_Option hoverable"}>Dollar (USD)</span>
                                 </a>
                                 <a href="#Cores" className="Menu_Link Config_Link" onClick={toggleColorModeButton}>
-                                    Modo de Cor: <span className={mode === "dark" ? "Config_Option active" : "Config_Option hoverable"}>Escuro</span>
+                                    <span className="Config_Option_Title">Modo de Cor:</span>{" "}
+                                    <span className={mode === "dark" ? "Config_Option active" : "Config_Option hoverable"}>Escuro</span>
                                     <span className={mode === "light" ? "Config_Option active" : "Config_Option"}>Claro</span>
                                 </a>
                                 <button className="Config_Reset hoverable" onClick={handleResetButton}>
