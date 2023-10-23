@@ -434,19 +434,12 @@ body {
     justify-content: end;
 }
 
-.Solution_Title {
-    margin-top: var(--gap);
-    font-size: clamp(2rem, 5vw, 8rem);
+.About_Card {
+    gap: 0;
 }
 
-.Solution_Video_Fader {
-    z-index: 1;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 75%;
-    background-image: linear-gradient(transparent, var(--background-color));
+.About_Card_Header {
+    height: 4rem;
 }
 
 .Card_Product_Detail_Button {
@@ -673,22 +666,6 @@ body {
 
 /* SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO */
 
-.Solution_Video {
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    object-fit: cover;
-}
-
-.Solution_Description {
-    z-index: 2;
-    margin-top: auto;
-    max-width: 800px;
-    width: 80%;
-    font-size: clamp(0.8rem, 1vw, 1.5rem);
-}
-
 .Solution_Detail,
 .Product_Detail {
     z-index: 99;
@@ -721,14 +698,6 @@ body {
     flex-direction: row;
     gap: var(--gap);
     padding: var(--gap);
-}
-
-.About_Card_Content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: var(--gap);
 }
 
 .About_Card_Image_Container,
@@ -787,6 +756,49 @@ body {
     overflow-y: auto;
 }
 
+.Product_Detail_Footer,
+.Solution_Detail_Footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
+}
+
+/* SEÇÃO DE SOLUÇÕES - SEÇÃO DE SOLUÇÕES - SEÇÃO DE SOLUÇÕES - SEÇÃO DE SOLUÇÕES */
+
+.Solution_Video {
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+
+.Solution_Description {
+    z-index: 2;
+    margin-top: auto;
+    max-width: 800px;
+    width: 80%;
+    font-size: clamp(0.8rem, 1vw, 1.5rem);
+}
+
+.Solution_Title {
+    margin-top: var(--gap);
+    font-size: clamp(2rem, 5vw, 8rem);
+}
+
+.Solution_Video_Fader {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background-image: linear-gradient(transparent, var(--background-color));
+}
+
 .Solution_Partner_Container {
     display: flex;
     flex-direction: row;
@@ -814,14 +826,80 @@ body {
     object-fit: contain;
 }
 
-.Product_Detail_Footer,
-.Solution_Detail_Footer {
+/* SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS */
+
+.About_Card_Content {
+    width: 100%;
+    height: calc(100% - 4rem);
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+}
+
+.Sobre_Member_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: start;
+    gap: var(--gap);
+    padding: var(--gap);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.Sobre_Member_Card {
+    scroll-margin-inline: var(--gap);
+    scroll-snap-align: start;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.Sobre_Member_Image_Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+
+.Sobre_Member_Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Sobre_Member_Description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    line-height: 1rem;
+    font-size: 0.8rem;
+}
+
+.Sobre_Member_Interactions {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: var(--gap);
-    padding: var(--gap);
+}
+
+.Sobre_Interaction_Icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 /* SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO */
