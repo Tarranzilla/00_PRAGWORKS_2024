@@ -74,18 +74,18 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                     </div>
                 </div>
                 <div className="Contact_Action_Container">
-                    <a className="Contact_Action_Btn Btn_Class hoverable" href="mailto:recipient@example.com">
+                    <a className="Contact_Action_Btn Btn_Class hoverable undecorated" href="mailto:recipient@example.com">
                         Enviar Email
                     </a>
                     <a
-                        className="Contact_Action_Btn Btn_Class hoverable"
+                        className="Contact_Action_Btn Btn_Class hoverable undecorated"
                         href="https://api.whatsapp.com/send?phone=5541999977955&text=Ol%C3%A1"
                         target="_blank"
                     >
                         Enviar Mensagem por WhatsApp
                     </a>
                     <a
-                        className="Contact_Action_Btn Btn_Class hoverable"
+                        className="Contact_Action_Btn Btn_Class hoverable undecorated"
                         href="https://api.whatsapp.com/send?phone=5541999977955&text=Ol%C3%A1"
                         target="_blank"
                     >

@@ -216,20 +216,27 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 <div className="List_Line"></div>
                             </div>
                             <div className="Configurations_Links">
-                                <a href="#Idioma" className="Menu_Link Config_Link" onClick={toggleLanguageButton}>
-                                    <span className="Config_Option_Title">Idioma:</span>
+                                <a href="#Idioma" className="Config_Link hoverable" onClick={toggleLanguageButton}>
+                                    <span className="Config_Option_Title">
+                                        <i className="material-icons hoverable">translate</i>
+                                        <p>Idioma:</p>
+                                    </span>
                                     <span className={language === "pt-br" ? "Config_Option active" : "Config_Option hoverable"}>Português</span>
                                     <span className={language === "en" ? "Config_Option active" : "Config_Option hoverable"}>English</span>
                                 </a>
-                                <a href="#Moeda" className="Menu_Link Config_Link" onClick={toggleCurrencyButton}>
-                                    <span className="Config_Option_Title">Moeda:</span>
-                                    <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option hoverable"}>
-                                        Real (R$)
-                                    </span>{" "}
+                                <a href="#Moeda" className="Config_Link hoverable" onClick={toggleCurrencyButton}>
+                                    <span className="Config_Option_Title">
+                                        <span className="material-icons">payments</span>
+                                        <p>Moeda:</p>
+                                    </span>
+                                    <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option hoverable"}>Real (R$)</span>
                                     <span className={currencyType === "USD" ? "Config_Option active" : "Config_Option hoverable"}>Dollar (USD)</span>
                                 </a>
-                                <a href="#Cores" className="Menu_Link Config_Link" onClick={toggleColorModeButton}>
-                                    <span className="Config_Option_Title">Modo de Cor:</span>{" "}
+                                <a href="#Cores" className="Config_Link hoverable" onClick={toggleColorModeButton}>
+                                    <span className="Config_Option_Title">
+                                        <span className="material-icons">palette</span>
+                                        <p>Modo de Cor:</p>
+                                    </span>
                                     <span className={mode === "dark" ? "Config_Option active" : "Config_Option hoverable"}>Escuro</span>
                                     <span className={mode === "light" ? "Config_Option active" : "Config_Option"}>Claro</span>
                                 </a>
@@ -241,13 +248,6 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                     </div>
 
                     <div className="Pragmata_Web hoverable">
-                        <p>
-                            Webdesign por{" "}
-                            <a href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer">
-                                Pragmata
-                            </a>
-                        </p>
-
                         <svg id="PragLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.87 172.3">
                             <g id="PragLogoGroup">
                                 <g>
@@ -256,6 +256,12 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 </g>
                             </g>
                         </svg>
+                        <p>
+                            Webdesign por{" "}
+                            <a href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer">
+                                Pragmata
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>

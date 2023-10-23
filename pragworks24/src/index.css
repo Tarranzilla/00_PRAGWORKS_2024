@@ -30,10 +30,27 @@
     --partners_ammount: 12;
 }
 
+::-webkit-scrollbar {
+    width: 0.5vw;
+}
+
+::-webkit-scrollbar-track {
+    margin: var(--gap);
+    background-color: var(--background-color);
+    border-radius: var(--gap);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: var(--gap);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    outline: 1px solid red;
+    outline-offset: -1px;
 }
 
 html {
@@ -64,7 +81,9 @@ body {
     color: var(--text-color);
 }
 
-.hoverable:hover {
+.hoverable:hover,
+.hoverable:focus,
+.hoverable:focus-within {
     transform: scale(1.05);
 }
 
@@ -240,7 +259,6 @@ body {
     left: 0;
     width: 100%;
     height: calc(100vh - 6rem);
-    outline: 2px solid blue;
     pointer-events: none;
 }
 
@@ -360,6 +378,7 @@ body {
     padding: var(--small_gap);
     cursor: pointer;
     font-size: clamp(1rem, 1vw, 1.5rem);
+    border-radius: var(--gap);
 }
 
 .Product_Card,
@@ -433,7 +452,6 @@ body {
 }
 
 .About_Card {
-    gap: 0;
 }
 
 .About_Card_Header {
@@ -506,16 +524,18 @@ body {
     justify-content: center;
     cursor: pointer;
     position: absolute;
+    padding: var(--small_gap);
+    border-radius: 50%;
 }
 
 .Previous_Btn {
-    bottom: var(--gap);
-    left: var(--gap);
+    bottom: var(--large_gap);
+    left: var(--large_gap);
 }
 
 .Next_Btn {
-    bottom: var(--gap);
-    right: var(--gap);
+    bottom: var(--large_gap);
+    right: var(--large_gap);
 }
 
 .Search_Btn {
@@ -714,6 +734,7 @@ body {
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    border-radius: var(--gap);
 }
 
 .About_Card_Img_Block,
@@ -729,6 +750,8 @@ body {
     justify-content: center;
     position: relative;
     flex-shrink: 0;
+    border-radius: var(--gap);
+    overflow: hidden;
 }
 
 .Product_Detail_Image,
@@ -752,6 +775,7 @@ body {
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    border-radius: var(--gap);
 }
 
 .Product_Detail_Footer,
@@ -828,7 +852,7 @@ body {
 
 .About_Card_Content {
     width: 100%;
-    height: calc(100% - 4rem);
+    height: calc(100% - 5rem);
     display: flex;
     flex-direction: row;
     gap: var(--gap);
@@ -857,6 +881,8 @@ body {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
+    border-radius: var(--gap);
+    overflow: hidden;
 }
 
 .Sobre_Member_Image_Container {
@@ -969,6 +995,10 @@ body {
     gap: var(--small_gap);
     width: min-content;
     margin-inline: auto;
+    padding: var(--gap);
+    border-radius: var(--gap);
+    width: 100%;
+    max-width: 20rem;
 }
 
 .Contact_Info_Title {
@@ -1000,7 +1030,9 @@ body {
 
 .Contact_Action_Btn {
     padding: var(--gap);
-    width: 50%;
+    width: 100%;
+    max-width: 20rem;
+    border-radius: var(--gap);
 }
 
 .Maps_Master_Container {
@@ -1017,6 +1049,8 @@ body {
     flex: 1;
     height: 100%;
     transition: width 0.2s ease-in-out;
+    border-radius: var(--gap);
+    overflow: hidden;
 }
 
 .Map_Header {
@@ -1024,6 +1058,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: var(--small_gap);
 }
 
 .Map_Title {
@@ -1073,6 +1108,7 @@ body {
     padding: var(--small_gap);
     cursor: pointer;
     width: 100%;
+    max-width: 20rem;
 }
 
 .Header_Link {
@@ -1111,12 +1147,16 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
+    width: 100%;
+    max-width: 20rem;
 }
 
 .Secondary_Links {
     display: flex;
     flex-direction: column;
     gap: var(--gap);
+    width: 100%;
+    max-width: 20rem;
 }
 
 .Menu_Options {
@@ -1135,8 +1175,11 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     gap: var(--small_gap);
+    width: 100%;
+    max-width: 20rem;
+    margin-top: auto;
 }
 
 #PragLogo {
@@ -1146,6 +1189,7 @@ body {
 }
 
 .Config_Reset {
+    margin-block: var(--small_gap);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1155,6 +1199,25 @@ body {
     border-radius: var(--gap);
     cursor: pointer;
     width: 100%;
+    max-width: 20rem;
+}
+
+.Configurations_Links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.Config_Link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: var(--gap);
+    padding: var(--small_gap);
+    cursor: pointer;
+    width: 100%;
+    max-width: 30rem;
 }
 
 .Config_Option_Title {
