@@ -727,6 +727,8 @@ body {
     font-size: clamp(4rem, 8vw, 8rem);
     line-height: 6rem;
     color: var(--seleted-color);
+    position: relative;
+    top: -1rem;
 }
 
 /* SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO */
