@@ -902,6 +902,47 @@ body {
     justify-content: center;
 }
 
+.Sobre_Partners_Description_Text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gap);
+    gap: var(--gap);
+}
+
+.Partners_Icons {
+    font-size: 10vh;
+}
+
+.Partner_Description_Actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.Partner_Description_Action_Btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small_gap);
+    padding: var(--gap);
+    border-radius: var(--gap);
+    cursor: pointer;
+    width: 12rem;
+}
+
+.WideImg {
+    width: 100%;
+    max-height: 50%;
+    object-fit: cover;
+    object-position: top;
+    text-align: center;
+}
+
 /* SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO */
 
 #contato {
@@ -996,6 +1037,117 @@ body {
 }
 
 .Map_Iframe {
+}
+
+/* MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU */
+
+.Menu_Container {
+}
+
+.Menu_Main_List {
+    display: flex;
+    flex-direction: column;
+    padding: var(--gap);
+    border-radius: var(--gap);
+    overflow-y: auto;
+    height: 100%;
+}
+
+.Main_List_Header,
+.Configurations_Header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: var(--gap);
+}
+
+.Menu_Link,
+.Menu_Link_Secondary {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: var(--gap);
+    padding: var(--small_gap);
+    cursor: pointer;
+}
+
+.List_Horizontal_Organizer {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+}
+
+.List_Line_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--small_gap);
+    width: 2rem;
+}
+
+.List_Line {
+    height: 100%;
+    width: 2px;
+    background-color: var(--text-color);
+}
+
+.LP_Links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.Product_Links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.Secondary_Links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.Menu_Options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--gap);
+    border-radius: var(--gap);
+    height: 100%;
+    overflow-y: auto;
+}
+
+.Pragmata_Web {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small_gap);
+}
+
+#PragLogo {
+    width: 2rem;
+    height: 2rem;
+}
+
+.Config_Reset {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small_gap);
+    padding: var(--small_gap);
+    border-radius: var(--gap);
+    cursor: pointer;
+}
+
+.Config_Option.active {
+    background-color: var(--seleted-color);
 }
 
 /* TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE - TESTE */

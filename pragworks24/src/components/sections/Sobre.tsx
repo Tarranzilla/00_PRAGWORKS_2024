@@ -457,56 +457,56 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                     <div className="Sobre_Partners_Container">
                                         <p className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">memory</span>
-                                            <strong>Parceiros de Produção:</strong> Nossos parceiros de produção são laboratórios de eletrônica e
+                                            <strong>Parceiros de Produção</strong> Nossos parceiros de produção são laboratórios de eletrônica e
                                             robótica localizadas nas cidades de Curitiba e São Paulo. Esses laboratórios são certificados pelo
                                             Instituto de Robótica do Brasil (IRB) e pelo Conselho de Manejo Industrial (CMI), que garantem a
                                             sustentabilidade e qualidade da produção de hardwares.
                                             <div className="Partner_Description_Actions">
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button">
+                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">info</span>Saiba mais
                                                 </button>
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button">
+                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
                                         </p>
                                         <p className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">loyalty</span>
-                                            <strong>Parceiros de Distribuição:</strong> Nossos parceiros de distribuição são empresas que nos ajudam a
+                                            <strong>Parceiros de Distribuição</strong> Nossos parceiros de distribuição são empresas que nos ajudam a
                                             levar nossos produtos para todo o Brasil. Eles são responsáveis pela logística de entrega e pela
                                             comercialização dos produtos da Human Robotics em suas lojas físicas e virtuais.
                                             <div className="Partner_Description_Actions">
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button">
+                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">info</span>Saiba mais
                                                 </button>
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button">
+                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
                                         </p>
                                         <p className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">handyman</span>
-                                            <strong>Parceiros de Assistência Técnica:</strong> Nossos parceiros de assistência técnica são capazes de
+                                            <strong>Parceiros de Assistência Técnica</strong> Nossos parceiros de assistência técnica são capazes de
                                             oferecer serviços de reparo, configuração e treinamento para o uso dos robôs.
                                             <div className="Partner_Description_Actions">
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button">
+                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">info</span>Saiba mais
                                                 </button>
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button">
+                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
                                         </p>
                                         <p className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">recycling</span>
-                                            <strong>Parceiros de Reciclagem:</strong> Nossos parceiros de reciclagem são empresas que nos ajudam a
+                                            <strong>Parceiros de Reciclagem</strong> Nossos parceiros de reciclagem são empresas que nos ajudam a
                                             reciclar as partes eletrônicas e estruturais de nossos robôs, garantindo que nossos produtos causem menos
                                             danos ao meio ambiente.
                                             <div className="Partner_Description_Actions">
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button">
+                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">info</span>Saiba mais
                                                 </button>
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button">
+                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
@@ -564,7 +564,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         deixaram textos detalhando autômatos viáveis alimentados por hidráulica ou vapor. Ctesibius construiu
                                         autômatos semelhantes a humanos, frequentemente usados em cerimônias religiosas e no culto a deuses.
                                     </p>
-                                    <img className="Sobre_Img WideImg" src={fotoAlexandria2}></img>
+                                    <img className="Sobre_Img" src={fotoAlexandria2}></img>
                                     <p className="Sobre_Description_Text">
                                         Um dos últimos grandes engenheiros alexandrinos, Heron de Alexandria (10-70 d.C. ) construiu um teatro de
                                         marionetes autômatos, onde as figuras e os cenários se moviam por meios mecânicos. Ele descreveu a construção

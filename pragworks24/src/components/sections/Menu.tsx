@@ -98,118 +98,118 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
             <h1 className="LP_Section_Title">Menu</h1>
             <div className="Menu_Container">
                 <div className="Menu_Main_List">
-                    <div className="LP_Links_Container">
-                        <div className="LP_Links_Header">
-                            <a href="#LP_Section_1" className="Menu_Link" onClick={toggleMenuButton}>
-                                <span className="material-icons LP_Links_Icon">flag_circle</span>
-                                Início
-                            </a>
+                    <div className="Main_List_Header">
+                        <a href="#" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
+                            <span className="material-icons LP_Links_Icon">flag_circle</span>
+                            <p>Início</p>
+                        </a>
+                    </div>
+                    <div className="List_Horizontal_Organizer">
+                        <div className="List_Line_Container">
+                            <div className="List_Line"></div>
                         </div>
-                        <div className="LP_Links_Horizontal_Organizer">
-                            <div className="LP_Links_Line_Container">
-                                <div className="LP_Links_Line"></div>
-                            </div>
-                            <div className="LP_Links">
-                                <div className="Product_Links_Container">
-                                    <div className="Product_Links_Header">
-                                        <a href="#LP_Section_2" className="Menu_Link" onClick={toggleMenuButton}>
-                                            Produtos
+                        <div className="LP_Links">
+                            <div className="Product_Links_Container">
+                                <div className="Product_Links_Header">
+                                    <a href="#produtos" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
+                                        Produtos
+                                    </a>
+                                </div>
+                                <div className="List_Horizontal_Organizer">
+                                    <div className="List_Line_Container">
+                                        <div className="List_Line"></div>
+                                    </div>
+                                    <div className="Product_Links">
+                                        <a
+                                            href="#produtos"
+                                            className="Menu_Link hoverable undecorated"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("robos", 0);
+                                            }}
+                                        >
+                                            RobiOS GO
+                                        </a>
+                                        <a
+                                            href="#produtos"
+                                            className="Menu_Link hoverable undecorated"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("robos", 1);
+                                            }}
+                                        >
+                                            RobiOS Inspector
+                                        </a>
+                                        <a
+                                            href="#produtos"
+                                            className="Menu_Link hoverable undecorated"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("robos", 2);
+                                            }}
+                                        >
+                                            RobiOS Cargo
+                                        </a>
+                                        <a
+                                            href="#produtos"
+                                            className="Menu_Link hoverable undecorated"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("softwares", 3);
+                                            }}
+                                        >
+                                            RobiOS
+                                        </a>
+                                        <a
+                                            href="#produtos"
+                                            className="Menu_Link hoverable undecorated"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("softwares", 4);
+                                            }}
+                                        >
+                                            RobiOS Studio
+                                        </a>
+                                        <a
+                                            href="#produtos"
+                                            className="Menu_Link hoverable undecorated"
+                                            onClick={() => {
+                                                toggleProductDetailsButton("softwares", 5);
+                                            }}
+                                        >
+                                            RobiOS Avatar
                                         </a>
                                     </div>
-                                    <div className="LP_Links_Horizontal_Organizer">
-                                        <div className="LP_Links_Line_Container">
-                                            <div className="LP_Links_Line"></div>
-                                        </div>
-                                        <div className="Product_Links">
-                                            <a
-                                                href="#produtos"
-                                                className="Menu_Link"
-                                                onClick={() => {
-                                                    toggleProductDetailsButton("robos", 0);
-                                                }}
-                                            >
-                                                RobiOS GO
-                                            </a>
-                                            <a
-                                                href="#produtos"
-                                                className="Menu_Link"
-                                                onClick={() => {
-                                                    toggleProductDetailsButton("robos", 1);
-                                                }}
-                                            >
-                                                RobiOS Inspector
-                                            </a>
-                                            <a
-                                                href="#produtos"
-                                                className="Menu_Link"
-                                                onClick={() => {
-                                                    toggleProductDetailsButton("robos", 2);
-                                                }}
-                                            >
-                                                RobiOS Cargo
-                                            </a>
-                                            <a
-                                                href="#produtos"
-                                                className="Menu_Link"
-                                                onClick={() => {
-                                                    toggleProductDetailsButton("softwares", 3);
-                                                }}
-                                            >
-                                                RobiOS
-                                            </a>
-                                            <a
-                                                href="#produtos"
-                                                className="Menu_Link"
-                                                onClick={() => {
-                                                    toggleProductDetailsButton("softwares", 4);
-                                                }}
-                                            >
-                                                RobiOS Studio
-                                            </a>
-                                            <a
-                                                href="#produtos"
-                                                className="Menu_Link"
-                                                onClick={() => {
-                                                    toggleProductDetailsButton("softwares", 5);
-                                                }}
-                                            >
-                                                RobiOS Avatar
-                                            </a>
-                                        </div>
-                                    </div>
                                 </div>
-                                <a href="#LP_Section_3" className="Menu_Link" onClick={toggleMenuButton}>
-                                    Soluções
-                                </a>
-                                <a href="#LP_Section_4" className="Menu_Link" onClick={toggleMenuButton}>
-                                    Sobre
-                                </a>
-
-                                <a href="#LP_Section_5" className="Menu_Link" onClick={toggleMenuButton}>
-                                    Contato
-                                </a>
                             </div>
+                            <a href="#solucoes" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
+                                Soluções
+                            </a>
+                            <a href="#sobre" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
+                                Sobre
+                            </a>
+
+                            <a href="#contato" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
+                                Contato
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div className="Menu_Div">
+                <div className="Menu_Options">
                     <div className="Secondary_Links">
-                        <a href="#Privacidade" className="Menu_Link_Secondary" onClick={togglePrivacyButton}>
+                        <a href="#privacidade" className="Menu_Link_Secondary hoverable undecorated" onClick={togglePrivacyButton}>
                             <span className="material-icons">privacy_tip</span>Privacidade
                         </a>
-                        <a href="#Termos" className="Menu_Link_Secondary" onClick={toggleTermsButton}>
+                        <a href="#termos" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleTermsButton}>
                             <span className="material-icons">assignment</span>
                             Termos
                         </a>
-                        <a href="#Mapa do Site" className="Menu_Link_Secondary" onClick={toggleSiteMapButton}>
+                        <a href="#mapa-do-site" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleSiteMapButton}>
                             <span className="material-icons">map</span>Mapa do Site
                         </a>
                     </div>
 
                     <div className="Configurations">
                         <div className="Configurations_Header">
-                            <span className="material-icons LP_Links_Icon">settings</span>
-                            <p className="Menu_Link">Configurações</p>
+                            <div className="Menu_Link">
+                                <span className="material-icons LP_Links_Icon">settings</span>
+                                <p>Configurações</p>
+                            </div>
                         </div>
                         <div className="LP_Links_Horizontal_Organizer Config_Organizer">
                             <div className="LP_Links_Line_Container">
@@ -217,25 +217,27 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                             </div>
                             <div className="Configurations_Links">
                                 <a href="#Idioma" className="Menu_Link Config_Link" onClick={toggleLanguageButton}>
-                                    Idioma: <span className={language === "pt-br" ? "Config_Option active" : "Config_Option"}>Português</span>
-                                    <span className={language === "en" ? "Config_Option active" : "Config_Option"}>English</span>
+                                    Idioma:{" "}
+                                    <span className={language === "pt-br" ? "Config_Option active" : "Config_Option hoverable"}>Português</span>
+                                    <span className={language === "en" ? "Config_Option active" : "Config_Option hoverable"}>English</span>
                                 </a>
                                 <a href="#Moeda" className="Menu_Link Config_Link" onClick={toggleCurrencyButton}>
-                                    Moeda: <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option"}>Real (R$)</span>{" "}
-                                    <span className={currencyType === "USD" ? "Config_Option active" : "Config_Option"}>Dollar (USD)</span>
+                                    Moeda:{" "}
+                                    <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option hoverable"}>Real (R$)</span>{" "}
+                                    <span className={currencyType === "USD" ? "Config_Option active" : "Config_Option hoverable"}>Dollar (USD)</span>
                                 </a>
                                 <a href="#Cores" className="Menu_Link Config_Link" onClick={toggleColorModeButton}>
-                                    Modo de Cor: <span className={mode === "dark" ? "Config_Option active" : "Config_Option"}>Escuro</span>
+                                    Modo de Cor: <span className={mode === "dark" ? "Config_Option active" : "Config_Option hoverable"}>Escuro</span>
                                     <span className={mode === "light" ? "Config_Option active" : "Config_Option"}>Claro</span>
                                 </a>
-                                <button className="Config_Reset" onClick={handleResetButton}>
+                                <button className="Config_Reset hoverable" onClick={handleResetButton}>
                                     <span className="material-icons">restart_alt</span>Reiniciar aplicativo e limpar todos os dados
                                 </button>
                             </div>
                         </div>
                     </div>
 
-                    <div className="Pragmata_Web">
+                    <div className="Pragmata_Web hoverable">
                         <p>
                             Webdesign por{" "}
                             <a href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer">
@@ -252,9 +254,6 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                             </g>
                         </svg>
                     </div>
-                </div>
-                <div className="App_Reset_Container">
-                    <button onClick={handleResetButton}>Reiniciar Aplicação</button>
                 </div>
             </div>
         </m.div>
