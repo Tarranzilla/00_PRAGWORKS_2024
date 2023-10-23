@@ -44,7 +44,7 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                 <div className="Contact_Info">
                     <div className="Contact_Info_Item">
                         <h3>Telefone:</h3>
-                        <p className="Contact_Info_Item_Detail">+55 (41) 999 999 999</p>
+                        <p className="Contact_Info_Item_Detail_B">+55 (41) 999 999 999</p>
                     </div>
 
                     <div className="Contact_Info_Item">
@@ -75,21 +75,24 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                 </div>
                 <div className="Contact_Action_Container">
                     <a className="Contact_Action_Btn Btn_Class hoverable undecorated" href="mailto:recipient@example.com">
-                        Enviar Email
+                        <i className="material-icons">email</i>
+                        <p>Enviar Email</p>
                     </a>
                     <a
                         className="Contact_Action_Btn Btn_Class hoverable undecorated"
                         href="https://api.whatsapp.com/send?phone=5541999977955&text=Ol%C3%A1"
                         target="_blank"
                     >
-                        Enviar Mensagem por WhatsApp
+                        <span className="material-icons">perm_phone_msg</span>
+                        <p>Entre em contato pelo WhatsApp</p>
                     </a>
                     <a
                         className="Contact_Action_Btn Btn_Class hoverable undecorated"
                         href="https://api.whatsapp.com/send?phone=5541999977955&text=Ol%C3%A1"
                         target="_blank"
                     >
-                        Inscreva-se na Newsletter
+                        <span className="material-icons">newspaper</span>
+                        <p>Inscreva-se na Newsletter</p>
                     </a>
                 </div>
             </div>

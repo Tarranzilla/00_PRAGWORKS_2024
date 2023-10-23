@@ -216,26 +216,26 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 <div className="List_Line"></div>
                             </div>
                             <div className="Configurations_Links">
-                                <a href="#Idioma" className="Config_Link hoverable" onClick={toggleLanguageButton}>
+                                <a href="#Idioma" className="Config_Link hoverable undecorated" onClick={toggleLanguageButton}>
                                     <span className="Config_Option_Title">
                                         <i className="material-icons hoverable">translate</i>
-                                        <p>Idioma:</p>
+                                        <p>Idioma</p>
                                     </span>
                                     <span className={language === "pt-br" ? "Config_Option active" : "Config_Option hoverable"}>Português</span>
                                     <span className={language === "en" ? "Config_Option active" : "Config_Option hoverable"}>English</span>
                                 </a>
-                                <a href="#Moeda" className="Config_Link hoverable" onClick={toggleCurrencyButton}>
+                                <a href="#Moeda" className="Config_Link hoverable undecorated" onClick={toggleCurrencyButton}>
                                     <span className="Config_Option_Title">
                                         <span className="material-icons">payments</span>
-                                        <p>Moeda:</p>
+                                        <p>Moeda</p>
                                     </span>
                                     <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option hoverable"}>Real (R$)</span>
                                     <span className={currencyType === "USD" ? "Config_Option active" : "Config_Option hoverable"}>Dollar (USD)</span>
                                 </a>
-                                <a href="#Cores" className="Config_Link hoverable" onClick={toggleColorModeButton}>
+                                <a href="#Cores" className="Config_Link hoverable undecorated" onClick={toggleColorModeButton}>
                                     <span className="Config_Option_Title">
                                         <span className="material-icons">palette</span>
-                                        <p>Modo de Cor:</p>
+                                        <p>Modo de Cor</p>
                                     </span>
                                     <span className={mode === "dark" ? "Config_Option active" : "Config_Option hoverable"}>Escuro</span>
                                     <span className={mode === "light" ? "Config_Option active" : "Config_Option"}>Claro</span>
@@ -258,8 +258,8 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                         </svg>
                         <p>
                             Webdesign por{" "}
-                            <a href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer">
-                                Pragmata
+                            <a className="undecorated" href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer">
+                                P R A G M A T A
                             </a>
                         </p>
                     </div>

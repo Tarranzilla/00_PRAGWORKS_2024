@@ -15,8 +15,12 @@
     -webkit-text-size-adjust: 100%;
 
     --text-color: rgba(255, 255, 255, 0.8);
+    --faded_text-color: rgba(255, 255, 255, 0.2);
     --background-color: #242424;
+    --faded_background-color: rgba(60, 60, 60, 0.5);
     --btn_color: #6b6b6b;
+    --card_color: #3c3c3c;
+    --subcard_color: #4c4c4c;
     --seleted-color: #008000;
 
     --small_gap: 0.5rem;
@@ -37,12 +41,12 @@
 
 ::-webkit-scrollbar-track {
     margin: var(--gap);
-    background-color: var(--background-color);
+    background-color: var(--faded_background-color);
     border-radius: var(--gap);
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: red;
+    background-color: var(--faded_text-color);
     border-radius: var(--gap);
 }
 
@@ -51,7 +55,6 @@
     margin: 0;
     padding: 0;
     outline: 1px solid red;
-    outline-offset: -1px;
 }
 
 html {
@@ -295,7 +298,7 @@ body {
 .Section_Divider {
     width: 100%;
     height: 25vh;
-    background-color: red;
+    background-color: var(--faded_text-color);
 }
 
 .Section_Divider_With_Text {
@@ -670,9 +673,50 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: var(--text-color);
     flex-shrink: 0;
     cursor: pointer;
+    position: relative;
+    border-radius: var(--gap);
+    overflow: hidden;
+}
+
+.carroussel_card_content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
+    background-color: var(--text-color);
+    color: var(--background-color);
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.auto_slider_card:hover .carroussel_card_content {
+    opacity: 1;
+}
+
+.auto_slider_card_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.auto_slider_card_image_partner {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .Brand_Fixed_Phrase {
@@ -680,7 +724,9 @@ body {
 }
 
 .Brand_Changing_Word {
-    font-size: clamp(2rem, 6vw, 8rem);
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 6rem;
+    color: var(--seleted-color);
 }
 
 /* SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO */
@@ -736,6 +782,7 @@ body {
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     border-radius: var(--gap);
+    background-color: var(--card_color);
 }
 
 .About_Card_Img_Block,
@@ -777,6 +824,7 @@ body {
     height: 100%;
     overflow-y: auto;
     border-radius: var(--gap);
+    background-color: var(--card_color);
 }
 
 .Product_Detail_Footer,
@@ -902,16 +950,18 @@ body {
     flex-shrink: 0;
     border-radius: var(--gap);
     overflow: hidden;
+    outline: 1px solid var(--text-color);
 }
 
 .Sobre_Member_Image_Container {
     width: 100%;
-    height: 100%;
+    height: 60%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    z-index: -1;
+    z-index: 0;
+    outline: 1px solid var(--text-color);
 }
 
 .Sobre_Member_Image {
@@ -920,14 +970,27 @@ body {
     object-fit: cover;
 }
 
+.Sobre_Member_Text_Container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+
 .Sobre_Member_Description {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 3rem;
+    height: 2.5rem;
+    width: 100%;
+    padding-inline: var(--gap);
+    padding-block: 0.5rem;
     line-height: 1rem;
     font-size: 0.8rem;
+    outline: 1px solid var(--text-color);
 }
 
 .Sobre_Member_Interactions {
@@ -936,6 +999,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: var(--gap);
+    padding: var(--small_gap);
 }
 
 .Sobre_Interaction_Icon {
@@ -943,6 +1007,9 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: var(--small_gap);
+    border-radius: 50%;
+    background-color: var(--btn_color);
 }
 
 .Sobre_Partners_Container {
@@ -961,6 +1028,7 @@ body {
     padding: var(--gap);
     gap: var(--gap);
     border-radius: var(--gap);
+    background-color: var(--subcard_color);
 }
 
 .Partners_Icons {
@@ -1027,6 +1095,7 @@ body {
     border-radius: var(--gap);
     width: 100%;
     max-width: 20rem;
+    background-color: var(--card_color);
 }
 
 .Contact_Info_Title {
@@ -1034,6 +1103,10 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+
+.Contact_Info_Item_Detail {
+    text-align: start;
 }
 
 .Contact_Location_Btn {
@@ -1060,6 +1133,11 @@ body {
     padding: var(--gap);
     width: 100%;
     max-width: 20rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small_gap);
     border-radius: var(--gap);
 }
 
@@ -1079,6 +1157,7 @@ body {
     transition: width 0.2s ease-in-out;
     border-radius: var(--gap);
     overflow: hidden;
+    outline: 1px solid var(--text-color);
 }
 
 .Map_Header {
@@ -1115,6 +1194,7 @@ body {
     overflow-x: hidden;
     height: 100%;
     width: 100%;
+    outline: 1px solid var(--text-color);
 }
 
 .Main_List_Header,
@@ -1197,6 +1277,7 @@ body {
     width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    outline: 1px solid var(--text-color);
 }
 
 .Pragmata_Web {
@@ -1224,7 +1305,7 @@ body {
     justify-content: center;
     gap: var(--small_gap);
     padding: var(--small_gap);
-    border-radius: var(--gap);
+    border-radius: var(--small_gap);
     cursor: pointer;
     width: 100%;
     max-width: 20rem;
@@ -1249,7 +1330,15 @@ body {
 }
 
 .Config_Option_Title {
-    width: 8rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--small_gap);
+    padding: var(--small_gap);
+    background-color: var(--btn_color);
+    border-radius: var(--small_gap);
 }
 
 .Config_Option {
