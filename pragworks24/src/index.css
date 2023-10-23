@@ -32,6 +32,7 @@
 
 ::-webkit-scrollbar {
     width: 0.5vw;
+    height: 0.5vw;
 }
 
 ::-webkit-scrollbar-track {
@@ -821,6 +822,23 @@ body {
     background-image: linear-gradient(transparent, var(--background-color));
 }
 
+.Solution_Recommended_Products_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+}
+
+.Solution_Recommended_Product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--small_gap);
+    border-radius: var(--gap);
+}
+
 .Solution_Partner_Container {
     display: flex;
     flex-direction: row;
@@ -871,6 +889,7 @@ body {
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    border-radius: var(--gap);
 }
 
 .Sobre_Member_Card {
@@ -926,6 +945,14 @@ body {
     justify-content: center;
 }
 
+.Sobre_Partners_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: var(--gap);
+}
+
 .Sobre_Partners_Description_Text {
     display: flex;
     flex-direction: column;
@@ -933,6 +960,7 @@ body {
     justify-content: center;
     padding: var(--gap);
     gap: var(--gap);
+    border-radius: var(--gap);
 }
 
 .Partners_Icons {
