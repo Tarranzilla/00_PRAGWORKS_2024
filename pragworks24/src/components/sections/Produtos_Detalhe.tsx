@@ -83,7 +83,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
         <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Product_Detail">
             <div className="Product_Detail_Header">
                 <span className="material-icons Info_Icon">info</span>
-                <h3 className="Product_Detail_Title">{activeProduct.name}</h3>
+                <h3 className="Product_Detail_Title">{"Detalhes do Produto: " + activeProduct.prename + " " + activeProduct.name}</h3>
                 <button className="Close_Btn_B hoverable" onClick={closeDetailsButton}>
                     <span className="material-icons">close</span>
                 </button>
@@ -113,17 +113,19 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                         <span className="material-icons Next_Btn_Icon">east</span>
                     </button>
                 </div>
-
                 <div className="Product_Detail_Text_Container">
+                    {/* Tipo do Produto */}
                     <div className="Product_Detail_Text_Item">
                         <div className="Product_Detail_Text_Item_Header">
-                            <h3 className="Product_Detail_Text_Item_Header_Title">Tipo do Produto</h3>
+                            <h3 className="Product_Detail_Title">{activeProduct.prename}</h3>
+                            <h1 className="Product_Detail_Title">{activeProduct.name}</h1>
                         </div>
                         <div className="Product_Detail_Text_Item_Content">
                             <p className="Product_Detail_Text_Content">{activeProduct.type}</p>
                         </div>
                     </div>
 
+                    {/* Descrição do Produto */}
                     <div className="Product_Detail_Text_Item">
                         <div className="Product_Detail_Text_Item_Header">
                             <h3 className="Product_Detail_Text_Item_Header_Title">Descrição</h3>
@@ -140,47 +142,46 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                         </div>
                     </div>
 
+                    {/* Componentes */}
                     <div className="Product_Detail_Text_Item">
                         <div className="Product_Detail_Text_Item_Header">
                             <h3 className="Product_Detail_Text_Item_Header_Title">Componentes</h3>
                         </div>
-                        <div className="Product_Detail_Text_Item_Content">
-                            <p className="Product_Detail_Text_Content">
-                                {activeProduct.components.map((component) => {
-                                    return (
-                                        <div className="Product_Component">
-                                            <span className="material-icons">check</span>
-                                            <p>{component.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </p>
+                        <div className="Product_Detail_Component_Container">
+                            {activeProduct.components.map((component) => {
+                                return (
+                                    <div className="Product_Detail_Component">
+                                        <span className="material-icons Component_Icon">check</span>
+                                        <p className="Component_Name">{component.name}</p>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
 
+                    {/* Soluções Relacionadas */}
                     <div className="Product_Detail_Text_Item">
                         <div className="Product_Detail_Text_Item_Header">
                             <h3 className="Product_Detail_Text_Item_Header_Title">Soluções</h3>
                         </div>
-                        <div className="Product_Detail_Text_Item_Content">
-                            <div className="Product_Detail_Solution_Container">
-                                {activeProduct.solutions.map((solution) => {
-                                    return (
-                                        <div
-                                            className="Product_Detail_Solution"
-                                            onClick={() => {
-                                                openDetailsButton(solution.id);
-                                            }}
-                                        >
-                                            <img src={solution.imgSrc} className="Product_Detail_Solution_Img"></img>
-                                            <p className="Product_Detail_Solution_Name">{solution.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </div>
+                        <div className="Product_Detail_Solution_Container">
+                            {activeProduct.solutions.map((solution) => {
+                                return (
+                                    <div
+                                        className="Product_Detail_Solution hoverable"
+                                        onClick={() => {
+                                            openDetailsButton(solution.id);
+                                        }}
+                                    >
+                                        <img src={solution.imgSrc} className="Product_Detail_Solution_Img"></img>
+                                        <p className="Product_Detail_Solution_Name">{solution.name}</p>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
 
+                    {/* Coordenadas */}
                     <div className="Product_Detail_Text_Item">
                         <div className="Product_Detail_Text_Item_Header">
                             <h3 className="Product_Detail_Text_Item_Header_Title">Coordenadas de Origem</h3>
@@ -190,6 +191,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                         </div>
                     </div>
 
+                    {/* Origem das Peças */}
                     <div className="Product_Detail_Text_Item">
                         <div className="Product_Detail_Text_Item_Header">
                             <h3 className="Product_Detail_Text_Item_Header_Title">Origem das Peças</h3>
@@ -199,6 +201,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                         </div>
                     </div>
 
+                    {/* Produtor do Robô */}
                     <div className="Product_Detail_Text_Item">
                         <div className="Product_Detail_Text_Item_Header">
                             <h3 className="Product_Detail_Text_Item_Header_Title">Produtor do Robô</h3>
@@ -208,6 +211,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                         </div>
                     </div>
 
+                    {/* Footer */}
                     <div className="Product_Detail_Footer">
                         <button
                             className="AddToCart_Btn hoverable"
