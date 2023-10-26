@@ -440,27 +440,22 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             </div>
 
                             <div className="About_Card_Content">
-                                <div className="About_Card_Image_Container">
-                                    <div className="About_Card_Img_Block">
-                                        <img className="About_Card_Img" src={fotoEquipe}></img>
-                                    </div>
-                                </div>
-
                                 <div className="About_Card_Text_Container">
                                     <p className="Sobre_Header_Text Partners_Text_Container">
-                                        <strong>
-                                            Contamos com uma rede de parceiros que nos ajudam a levar tecnologia de ponta para você. Conheça um pouco
-                                            mais sobre eles:
-                                        </strong>
+                                        <strong>Contamos com uma rede de parceiros que nos ajudam a levar tecnologia de ponta para você.</strong>
                                     </p>
 
                                     <div className="Sobre_Partners_Container">
-                                        <p className="Sobre_Partners_Description_Text">
+                                        <div className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">memory</span>
-                                            <strong>Parceiros de Produção</strong> Nossos parceiros de produção são laboratórios de eletrônica e
-                                            robótica localizadas nas cidades de Curitiba e São Paulo. Esses laboratórios são certificados pelo
-                                            Instituto de Robótica do Brasil (IRB) e pelo Conselho de Manejo Industrial (CMI), que garantem a
-                                            sustentabilidade e qualidade da produção de hardwares.
+                                            <h3 className="Partners_Description_Title">Parceiros de Produção</h3>
+
+                                            <p className="Partners_Description_Detail">
+                                                Nossos parceiros de produção são laboratórios de eletrônica e robótica localizadas nas cidades de
+                                                Curitiba e São Paulo. Esses laboratórios são certificados pelo Instituto de Robótica do Brasil (IRB) e
+                                                pelo Conselho de Manejo Industrial (CMI), que garantem a sustentabilidade e qualidade da produção de
+                                                hardwares.
+                                            </p>
                                             <div className="Partner_Description_Actions">
                                                 <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">info</span>Saiba mais
@@ -469,12 +464,15 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
-                                        </p>
-                                        <p className="Sobre_Partners_Description_Text">
+                                        </div>
+                                        <div className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">loyalty</span>
-                                            <strong>Parceiros de Distribuição</strong> Nossos parceiros de distribuição são empresas que nos ajudam a
-                                            levar nossos produtos para todo o Brasil. Eles são responsáveis pela logística de entrega e pela
-                                            comercialização dos produtos da Human Robotics em suas lojas físicas e virtuais.
+                                            <h3 className="Partners_Description_Title">Parceiros de Distribuição</h3>
+                                            <p className="Partners_Description_Detail">
+                                                Nossos parceiros de distribuição são empresas que nos ajudam a levar nossos produtos para todo o
+                                                Brasil. Eles são responsáveis pela logística de entrega e pela comercialização dos produtos da Human
+                                                Robotics em suas lojas físicas e virtuais.
+                                            </p>
                                             <div className="Partner_Description_Actions">
                                                 <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">info</span>Saiba mais
@@ -483,11 +481,14 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
-                                        </p>
-                                        <p className="Sobre_Partners_Description_Text">
+                                        </div>
+                                        <div className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">handyman</span>
-                                            <strong>Parceiros de Assistência Técnica</strong> Nossos parceiros de assistência técnica são capazes de
-                                            oferecer serviços de reparo, configuração e treinamento para o uso dos robôs.
+                                            <h3 className="Partners_Description_Title">Parceiros de Assistência Técnica</h3>
+                                            <p className="Partners_Description_Detail">
+                                                Nossos parceiros de assistência técnica são capazes de oferecer serviços de reparo, configuração e
+                                                treinamento para o uso dos robôs.
+                                            </p>
                                             <div className="Partner_Description_Actions">
                                                 <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">info</span>Saiba mais
@@ -496,12 +497,14 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
-                                        </p>
-                                        <p className="Sobre_Partners_Description_Text">
+                                        </div>
+                                        <div className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">recycling</span>
-                                            <strong>Parceiros de Reciclagem</strong> Nossos parceiros de reciclagem são empresas que nos ajudam a
-                                            reciclar as partes eletrônicas e estruturais de nossos robôs, garantindo que nossos produtos causem menos
-                                            danos ao meio ambiente.
+                                            <h3 className="Partners_Description_Title">Parceiros de Reciclagem</h3>
+                                            <p className="Partners_Description_Detail">
+                                                Nossos parceiros de reciclagem são empresas que nos ajudam a reciclar as partes eletrônicas e
+                                                estruturais de nossos robôs, garantindo que nossos produtos causem menos danos ao meio ambiente.
+                                            </p>
                                             <div className="Partner_Description_Actions">
                                                 <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
                                                     <span className="material-icons">info</span>Saiba mais
@@ -510,7 +513,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
-                                        </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -117,16 +117,16 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                 </div>
 
                 <div className="Solution_Detail_Text_Container">
-                    <h2 className="Solution_Detail_Content_Title">{activeSolution.name}</h2>
+                    <h1 className="Solution_Detail_Content_Title">{activeSolution.name}</h1>
                     <p className="Solution_Detail_Description">{activeSolution.description}</p>
                     <p className="Solution_Detail_FullDescription">{activeSolution.fullDescription}</p>
-                    <p className="Solution_Recommended_Products_Title">Produtos que atuam nesta solução:</p>
+                    <h4 className="Solution_Recommended_Products_Title">Produtos que atuam nesta solução:</h4>
                     <div className="Solution_Recommended_Products_Container">
                         <h3 className="Solution_Recommended_Product">RobiOS GO</h3>
                         <h3 className="Solution_Recommended_Product">RobiOS INPSECTOR</h3>
                         <h3 className="Solution_Recommended_Product">RobiOS CARGO</h3>
                     </div>
-                    <p className="Solution_Partner_Title">Parceiros que utilizam nossos serviços:</p>
+                    <h4 className="Solution_Partner_Title">Parceiros que utilizam nossos serviços:</h4>
                     <div className="Solution_Partner_Container">
                         <AnimatePresence mode="wait">
                             {activeSolution.partners.map(
@@ -144,10 +144,10 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                                     )
                             )}
                         </AnimatePresence>
-                        <button className="Previous_Btn" onClick={handlePrevClick2}>
+                        <button className="Previous_Btn Centered_Previous_Btn" onClick={handlePrevClick2}>
                             <span className="material-icons Previous_Btn_Icon">west</span>
                         </button>
-                        <button className="Next_Btn" onClick={handleNextClick2}>
+                        <button className="Next_Btn Centered_Next_Btn" onClick={handleNextClick2}>
                             <span className="material-icons Next_Btn_Icon">east</span>
                         </button>
                     </div>
