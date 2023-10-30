@@ -1331,14 +1331,17 @@ body {
 .Menu_Main_List {
     display: flex;
     flex-direction: column;
-    padding: var(--gap);
+    padding: 2rem;
     border-radius: var(--gap);
     overflow-y: auto;
     overflow-x: hidden;
+    overflow: overlay;
     height: 100%;
     width: 100%;
     gap: var(--gap);
     outline: 1px solid var(--text-color);
+    scroll-padding: 2rem;
+    scroll-behavior: smooth;
 }
 
 .Main_List_Header,
