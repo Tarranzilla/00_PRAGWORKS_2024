@@ -22,6 +22,21 @@ import {
 import { persistor } from "../../main.tsx";
 
 const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
+    const [configIsOpen, setConfigIsOpen] = useState(false);
+    const toggleConfig = () => {
+        setConfigIsOpen(!configIsOpen);
+    };
+
+    const [productsIsOpen, setProductsIsOpen] = useState(false);
+    const toggleProducts = () => {
+        setProductsIsOpen(!productsIsOpen);
+    };
+
+    const [solutionsIsOpen, setSolutionsIsOpen] = useState(false);
+    const toggleSolutions = () => {
+        setSolutionsIsOpen(!solutionsIsOpen);
+    };
+
     const dispatch = useDispatch();
 
     const productDetailsIsOpen = useSelector((state: any) => state.productDetailsIsOpen);
@@ -97,11 +112,19 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
             </a>
             <h1 className="LP_Section_Title">Menu</h1>
             <div className="Menu_Container">
+                <div className="Menu_Options"></div>
                 <div className="Menu_Main_List">
                     <div className="Main_List_Header">
                         <a href="#" className="Menu_Link Header_Link hoverable undecorated" onClick={toggleMenuButton}>
-                            <span className="material-icons LP_Links_Icon">flag_circle</span>
-                            <p>Início</p>
+                            <div className="Header_Link_Organizer">
+                                <span className="material-icons LP_Links_Icon">flag_circle</span>
+                                <p>Início</p>
+                            </div>
+                            <div className="Menu_Link_Actions">
+                                <a href="#" className="material-icons hoverable undecorated">
+                                    keyboard_double_arrow_up
+                                </a>
+                            </div>
                         </a>
                     </div>
                     <div className="List_Horizontal_Organizer">
@@ -109,142 +132,259 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                             <div className="List_Line"></div>
                         </div>
                         <div className="LP_Links">
-                            <div className="Product_Links_Container">
-                                <div className="Product_Links_Header">
-                                    <a href="#produtos" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
-                                        Produtos
+                            <div className="Links_Container">
+                                <div className="Links_Header">
+                                    <div className="Menu_Link hoverable undecorated" onClick={toggleProducts}>
+                                        <p>Produtos</p>
+
+                                        <div className="Menu_Link_Actions">
+                                            <a href="#lista-de-produtos" className="material-icons hoverable undecorated" onClick={toggleProducts}>
+                                                more
+                                            </a>
+                                            <a href="#produtos" className="material-icons hoverable undecorated" onClick={toggleMenuButton}>
+                                                keyboard_double_arrow_up
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {productsIsOpen && (
+                                    <div className="List_Horizontal_Organizer">
+                                        <div className="List_Line_Container">
+                                            <div className="List_Line"></div>
+                                        </div>
+                                        <div className="Product_Links">
+                                            <a
+                                                href="#produtos"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("robos", 0);
+                                                }}
+                                            >
+                                                RobiOS GO
+                                            </a>
+                                            <a
+                                                href="#produtos"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("robos", 1);
+                                                }}
+                                            >
+                                                RobiOS Inspector
+                                            </a>
+                                            <a
+                                                href="#produtos"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("robos", 2);
+                                                }}
+                                            >
+                                                RobiOS Cargo
+                                            </a>
+                                            <a
+                                                href="#produtos"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("softwares", 3);
+                                                }}
+                                            >
+                                                RobiOS
+                                            </a>
+                                            <a
+                                                href="#produtos"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("softwares", 4);
+                                                }}
+                                            >
+                                                RobiOS Studio
+                                            </a>
+                                            <a
+                                                href="#produtos"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("softwares", 5);
+                                                }}
+                                            >
+                                                RobiOS Avatar
+                                            </a>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                            <div className="Links_Container">
+                                <div className="Links_Header">
+                                    <div className="Menu_Link hoverable undecorated" onClick={toggleSolutions}>
+                                        <p>Soluções</p>
+
+                                        <div className="Menu_Link_Actions">
+                                            <a href="#lista-de-solucoes" className="material-icons hoverable undecorated" onClick={toggleSolutions}>
+                                                more
+                                            </a>
+                                            <a href="#solucoes" className="material-icons hoverable undecorated" onClick={toggleMenuButton}>
+                                                keyboard_double_arrow_up
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {solutionsIsOpen && (
+                                    <div className="List_Horizontal_Organizer">
+                                        <div className="List_Line_Container">
+                                            <div className="List_Line"></div>
+                                        </div>
+                                        <div className="Product_Links">
+                                            <a
+                                                href="#solucoes"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("robos", 0);
+                                                }}
+                                            >
+                                                Atendimento
+                                            </a>
+                                            <a
+                                                href="#solucoes"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("robos", 1);
+                                                }}
+                                            >
+                                                Publicidade
+                                            </a>
+                                            <a
+                                                href="#solucoes"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("robos", 2);
+                                                }}
+                                            >
+                                                Inspeção
+                                            </a>
+                                            <a
+                                                href="#solucoes"
+                                                className="Menu_Link hoverable undecorated"
+                                                onClick={() => {
+                                                    toggleProductDetailsButton("softwares", 3);
+                                                }}
+                                            >
+                                                Transporte
+                                            </a>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                            <a href="#sobre" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
+                                <p>Sobre</p>
+                                <div className="Menu_Link_Actions">
+                                    <a href="#sobre" className="material-icons hoverable undecorated" onClick={toggleMenuButton}>
+                                        keyboard_double_arrow_up
                                     </a>
                                 </div>
-                                <div className="List_Horizontal_Organizer">
-                                    <div className="List_Line_Container">
-                                        <div className="List_Line"></div>
-                                    </div>
-                                    <div className="Product_Links">
-                                        <a
-                                            href="#produtos"
-                                            className="Menu_Link hoverable undecorated"
-                                            onClick={() => {
-                                                toggleProductDetailsButton("robos", 0);
-                                            }}
-                                        >
-                                            RobiOS GO
-                                        </a>
-                                        <a
-                                            href="#produtos"
-                                            className="Menu_Link hoverable undecorated"
-                                            onClick={() => {
-                                                toggleProductDetailsButton("robos", 1);
-                                            }}
-                                        >
-                                            RobiOS Inspector
-                                        </a>
-                                        <a
-                                            href="#produtos"
-                                            className="Menu_Link hoverable undecorated"
-                                            onClick={() => {
-                                                toggleProductDetailsButton("robos", 2);
-                                            }}
-                                        >
-                                            RobiOS Cargo
-                                        </a>
-                                        <a
-                                            href="#produtos"
-                                            className="Menu_Link hoverable undecorated"
-                                            onClick={() => {
-                                                toggleProductDetailsButton("softwares", 3);
-                                            }}
-                                        >
-                                            RobiOS
-                                        </a>
-                                        <a
-                                            href="#produtos"
-                                            className="Menu_Link hoverable undecorated"
-                                            onClick={() => {
-                                                toggleProductDetailsButton("softwares", 4);
-                                            }}
-                                        >
-                                            RobiOS Studio
-                                        </a>
-                                        <a
-                                            href="#produtos"
-                                            className="Menu_Link hoverable undecorated"
-                                            onClick={() => {
-                                                toggleProductDetailsButton("softwares", 5);
-                                            }}
-                                        >
-                                            RobiOS Avatar
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="#solucoes" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
-                                Soluções
-                            </a>
-                            <a href="#sobre" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
-                                Sobre
                             </a>
 
                             <a href="#contato" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
-                                Contato
+                                <p>Contato</p>
+                                <div className="Menu_Link_Actions">
+                                    <a href="#contato" className="material-icons hoverable undecorated" onClick={toggleMenuButton}>
+                                        keyboard_double_arrow_up
+                                    </a>
+                                </div>
                             </a>
                         </div>
                     </div>
-                </div>
-                <div className="Menu_Options">
+
                     <div className="Secondary_Links">
                         <a href="#privacidade" className="Menu_Link_Secondary hoverable undecorated" onClick={togglePrivacyButton}>
-                            <span className="material-icons">privacy_tip</span>Privacidade
+                            <div className="Header_Link_Organizer">
+                                <span className="material-icons">privacy_tip</span>
+                                <p>Privacidade</p>
+                            </div>
+
+                            <a href="#privacidade" className="material-icons hoverable undecorated" onClick={toggleConfig}>
+                                more
+                            </a>
                         </a>
                         <a href="#termos" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleTermsButton}>
-                            <span className="material-icons">assignment</span>
-                            Termos
+                            <div className="Header_Link_Organizer">
+                                <span className="material-icons">assignment</span>
+                                <p>Termos</p>
+                            </div>
+                            <a href="#termos" className="material-icons hoverable undecorated" onClick={toggleConfig}>
+                                more
+                            </a>
                         </a>
                         <a href="#mapa-do-site" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleSiteMapButton}>
-                            <span className="material-icons">map</span>Mapa do Site
+                            <div className="Header_Link_Organizer">
+                                <span className="material-icons">map</span>
+                                <p>Mapa do Site</p>
+                            </div>
+
+                            <a href="#mapa-do-site" className="material-icons hoverable undecorated" onClick={toggleConfig}>
+                                more
+                            </a>
                         </a>
                     </div>
 
                     <div className="Configurations">
-                        <div className="Configurations_Header">
-                            <div className="Menu_Link">
-                                <span className="material-icons LP_Links_Icon">settings</span>
-                                <p>Configurações</p>
+                        <div className="Configurations_Header hoverable undecorated">
+                            <div className="Menu_Link" onClick={toggleConfig}>
+                                <div className="Header_Link_Organizer">
+                                    <span className="material-icons LP_Links_Icon">settings</span>
+                                    <p>Configurações</p>
+                                </div>
+
+                                <a href="#lista-de-produtos" className="material-icons hoverable undecorated" onClick={toggleConfig}>
+                                    more
+                                </a>
                             </div>
                         </div>
-                        <div className="List_Horizontal_Organizer Config_Organizer">
-                            <div className="List_Line_Container">
-                                <div className="List_Line"></div>
+                        {configIsOpen && (
+                            <div className="List_Horizontal_Organizer Config_Organizer">
+                                <div className="List_Line_Container">
+                                    <div className="List_Line"></div>
+                                </div>
+                                <div className="Configurations_Links">
+                                    <a href="#Idioma" className="Config_Link hoverable undecorated" onClick={toggleLanguageButton}>
+                                        <span className="Config_Option_Title">
+                                            <i className="material-icons hoverable">translate</i>
+                                            <p>Idioma</p>
+                                        </span>
+                                        <div className="Config_Options">
+                                            <span className={language === "pt-br" ? "Config_Option active" : "Config_Option hoverable"}>
+                                                Português
+                                            </span>
+                                            <span className={language === "en" ? "Config_Option active" : "Config_Option hoverable"}>English</span>
+                                        </div>
+                                    </a>
+                                    <a href="#Moeda" className="Config_Link hoverable undecorated" onClick={toggleCurrencyButton}>
+                                        <span className="Config_Option_Title">
+                                            <span className="material-icons">payments</span>
+                                            <p>Moeda</p>
+                                        </span>
+                                        <div className="Config_Options">
+                                            <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option hoverable"}>
+                                                Real (R$)
+                                            </span>
+                                            <span className={currencyType === "USD" ? "Config_Option active" : "Config_Option hoverable"}>
+                                                Dollar (USD)
+                                            </span>
+                                        </div>
+                                    </a>
+                                    <a href="#Cores" className="Config_Link hoverable undecorated" onClick={toggleColorModeButton}>
+                                        <span className="Config_Option_Title">
+                                            <span className="material-icons">palette</span>
+                                            <p>Modo de Cor</p>
+                                        </span>
+                                        <div className="Config_Options">
+                                            <span className={mode === "dark" ? "Config_Option active" : "Config_Option hoverable"}>Escuro</span>
+                                            <span className={mode === "light" ? "Config_Option active" : "Config_Option"}>Claro</span>
+                                        </div>
+                                    </a>
+                                    <button className="Config_Reset hoverable" onClick={handleResetButton}>
+                                        <span className="material-icons">restart_alt</span>Reiniciar aplicativo e limpar todos os dados
+                                    </button>
+                                </div>
                             </div>
-                            <div className="Configurations_Links">
-                                <a href="#Idioma" className="Config_Link hoverable undecorated" onClick={toggleLanguageButton}>
-                                    <span className="Config_Option_Title">
-                                        <i className="material-icons hoverable">translate</i>
-                                        <p>Idioma</p>
-                                    </span>
-                                    <span className={language === "pt-br" ? "Config_Option active" : "Config_Option hoverable"}>Português</span>
-                                    <span className={language === "en" ? "Config_Option active" : "Config_Option hoverable"}>English</span>
-                                </a>
-                                <a href="#Moeda" className="Config_Link hoverable undecorated" onClick={toggleCurrencyButton}>
-                                    <span className="Config_Option_Title">
-                                        <span className="material-icons">payments</span>
-                                        <p>Moeda</p>
-                                    </span>
-                                    <span className={currencyType === "BRL" ? "Config_Option active" : "Config_Option hoverable"}>Real (R$)</span>
-                                    <span className={currencyType === "USD" ? "Config_Option active" : "Config_Option hoverable"}>Dollar (USD)</span>
-                                </a>
-                                <a href="#Cores" className="Config_Link hoverable undecorated" onClick={toggleColorModeButton}>
-                                    <span className="Config_Option_Title">
-                                        <span className="material-icons">palette</span>
-                                        <p>Modo de Cor</p>
-                                    </span>
-                                    <span className={mode === "dark" ? "Config_Option active" : "Config_Option hoverable"}>Escuro</span>
-                                    <span className={mode === "light" ? "Config_Option active" : "Config_Option"}>Claro</span>
-                                </a>
-                                <button className="Config_Reset hoverable" onClick={handleResetButton}>
-                                    <span className="material-icons">restart_alt</span>Reiniciar aplicativo e limpar todos os dados
-                                </button>
-                            </div>
-                        </div>
+                        )}
                     </div>
 
                     <div className="Pragmata_Web hoverable">

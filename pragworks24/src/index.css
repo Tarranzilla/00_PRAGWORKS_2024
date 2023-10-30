@@ -289,10 +289,47 @@ body {
     justify-content: center;
     gap: var(--gap);
     padding: var(--gap);
+    border-radius: var(--gap);
+    background-color: var(--card_color);
 }
 
 .Search_Bar_Input {
     padding: var(--small_gap);
+    border-radius: var(--small_gap);
+}
+
+.Search_Results_Container {
+    display: flex;
+    flex-direction: column;
+    padding: var(--gap);
+    border-radius: var(--gap);
+    gap: var(--gap);
+    width: 30rem;
+    height: 80%;
+    background-color: var(--card_color);
+    position: relative;
+}
+
+.Search_Results_List {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    overflow-y: auto;
+    padding: var(--small_gap);
+}
+
+.Search_Result_Class {
+    padding: var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--small_gap);
+}
+
+.Search_Result_Item {
+    padding: var(--small_gap);
+    max-width: 30rem;
+    text-align: start;
+    cursor: pointer;
 }
 
 .Section_Divider {
@@ -592,7 +629,7 @@ body {
 .Menu_GoUp_Btn {
     position: absolute;
     top: var(--gap);
-    right: var(--small_gap);
+    left: var(--small_gap);
 
     display: flex;
     flex-direction: row;
@@ -1187,7 +1224,7 @@ body {
 }
 
 .Contact_CallToAction {
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
 .Contact_Info {
@@ -1300,6 +1337,7 @@ body {
     overflow-x: hidden;
     height: 100%;
     width: 100%;
+    gap: var(--gap);
     outline: 1px solid var(--text-color);
 }
 
@@ -1317,12 +1355,32 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     gap: var(--gap);
     padding: var(--small_gap);
     cursor: pointer;
     width: 100%;
-    max-width: 20rem;
+}
+
+.Menu_Link_Actions {
+    display: flex;
+    flex-direction: row;
+    gap: var(--small_gap);
+}
+
+.Header_Link_Organizer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: calc(1.5rem - 2px);
+}
+
+.LP_Links_Icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .Header_Link {
@@ -1370,7 +1428,6 @@ body {
     flex-direction: column;
     gap: var(--gap);
     width: 100%;
-    max-width: 20rem;
 }
 
 .Menu_Options {
@@ -1403,6 +1460,10 @@ body {
     fill: var(--text-color);
 }
 
+.Configurations {
+    width: 100%;
+}
+
 .Config_Reset {
     margin-block: var(--small_gap);
     display: flex;
@@ -1414,7 +1475,6 @@ body {
     border-radius: var(--small_gap);
     cursor: pointer;
     width: 100%;
-    max-width: 20rem;
 }
 
 .Configurations_Links {
@@ -1425,18 +1485,24 @@ body {
 
 .Config_Link {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: start;
-    gap: var(--gap);
+    gap: var(--small_gap);
     padding: var(--small_gap);
     cursor: pointer;
     width: 100%;
-    max-width: 30rem;
+}
+
+.Config_Options {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    width: 100%;
 }
 
 .Config_Option_Title {
-    width: 7rem;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -1453,6 +1519,7 @@ body {
     border-radius: var(--small_gap);
     width: 5rem;
     font-size: 0.6rem;
+    width: 100%;
 }
 
 .Config_Option.active {
@@ -1482,6 +1549,52 @@ body {
 
     .Nav_Link {
         font-size: 0.95rem;
+    }
+
+    .Menu_Container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .Menu_Main_List,
+    .Menu_Options {
+        flex-shrink: 0;
+    }
+
+    .Secondary_Links,
+    .Menu_Options {
+        gap: var(--small_gap);
+    }
+
+    .Menu_Options {
+        display: none;
+    }
+
+    .List_Line_Container {
+        width: 1rem;
+    }
+
+    .Product_Links {
+        gap: var(--small_gap);
+    }
+
+    .Product_Detail_Content {
+        flex-direction: column;
+    }
+
+    .Solution_Detail_Content {
+        flex-direction: column;
+    }
+
+    .About_Card_Content {
+        flex-direction: column;
+    }
+
+    .Contact_Action_Btn {
+        padding: var(--small_gap);
+    }
+
+    .Maps_Master_Container {
+        display: none;
     }
 
     .Footer_Copyright {
