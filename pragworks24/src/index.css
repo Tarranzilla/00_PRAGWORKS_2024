@@ -463,6 +463,10 @@ body {
     border-radius: var(--gap);
 }
 
+.Type_Header {
+    margin-bottom: -1rem;
+}
+
 .Product_Card,
 .Solution_Card,
 .About_Card {
