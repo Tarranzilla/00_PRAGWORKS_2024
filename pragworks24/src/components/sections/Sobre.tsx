@@ -879,7 +879,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <h3 className="Post_Card_Title">{post.title}</h3>
                                                     <p className="Post_Card_Description">{post.description}</p>
                                                     <div className="Post_Card_Actions">
-                                                        <button className="Post_Card_KnowMore_Btn">Saiba Mais</button>
+                                                        <button className="Post_Card_KnowMore_Btn hoverable">Saiba Mais</button>
                                                         <button className="Post_Card_Action_Btn hoverable undecorated">
                                                             <span className="material-icons">share</span>
                                                         </button>

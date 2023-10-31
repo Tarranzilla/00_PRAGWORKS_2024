@@ -85,6 +85,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    border: none;
 }
 
 html {
@@ -674,6 +675,8 @@ body {
     cursor: pointer;
     padding: var(--small_gap);
     border-radius: 50%;
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
 .progress-bar {
@@ -915,6 +918,10 @@ body {
     overflow-y: auto;
     border-radius: var(--gap);
     background-color: var(--card_color);
+}
+
+.About_Card_Text_Container {
+    gap: 0;
 }
 
 .Product_Detail_Text_Item {
@@ -1195,8 +1202,16 @@ body {
     justify-content: start;
     gap: var(--gap);
     height: 100%;
+    padding-bottom: var(--small_gap);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+}
+
+.Partners_Text_Container {
+    max-width: 30rem;
+    line-height: 1.2rem;
+    margin-inline: auto;
+    margin-bottom: var(--gap);
 }
 
 .Sobre_Partners_Description_Text {
@@ -1311,6 +1326,7 @@ body {
 
 .Post_Card_KnowMore_Btn {
     padding: var(--small_gap);
+    padding-inline: var(--gap);
     border-radius: var(--gap);
     cursor: pointer;
 }
