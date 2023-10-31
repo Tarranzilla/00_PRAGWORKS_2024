@@ -1324,6 +1324,10 @@ body {
 
 /* MENU - MENU - MENU - MENU - MENU - MENU - MENU - MENU */
 
+#menu {
+    overflow: hidden;
+}
+
 .Menu_Container {
     padding: var(--gap);
 }
@@ -1442,8 +1446,22 @@ body {
     height: 100%;
     width: 100%;
     overflow-y: auto;
-    overflow-x: hidden;
     outline: 1px solid var(--text-color);
+}
+
+.Menu_Options_Logo_Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap);
+    padding: var(--gap);
+    width: 100%;
+    height: 100%;
+}
+
+.Options_Svg {
+    fill: var(--text-color);
 }
 
 .Pragmata_Web {
