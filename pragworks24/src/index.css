@@ -351,6 +351,10 @@ body {
     position: relative;
 }
 
+.Search_Results_Title {
+    text-align: start;
+}
+
 .Search_Results_List {
     display: flex;
     flex-direction: column;
@@ -367,10 +371,14 @@ body {
 }
 
 .Search_Result_Item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     padding: var(--small_gap);
     max-width: 30rem;
     text-align: start;
     cursor: pointer;
+    gap: var(--small_gap);
 }
 
 .Section_Divider {
@@ -587,6 +595,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border-radius: 0.25rem;
 }
 
 .Close_Btn_B,
@@ -596,6 +605,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    border-radius: 0.25rem;
 }
 
 .Previous_Btn,
@@ -1193,7 +1203,7 @@ body {
 }
 
 .Sobre_Interaction_Icon > * {
-    font-size: clamp(0.5rem, 1vw, 2rem);
+    font-size: clamp(1rem, 1vw, 2rem);
 }
 
 .Sobre_Partners_Container {
@@ -1336,6 +1346,7 @@ body {
 #contato {
     flex-direction: row;
     align-items: center;
+    overflow: hidden;
 }
 
 .Contact_Container {
@@ -1346,10 +1357,12 @@ body {
     height: 100%;
     gap: var(--gap);
     transition: all 0.2s ease-in-out;
+    z-index: 1;
 }
 
 .Contact_CallToAction {
     font-size: clamp(1.2rem, 2vw, 2rem);
+    margin-block: auto;
 }
 
 .Contact_Info {
@@ -1434,6 +1447,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: var(--small_gap);
+    background-color: var(--background-color);
+    cursor: grab;
 }
 
 .Map_Title {
@@ -1679,6 +1694,13 @@ body {
 }
 
 /* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */
+
+@media screen and (max-width: 1200px) {
+    .About_Card_Post_Container {
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: var(--gap);
+    }
+}
 
 @media screen and (max-width: 700px) {
     .Mobile_Only {

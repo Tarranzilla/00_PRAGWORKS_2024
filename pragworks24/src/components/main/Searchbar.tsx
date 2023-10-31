@@ -61,59 +61,71 @@ const Searchbar = forwardRef(function Searchbar(props, ref: any) {
                             exit={{ opacity: 0 }}
                         >
                             <div className="Search_Result_Class Search_Robots_Class">
-                                <h5>Robôs Encontrados:</h5>
+                                <h5 className="Search_Results_Title">Robôs Encontrados:</h5>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Robios GO</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Robios INSPECTOR</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Robios CARGO</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                             </div>
 
                             <div className="Search_Result_Class Search_Softwares_Class">
-                                <h5>Softwares Encontrados:</h5>
+                                <h5 className="Search_Results_Title">Softwares Encontrados:</h5>
                                 <div className="Search_Result_Item hoverable">
                                     <p>RobiOS</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>RobiOS Studio</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>RobiOS Avatar</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                             </div>
 
                             <div className="Search_Result_Class Search_Services_Class">
-                                <h5>Serviços Adicionais Encontrados:</h5>
+                                <h5 className="Search_Results_Title">Serviços Adicionais Encontrados:</h5>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Customização de Robôs</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Mapeamento de Ambientes</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Treinamento e Suporte Técnico</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                             </div>
 
                             <div className="Search_Result_Class Search_Experience_Class">
-                                <h5>Experiências Encontradas:</h5>
+                                <h5 className="Search_Results_Title">Experiências Encontradas:</h5>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Desenvolvimento de Experiências no Varejo</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Desenvolvimento de Experiências na Indústria</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Desenvolvimento de Experiências na Cultura</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                             </div>
 
                             <div className="Search_Result_Class Search_Contact_Class">
-                                <h5>Informações sobre contato encontradas:</h5>
+                                <h5 className="Search_Results_Title">Informações sobre contato encontradas:</h5>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Nosso Telefone é: (41) 3333-3333</p>
                                 </div>
@@ -141,15 +153,18 @@ const Searchbar = forwardRef(function Searchbar(props, ref: any) {
                             </div>
 
                             <div className="Search_Result_Class Search_Experience_Class">
-                                <h5>Posts do Blog Encontrados:</h5>
+                                <h5 className="Search_Results_Title">Posts do Blog Encontrados:</h5>
                                 <div className="Search_Result_Item hoverable">
                                     <p>A História da Robótica</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>A História da Robótica no Brasil</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                                 <div className="Search_Result_Item hoverable">
                                     <p>Como desenvolver robôs hoje no Brasil</p>
+                                    <span className="material-icons">open_in_new</span>
                                 </div>
                             </div>
                         </m.div>

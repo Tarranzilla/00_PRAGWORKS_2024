@@ -560,7 +560,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                     </p>
 
                                     <div className="Sobre_Partners_Container">
-                                        <div className="Sobre_Partners_Description_Text">
+                                        <m.div drag dragSnapToOrigin className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">memory</span>
                                             <h3 className="Partners_Description_Title">Parceiros de Produção</h3>
 
@@ -576,8 +576,8 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
-                                        </div>
-                                        <div className="Sobre_Partners_Description_Text">
+                                        </m.div>
+                                        <m.div drag dragSnapToOrigin className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">loyalty</span>
                                             <h3 className="Partners_Description_Title">Parceiros de Distribuição</h3>
                                             <p className="Partners_Description_Detail">
@@ -593,8 +593,8 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
-                                        </div>
-                                        <div className="Sobre_Partners_Description_Text">
+                                        </m.div>
+                                        <m.div drag dragSnapToOrigin className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">handyman</span>
                                             <h3 className="Partners_Description_Title">Parceiros de Assistência Técnica</h3>
                                             <p className="Partners_Description_Detail">
@@ -609,8 +609,8 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
-                                        </div>
-                                        <div className="Sobre_Partners_Description_Text">
+                                        </m.div>
+                                        <m.div drag dragSnapToOrigin className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">recycling</span>
                                             <h3 className="Partners_Description_Title">Parceiros de Reciclagem</h3>
                                             <p className="Partners_Description_Detail">
@@ -625,7 +625,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
-                                        </div>
+                                        </m.div>
                                     </div>
                                 </div>
                             </div>

@@ -105,6 +105,8 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                         exit={{ opacity: 0 }}
                         className="Map_Container Map_1"
                         key="mapa_01"
+                        drag
+                        dragSnapToOrigin
                     >
                         <div className="Map_Header">
                             <span className="material-icons Info_Icon">info</span>
@@ -136,6 +138,8 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                         exit={{ opacity: 0 }}
                         className="Map_Container Map_2"
                         key="mapa_02"
+                        drag
+                        dragSnapToOrigin
                     >
                         <div className="Map_Header">
                             <span className="material-icons">info</span>
