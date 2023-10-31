@@ -222,6 +222,124 @@ import fotoRUR from "../../assets/sobre/rur.jpg";
 import fotoGIRINO from "../../assets/sobre/GIRINO.png";
 import fotoCHICO from "../../assets/sobre/ROBOCHICO.png";
 
+const blogPosts = [
+    {
+        id: 1,
+        title: "A História da Robótica",
+        date: "01/01/2021",
+        img: fotoRUR,
+        description:
+            "A história da robótica é uma história de ambição humana. É a história de como a humanidade criou uma raça de escravos mecânicos para libertar a humanidade do trabalho.",
+
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 2,
+        title: "A História da Robótica no Brasil",
+        date: "01/01/2021",
+        img: fotoRUR,
+        description:
+            "A história da robótica no Brasil é uma história de ambição humana. É a história de como a humanidade criou uma raça de escravos mecânicos para libertar a humanidade do trabalho.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 3,
+        title: "Os Precursores da Robótica",
+        date: "03/15/2021",
+        img: "fotoRobots",
+        description:
+            "Os primeiros passos na robótica remontam a tempos antigos, com dispositivos mecânicos que intrigavam civilizações como os gregos e egípcios.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 4,
+        title: "A Revolução Industrial",
+        date: "04/20/2021",
+        img: "fotoIndustrial",
+        description:
+            "A Revolução Industrial trouxe consigo máquinas revolucionárias que sinalizaram o início da automação industrial, um marco importante na história da robótica.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 5,
+        title: "O Nascimento de R.U.R.",
+        date: "05/12/2021",
+        img: "fotoRUR",
+        description:
+            "A peça 'R.U.R.' de Karel Čapek, escrita em 1920, introduziu o termo 'robô' e explorou as implicações da criação de seres artificiais.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 6,
+        title: "Robótica na Exploração Espacial",
+        date: "06/05/2021",
+        img: "fotoSpace",
+        description: "Os robôs desempenham um papel fundamental na exploração espacial, desde o Sojourner em Marte até os rovers modernos.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 7,
+        title: "Robótica no Mundo Subaquático",
+        date: "07/20/2021",
+        img: "fotoSubsea",
+        description:
+            "Robôs subaquáticos são usados para explorar os mistérios dos oceanos, tornando possível estudar áreas que eram inacessíveis antes.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 8,
+        title: "A Robótica na Medicina",
+        date: "08/10/2021",
+        img: "fotoMedical",
+        description: "Robôs cirúrgicos estão transformando a medicina, permitindo procedimentos de precisão e recuperações mais rápidas.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 9,
+        title: "Robótica e Inteligência Artificial",
+        date: "09/02/2021",
+        img: "fotoAI",
+        description: "A interseção da robótica e IA está abrindo novas possibilidades, tornando robôs mais inteligentes e versáteis.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 10,
+        title: "Ética na Robótica",
+        date: "10/15/2021",
+        img: "fotoEthics",
+        description: "A discussão sobre a ética na robótica cresce à medida que os robôs se tornam mais presentes em nossa vida cotidiana.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 11,
+        title: "A Robótica no Entretenimento",
+        date: "11/10/2021",
+        img: "fotoEntertainment",
+        description: "Robôs estão fazendo sucesso no entretenimento, desde robôs dançarinos até personagens de filmes e parques temáticos.",
+        likes: 0,
+        comments: [],
+    },
+    {
+        id: 12,
+        title: "Robótica em Resgate e Salvamento",
+        date: "12/05/2021",
+        img: "fotoRescue",
+        description: "Robôs desempenham um papel crucial em operações de resgate, ajudando a salvar vidas em situações de emergência.",
+        likes: 0,
+        comments: [],
+    },
+];
+
 const customTransition = springTransition;
 
 const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
@@ -261,11 +379,6 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_01"
                         >
-                            <div className="About_Card_Header">
-                                <h3>Sobre</h3>
-                                <h2>A Human Robotics</h2>
-                            </div>
-
                             <div className="About_Card_Content">
                                 <div className="About_Card_Image_Container">
                                     <div className="About_Card_Img_Block">
@@ -274,6 +387,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                 </div>
 
                                 <div className="About_Card_Text_Container">
+                                    <div className="About_Card_Header">
+                                        <h3 className="Card_Header_Subtitle">Sobre</h3>
+                                        <h2 className="Card_Header_Title">A Human Robotics</h2>
+                                    </div>
                                     <p className="Sobre_Header_Text">
                                         <strong>
                                             Somos a vanguarda da robótica e da inteligência artificial no Brasil, criando soluções inovadoras e
@@ -314,11 +431,6 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_02"
                         >
-                            <div className="About_Card_Header">
-                                <h3>Sobre</h3>
-                                <h2>Nossa Equipe</h2>
-                            </div>
-
                             <div className="About_Card_Content">
                                 <div className="About_Card_Image_Container">
                                     <div className="About_Card_Img_Block">
@@ -327,6 +439,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                 </div>
 
                                 <div className="About_Card_Text_Container">
+                                    <div className="About_Card_Header">
+                                        <h3 className="Card_Header_Subtitle">Sobre</h3>
+                                        <h2 className="Card_Header_Title">Nossa Equipe</h2>
+                                    </div>
                                     <p className="Sobre_Header_Text">
                                         <strong>
                                             Nossa Equipe é Multidisciplinar e conta com profissionais de diversas áreas, como Engenharia, Design,
@@ -338,38 +454,38 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         {membrosDaEquipe.map((membro: any) => {
                                             return (
                                                 <div className="Sobre_Member_Card" key={membro.nome}>
-                                                    <div className="Sobre_Member_Image_Container">
-                                                        <img src={membro.foto} alt={membro.nome} className="Sobre_Member_Image" />
+                                                    <div className="Sobre_Member_Interactions">
+                                                        <a
+                                                            className="Sobre_Interaction_Icon hoverable undecorated"
+                                                            href={membro.linkedin}
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                        >
+                                                            <span className="material-icons">share</span>
+                                                        </a>
+                                                        <a
+                                                            className="Sobre_Interaction_Icon hoverable undecorated"
+                                                            href={membro.telephone}
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                        >
+                                                            <span className="material-icons">perm_phone_msg</span>
+                                                        </a>
+                                                        <a
+                                                            className="Sobre_Interaction_Icon hoverable undecorated"
+                                                            href={membro.email}
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                        >
+                                                            <span className="material-icons">mail</span>
+                                                        </a>
                                                     </div>
                                                     <div className="Sobre_Member_Text_Container">
                                                         <h3 className="Sobre_Member_Name">{membro.nome}</h3>
                                                         <p className="Sobre_Member_Description">{membro.cargo}</p>
-                                                        <div className="Sobre_Member_Interactions">
-                                                            <a
-                                                                className="Sobre_Interaction_Icon hoverable undecorated"
-                                                                href={membro.linkedin}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                <span className="material-icons">share</span>
-                                                            </a>
-                                                            <a
-                                                                className="Sobre_Interaction_Icon hoverable undecorated"
-                                                                href={membro.telephone}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                <span className="material-icons">perm_phone_msg</span>
-                                                            </a>
-                                                            <a
-                                                                className="Sobre_Interaction_Icon hoverable undecorated"
-                                                                href={membro.email}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                <span className="material-icons">mail</span>
-                                                            </a>
-                                                        </div>
+                                                    </div>
+                                                    <div className="Sobre_Member_Image_Container">
+                                                        <img src={membro.foto} alt={membro.nome} className="Sobre_Member_Image" />
                                                     </div>
                                                 </div>
                                             );
@@ -390,11 +506,6 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_03"
                         >
-                            <div className="About_Card_Header">
-                                <h3>Sobre</h3>
-                                <h2>A Fundação</h2>
-                            </div>
-
                             <div className="About_Card_Content">
                                 <div className="About_Card_Image_Container">
                                     <div className="About_Card_Img_Block">
@@ -403,6 +514,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                 </div>
 
                                 <div className="About_Card_Text_Container">
+                                    <div className="About_Card_Header">
+                                        <h3 className="Card_Header_Subtitle">Sobre</h3>
+                                        <h2 className="Card_Header_Title">A Fundação</h2>
+                                    </div>
                                     <p className="Sobre_Description_Text">
                                         Nossa história começa em março de 2017, quando Olivier Smadja teve a ideia de criar um robô para cuidar de
                                         pessoas idosas. Com o passar do tempo, a ideia foi ganhando forma e se transformando em algo muito maior: uma
@@ -434,13 +549,12 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_04"
                         >
-                            <div className="About_Card_Header">
-                                <h3>Sobre</h3>
-                                <h2>Nossos Parceiros</h2>
-                            </div>
-
                             <div className="About_Card_Content">
                                 <div className="About_Card_Text_Container">
+                                    <div className="About_Card_Header">
+                                        <h3 className="Card_Header_Subtitle">Sobre</h3>
+                                        <h2 className="Card_Header_Title">Nossos Parceiros</h2>
+                                    </div>
                                     <p className="Sobre_Header_Text Partners_Text_Container">
                                         <strong>Contamos com uma rede de parceiros que nos ajudam a levar tecnologia de ponta para você.</strong>
                                     </p>
@@ -530,11 +644,6 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_05"
                         >
-                            <div className="About_Card_Header">
-                                <h3>Sobre</h3>
-                                <h2>A História da Robótica</h2>
-                            </div>
-
                             <div className="About_Card_Content">
                                 <div className="About_Card_Image_Container">
                                     <div className="About_Card_Img_Block">
@@ -543,6 +652,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                 </div>
 
                                 <div className="About_Card_Text_Container">
+                                    <div className="About_Card_Header">
+                                        <h3 className="Card_Header_Subtitle">Sobre</h3>
+                                        <h2 className="Card_Header_Title">A História da Robótica</h2>
+                                    </div>
                                     <p className="Sobre_Header_Text">
                                         <strong>
                                             Aristóteles, em sua obra Política de 322 a.C, especulou que autômatos poderiam, um dia, trazer a igualdade
@@ -690,11 +803,6 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_06"
                         >
-                            <div className="About_Card_Header">
-                                <h3>Sobre</h3>
-                                <h2>A Robótica e o Brasil</h2>
-                            </div>
-
                             <div className="About_Card_Content">
                                 <div className="About_Card_Image_Container">
                                     <div className="About_Card_Img_Block">
@@ -703,6 +811,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                 </div>
 
                                 <div className="About_Card_Text_Container">
+                                    <div className="About_Card_Header">
+                                        <h3 className="Card_Header_Subtitle">Sobre</h3>
+                                        <h2 className="Card_Header_Title">A Robótica e o Brasil</h2>
+                                    </div>
                                     <p className="Sobre_Header_Text">
                                         <strong>
                                             A robótica poder ser uma força transformadora para a sociedade brasileira, ajudando a criar empregos de
@@ -755,43 +867,50 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_07"
                         >
-                            <div className="About_Card_Header">
-                                <h3>Sobre</h3>
-                                <h2>Blog</h2>
-                            </div>
-
                             <div className="About_Card_Content">
-                                <div className="About_Card_Image_Container">
-                                    <div className="About_Card_Img_Block">
-                                        <img className="About_Card_Img" src={fotoEquipe}></img>
-                                    </div>
+                                <div className="About_Card_Post_Container">
+                                    {blogPosts.map((post: any) => {
+                                        return (
+                                            <div className="Post_Card small_hoverable">
+                                                <div className="Post_Card_Image_Container">
+                                                    <img className="Post_Card_Image" src={post.image}></img>
+                                                </div>
+                                                <div className="Post_Card_Text_Container">
+                                                    <h3 className="Post_Card_Title">{post.title}</h3>
+                                                    <p className="Post_Card_Description">{post.description}</p>
+                                                    <div className="Post_Card_Actions">
+                                                        <button className="Post_Card_KnowMore_Btn">Saiba Mais</button>
+                                                        <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                            <span className="material-icons">share</span>
+                                                        </button>
+                                                        <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                            <span className="material-icons">favorite</span>
+                                                        </button>
+                                                        <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                            <span className="material-icons">comment</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
-
                                 <div className="About_Card_Text_Container">
+                                    <div className="About_Card_Header">
+                                        <h3 className="Card_Header_Subtitle">Sobre</h3>
+                                        <h2 className="Card_Header_Title">Blog</h2>
+                                    </div>
                                     <p className="Sobre_Header_Text">
                                         <strong>
-                                            Somos a vanguarda da robótica e da inteligência artificial no Brasil, criando soluções inovadoras e
-                                            personalizadas para atender às necessidades de nossos clientes em setores como Varejo, Indústria e
-                                            Cultura.
+                                            Neste blog, exploraremos temas pertinentes à robótica, inteligência artificial, internet das coisas e
+                                            automação e semanalmente trazemos um update de nossos projetos e avanços, convidando você a se juntar a
+                                            nós nessa jornada por uma transformação tecnológica mais centrada no ser humano e ao complexo ecossistema
+                                            que nos envolve.
                                         </strong>
                                     </p>
                                     <p className="Sobre_Description_Text">
-                                        Inspirados pela Subjetividade que a nossa Cultura tem a oferecer e na Precisão que nossas Tecnologias
-                                        desbloqueiam, confecionamos assistentes virtuais e robôs que se destacam pela sua capacidade de interagir com
-                                        as pessoas.
-                                    </p>
-
-                                    <p className="Sobre_Header_Text">
-                                        Temos uma visão clara e ambiciosa para o futuro. Nossa meta é liderar a transformação tecnológica no Brasil,
-                                        sendo a vanguarda das tecnologias de atendimento, educação, interação, inspeção e transporte em bases
-                                        robóticas.
-                                    </p>
-                                    <p className="Sobre_Header_Text">
-                                        Nossa missão é tornar a robótica mais humana, mais acessível e mais presente na vida das pessoas.
-                                    </p>
-
-                                    <p className="Sobre_Header_Text">
-                                        <strong>Junte-se a nós nesta jornada por uma transformação tecnológica mais humana!</strong>
+                                        Acreditamos que um canal cultural como um blog pode ser útil para gerar discussões e reflexões sobre o futuro
+                                        da tecnologia e como ela pode ser usada para melhorar a vida das pessoas.
                                     </p>
                                 </div>
                             </div>

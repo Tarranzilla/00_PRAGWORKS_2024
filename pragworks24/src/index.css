@@ -1,3 +1,34 @@
+/* IMPORTAÇÕES */
+
+/* Researcher 300 */
+@font-face {
+    font-family: "Researcher_WOFF2";
+    src: url("./assets/fonts/Researcher_Thin_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Researcher 400 */
+@font-face {
+    font-family: "Researcher_WOFF2";
+    src: url("./assets/fonts/Researcher_Regular_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Researcher 600 */
+@font-face {
+    font-family: "Researcher_WOFF2";
+    src: url("./assets/fonts/Researcher_Bold_WOFF2.woff2") format("woff2");
+    /* Add additional src lines for different font file formats if necessary */
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* CONFIGURAÇÕES GERAIS - VARIÁVEIS - A RAIZ DO PROJETO */
+
 :root {
     font-family: sans-serif;
     line-height: 1.5;
@@ -54,7 +85,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    outline: 1px solid red;
 }
 
 html {
@@ -74,6 +104,16 @@ body {
 
 .hoverable {
     transition: all 0.2s ease-in-out;
+}
+
+.small_hoverable {
+    transition: all 0.2s ease-in-out;
+}
+
+.small_hoverable:hover,
+.small_hoverable:focus,
+.small_hoverable:focus-within {
+    transform: scale(1.01);
 }
 
 .Btn_Class {
@@ -493,10 +533,6 @@ body {
 }
 
 .About_Card {
-}
-
-.About_Card_Header {
-    height: 4rem;
 }
 
 .Card_Product_Detail_Button {
@@ -1030,9 +1066,16 @@ body {
 
 /* SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS */
 
+.Card_Header_Subtitle {
+    margin-bottom: -0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 0.75rem;
+}
+
 .About_Card_Content {
     width: 100%;
-    height: calc(100% - 5rem);
+    height: 100%;
     display: flex;
     flex-direction: row;
     gap: var(--gap);
@@ -1041,7 +1084,6 @@ body {
 .Sobre_Member_Container {
     display: flex;
     flex-direction: row;
-    align-items: start;
     justify-content: start;
     gap: var(--gap);
     padding: var(--gap);
@@ -1057,27 +1099,29 @@ body {
 .Sobre_Member_Card {
     scroll-margin-inline: var(--gap);
     scroll-snap-align: start;
-    width: 100%;
     height: 100%;
+    aspect-ratio: 1/1;
     min-width: 150px;
-    max-width: 300px;
+    max-width: 420px;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     border-radius: var(--gap);
-    overflow: hidden;
     outline: 1px solid var(--text-color);
+    position: relative;
 }
 
 .Sobre_Member_Image_Container {
     width: 100%;
-    height: 60%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     z-index: 0;
     outline: 1px solid var(--text-color);
+    border-radius: var(--gap);
+    overflow: hidden;
 }
 
 .Sobre_Member_Image {
@@ -1087,16 +1131,20 @@ body {
 }
 
 .Sobre_Member_Text_Container {
+    z-index: 1;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: start;
+    gap: 0.25rem;
+    padding: var(--small_gap);
+    position: absolute;
+    bottom: 0;
 }
 
 .Sobre_Member_Name {
-    font-size: clamp(0.8rem, 0.5vw, 1rem);
+    font-size: clamp(1.2rem, 1vw, 1.4rem);
 }
 
 .Sobre_Member_Description {
@@ -1104,13 +1152,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: clamp(1.5rem, 2vw, 3rem);
+    border-radius: var(--small_gap);
     padding-inline: var(--gap);
     padding-block: 0.5rem;
     outline: 1px solid var(--text-color);
     font-size: clamp(0.5rem, 0.8vw, 1rem);
-    line-height: clamp(0.5rem, 0.8vw, 1rem);
+    line-height: clamp(0.8rem, 1vw, 1rem);
+    background-color: var(--text-color);
+    color: var(--card_color);
 }
 
 .Sobre_Member_Interactions {
@@ -1120,6 +1169,10 @@ body {
     justify-content: center;
     gap: var(--gap);
     padding: var(--small_gap);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .Sobre_Interaction_Icon {
@@ -1204,6 +1257,62 @@ body {
     object-fit: cover;
     object-position: top;
     text-align: center;
+}
+
+.About_Card_Post_Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    overflow-y: auto;
+    padding-right: var(--gap);
+    padding-block: var(--gap);
+    width: 200%;
+}
+
+.Post_Card {
+    padding: var(--medium_gap);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-color: var(--card_color);
+    border-radius: var(--gap);
+    position: relative;
+}
+
+.Post_Card_Text_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--small_gap);
+    text-align: start;
+}
+
+.Post_Card_Description {
+    --max-lines: 3;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+    max-width: 20rem;
+}
+
+.Post_Card_Actions {
+    display: flex;
+    gap: var(--small_gap);
+}
+
+.Post_Card_Action_Btn {
+    padding: var(--small_gap);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.Post_Card_KnowMore_Btn {
+    padding: var(--small_gap);
+    border-radius: var(--gap);
+    cursor: pointer;
 }
 
 /* SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO */
