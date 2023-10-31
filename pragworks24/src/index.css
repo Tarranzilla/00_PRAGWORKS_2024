@@ -920,10 +920,6 @@ body {
     background-color: var(--card_color);
 }
 
-.About_Card_Text_Container {
-    gap: 0;
-}
-
 .Product_Detail_Text_Item {
     display: flex;
     flex-direction: column;

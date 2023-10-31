@@ -565,10 +565,8 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             <h3 className="Partners_Description_Title">Parceiros de Produção</h3>
 
                                             <p className="Partners_Description_Detail">
-                                                Nossos parceiros de produção são laboratórios de eletrônica e robótica localizadas nas cidades de
-                                                Curitiba e São Paulo. Esses laboratórios são certificados pelo Instituto de Robótica do Brasil (IRB) e
-                                                pelo Conselho de Manejo Industrial (CMI), que garantem a sustentabilidade e qualidade da produção de
-                                                hardwares.
+                                                Nossos parceiros de produção são laboratórios de eletrônica e robótica certificados pelo Conselho de
+                                                Manejo Industrial (CMI), que garantem a sustentabilidade e qualidade da produção de hardwares.
                                             </p>
                                             <div className="Partner_Description_Actions">
                                                 <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
