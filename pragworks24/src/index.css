@@ -722,6 +722,7 @@ body {
     overflow-y: hidden;
 }
 
+.Post_Detail_Container,
 .Experience_Detail_Container {
     position: absolute;
     width: 100%;
@@ -733,16 +734,30 @@ body {
     backdrop-filter: blur(10px);
     z-index: 2;
     padding: var(--gap);
+    overflow: hidden;
 }
 
+.Post_Detail,
 .Experience_Detail {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--gap);
+    position: relative;
+    background-color: var(--card_color);
+    padding: var(--gap);
+    border-radius: var(--gap);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    max-width: 40rem;
+    width: 100%;
+    overflow-y: auto;
 }
 
+.Post_Detail {
+}
+
+.Post_Detail_Image_Block,
 .Experience_Detail_Image_Block {
     height: 100%;
     max-height: 400px;
@@ -968,6 +983,7 @@ body {
     overflow-y: auto;
 }
 
+.About_Card_Text_Wrapper,
 .Solution_Detail_Text_Wrapper,
 .Product_Detail_Text_Wrapper {
     display: flex;
@@ -979,6 +995,12 @@ body {
 
     background-color: var(--card_color);
     border-radius: var(--gap);
+    min-height: 100%;
+    flex-shrink: 0;
+}
+
+#Blog_Card_Content {
+    gap: 0;
 }
 
 .Product_Detail_Text_Item {
@@ -1379,6 +1401,10 @@ body {
     aspect-ratio: 1/1;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .Post_Card_KnowMore_Btn {
