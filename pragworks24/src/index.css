@@ -1923,7 +1923,12 @@ body {
     }
 }
 
-#teste_3d_canvas {
-    width: 1000px;
-    height: 1000px;
+#teste3dteste {
+    overflow: hidden;
+    border-radius: var(--gap);
+    position: relative;
+    align-items: center;
+    margin: var(--small_gap);
+    height: calc(100vh - 7rem);
+    top: 1rem;
 }

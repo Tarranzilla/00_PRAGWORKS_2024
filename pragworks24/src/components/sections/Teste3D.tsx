@@ -15,44 +15,60 @@ import Stats from "three/examples/jsm/libs/stats.module.js";
 
 const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
     useEffect(() => {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
+        const canvasContainer = document.getElementById("teste3dteste");
 
-        camera.position.z = 96;
-        const canvas = document.getElementById("Test3DCanvas");
-        const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-        const canvasContainer = document.getElementById("Teste3dSectionContent");
+        if (canvasContainer) {
+            const canvasContainer = document.getElementById("teste3dteste");
+            const canvas = document.getElementById("Test3DCanvas");
+            const aspectRatio = canvasContainer.clientWidth / canvasContainer.clientHeight;
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(50, aspectRatio, 1, 1000);
+            camera.position.z = 4;
 
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        canvasContainer.appendChild(renderer.domElement);
+            function resizeCanvasToDisplaySize() {
+                // look up the size the canvas is being displayed
+                if (!canvasContainer) return;
+                const width = canvasContainer.clientWidth;
+                const height = canvasContainer.clientHeight;
 
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-        ambientLight.castShadow = true;
-        scene.add(ambientLight);
+                // adjust displayBuffer size to match
+                if (canvas) {
+                    if (canvas.clientWidth !== width || canvas.clientHeight !== height) {
+                        // you must pass false here or three.js sadly fights the browser
+                        renderer.setSize(width, height, false);
+                        camera.aspect = width / height;
+                        camera.updateProjectionMatrix();
 
-        const spotLight = new THREE.SpotLight(0xffffff, 1);
-        spotLight.castShadow = true;
-        spotLight.position.set(0, 64, 32);
+                        // update any render target sizes here
+                    }
+                }
+            }
+            canvasContainer.appendChild(renderer.domElement);
 
-        const controls = new OrbitControls(camera, renderer.domElement);
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            ambientLight.castShadow = true;
+            scene.add(ambientLight);
 
-        const stats = Stats();
-        canvasContainer.appendChild(stats.dom);
+            const spotLight = new THREE.SpotLight(0xffffff, 1);
+            spotLight.castShadow = true;
+            spotLight.position.set(0, 64, 32);
 
-        window.addEventListener("resize", () => this.onWindowResize(), false);
+            const controls = new OrbitControls(camera, renderer.domElement);
 
-        const animate = () => {
-            stats.update();
-            controls.update();
-            renderer.render(scene, camera);
-            window.requestAnimationFrame(animate);
-        };
-        animate();
+            const animate = () => {
+                resizeCanvasToDisplaySize();
+                controls.update();
+                renderer.render(scene, camera);
+                window.requestAnimationFrame(animate);
+            };
+            animate();
 
-        const gltfLoader = new GLTFLoader();
-        gltfLoader.load("../../assets/files3d/shiba/scene.gltf", (gltfScene) => {
-            scene.add(gltfScene.scene);
-        });
+            const gltfLoader = new GLTFLoader();
+            gltfLoader.load("objects3D/shiba/scene.gltf", (gltfScene) => {
+                scene.add(gltfScene.scene);
+            });
+        }
     }, []);
 
     return (
@@ -64,10 +80,7 @@ const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
             id="teste3dteste"
             key={"3dteste_key"}
         >
-            <h1 className="LP_Section_Title">Teste 3D</h1>
-            <div className="LP_Section_Content" id="Teste3dSectionContent">
-                <canvas id="Test3DCanvas"></canvas>
-            </div>
+            <canvas id="Test3DCanvas"></canvas>
         </m.div>
     );
 });
