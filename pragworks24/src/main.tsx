@@ -20,6 +20,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import LandingPage from "./components/main/Landing_Page.tsx";
 import Error from "./components/sections/Error.tsx";
 import Register from "./components/sections/Register.tsx";
+import Teste3D from "./components/sections/Teste3D.tsx";
 
 // Router Creation
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <LandingPage />,
+            },
+            {
+                path: "/3dteste",
+                element: <Teste3D />,
             },
             {
                 path: "/registro",
