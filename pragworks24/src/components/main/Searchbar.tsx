@@ -306,25 +306,40 @@ const Searchbar = forwardRef(function Searchbar(props, ref: any) {
     return (
         <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Search_Container" key={"searchbar_key"}>
             <m.div layout="preserve-aspect" className="Search_Bar hoverable">
-                <input className="Search_Bar_Input" type="text" placeholder="O que você procura?" onChange={(e) => setQuery(e.target.value)} />
-                <button className="Search_Btn hoverable" onClick={searchForUserInput}>
+                <input
+                    className="Search_Bar_Input"
+                    type="text"
+                    placeholder="O que você procura?"
+                    onChange={(e) => {
+                        setQuery(e.target.value);
+                        console.log("Query: ", query);
+                        handleSearch();
+                    }}
+                />
+                <m.button whileTap={{ scale: 0.8, transition: { duration: 0.1 } }} className="Search_Btn hoverable" onClick={searchForUserInput}>
                     <i className="material-icons">search</i>
-                </button>
+                </m.button>
             </m.div>
             <button className="Close_Btn hoverable" onClick={toggleSearchBarFunction}>
                 <i className="material-icons">close</i>
             </button>
 
-            <m.div layout="preserve-aspect" layoutScroll className="Search_Results_Container">
+            <m.div drag dragSnapToOrigin layout="preserve-aspect" layoutScroll className="Search_Results_Container">
                 <h4>Resultados Encontrados:</h4>
                 <AnimatePresence>
-                    {!searchResults && (
+                    {query === "" && (
                         <m.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                             Nenhuma pesquisa realizada.
                         </m.p>
                     )}
 
-                    {searchResults && (
+                    {!(query === "") && searchResults.length === 0 && (
+                        <m.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+                            Nenhum resultado encontrado.
+                        </m.p>
+                    )}
+
+                    {!(query === "") && (
                         <m.div
                             layout
                             layoutScroll

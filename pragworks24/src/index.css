@@ -131,6 +131,74 @@ body {
     transform: scale(1.05);
 }
 
+.Loading_Screen {
+    top: 25vh;
+    left: 0;
+    z-index: 1000;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 0.5rem);
+    height: 100vh;
+    background-color: var(--background-color);
+    opacity: 1;
+}
+
+.Cookies_Banner {
+    z-index: 1000;
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    width: calc(100vw - 0.5rem);
+    height: calc(100vh - 6rem);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.Cookies_Banner_Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gap);
+    border-radius: var(--gap);
+    gap: var(--gap);
+    background-color: var(--card_color);
+}
+
+.Cookies_Banner_Icon {
+    font-size: 15rem;
+    animation: rotateZ 10s linear infinite;
+}
+
+@keyframes rotateZ {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.Cookies_Banner_Text {
+    max-width: 30rem;
+}
+
+.Cookies_Banner_Btn {
+    padding: var(--small_gap);
+    padding-inline: var(--gap);
+    border-radius: var(--gap);
+    cursor: pointer;
+}
+
 .Navbar {
     position: fixed;
     height: 3rem;
@@ -336,6 +404,7 @@ body {
 .Search_Bar_Input {
     padding: var(--small_gap);
     border-radius: var(--small_gap);
+    outline: 1px solid var(--text-color);
 }
 
 .Search_Results_Container {
@@ -1715,6 +1784,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 20rem;
 }
 
 .Config_Link {

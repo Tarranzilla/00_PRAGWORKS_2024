@@ -168,7 +168,7 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
             <AnimatePresence mode="popLayout">
                 {activeDetailCard && (
                     <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Experience_Detail_Container">
-                        <div className="Experience_Detail">
+                        <m.div drag dragSnapToOrigin className="Experience_Detail">
                             <button className="Close_Btn hoverable" onClick={closeDetailCard}>
                                 <i className="material-icons">close</i>
                             </button>
@@ -179,7 +179,7 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
                             <div className="Experience_Detail_Image_Block hoverable">
                                 <img src={activeDetailCard.image} alt={activeDetailCard.text} />
                             </div>
-                        </div>
+                        </m.div>
                     </m.div>
                 )}
             </AnimatePresence>
