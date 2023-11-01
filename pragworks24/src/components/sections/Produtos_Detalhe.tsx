@@ -89,6 +89,125 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                 </button>
             </div>
             <div className="Product_Detail_Content">
+                <div className="Product_Detail_Text_Container">
+                    {/* Tipo do Produto */}
+                    <div className="Product_Detail_Text_Wrapper">
+                        <div className="Product_Detail_Text_Item">
+                            <div className="Product_Detail_Text_Item_Header">
+                                <h3 className="Product_Detail_Title">{activeProduct.prename}</h3>
+                                <h1 className="Product_Detail_Title">{activeProduct.name}</h1>
+                            </div>
+                            <div className="Product_Detail_Text_Item_Content">
+                                <p className="Product_Detail_Text_Content">{activeProduct.type}</p>
+                            </div>
+                        </div>
+
+                        {/* Descrição do Produto */}
+                        <div className="Product_Detail_Text_Item">
+                            <div className="Product_Detail_Text_Item_Header">
+                                <h3 className="Product_Detail_Text_Item_Header_Title">Descrição</h3>
+                            </div>
+                            <div className="Product_Detail_Text_Item_Content">
+                                <p className="Product_Detail_Text_Content">
+                                    <strong>{activeProduct.description}</strong>
+                                </p>
+                                <div className="Product_Detail_FullDescription">
+                                    {activeProduct.fullDescription.map((paragraph) => {
+                                        return <p className="Product_Detail_Text_Content">{paragraph}</p>;
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Componentes */}
+                        <div className="Product_Detail_Text_Item">
+                            <div className="Product_Detail_Text_Item_Header">
+                                <h3 className="Product_Detail_Text_Item_Header_Title">Componentes</h3>
+                            </div>
+                            <div className="Product_Detail_Component_Container">
+                                {activeProduct.components.map((component) => {
+                                    return (
+                                        <div className="Product_Detail_Component">
+                                            <span className="material-icons Component_Icon">check</span>
+                                            <p className="Component_Name">{component.name}</p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Soluções Relacionadas */}
+                        <div className="Product_Detail_Text_Item">
+                            <div className="Product_Detail_Text_Item_Header">
+                                <h3 className="Product_Detail_Text_Item_Header_Title">Soluções</h3>
+                            </div>
+                            <div className="Product_Detail_Solution_Container">
+                                {activeProduct.solutions.map((solution) => {
+                                    return (
+                                        <div
+                                            className="Product_Detail_Solution hoverable"
+                                            onClick={() => {
+                                                openDetailsButton(solution.id);
+                                            }}
+                                        >
+                                            <img src={solution.imgSrc} className="Product_Detail_Solution_Img"></img>
+                                            <p className="Product_Detail_Solution_Name">{solution.name}</p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        {/* Coordenadas */}
+                        <div className="Product_Detail_Text_Item">
+                            <div className="Product_Detail_Text_Item_Header">
+                                <h3 className="Product_Detail_Text_Item_Header_Title">Coordenadas de Origem</h3>
+                            </div>
+                            <div className="Product_Detail_Text_Item_Content">
+                                <p className="Product_Detail_Text_Content">{activeProduct.productOriginCoordinates}</p>
+                            </div>
+                        </div>
+
+                        {/* Origem das Peças */}
+                        <div className="Product_Detail_Text_Item">
+                            <div className="Product_Detail_Text_Item_Header">
+                                <h3 className="Product_Detail_Text_Item_Header_Title">Origem das Peças</h3>
+                            </div>
+                            <div className="Product_Detail_Text_Item_Content">
+                                <p className="Product_Detail_Text_Content">{activeProduct.productOrigin}</p>
+                            </div>
+                        </div>
+
+                        {/* Produtor do Robô */}
+                        <div className="Product_Detail_Text_Item">
+                            <div className="Product_Detail_Text_Item_Header">
+                                <h3 className="Product_Detail_Text_Item_Header_Title">Produtor do Robô</h3>
+                            </div>
+                            <div className="Product_Detail_Text_Item_Content">
+                                <p className="Product_Detail_Text_Content">{activeProduct.producerName}</p>
+                            </div>
+                        </div>
+
+                        {/* Footer */}
+                        <div className="Product_Detail_Footer">
+                            <button
+                                className="AddToCart_Btn hoverable"
+                                onClick={() => {
+                                    addToCartButton(activeProduct.id, 1);
+                                    if (!cartIsOpen) dispatch(toggleCart());
+                                }}
+                            >
+                                <div className="AddToCartLeft">
+                                    À partir de<h3 className="Card_Product_Price">R$ {activeProduct.buyPrice},00</h3>
+                                </div>
+                                <div className="AddToCartRight">Solicitar uma Cotação {itemTotalQuantity > 0 && `(${itemTotalQuantity})`}</div>
+                            </button>
+                            <button className="ScheduleDemo_Btn hoverable" onClick={toggleFinishOrderButton}>
+                                Agendar Demonstração
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div className="Product_Detail_Image_Container">
                     <AnimatePresence mode="wait">
                         {activeProduct.imgSrc.map(
@@ -112,123 +231,6 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                     <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
                         <span className="material-icons Next_Btn_Icon">east</span>
                     </button>
-                </div>
-                <div className="Product_Detail_Text_Container">
-                    {/* Tipo do Produto */}
-                    <div className="Product_Detail_Text_Item">
-                        <div className="Product_Detail_Text_Item_Header">
-                            <h3 className="Product_Detail_Title">{activeProduct.prename}</h3>
-                            <h1 className="Product_Detail_Title">{activeProduct.name}</h1>
-                        </div>
-                        <div className="Product_Detail_Text_Item_Content">
-                            <p className="Product_Detail_Text_Content">{activeProduct.type}</p>
-                        </div>
-                    </div>
-
-                    {/* Descrição do Produto */}
-                    <div className="Product_Detail_Text_Item">
-                        <div className="Product_Detail_Text_Item_Header">
-                            <h3 className="Product_Detail_Text_Item_Header_Title">Descrição</h3>
-                        </div>
-                        <div className="Product_Detail_Text_Item_Content">
-                            <p className="Product_Detail_Text_Content">
-                                <strong>{activeProduct.description}</strong>
-                            </p>
-                            <div className="Product_Detail_FullDescription">
-                                {activeProduct.fullDescription.map((paragraph) => {
-                                    return <p className="Product_Detail_Text_Content">{paragraph}</p>;
-                                })}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Componentes */}
-                    <div className="Product_Detail_Text_Item">
-                        <div className="Product_Detail_Text_Item_Header">
-                            <h3 className="Product_Detail_Text_Item_Header_Title">Componentes</h3>
-                        </div>
-                        <div className="Product_Detail_Component_Container">
-                            {activeProduct.components.map((component) => {
-                                return (
-                                    <div className="Product_Detail_Component">
-                                        <span className="material-icons Component_Icon">check</span>
-                                        <p className="Component_Name">{component.name}</p>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-
-                    {/* Soluções Relacionadas */}
-                    <div className="Product_Detail_Text_Item">
-                        <div className="Product_Detail_Text_Item_Header">
-                            <h3 className="Product_Detail_Text_Item_Header_Title">Soluções</h3>
-                        </div>
-                        <div className="Product_Detail_Solution_Container">
-                            {activeProduct.solutions.map((solution) => {
-                                return (
-                                    <div
-                                        className="Product_Detail_Solution hoverable"
-                                        onClick={() => {
-                                            openDetailsButton(solution.id);
-                                        }}
-                                    >
-                                        <img src={solution.imgSrc} className="Product_Detail_Solution_Img"></img>
-                                        <p className="Product_Detail_Solution_Name">{solution.name}</p>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-
-                    {/* Coordenadas */}
-                    <div className="Product_Detail_Text_Item">
-                        <div className="Product_Detail_Text_Item_Header">
-                            <h3 className="Product_Detail_Text_Item_Header_Title">Coordenadas de Origem</h3>
-                        </div>
-                        <div className="Product_Detail_Text_Item_Content">
-                            <p className="Product_Detail_Text_Content">{activeProduct.productOriginCoordinates}</p>
-                        </div>
-                    </div>
-
-                    {/* Origem das Peças */}
-                    <div className="Product_Detail_Text_Item">
-                        <div className="Product_Detail_Text_Item_Header">
-                            <h3 className="Product_Detail_Text_Item_Header_Title">Origem das Peças</h3>
-                        </div>
-                        <div className="Product_Detail_Text_Item_Content">
-                            <p className="Product_Detail_Text_Content">{activeProduct.productOrigin}</p>
-                        </div>
-                    </div>
-
-                    {/* Produtor do Robô */}
-                    <div className="Product_Detail_Text_Item">
-                        <div className="Product_Detail_Text_Item_Header">
-                            <h3 className="Product_Detail_Text_Item_Header_Title">Produtor do Robô</h3>
-                        </div>
-                        <div className="Product_Detail_Text_Item_Content">
-                            <p className="Product_Detail_Text_Content">{activeProduct.producerName}</p>
-                        </div>
-                    </div>
-
-                    {/* Footer */}
-                    <div className="Product_Detail_Footer">
-                        <button
-                            className="AddToCart_Btn hoverable"
-                            onClick={() => {
-                                addToCartButton(activeProduct.id, 1);
-                                if (!cartIsOpen) dispatch(toggleCart());
-                            }}
-                        >
-                            <div className="AddToCartLeft">
-                                À partir de<h3 className="Card_Product_Price">R$ {activeProduct.buyPrice},00</h3>
-                            </div>
-                            <div className="AddToCartRight">Solicitar uma Cotação {itemTotalQuantity > 0 && `(${itemTotalQuantity})`}</div>
-                        </button>
-                        <button className="ScheduleDemo_Btn hoverable" onClick={toggleFinishOrderButton}>
-                            Agendar Demonstração
-                        </button>
-                    </div>
                 </div>
             </div>
         </m.div>

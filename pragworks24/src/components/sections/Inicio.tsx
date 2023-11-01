@@ -38,23 +38,23 @@ import exp_valedopinhao from "../../assets/experiencia/exp_valedopinhao.png";
 import exp_varejo from "../../assets/experiencia/exp_varejo.png";
 
 const baseExperiencias = [
-    { id: nanoid(), indx: 1, text: "Activa Id", description: "Campanha de Marketing", image: exp_activa_id },
-    { id: nanoid(), indx: 2, text: "Bioos", description: "Campanha de Marketing", image: exp_bioos },
-    { id: nanoid(), indx: 3, text: "Caixa", description: "Campanha de Marketing", image: exp_caixa },
-    { id: nanoid(), indx: 4, text: "Cajuru", description: "Campanha de Marketing", image: exp_cajuru },
-    { id: nanoid(), indx: 5, text: "Condor", description: "Campanha de Marketing", image: epx_condor },
-    { id: nanoid(), indx: 6, text: "Inno", description: "Campanha de Marketing", image: exp_inno },
-    { id: nanoid(), indx: 7, text: "Lab", description: "Campanha de Marketing", image: exp_lab },
-    { id: nanoid(), indx: 8, text: "Montagem", description: "Campanha de Marketing", image: exp_montagem },
-    { id: nanoid(), indx: 9, text: "Novo", description: "Campanha de Marketing", image: exp_novo },
-    { id: nanoid(), indx: 10, text: "Pipefy 1", description: "Campanha de Marketing", image: exp_pipefy_1 },
-    { id: nanoid(), indx: 11, text: "Pipefy 2", description: "Campanha de Marketing", image: exp_pipefy_2 },
-    { id: nanoid(), indx: 12, text: "Shopping", description: "Campanha de Marketing", image: exp_shopping },
-    { id: nanoid(), indx: 13, text: "Teatro", description: "Campanha de Marketing", image: exp_teatro },
-    { id: nanoid(), indx: 14, text: "Terça da Terra", description: "Campanha de Marketing", image: exp_terca_da_terra },
-    { id: nanoid(), indx: 15, text: "Topmed", description: "Campanha de Marketing", image: exp_topmed },
-    { id: nanoid(), indx: 16, text: "Vale do Pinhão", description: "Campanha de Marketing", image: exp_valedopinhao },
-    { id: nanoid(), indx: 17, text: "Varejo", description: "Campanha de Marketing", image: exp_varejo },
+    { id: nanoid(), type: "exp", indx: 1, text: "Activa Id", description: "Campanha de Marketing", image: exp_activa_id },
+    { id: nanoid(), type: "exp", indx: 2, text: "Bioos", description: "Campanha de Marketing", image: exp_bioos },
+    { id: nanoid(), type: "exp", indx: 3, text: "Caixa", description: "Campanha de Marketing", image: exp_caixa },
+    { id: nanoid(), type: "exp", indx: 4, text: "Cajuru", description: "Campanha de Marketing", image: exp_cajuru },
+    { id: nanoid(), type: "exp", indx: 5, text: "Condor", description: "Campanha de Marketing", image: epx_condor },
+    { id: nanoid(), type: "exp", indx: 6, text: "Inno", description: "Campanha de Marketing", image: exp_inno },
+    { id: nanoid(), type: "exp", indx: 7, text: "Lab", description: "Campanha de Marketing", image: exp_lab },
+    { id: nanoid(), type: "exp", indx: 8, text: "Montagem", description: "Campanha de Marketing", image: exp_montagem },
+    { id: nanoid(), type: "exp", indx: 9, text: "Novo", description: "Campanha de Marketing", image: exp_novo },
+    { id: nanoid(), type: "exp", indx: 10, text: "Pipefy 1", description: "Campanha de Marketing", image: exp_pipefy_1 },
+    { id: nanoid(), type: "exp", indx: 11, text: "Pipefy 2", description: "Campanha de Marketing", image: exp_pipefy_2 },
+    { id: nanoid(), type: "exp", indx: 12, text: "Shopping", description: "Campanha de Marketing", image: exp_shopping },
+    { id: nanoid(), type: "exp", indx: 13, text: "Teatro", description: "Campanha de Marketing", image: exp_teatro },
+    { id: nanoid(), type: "exp", indx: 14, text: "Terça da Terra", description: "Campanha de Marketing", image: exp_terca_da_terra },
+    { id: nanoid(), type: "exp", indx: 15, text: "Topmed", description: "Campanha de Marketing", image: exp_topmed },
+    { id: nanoid(), type: "exp", indx: 16, text: "Vale do Pinhão", description: "Campanha de Marketing", image: exp_valedopinhao },
+    { id: nanoid(), type: "exp", indx: 17, text: "Varejo", description: "Campanha de Marketing", image: exp_varejo },
 ];
 
 import tresM from "../../assets/parceiros/3M.webp";
@@ -71,18 +71,18 @@ import tercadaterra from "../../assets/parceiros/tercadaterra.webp";
 import unimed from "../../assets/parceiros/unimed.webp";
 
 const baseParceiros = [
-    { id: nanoid(), indx: 1, text: "3M", description: "Campanha de Marketing", image: tresM },
-    { id: nanoid(), indx: 2, text: "Ambev", description: "Campanha de Marketing", image: ambev },
-    { id: nanoid(), indx: 3, text: "BRMalls", description: "Campanha de Marketing", image: brmalls },
-    { id: nanoid(), indx: 4, text: "Cajuru", description: "Campanha de Marketing", image: cajuru },
-    { id: nanoid(), indx: 5, text: "Ebanx", description: "Campanha de Marketing", image: ebanx },
-    { id: nanoid(), indx: 6, text: "Finep", description: "Campanha de Marketing", image: finep },
-    { id: nanoid(), indx: 7, text: "Nivea", description: "Campanha de Marketing", image: nivea },
-    { id: nanoid(), indx: 8, text: "NTU", description: "Campanha de Marketing", image: ntu },
-    { id: nanoid(), indx: 9, text: "São Cristovão", description: "Campanha de Marketing", image: sao_cristovao },
-    { id: nanoid(), indx: 10, text: "Sebrae", description: "Campanha de Marketing", image: sebrae },
-    { id: nanoid(), indx: 11, text: "Terca da Terra", description: "Campanha de Marketing", image: tercadaterra },
-    { id: nanoid(), indx: 12, text: "Unimed", description: "Campanha de Marketing", image: unimed },
+    { id: nanoid(), type: "partner", indx: 1, text: "3M", description: "Campanha de Marketing", image: tresM },
+    { id: nanoid(), type: "partner", indx: 2, text: "Ambev", description: "Campanha de Marketing", image: ambev },
+    { id: nanoid(), type: "partner", indx: 3, text: "BRMalls", description: "Campanha de Marketing", image: brmalls },
+    { id: nanoid(), type: "partner", indx: 4, text: "Cajuru", description: "Campanha de Marketing", image: cajuru },
+    { id: nanoid(), type: "partner", indx: 5, text: "Ebanx", description: "Campanha de Marketing", image: ebanx },
+    { id: nanoid(), type: "partner", indx: 6, text: "Finep", description: "Campanha de Marketing", image: finep },
+    { id: nanoid(), type: "partner", indx: 7, text: "Nivea", description: "Campanha de Marketing", image: nivea },
+    { id: nanoid(), type: "partner", indx: 8, text: "NTU", description: "Campanha de Marketing", image: ntu },
+    { id: nanoid(), type: "partner", indx: 9, text: "São Cristovão", description: "Campanha de Marketing", image: sao_cristovao },
+    { id: nanoid(), type: "partner", indx: 10, text: "Sebrae", description: "Campanha de Marketing", image: sebrae },
+    { id: nanoid(), type: "partner", indx: 11, text: "Terca da Terra", description: "Campanha de Marketing", image: tercadaterra },
+    { id: nanoid(), type: "partner", indx: 12, text: "Unimed", description: "Campanha de Marketing", image: unimed },
 ];
 
 const customTransition = springTransition;
@@ -95,6 +95,26 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
 
     const [expCards] = useState(baseExperiencias);
     const [partnerCards] = useState(baseParceiros);
+
+    const [activeDetailCard, setActiveDetailCard] = useState(null as any);
+    const setActiveDetailCardFunction = (id: any, type: any) => {
+        if (type === "exp") {
+            expCards.map((card: any) => {
+                if (card.id === id) {
+                    setActiveDetailCard(card);
+                }
+            });
+        } else if (type === "partner") {
+            partnerCards.map((card: any) => {
+                if (card.id === id) {
+                    setActiveDetailCard(card);
+                }
+            });
+        }
+    };
+    const closeDetailCard = () => {
+        setActiveDetailCard(null);
+    };
 
     /* Brand Declaration Text Animate */
     const [text, setText] = useState("Agora");
@@ -145,12 +165,37 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
             id="inicio"
             key={"inicio_key"}
         >
+            <AnimatePresence mode="popLayout">
+                {activeDetailCard && (
+                    <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Experience_Detail_Container">
+                        <div className="Experience_Detail">
+                            <button className="Close_Btn hoverable" onClick={closeDetailCard}>
+                                <i className="material-icons">close</i>
+                            </button>
+                            <div className="Experience_Detail_Text">
+                                <h2 className="Experience_Detail_Title">{activeDetailCard.text}</h2>
+                                <p className="Experience_Detail_Description">{activeDetailCard.description}</p>
+                            </div>
+                            <div className="Experience_Detail_Image_Block hoverable">
+                                <img src={activeDetailCard.image} alt={activeDetailCard.text} />
+                            </div>
+                        </div>
+                    </m.div>
+                )}
+            </AnimatePresence>
+
             <h1 className="LP_Section_Title">Início</h1>
             <div className="auto_slider_card_container auto_slider_experiencias" id="auto_slider_blogPosts">
                 <div className="auto_slider_track slider_experiencias">
                     <div className="auto_slider_card hoverable">Slider Card 1</div>
                     {expCards.map((card) => (
-                        <div className="auto_slider_card hoverable" key={card.id}>
+                        <div
+                            className="auto_slider_card hoverable"
+                            key={card.id}
+                            onClick={() => {
+                                setActiveDetailCardFunction(card.id, card.type);
+                            }}
+                        >
                             <div className="carroussel_card_content">
                                 <p className="auto_slider_card_title">{card.text}</p>
                                 <p className="auto_slider_card_description">{card.description}</p>
@@ -162,7 +207,13 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
                     {/* Cópias */}
 
                     {expCards.map((card) => (
-                        <div className="auto_slider_card hoverable" key={card.id + "_B"}>
+                        <div
+                            className="auto_slider_card hoverable"
+                            key={card.id + "_B"}
+                            onClick={() => {
+                                setActiveDetailCardFunction(card.id, card.type);
+                            }}
+                        >
                             <div className="carroussel_card_content">
                                 <p className="auto_slider_card_title">{card.text}</p>
                                 <p className="auto_slider_card_description">{card.description}</p>
@@ -216,7 +267,13 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
             <div className="auto_slider_card_container" id="auto_slider_partners">
                 <div className="auto_slider_track slider_parceiros">
                     {partnerCards.map((card) => (
-                        <div className="auto_slider_card hoverable" key={card.id}>
+                        <div
+                            className="auto_slider_card hoverable"
+                            key={card.id}
+                            onClick={() => {
+                                setActiveDetailCardFunction(card.id, card.type);
+                            }}
+                        >
                             <div className="carroussel_card_content">
                                 <p className="auto_slider_card_title">{card.text}</p>
                                 <p className="auto_slider_card_description">{card.description}</p>
@@ -227,7 +284,13 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
 
                     {/* Cópias */}
                     {partnerCards.map((card) => (
-                        <div className="auto_slider_card hoverable" key={card.id + "_C"}>
+                        <div
+                            className="auto_slider_card hoverable"
+                            key={card.id + "_C"}
+                            onClick={() => {
+                                setActiveDetailCardFunction(card.id, card.type);
+                            }}
+                        >
                             <div className="carroussel_card_content">
                                 <p className="auto_slider_card_title">{card.text}</p>
                                 <p className="auto_slider_card_description">{card.description}</p>

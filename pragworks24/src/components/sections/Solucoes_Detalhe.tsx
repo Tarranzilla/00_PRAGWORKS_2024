@@ -91,6 +91,50 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                 </button>
             </div>
             <div className="Solution_Detail_Content">
+                <div className="Solution_Detail_Text_Container">
+                    <div className="Solution_Detail_Text_Wrapper">
+                        <h1 className="Solution_Detail_Content_Title">{activeSolution.name}</h1>
+                        <p className="Solution_Detail_Description">{activeSolution.description}</p>
+                        <p className="Solution_Detail_FullDescription">{activeSolution.fullDescription}</p>
+                        <h4 className="Solution_Recommended_Products_Title">Produtos que atuam nesta solução:</h4>
+                        <div className="Solution_Recommended_Products_Container">
+                            <h3 className="Solution_Recommended_Product">RobiOS GO</h3>
+                            <h3 className="Solution_Recommended_Product">RobiOS INPSECTOR</h3>
+                            <h3 className="Solution_Recommended_Product">RobiOS CARGO</h3>
+                        </div>
+                        <h4 className="Solution_Partner_Title">Parceiros que utilizam nossos serviços:</h4>
+                        <div className="Solution_Partner_Container">
+                            <AnimatePresence mode="wait">
+                                {activeSolution.partners.map(
+                                    (partner, index) =>
+                                        index === currentPartnerIndex && (
+                                            <m.div
+                                                key={index}
+                                                className="Solution_Partner"
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                            >
+                                                <img className="Solution_Partner_Img" src={partner.imgSrc} alt={partner.name} />
+                                            </m.div>
+                                        )
+                                )}
+                            </AnimatePresence>
+                            <button className="Previous_Btn Centered_Previous_Btn" onClick={handlePrevClick2}>
+                                <span className="material-icons Previous_Btn_Icon">west</span>
+                            </button>
+                            <button className="Next_Btn Centered_Next_Btn" onClick={handleNextClick2}>
+                                <span className="material-icons Next_Btn_Icon">east</span>
+                            </button>
+                        </div>
+
+                        <div className="Solution_Detail_Footer">
+                            <button className="ScheduleDemo_Btn" onClick={toggleFinishOrderButton}>
+                                Agendar Demonstração
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div className="Solution_Detail_Image_Container">
                     <AnimatePresence mode="wait">
                         {activeSolution.imgSrc.map(
@@ -114,49 +158,6 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                     <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
                         <span className="material-icons Next_Btn_Icon">east</span>
                     </button>
-                </div>
-
-                <div className="Solution_Detail_Text_Container">
-                    <h1 className="Solution_Detail_Content_Title">{activeSolution.name}</h1>
-                    <p className="Solution_Detail_Description">{activeSolution.description}</p>
-                    <p className="Solution_Detail_FullDescription">{activeSolution.fullDescription}</p>
-                    <h4 className="Solution_Recommended_Products_Title">Produtos que atuam nesta solução:</h4>
-                    <div className="Solution_Recommended_Products_Container">
-                        <h3 className="Solution_Recommended_Product">RobiOS GO</h3>
-                        <h3 className="Solution_Recommended_Product">RobiOS INPSECTOR</h3>
-                        <h3 className="Solution_Recommended_Product">RobiOS CARGO</h3>
-                    </div>
-                    <h4 className="Solution_Partner_Title">Parceiros que utilizam nossos serviços:</h4>
-                    <div className="Solution_Partner_Container">
-                        <AnimatePresence mode="wait">
-                            {activeSolution.partners.map(
-                                (partner, index) =>
-                                    index === currentPartnerIndex && (
-                                        <m.div
-                                            key={index}
-                                            className="Solution_Partner"
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                        >
-                                            <img className="Solution_Partner_Img" src={partner.imgSrc} alt={partner.name} />
-                                        </m.div>
-                                    )
-                            )}
-                        </AnimatePresence>
-                        <button className="Previous_Btn Centered_Previous_Btn" onClick={handlePrevClick2}>
-                            <span className="material-icons Previous_Btn_Icon">west</span>
-                        </button>
-                        <button className="Next_Btn Centered_Next_Btn" onClick={handleNextClick2}>
-                            <span className="material-icons Next_Btn_Icon">east</span>
-                        </button>
-                    </div>
-
-                    <div className="Solution_Detail_Footer">
-                        <button className="ScheduleDemo_Btn" onClick={toggleFinishOrderButton}>
-                            Agendar Demonstração
-                        </button>
-                    </div>
                 </div>
             </div>
         </m.div>
