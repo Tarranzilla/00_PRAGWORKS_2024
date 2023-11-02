@@ -33,16 +33,15 @@ const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
                 const height = canvasContainer.clientHeight;
 
                 // adjust displayBuffer size to match
-                if (canvas) {
-                    if (canvas.clientWidth !== width || canvas.clientHeight !== height) {
-                        // you must pass false here or three.js sadly fights the browser
-                        renderer.setSize(width, height, false);
-                        camera.aspect = width / height;
-                        camera.updateProjectionMatrix();
-                        console.log(camera.aspect, "camera.aspect");
 
-                        // update any render target sizes here
-                    }
+                if (renderer.clientWidth !== width || renderer.clientHeight !== height) {
+                    // you must pass false here or three.js sadly fights the browser
+                    renderer.setSize(width, height, false);
+                    camera.aspect = width / height;
+                    camera.updateProjectionMatrix();
+                    console.log(camera.aspect, "camera.aspect");
+
+                    // update any render target sizes here
                 }
             }
             canvasContainer!.appendChild(renderer.domElement);
