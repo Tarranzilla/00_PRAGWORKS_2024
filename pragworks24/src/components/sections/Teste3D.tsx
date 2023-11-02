@@ -20,7 +20,7 @@ const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
         if (canvasContainer) {
             const canvasContainer = document.getElementById("teste3dteste");
             const canvas = document.getElementById("Test3DCanvas");
-            const aspectRatio = canvasContainer.clientWidth / canvasContainer.clientHeight;
+            const aspectRatio = canvasContainer!.clientWidth / canvasContainer!.clientHeight;
             const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(50, aspectRatio, 1, 1000);
@@ -39,12 +39,14 @@ const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
                         renderer.setSize(width, height, false);
                         camera.aspect = width / height;
                         camera.updateProjectionMatrix();
+                        console.log(camera.aspect, "camera.aspect");
 
                         // update any render target sizes here
                     }
                 }
             }
-            canvasContainer.appendChild(renderer.domElement);
+            canvasContainer!.appendChild(renderer.domElement);
+            window.addEventListener("resize", resizeCanvasToDisplaySize);
 
             const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
             ambientLight.castShadow = true;
