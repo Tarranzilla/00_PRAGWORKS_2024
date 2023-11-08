@@ -25,26 +25,26 @@ export default interface ProductType {
     relatedSectors: {
         title: string;
         description: string;
-        icon: React.JSX.Element;
+        icon: String;
     }[];
     useCases: {
         title: string;
         description: string;
-        icon: React.JSX.Element;
+        icon: String;
     }[];
     capacities: {
         title: string;
         description: string;
-        icon: React.JSX.Element;
+        icon: String;
     }[];
     specifications: {
         title: string;
         description: string;
-        icon: React.JSX.Element;
+        icon: String;
     }[];
     interactions: {
         title: string;
-        icon: React.JSX.Element;
+        icon: String;
     }[];
     roboTags: string[];
 }

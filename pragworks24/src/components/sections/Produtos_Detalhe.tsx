@@ -11,6 +11,9 @@ import { addToCart, toggleProductDetails, toggleCart, toggleSolutionDetails, set
 // Product Type Import
 import ProductType from "../../types/00_Produto";
 
+// Custom Icons Imports
+import Icon_HR_All from "../icons/hr/Icon_HR_All";
+
 const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     const dispatch = useDispatch();
 
@@ -64,11 +67,11 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     };
 
     const handleNextClick = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % activeProduct.imgSrc.length);
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % activeProduct.detail_Images.length);
     };
 
     const handlePrevClick = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + activeProduct.imgSrc.length) % activeProduct.imgSrc.length);
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + activeProduct.detail_Images.length) % activeProduct.detail_Images.length);
     };
 
     const handleNextClick2 = () => {
@@ -94,123 +97,95 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                     <div className="Product_Detail_Text_Wrapper">
                         <div className="Product_Detail_Text_Item">
                             <div className="Product_Detail_Text_Item_Header">
-                                <h3 className="Product_Detail_Title">{activeProduct.prename}</h3>
-                                <h1 className="Product_Detail_Title">{activeProduct.name}</h1>
+                                <h3 className="Product_Detail_Subtitle">{activeProduct.prename}</h3>
+                                <h1 className="Product_Card_Detail_Title">{activeProduct.name}</h1>
                             </div>
                             <div className="Product_Detail_Text_Item_Content">
-                                <p className="Product_Detail_Text_Content">{activeProduct.type}</p>
+                                <p className="Product_Detail_Type">{activeProduct.type}</p>
                             </div>
                         </div>
 
                         {/* Descrição do Produto */}
                         <div className="Product_Detail_Text_Item">
-                            <div className="Product_Detail_Text_Item_Header">
-                                <h3 className="Product_Detail_Text_Item_Header_Title">Descrição</h3>
-                            </div>
                             <div className="Product_Detail_Text_Item_Content">
                                 <p className="Product_Detail_Text_Content">
-                                    <strong>{activeProduct.description}</strong>
+                                    <strong>{activeProduct.textIntro}</strong>
                                 </p>
                                 <div className="Product_Detail_FullDescription">
-                                    {activeProduct.fullDescription.map((paragraph) => {
+                                    {activeProduct.textDetail.map((paragraph) => {
                                         return <p className="Product_Detail_Text_Content">{paragraph}</p>;
                                     })}
                                 </div>
                             </div>
                         </div>
 
-                        {/* Componentes */}
-                        <div className="Product_Detail_Text_Item">
-                            <div className="Product_Detail_Text_Item_Header">
-                                <h3 className="Product_Detail_Text_Item_Header_Title">Componentes</h3>
-                            </div>
-                            <div className="Product_Detail_Component_Container">
-                                {activeProduct.components.map((component) => {
-                                    return (
-                                        <div className="Product_Detail_Component">
-                                            <span className="material-icons Component_Icon">check</span>
-                                            <p className="Component_Name">{component.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        {/* Soluções Relacionadas */}
-                        <div className="Product_Detail_Text_Item">
-                            <div className="Product_Detail_Text_Item_Header">
-                                <h3 className="Product_Detail_Text_Item_Header_Title">Soluções</h3>
-                            </div>
-                            <div className="Product_Detail_Solution_Container">
-                                {activeProduct.solutions.map((solution) => {
-                                    return (
-                                        <div
-                                            className="Product_Detail_Solution hoverable"
-                                            onClick={() => {
-                                                openDetailsButton(solution.id);
-                                            }}
-                                        >
-                                            <img src={solution.imgSrc} className="Product_Detail_Solution_Img"></img>
-                                            <p className="Product_Detail_Solution_Name">{solution.name}</p>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-
-                        {/* Coordenadas */}
-                        <div className="Product_Detail_Text_Item">
-                            <div className="Product_Detail_Text_Item_Header">
-                                <h3 className="Product_Detail_Text_Item_Header_Title">Coordenadas de Origem</h3>
-                            </div>
-                            <div className="Product_Detail_Text_Item_Content">
-                                <p className="Product_Detail_Text_Content">{activeProduct.productOriginCoordinates}</p>
-                            </div>
-                        </div>
-
-                        {/* Origem das Peças */}
-                        <div className="Product_Detail_Text_Item">
-                            <div className="Product_Detail_Text_Item_Header">
-                                <h3 className="Product_Detail_Text_Item_Header_Title">Origem das Peças</h3>
-                            </div>
-                            <div className="Product_Detail_Text_Item_Content">
-                                <p className="Product_Detail_Text_Content">{activeProduct.productOrigin}</p>
-                            </div>
-                        </div>
-
-                        {/* Produtor do Robô */}
-                        <div className="Product_Detail_Text_Item">
-                            <div className="Product_Detail_Text_Item_Header">
-                                <h3 className="Product_Detail_Text_Item_Header_Title">Produtor do Robô</h3>
-                            </div>
-                            <div className="Product_Detail_Text_Item_Content">
-                                <p className="Product_Detail_Text_Content">{activeProduct.producerName}</p>
-                            </div>
-                        </div>
-
-                        {/* Footer */}
-                        <div className="Product_Detail_Footer">
-                            <button
-                                className="AddToCart_Btn hoverable"
-                                onClick={() => {
-                                    addToCartButton(activeProduct.id, 1);
-                                    if (!cartIsOpen) dispatch(toggleCart());
-                                }}
-                            >
-                                <div className="AddToCartLeft">
-                                    À partir de<h3 className="Card_Product_Price">R$ {activeProduct.buyPrice},00</h3>
+                        {activeProduct.relatedSectors.length > 0 && <h2 className="Product_Information_Title">Indicado para os Setores</h2>}
+                        {activeProduct.relatedSectors.map((sector, index) => {
+                            return (
+                                <div className="Produto_Container_Text_RelatedSectors" key={"related_sector_" + index}>
+                                    <div className="Produto_Container_Text_Header">
+                                        <Icon_HR_All iconName={sector.icon} />
+                                        <h2 className="Produto_Container_Titulo">{sector.title}</h2>
+                                    </div>
+                                    <p className="Produto_Information_Description">{sector.description}</p>
                                 </div>
-                                <div className="AddToCartRight">Solicitar uma Cotação {itemTotalQuantity > 0 && `(${itemTotalQuantity})`}</div>
-                            </button>
-                            <button className="ScheduleDemo_Btn hoverable" onClick={toggleFinishOrderButton}>
-                                Agendar Demonstração
-                            </button>
+                            );
+                        })}
+
+                        {activeProduct.useCases.length > 0 && <h2 className="Product_Information_Title">Aplicações</h2>}
+                        {activeProduct.useCases.map((useCase, index) => {
+                            return (
+                                <div className="Produto_Container_Text_UseCases" key={"useCase_" + index}>
+                                    <div className="Produto_Container_Text_Header">
+                                        <Icon_HR_All iconName={useCase.icon} />
+                                        <h2 className="Produto_Container_Titulo">{useCase.title}</h2>
+                                    </div>
+                                    <p className="Produto_Information_Description">{useCase.description}</p>
+                                </div>
+                            );
+                        })}
+
+                        {activeProduct.capacities.length > 0 && <h2 className="Product_Information_Title">Capacidades</h2>}
+                        {activeProduct.capacities.map((capacity, index) => {
+                            return (
+                                <div className="Produto_Container_Text_Capacities" key={"capacities_" + index}>
+                                    <div className="Produto_Container_Text_Header">
+                                        <Icon_HR_All iconName={capacity.icon} />
+                                        <h2 className="Produto_Container_Titulo">{capacity.title}</h2>
+                                    </div>
+                                    <p className="Produto_Information_Description">{capacity.description}</p>
+                                </div>
+                            );
+                        })}
+
+                        {activeProduct.specifications.length > 0 && <h2 className="Product_Information_Title">Especificações</h2>}
+                        {activeProduct.specifications.map((specification, index) => {
+                            return (
+                                <div className="Produto_Container_Text_Specifications" key={"spec_" + index}>
+                                    <div className="Produto_Container_Text_Header">
+                                        <Icon_HR_All iconName={specification.icon} />
+                                        <h2 className="Produto_Container_Titulo">{specification.title}</h2>
+                                    </div>
+                                    <p className="Produto_Information_Description">{specification.description}</p>
+                                </div>
+                            );
+                        })}
+
+                        <div className="Produto_Detalhe_Footer">
+                            {activeProduct.interactions.map((interaction, index) => {
+                                return (
+                                    <div className="Produto_Container_Text_Interactions hoverable" key={"interaction_" + index}>
+                                        <Icon_HR_All iconName={interaction.icon} />
+                                        <h2 className="Produto_Container_Interaction_Titulo">{interaction.title}</h2>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
                 <div className="Product_Detail_Image_Container">
                     <AnimatePresence mode="wait">
-                        {activeProduct.imgSrc.map(
+                        {activeProduct.detail_Images.map(
                             (imgSrc, index) =>
                                 index === currentImageIndex && (
                                     <m.div

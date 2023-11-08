@@ -5,7 +5,7 @@ import ProductType from "../../types/00_Produto";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCart, addToCart, toggleProductDetails, setActiveProduct } from "../../context/main-context";
 
-export default function Software_Card({ product: { id, imgSrc, bgImgSrc, prename, name, type, description, price, domId } }) {
+export default function Software_Card({ product: { domId, id, prename, name, type, heroImg, backgroundImg, detail_images, textIntro } }) {
     const dispatch = useDispatch();
 
     const openDetailsButton = (id) => {
@@ -42,11 +42,11 @@ export default function Software_Card({ product: { id, imgSrc, bgImgSrc, prename
                 <h1 className="Card_Product_Name Software_Name">{name}</h1>
                 <h4 className="Card_Product_Type Sofware_Type">{type}</h4>
             </div>
-            <img className="Card_Product_Image Product_Bg_Image" src={bgImgSrc}></img>
-            <img className="Card_Product_Image Product_Main_Image" src={imgSrc[0]}></img>
+            <img className="Card_Product_Image Product_Bg_Image" src={backgroundImg}></img>
+            <img className="Card_Product_Image Product_Main_Image" src={heroImg}></img>
 
             <div className="Product_Card_Body">
-                <p className="Card_Product_Description">{description}</p>
+                <p className="Card_Product_Description">{textIntro}</p>
                 <button
                     className="Card_Product_Detail_Button hoverable"
                     onClick={() => {

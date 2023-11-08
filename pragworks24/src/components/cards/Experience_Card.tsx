@@ -5,7 +5,7 @@ import ProductType from "../../types/00_Produto";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCart, addToCart, toggleProductDetails, setActiveProduct } from "../../context/main-context";
 
-export default function Experience_Card({ product: { id, imgSrc, bgImgSrc, prename, name, type, description, price, domId } }) {
+export default function Experience_Card({ product: { domId, id, prename, name, type, heroImg, backgroundImg, detail_images, textIntro } }) {
     const dispatch = useDispatch();
 
     const openDetailsButton = (id) => {
@@ -42,11 +42,11 @@ export default function Experience_Card({ product: { id, imgSrc, bgImgSrc, prena
                 <h2 className="Card_Product_Name Experience_Name">{name}</h2>
                 <h4 className="Card_Product_Type Experience_Type">{type}</h4>
             </div>
-            <img className="Card_Product_Image Product_Bg_Image" src={bgImgSrc}></img>
-            <img className="Card_Product_Image Product_Main_Image Experience_Card_Image" src={imgSrc[0]}></img>
+            <img className="Card_Product_Image Product_Bg_Image" src={backgroundImg}></img>
+            <img className="Card_Product_Image Product_Main_Image Experience_Card_Image" src={heroImg}></img>
             <div className="Product_Description_Background"></div>
             <div className="Product_Card_Body">
-                <p className="Card_Product_Description">{description}</p>
+                <p className="Card_Product_Description">{textIntro}</p>
                 <button
                     className="Card_Product_Detail_Button hoverable"
                     onClick={() => {

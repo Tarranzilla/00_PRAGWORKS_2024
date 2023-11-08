@@ -50,11 +50,15 @@ const TodosOsProdutos: ProductType[] = [
         id: 1,
         prename: "RobiOS",
         name: "GO",
-        class: "produtos",
-        type: "robo",
-        heroImg: "./imgs/products/RobiOS_GO_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_GO_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_GO_Detail_Image_01", "./imgs/products/RobiOS_GO_Detail_Image_02"],
+        class: "robos",
+        type: "Robô Autônomo",
+        heroImg: "./imgs/products/RobiOS_GO_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_GO_Bg_Image.png/",
+        detail_Images: [
+            "./imgs/products/RobiOS_GO_Detail_Image_01.png",
+            "./imgs/products/RobiOS_GO_Detail_Image_02.png",
+            "./imgs/products/RobiOS_GO_Detail_Image_03.png",
+        ],
         object3D: "./objects3D/products/robios_go.gltf",
         textIntro: "Um robô interativo capaz de se locomover de forma autônoma e inteligente.",
         textDetail: [
@@ -79,165 +83,165 @@ const TodosOsProdutos: ProductType[] = [
                 title: "Indústria",
                 description:
                     "Robôs autônomos são usados na indústria para tarefas como automação de linhas de produção, inspeção de qualidade e transporte de materiais.",
-                icon: <Icon_Industria />,
+                icon: "industria",
             },
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Cultura",
                 description:
                     "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
-                icon: <Icon_Cultura />,
+                icon: "cultura",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
-                icon: <Icon_Atendimento />,
+                icon: "atendimento",
             },
             {
                 title: "Acompanhamento de Compras",
                 description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
-                icon: <Icon_Compras />,
+                icon: "compras",
             },
             {
                 title: "Exposição de Peças Publicitárias",
                 description: "Exibe publicidade e informações promocionais.",
-                icon: <Icon_ExpPubli />,
+                icon: "expPubli",
             },
         ],
         capacities: [
             {
                 title: "Autonomia de Navegação",
                 description: "O robô pode se movimentar de forma independente e tomar decisões de navegação.",
-                icon: <Icon_Navegação />,
+                icon: "navegacao",
             },
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Rotas Programáveis",
                 description: "O robô pode se movimentar de forma independente e tomar decisões de navegação.",
-                icon: <Icon_Rotas />,
+                icon: "rotas",
             },
             {
                 title: "Auto-Recarregável",
                 description: "O robô pode retornar automaticamente à estação de recarga quando a bateria está fraca.",
-                icon: <Icon_Recarrega />,
+                icon: "recarrega",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Micro Computador Intel NUC",
                 description: "Equipado com microcomputador Intel para processamento eficiente.",
-                icon: <Icon_IntelNUC />,
+                icon: "intelNUC",
             },
             {
                 title: "Sensores de Navegação LIDAR",
                 description: "Utiliza sensores LIDAR para mapeamento e navegação precisa.",
-                icon: <Icon_LIDAR />,
+                icon: "lidar",
             },
             {
                 title: "Sensores de Navegação Ultrassom",
                 description: "Conta com sensores de ultrassom adicionais para evitar obstáculos.",
-                icon: <Icon_Ultrasom />,
+                icon: "ultrasom",
             },
             {
                 title: "Câmeras 4k e 1080p",
                 description: "Possui câmeras de alta resolução para captura de imagens e vídeos.",
-                icon: <Icon_Camera />,
+                icon: "camera",
             },
             {
                 title: "Tela de 11 Polegadas 1080p",
                 description: "Possui uma tela de 11 polegadas para exibição de informações.",
-                icon: <Icon_Tela />,
+                icon: "tela",
             },
             {
                 title: "Auto Falantes Hi-Fi",
                 description: "Possui 2 auto falantes de alta potência que oferecem qualidade de áudio superior.",
-                icon: <Icon_Som />,
+                icon: "som",
             },
             {
                 title: "2 Baterias Recarregáveis",
                 description: "Permitem operação contínua por até 6 horas.",
-                icon: <Icon_Bateria />,
+                icon: "bateria",
             },
             {
                 title: "Conectividade 4G, Wi-Fi e Bluetooth",
                 description: "Conectividade versátil para comunicação e atualizações.",
-                icon: <Icon_Wifi4gBlue />,
+                icon: "wifi4gBlue",
             },
             {
                 title: "Hardware e Estrutura Modulares",
                 description: "Componentes intercambiáveis para fácil manutenção, atualização e customização.",
-                icon: <Icon_Modularidade />,
+                icon: "modularidade",
             },
             {
                 title: "Aparência Virtual e Física Personalizável",
                 description: "Design personalizável para atender às necessidades específicas do cliente.",
-                icon: <Icon_Customizacao />,
+                icon: "customizacao",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -256,11 +260,15 @@ const TodosOsProdutos: ProductType[] = [
         id: 2,
         prename: "RobiOS",
         name: "INSPECTOR",
-        class: "produtos",
-        type: "robo",
-        heroImg: "./imgs/products/RobiOS_Inspector_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Inspector_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Inspector_Detail_Image_01", "./imgs/products/RobiOS_Inspector_Detail_Image_02"],
+        class: "robos",
+        type: "Robô Autônomo",
+        heroImg: "./imgs/products/RobiOS_Inspector_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Inspector_Bg_Image.png",
+        detail_Images: [
+            "./imgs/products/RobiOS_Inspector_Detail_Image_01.png",
+            "./imgs/products/RobiOS_Inspector_Detail_Image_02.png",
+            "./imgs/products/RobiOS_Inspector_Detail_Image_03.png",
+        ],
         object3D: "./objects3D/products/robios_Inspector.gltf",
         textIntro: "Um robô interativo para a inspeção de ambientes, produtos e equipamentos.",
         textDetail: [
@@ -285,165 +293,165 @@ const TodosOsProdutos: ProductType[] = [
                 title: "Indústria",
                 description:
                     "Robôs autônomos são usados na indústria para tarefas como automação de linhas de produção, inspeção de qualidade e transporte de materiais.",
-                icon: <Icon_Industria />,
+                icon: "industria",
             },
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Cultura",
                 description:
                     "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
-                icon: <Icon_Cultura />,
+                icon: "cultura",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
-                icon: <Icon_Atendimento />,
+                icon: "atendimento",
             },
             {
                 title: "Inspeção de Ambientes, Produtos e Maquinário",
                 description: "Realiza inspeções detalhadas para garantir qualidade e segurança.",
-                icon: <Icon_Inspecao />,
+                icon: "inspecao",
             },
         ],
         capacities: [
             {
                 title: "Autonomia de Navegação",
                 description: "O robô pode se movimentar de forma independente e tomar decisões de navegação.",
-                icon: <Icon_Navegação />,
+                icon: "navegacao",
             },
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Rotas Programáveis",
                 description: "O robô pode se movimentar de forma independente e tomar decisões de navegação.",
-                icon: <Icon_Rotas />,
+                icon: "rotas",
             },
             {
                 title: "Auto-Recarregável",
                 description: "O robô pode retornar automaticamente à estação de recarga quando a bateria está fraca.",
-                icon: <Icon_Recarrega />,
+                icon: "recarrega",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Sensor Ultrasônico Especial RobiOS",
                 description: "Equipado com um sensor especialmente desenvolvido pela Human Robotics para inspeção.",
-                icon: <Icon_HarwareEspecial />,
+                icon: "hardwareEspecial",
             },
             {
                 title: "Micro Computador Intel NUC",
                 description: "Equipado com microcomputador Intel para processamento eficiente.",
-                icon: <Icon_IntelNUC />,
+                icon: "intelNUC",
             },
             {
                 title: "Sensores de Navegação LIDAR",
                 description: "Utiliza sensores LIDAR para mapeamento e navegação precisa.",
-                icon: <Icon_LIDAR />,
+                icon: "lidar",
             },
             {
                 title: "Sensores de Navegação Ultrassom",
                 description: "Conta com sensores de ultrassom adicionais para evitar obstáculos.",
-                icon: <Icon_Ultrasom />,
+                icon: "ultrasom",
             },
             {
                 title: "Câmeras 4k e 1080p",
                 description: "Possui câmeras de alta resolução para captura de imagens e vídeos.",
-                icon: <Icon_Camera />,
+                icon: "camera",
             },
             {
                 title: "Tela de 11 Polegadas 1080p",
                 description: "Possui uma tela de 11 polegadas para exibição de informações.",
-                icon: <Icon_Tela />,
+                icon: "tela",
             },
             {
                 title: "Auto Falantes Hi-Fi",
                 description: "Possui 2 auto falantes de alta potência que oferecem qualidade de áudio superior.",
-                icon: <Icon_Som />,
+                icon: "som",
             },
             {
                 title: "2 Baterias Recarregáveis",
                 description: "Permitem operação contínua por até 6 horas.",
-                icon: <Icon_Bateria />,
+                icon: "bateria",
             },
             {
                 title: "Conectividade 4G, Wi-Fi e Bluetooth",
                 description: "Conectividade versátil para comunicação e atualizações.",
-                icon: <Icon_Wifi4gBlue />,
+                icon: "wifi4gBlue",
             },
             {
                 title: "Hardware e Estrutura Modulares",
                 description: "Componentes intercambiáveis para fácil manutenção, atualização e customização.",
-                icon: <Icon_Modularidade />,
+                icon: "modularidade",
             },
             {
                 title: "Aparência Virtual e Física Personalizável",
                 description: "Design personalizável para atender às necessidades específicas do cliente.",
-                icon: <Icon_Customizacao />,
+                icon: "customizacao",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -462,11 +470,11 @@ const TodosOsProdutos: ProductType[] = [
         id: 3,
         prename: "RobiOS",
         name: "CARGO",
-        class: "produtos",
-        type: "robo",
-        heroImg: "./imgs/products/RobiOS_Cargo_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Cargo_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Cargo_Detail_Image_01", "./imgs/products/RobiOS_Cargo_Detail_Image_02"],
+        class: "robos",
+        type: "Robô Autônomo",
+        heroImg: "./imgs/products/RobiOS_Cargo_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Cargo_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Cargo_Detail_Image_01.png", "./imgs/products/RobiOS_Cargo_Detail_Image_02.png"],
         object3D: "./objects3D/products/robios_Cargo.gltf",
         textIntro: "Um robô interativo que lhe permite armazenar e transportar objetos e ferramentas.",
         textDetail: [
@@ -490,159 +498,159 @@ const TodosOsProdutos: ProductType[] = [
                 title: "Indústria",
                 description:
                     "Robôs autônomos são usados na indústria para tarefas como automação de linhas de produção, inspeção de qualidade e transporte de materiais.",
-                icon: <Icon_Industria />,
+                icon: "industria",
             },
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Inspeção de Ambientes, Produtos e Maquinário",
                 description: "Realiza inspeções detalhadas para garantir qualidade e segurança.",
-                icon: <Icon_Inspecao />,
+                icon: "inspecao",
             },
             {
                 title: "Transporte de Objetos",
                 description: "Movimenta objetos de um local para outro de forma autônoma.",
-                icon: <Icon_Transporte />,
+                icon: "transporte",
             },
         ],
         capacities: [
             {
                 title: "Autonomia de Navegação",
                 description: "O robô pode se movimentar de forma independente e tomar decisões de navegação.",
-                icon: <Icon_Navegação />,
+                icon: "navegacao",
             },
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Rotas Programáveis",
                 description: "O robô pode se movimentar de forma independente e tomar decisões de navegação.",
-                icon: <Icon_Rotas />,
+                icon: "rotas",
             },
             {
                 title: "Auto-Recarregável",
                 description: "O robô pode retornar automaticamente à estação de recarga quando a bateria está fraca.",
-                icon: <Icon_Recarrega />,
+                icon: "recarrega",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Compartimento de Carga",
                 description: "Equipado com um compartimento de carga modular e capaz de suportar até 30kg.",
-                icon: <Icon_Carga />,
+                icon: "carga",
             },
             {
                 title: "Micro Computador Intel NUC",
                 description: "Equipado com microcomputador Intel para processamento eficiente.",
-                icon: <Icon_IntelNUC />,
+                icon: "intelNUC",
             },
             {
                 title: "Sensores de Navegação LIDAR",
                 description: "Utiliza sensores LIDAR para mapeamento e navegação precisa.",
-                icon: <Icon_LIDAR />,
+                icon: "lidar",
             },
             {
                 title: "Sensores de Navegação Ultrassom",
                 description: "Conta com sensores de ultrassom adicionais para evitar obstáculos.",
-                icon: <Icon_Ultrasom />,
+                icon: "ultrasom",
             },
             {
                 title: "Câmeras 4k e 1080p",
                 description: "Possui câmeras de alta resolução para captura de imagens e vídeos.",
-                icon: <Icon_Camera />,
+                icon: "camera",
             },
             {
                 title: "Tela de 11 Polegadas 1080p",
                 description: "Possui uma tela de 11 polegadas para exibição de informações.",
-                icon: <Icon_Tela />,
+                icon: "tela",
             },
             {
                 title: "Auto Falantes Hi-Fi",
                 description: "Possui 2 auto falantes de alta potência que oferecem qualidade de áudio superior.",
-                icon: <Icon_Som />,
+                icon: "som",
             },
             {
                 title: "2 Baterias Recarregáveis",
                 description: "Permitem operação contínua por até 6 horas.",
-                icon: <Icon_Bateria />,
+                icon: "bateria",
             },
             {
                 title: "Conectividade 4G, Wi-Fi e Bluetooth",
                 description: "Conectividade versátil para comunicação e atualizações.",
-                icon: <Icon_Wifi4gBlue />,
+                icon: "wifi4gBlue",
             },
             {
                 title: "Hardware e Estrutura Modulares",
                 description: "Componentes intercambiáveis para fácil manutenção, atualização e customização.",
-                icon: <Icon_Modularidade />,
+                icon: "modularidade",
             },
             {
                 title: "Aparência Virtual e Física Personalizável",
                 description: "Design personalizável para atender às necessidades específicas do cliente.",
-                icon: <Icon_Customizacao />,
+                icon: "customizacao",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -663,9 +671,9 @@ const TodosOsProdutos: ProductType[] = [
         name: "RobiOS",
         class: "softwares",
         type: "essential",
-        heroImg: "./imgs/products/RobiOS_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Detail_Image_01", "./imgs/products/RobiOS_Detail_Image_02"],
+        heroImg: "./imgs/products/RobiOS_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Detail_Image_01.png", "./imgs/products/RobiOS_Detail_Image_02.png"],
         object3D: "./objects3D/products/robios.gltf",
         textIntro:
             "Um sistema operacional robótico capaz de gerenciar e controlar robôs autônomos móveis, com uma interface gráfica intuitiva e de fácil utilização.",
@@ -693,27 +701,27 @@ const TodosOsProdutos: ProductType[] = [
             {
                 title: "Disponível para Download",
                 description: "Aplicação disponível para download em Google PlayStore.",
-                icon: <Icon_Download />,
+                icon: "download",
             },
             {
                 title: "Disponível como Serviço Web",
                 description: "Aplicação disponível também em formato web em nosso site.",
-                icon: <Icon_OpenWebLink />,
+                icon: "openWebLink",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -734,9 +742,9 @@ const TodosOsProdutos: ProductType[] = [
         name: "Studio",
         class: "softwares",
         type: "essential",
-        heroImg: "./imgs/products/RobiOS_Studio_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Studio_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Studio_Detail_Image_01", "./imgs/products/RobiOS_Studio_Detail_Image_02"],
+        heroImg: "./imgs/products/RobiOS_Studio_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Studio_Detail_Image_01.png", "./imgs/products/RobiOS_Studio_Detail_Image_02.png"],
         object3D: "./objects3D/products/robios_studio.gltf",
         textIntro: "Plataforma para a personalização das ações dos robôs e assistentes, com uma interface gráfica intuitiva e fácil de usar.",
         textDetail: [
@@ -763,27 +771,27 @@ const TodosOsProdutos: ProductType[] = [
             {
                 title: "Disponível para Download",
                 description: "Aplicação disponível para download em Google PlayStore.",
-                icon: <Icon_Download />,
+                icon: "download",
             },
             {
                 title: "Disponível como Serviço Web",
                 description: "Aplicação disponível também em formato web em nosso site.",
-                icon: <Icon_OpenWebLink />,
+                icon: "openWebLink",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -804,9 +812,9 @@ const TodosOsProdutos: ProductType[] = [
         name: "AVATAR",
         class: "softwares",
         type: "Serviço Adicional",
-        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01", "./imgs/products/RobiOS_Avatar_Detail_Image_02"],
+        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/products/robios_avatar.gltf",
         textIntro: "Software capaz de emular Avatares - assistentes virtuais que podem ser acessados em qualquer dispositivo móvel ou inteligente.",
         textDetail: [
@@ -830,105 +838,105 @@ const TodosOsProdutos: ProductType[] = [
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Cultura",
                 description:
                     "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
-                icon: <Icon_Cultura />,
+                icon: "cultura",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
-                icon: <Icon_Atendimento />,
+                icon: "atendimento",
             },
             {
                 title: "Acompanhamento de Compras",
                 description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
-                icon: <Icon_Compras />,
+                icon: "compras",
             },
             {
                 title: "Exposição de Peças Publicitárias",
                 description: "Exibe publicidade e informações promocionais.",
-                icon: <Icon_ExpPubli />,
+                icon: "expPubli",
             },
         ],
         capacities: [
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Disponível para Download",
                 description: "Aplicação disponível para download em Google PlayStore.",
-                icon: <Icon_Download />,
+                icon: "download",
             },
             {
                 title: "Disponível como Serviço Web",
                 description: "Aplicação disponível também em formato web em nosso site.",
-                icon: <Icon_OpenWebLink />,
+                icon: "openWebLink",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -950,11 +958,12 @@ const TodosOsProdutos: ProductType[] = [
         name: "Customização",
         type: "Serviço Adicional",
         class: "servicos",
-        heroImg: "./imgs/products/Customizacao_Hero_Image",
-        backgroundImg: "/robots_backgrounds/fundo_go.png",
+        heroImg: "./imgs/products/Customizacao_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["/robots_images/new8/07_Customizacao.png", "/robots_images/new8/07_Customizacao.png"],
         object3D: "./objects3D/products/customizacao.gltf",
-        textIntro: "Customize seu robô visualmente aplicando a sua marca e identidade visual, estuturalmente com módulos e comportamentalmente com uma personalidade única.",
+        textIntro:
+            "Customize seu robô visualmente aplicando a sua marca e identidade visual, estuturalmente com módulos e comportamentalmente com uma personalidade única.",
         textDetail: [
             "O RobiOS AVATAR é um software inovador que permite emular Avatares - assistentes virtuais acessíveis em dispositivos móveis ou inteligentes.",
             "O RobiOS AVATAR é uma solução que transcende os robôs físicos. Ele oferece assistentes virtuais que podem ser acessados em dispositivos móveis e inteligentes, tornando a interação com os serviços da Human Robotics mais conveniente do que nunca.",
@@ -977,105 +986,105 @@ const TodosOsProdutos: ProductType[] = [
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Cultura",
                 description:
                     "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
-                icon: <Icon_Cultura />,
+                icon: "cultura",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
-                icon: <Icon_Atendimento />,
+                icon: "atendimento",
             },
             {
                 title: "Acompanhamento de Compras",
                 description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
-                icon: <Icon_Compras />,
+                icon: "compras",
             },
             {
                 title: "Exposição de Peças Publicitárias",
                 description: "Exibe publicidade e informações promocionais.",
-                icon: <Icon_ExpPubli />,
+                icon: "expPubli",
             },
         ],
         capacities: [
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Disponível para Download",
                 description: "Aplicação disponível para download em Google PlayStore.",
-                icon: <Icon_Download />,
+                icon: "download",
             },
             {
                 title: "Disponível como Serviço Web",
                 description: "Aplicação disponível também em formato web em nosso site.",
-                icon: <Icon_OpenWebLink />,
+                icon: "openWebLink",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -1088,7 +1097,6 @@ const TodosOsProdutos: ProductType[] = [
             "Reconhecimento de Objetos",
             "Reconhecimento de Voz",
         ],
-
     },
 
     {
@@ -1100,14 +1108,12 @@ const TodosOsProdutos: ProductType[] = [
         type: "Serviço Adicional",
         class: "servicos",
 
-        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01", "./imgs/products/RobiOS_Avatar_Detail_Image_02"],
+        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/products/robios_avatar.gltf",
         textIntro: "Mapeie ambientes internos e externos com LIDAR e os compile um arquivo digital em conjunto com percursos personalizados.",
-        textDetail: [
-            " ",
-        ],
+        textDetail: [" "],
 
         buyPrice: 30000,
         rentPrice: 10000,
@@ -1124,105 +1130,105 @@ const TodosOsProdutos: ProductType[] = [
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Cultura",
                 description:
                     "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
-                icon: <Icon_Cultura />,
+                icon: "cultura",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
-                icon: <Icon_Atendimento />,
+                icon: "atendimento",
             },
             {
                 title: "Acompanhamento de Compras",
                 description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
-                icon: <Icon_Compras />,
+                icon: "compras",
             },
             {
                 title: "Exposição de Peças Publicitárias",
                 description: "Exibe publicidade e informações promocionais.",
-                icon: <Icon_ExpPubli />,
+                icon: "expPubli",
             },
         ],
         capacities: [
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Disponível para Download",
                 description: "Aplicação disponível para download em Google PlayStore.",
-                icon: <Icon_Download />,
+                icon: "download",
             },
             {
                 title: "Disponível como Serviço Web",
                 description: "Aplicação disponível também em formato web em nosso site.",
-                icon: <Icon_OpenWebLink />,
+                icon: "openWebLink",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -1246,14 +1252,12 @@ const TodosOsProdutos: ProductType[] = [
         type: "Experiência",
         class: "experiencias",
 
-        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01", "./imgs/products/RobiOS_Avatar_Detail_Image_02"],
+        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/products/robios_avatar.gltf",
         textIntro: "Proporcione experiências capazes de engajar o público, ativar produtos e aprimorar seu fluxo de distribuição.",
-        textDetail: [
-            " ",
-        ],
+        textDetail: [" "],
 
         buyPrice: 30000,
         rentPrice: 10000,
@@ -1270,105 +1274,105 @@ const TodosOsProdutos: ProductType[] = [
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Cultura",
                 description:
                     "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
-                icon: <Icon_Cultura />,
+                icon: "cultura",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
-                icon: <Icon_Atendimento />,
+                icon: "atendimento",
             },
             {
                 title: "Acompanhamento de Compras",
                 description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
-                icon: <Icon_Compras />,
+                icon: "compras",
             },
             {
                 title: "Exposição de Peças Publicitárias",
                 description: "Exibe publicidade e informações promocionais.",
-                icon: <Icon_ExpPubli />,
+                icon: "expPubli",
             },
         ],
         capacities: [
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Disponível para Download",
                 description: "Aplicação disponível para download em Google PlayStore.",
-                icon: <Icon_Download />,
+                icon: "download",
             },
             {
                 title: "Disponível como Serviço Web",
                 description: "Aplicação disponível também em formato web em nosso site.",
-                icon: <Icon_OpenWebLink />,
+                icon: "openWebLink",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -1392,14 +1396,12 @@ const TodosOsProdutos: ProductType[] = [
         type: "Experiência",
         class: "experiencias",
 
-        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01", "./imgs/products/RobiOS_Avatar_Detail_Image_02"],
+        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/products/robios_avatar.gltf",
         textIntro: "Proporcione experiências capazes de facilitar o atendimento de clientes, a inspeção de recursos e transporte de equipamento.",
-        textDetail: [
-            " ",
-        ],
+        textDetail: [" "],
 
         buyPrice: 30000,
         rentPrice: 10000,
@@ -1416,105 +1418,105 @@ const TodosOsProdutos: ProductType[] = [
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Cultura",
                 description:
                     "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
-                icon: <Icon_Cultura />,
+                icon: "cultura",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
-                icon: <Icon_Atendimento />,
+                icon: "atendimento",
             },
             {
                 title: "Acompanhamento de Compras",
                 description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
-                icon: <Icon_Compras />,
+                icon: "compras",
             },
             {
                 title: "Exposição de Peças Publicitárias",
                 description: "Exibe publicidade e informações promocionais.",
-                icon: <Icon_ExpPubli />,
+                icon: "expPubli",
             },
         ],
         capacities: [
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Disponível para Download",
                 description: "Aplicação disponível para download em Google PlayStore.",
-                icon: <Icon_Download />,
+                icon: "download",
             },
             {
                 title: "Disponível como Serviço Web",
                 description: "Aplicação disponível também em formato web em nosso site.",
-                icon: <Icon_OpenWebLink />,
+                icon: "openWebLink",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
@@ -1538,14 +1540,12 @@ const TodosOsProdutos: ProductType[] = [
         type: "Experiência",
         class: "experiencias",
 
-        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image/",
-        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01", "./imgs/products/RobiOS_Avatar_Detail_Image_02"],
+        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/products/robios_avatar.gltf",
         textIntro: "Proporcione experiências que estimulam aprendizados mais humanizados, criativos e informatizados.",
-        textDetail: [
-            " ",
-        ],
+        textDetail: [" "],
 
         buyPrice: 30000,
         rentPrice: 10000,
@@ -1562,105 +1562,105 @@ const TodosOsProdutos: ProductType[] = [
             {
                 title: "Varejo",
                 description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
-                icon: <Icon_Varejo />,
+                icon: "varejo",
             },
             {
                 title: "Saúde e Cuidado",
                 description:
                     "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
-                icon: <Icon_SaudeCuidado />,
+                icon: "saudeCuidado",
             },
             {
                 title: "Cultura",
                 description:
                     "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
-                icon: <Icon_Cultura />,
+                icon: "cultura",
             },
             {
                 title: "Hospitalidade",
                 description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
-                icon: <Icon_Hospitalidade />,
+                icon: "hospitalidade",
             },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
-                icon: <Icon_Atendimento />,
+                icon: "atendimento",
             },
             {
                 title: "Acompanhamento de Compras",
                 description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
-                icon: <Icon_Compras />,
+                icon: "compras",
             },
             {
                 title: "Exposição de Peças Publicitárias",
                 description: "Exibe publicidade e informações promocionais.",
-                icon: <Icon_ExpPubli />,
+                icon: "expPubli",
             },
         ],
         capacities: [
             {
                 title: "Interações Personalizáveis",
                 description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
-                icon: <Icon_Interacoes />,
+                icon: "interacoes",
             },
             {
                 title: "Reconhecimento Facial e de Objetos",
                 description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
-                icon: <Icon_ReconhecimentoVisao />,
+                icon: "reconhecimentoVisao",
             },
             {
                 title: "Reconhecimento de Fala",
                 description: "Compreensão de comandos de voz para interações mais naturais.",
-                icon: <Icon_ReconhecimentoFala />,
+                icon: "reconhecimentoFala",
             },
             {
                 title: "Disponível em 3 Idiomas",
                 description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
-                icon: <Icon_Idioma />,
+                icon: "idioma",
             },
             {
                 title: "Coleta de Dados, Pesquisa, CRM",
                 description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
-                icon: <Icon_ColetaDados />,
+                icon: "coletaDados",
             },
             {
                 title: "Reprodução de Mídia, Fotos e Vídeos",
                 description: "Reproduz conteúdo multimídia para entretenimento e informação.",
-                icon: <Icon_Midia />,
+                icon: "midia",
             },
             {
                 title: "Acesso Remoto e Chamadas por Vídeo",
                 description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
-                icon: <Icon_VideoChamada />,
+                icon: "videoChamada",
             },
         ],
         specifications: [
             {
                 title: "Disponível para Download",
                 description: "Aplicação disponível para download em Google PlayStore.",
-                icon: <Icon_Download />,
+                icon: "download",
             },
             {
                 title: "Disponível como Serviço Web",
                 description: "Aplicação disponível também em formato web em nosso site.",
-                icon: <Icon_OpenWebLink />,
+                icon: "openWebLink",
             },
             {
                 title: "Desenvolvido no Brasil",
                 description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
-                icon: <Icon_Brasil />,
+                icon: "brasil",
             },
         ],
         interactions: [
             {
                 title: "Solicite uma Cotação",
-                icon: <Icon_QuotePrice />,
+                icon: "quotePrice",
             },
             {
                 title: "Agende uma Demonstração",
-                icon: <Icon_Demo />,
+                icon: "demo",
             },
         ],
         roboTags: [
