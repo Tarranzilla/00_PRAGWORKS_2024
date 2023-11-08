@@ -1,3 +1,12 @@
 export default function Icon_Navegação() {
-    return <div className="Icon_Container"></div>;
+    return (
+        <div className="Icon_Container">
+            <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M75.5 71.49C73.0295 71.49 71.045 73.499 71.045 76C71.045 78.501 73.0295 80.51 75.5 80.51C77.9705 80.51 79.955 78.501 79.955 76C79.955 73.499 77.9705 71.49 75.5 71.49ZM75.5 35C53.144 35 35 53.368 35 76C35 98.632 53.144 117 75.5 117C97.856 117 116 98.632 116 76C116 53.368 97.856 35 75.5 35ZM84.3695 84.979L51.2 100.6L66.6305 67.021L99.8 51.4L84.3695 84.979Z"
+                    fill="white"
+                />
+            </svg>
+        </div>
+    );
 }

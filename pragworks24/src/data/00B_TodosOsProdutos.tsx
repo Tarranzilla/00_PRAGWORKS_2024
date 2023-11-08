@@ -1,9 +1,38 @@
 import React from "react";
 
-import Icon_Atendimento from "../components/icons/hr/Icon_Industria";
 import Icon_Industria from "../components/icons/hr/Icon_Industria";
+import Icon_Varejo from "../components/icons/hr/Icon_Varejo";
+import Icon_SaudeCuidado from "../components/icons/hr/Icon_SaudeCuidado";
+import Icon_Cultura from "../components/icons/hr/Icon_Cultura";
+import Icon_Hospitalidade from "../components/icons/hr/Icon_Hospitalidade";
+
+import Icon_Atendimento from "../components/icons/hr/Icon_Atendimento";
+import Icon_Compras from "../components/icons/hr/Icon_Compras";
+import Icon_ExpPubli from "../components/icons/hr/Icon_ExpPubli";
+
 import Icon_Navegação from "../components/icons/hr/Icon_Navegação";
+import Icon_Interacoes from "../components/icons/hr/Icon_Interacoes";
+import Icon_Rotas from "../components/icons/hr/Icon_Rotas";
+import Icon_Recarrega from "../components/icons/hr/Icon_Recarrega";
+import Icon_ReconhecimentoVisao from "../components/icons/hr/Icon_ReconhecimentoVisao";
+import Icon_ReconhecimentoFala from "../components/icons/hr/Icon_ReconhecimentoFala";
+import Icon_Idioma from "../components/icons/hr/Icon_Idioma";
+import Icon_ColetaDados from "../components/icons/hr/Icon_ColetaDados";
+import Icon_Midia from "../components/icons/hr/Icon_Midia";
+import Icon_VideoChamada from "../components/icons/hr/Icon_VideoChamada";
+
 import Icon_IntelNUC from "../components/icons/hr/Icon_IntelNUC";
+import Icon_LIDAR from "../components/icons/hr/Icon_LIDAR";
+import Icon_Ultrasom from "../components/icons/hr/Icon_Ultrasom";
+import Icon_Camera from "../components/icons/hr/Icon_Camera";
+import Icon_Tela from "../components/icons/hr/Icon_Tela";
+import Icon_Som from "../components/icons/hr/Icon_Som";
+import Icon_Bateria from "../components/icons/hr/Icon_Bateria";
+import Icon_Wifi4gBlue from "../components/icons/hr/Icon_Wifi4gBlue";
+import Icon_Modularidade from "../components/icons/hr/Icon_Modularidade";
+import Icon_Customizacao from "../components/icons/hr/Icon_Customizacao";
+import Icon_Brasil from "../components/icons/hr/Icon_Brasil";
+
 import Icon_QuotePrice from "../components/icons/hr/Icon_QuotePrice";
 import Icon_Demo from "../components/icons/hr/Icon_Demo";
 
@@ -33,12 +62,44 @@ const Produtos: Product[] = [
                     "Robôs autônomos são usados na indústria para tarefas como automação de linhas de produção, inspeção de qualidade e transporte de materiais.",
                 icon: <Icon_Industria />,
             },
+            {
+                title: "Varejo",
+                description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
+                icon: <Icon_Varejo />,
+            },
+            {
+                title: "Saúde e Cuidado",
+                description:
+                    "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
+                icon: <Icon_SaudeCuidado />,
+            },
+            {
+                title: "Cultura",
+                description:
+                    "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
+                icon: <Icon_Cultura />,
+            },
+            {
+                title: "Hospitalidade",
+                description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
+                icon: <Icon_Hospitalidade />,
+            },
         ],
         useCases: [
             {
                 title: "Atendimento ao Cliente",
                 description: "Pode oferecer suporte e informações aos clientes.",
                 icon: <Icon_Atendimento />,
+            },
+            {
+                title: "Acompanhamento de Compras",
+                description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
+                icon: <Icon_Compras />,
+            },
+            {
+                title: "Exposição de Peças Publicitárias",
+                description: "Exibe publicidade e informações promocionais.",
+                icon: <Icon_ExpPubli />,
             },
         ],
         capacities: [
@@ -47,12 +108,107 @@ const Produtos: Product[] = [
                 description: "O robô pode se movimentar de forma independente e tomar decisões de navegação.",
                 icon: <Icon_Navegação />,
             },
+            {
+                title: "Interações Personalizáveis",
+                description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
+                icon: <Icon_Interacoes />,
+            },
+            {
+                title: "Rotas Programáveis",
+                description: "O robô pode se movimentar de forma independente e tomar decisões de navegação.",
+                icon: <Icon_Rotas />,
+            },
+            {
+                title: "Auto-Recarregável",
+                description: "O robô pode retornar automaticamente à estação de recarga quando a bateria está fraca.",
+                icon: <Icon_Recarrega />,
+            },
+            {
+                title: "Reconhecimento Facial e de Objetos",
+                description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
+                icon: <Icon_ReconhecimentoVisao />,
+            },
+            {
+                title: "Reconhecimento de Fala",
+                description: "Compreensão de comandos de voz para interações mais naturais.",
+                icon: <Icon_ReconhecimentoFala />,
+            },
+            {
+                title: "Disponível em 3 Idiomas",
+                description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
+                icon: <Icon_Idioma />,
+            },
+            {
+                title: "Coleta de Dados, Pesquisa, CRM",
+                description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
+                icon: <Icon_ColetaDados />,
+            },
+            {
+                title: "Reprodução de Mídia, Fotos e Vídeos",
+                description: "Reproduz conteúdo multimídia para entretenimento e informação.",
+                icon: <Icon_Midia />,
+            },
+            {
+                title: "Acesso Remoto e Chamadas por Vídeo",
+                description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
+                icon: <Icon_VideoChamada />,
+            },
         ],
         specifications: [
             {
                 title: "Micro Computador Intel NUC",
                 description: "Equipado com microcomputador Intel para processamento eficiente.",
                 icon: <Icon_IntelNUC />,
+            },
+            {
+                title: "Sensores de Navegação LIDAR",
+                description: "Utiliza sensores LIDAR para mapeamento e navegação precisa.",
+                icon: <Icon_LIDAR />,
+            },
+            {
+                title: "Sensores de Navegação Ultrassom",
+                description: "Conta com sensores de ultrassom adicionais para evitar obstáculos.",
+                icon: <Icon_Ultrasom />,
+            },
+            {
+                title: "Câmeras 4k e 1080p",
+                description: "Possui câmeras de alta resolução para captura de imagens e vídeos.",
+                icon: <Icon_Camera />,
+            },
+            {
+                title: "Tela de 11 Polegadas 1080p",
+                description: "Possui uma tela de 11 polegadas para exibição de informações.",
+                icon: <Icon_Tela />,
+            },
+            {
+                title: "Auto Falantes Hi-Fi",
+                description: "Possui 2 auto falantes de alta potência que oferecem qualidade de áudio superior.",
+                icon: <Icon_Som />,
+            },
+            {
+                title: "2 Baterias Recarregáveis",
+                description: "Permitem operação contínua por até 6 horas.",
+                icon: <Icon_Bateria />,
+            },
+            {
+                title: "Conectividade 4G, Wi-Fi e Bluetooth",
+                description: "Conectividade versátil para comunicação e atualizações.",
+                icon: <Icon_Wifi4gBlue />,
+            },
+            {
+                title: "Hardware e Estrutura Modulares",
+                description: "Componentes intercambiáveis para fácil manutenção, atualização e customização.",
+                icon: <Icon_Modularidade />,
+            },
+            {
+                title: "Aparência Virtual e Física Personalizável",
+                description: "Design personalizável para atender às necessidades específicas do cliente.",
+                icon: <Icon_Customizacao />,
+            },
+            {
+                title: "Desenvolvido no Brasil",
+                description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
+                icon: <Icon_Brasil />,
             },
         ],
         interactions: [
