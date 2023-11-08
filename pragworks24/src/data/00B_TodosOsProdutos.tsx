@@ -36,6 +36,8 @@ import Icon_Customizacao from "../components/icons/hr/Icon_Customizacao";
 import Icon_Brasil from "../components/icons/hr/Icon_Brasil";
 import Icon_HarwareEspecial from "../components/icons/hr/Icon_HardwareEspecial";
 import Icon_Carga from "../components/icons/hr/Icon_Carga";
+import Icon_Download from "../components/icons/hr/Icon_Download";
+import Icon_OpenWebLink from "../components/icons/hr/Icon_OpenWebLink";
 
 import Icon_QuotePrice from "../components/icons/hr/Icon_QuotePrice";
 import Icon_Demo from "../components/icons/hr/Icon_Demo";
@@ -44,6 +46,7 @@ import Product from "../types/00_Alt_Produto";
 
 const Produtos: Product[] = [
     {
+        domId: "produto-00",
         id: 1,
         prename: "RobiOS",
         name: "GO",
@@ -249,6 +252,7 @@ const Produtos: Product[] = [
         ],
     },
     {
+        domId: "produto-01",
         id: 2,
         prename: "RobiOS",
         name: "INSPECTOR",
@@ -454,6 +458,7 @@ const Produtos: Product[] = [
         ],
     },
     {
+        domId: "produto-02",
         id: 3,
         prename: "RobiOS",
         name: "CARGO",
@@ -623,6 +628,292 @@ const Produtos: Product[] = [
                 title: "Aparência Virtual e Física Personalizável",
                 description: "Design personalizável para atender às necessidades específicas do cliente.",
                 icon: <Icon_Customizacao />,
+            },
+            {
+                title: "Desenvolvido no Brasil",
+                description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
+                icon: <Icon_Brasil />,
+            },
+        ],
+        interactions: [
+            {
+                title: "Solicite uma Cotação",
+                icon: <Icon_QuotePrice />,
+            },
+            {
+                title: "Agende uma Demonstração",
+                icon: <Icon_Demo />,
+            },
+        ],
+        roboTags: [
+            "Robô",
+            "Autônomo",
+            "Interativo",
+            "Móvel",
+            "Navegação",
+            "Reconhecimento Facial",
+            "Reconhecimento de Objetos",
+            "Reconhecimento de Voz",
+        ],
+    },
+    {
+        domId: "produto-03",
+        id: 4,
+        prename: "",
+        name: "RobiOS",
+        class: "softwares",
+        type: "essential",
+        heroImg: "./imgs/products/RobiOS_Hero_Image",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image/",
+        detail_Images: ["./imgs/products/RobiOS_Detail_Image_01", "./imgs/products/RobiOS_Detail_Image_02"],
+        object3D: "./objects3D/products/robios.gltf",
+        textIntro:
+            "Um sistema operacional robótico capaz de gerenciar e controlar robôs autônomos móveis, com uma interface gráfica intuitiva e de fácil utilização.",
+        textDetail: [
+            "O RobiOS é um sistema operacional robótico abrangente que gerencia e controla robôs autônomos móveis. Ele exerce o papel de ponte entre o hardware e a interface gráfica, sendo também responsável pela emulação da inteligência artificial dos nossos robôs e assistentes.",
+            "Este é o cérebro por trás de todos os produtos da Human Robotics. Ele fornece uma plataforma centralizada para gerenciar e coordenar seus robôs. ",
+            "Com uma interface gráfica amigável, os operadores podem programar trajetos, definir comportamentos básicos e monitorar o desempenho em tempo real. Isso o torna um elemento fundamental em aplicações que dependem de múltiplos robôs, como logística e segurança.",
+        ],
+
+        buyPrice: 30000,
+        rentPrice: 10000,
+        cartQuantity: 0,
+
+        producerName: "Laboratório Human Robotics",
+        productOrigin: "Curitiba, Paraná, Brasil",
+        productOriginCoordinates: "-23.5505199,-46.6333094",
+
+        sellerName: "Comercial Human Robotics",
+        sellerOrigin: "Curitiba, Paraná, Brasil",
+        sellerOriginCoordinates: "-23.5505199,-46.6333094",
+        relatedSectors: [],
+        useCases: [],
+        capacities: [],
+        specifications: [
+            {
+                title: "Disponível para Download",
+                description: "Aplicação disponível para download em Google PlayStore.",
+                icon: <Icon_Download />,
+            },
+            {
+                title: "Disponível como Serviço Web",
+                description: "Aplicação disponível também em formato web em nosso site.",
+                icon: <Icon_OpenWebLink />,
+            },
+            {
+                title: "Desenvolvido no Brasil",
+                description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
+                icon: <Icon_Brasil />,
+            },
+        ],
+        interactions: [
+            {
+                title: "Solicite uma Cotação",
+                icon: <Icon_QuotePrice />,
+            },
+            {
+                title: "Agende uma Demonstração",
+                icon: <Icon_Demo />,
+            },
+        ],
+        roboTags: [
+            "Robô",
+            "Autônomo",
+            "Interativo",
+            "Móvel",
+            "Navegação",
+            "Reconhecimento Facial",
+            "Reconhecimento de Objetos",
+            "Reconhecimento de Voz",
+        ],
+    },
+    {
+        domId: "produto-00",
+        id: 5,
+        prename: "RobiOS",
+        name: "Studio",
+        class: "softwares",
+        type: "essential",
+        heroImg: "./imgs/products/RobiOS_Studio_Hero_Image",
+        backgroundImg: "./imgs/products/RobiOS_Studio_Bg_Image/",
+        detail_Images: ["./imgs/products/RobiOS_Studio_Detail_Image_01", "./imgs/products/RobiOS_Studio_Detail_Image_02"],
+        object3D: "./objects3D/products/robios_studio.gltf",
+        textIntro: "Plataforma para a personalização das ações dos robôs e assistentes, com uma interface gráfica intuitiva e fácil de usar.",
+        textDetail: [
+            "O RobiOS Studio é uma plataforma de personalização que permite definir as ações e comportamentos dos robôs e assistentes. Ele possui uma interface gráfica intuitiva para simplificar o processo de personalização.",
+            "O RobiOS Studio é uma ferramenta essencial para adaptar os robôs às necessidades específicas de diferentes aplicativos.",
+            "Com ele, você pode criar sequências de ações personalizadas, definir respostas a comandos de voz e até mesmo criar novos comportamentos. É uma solução versátil que oferece a flexibilidade necessária para tornar os robôs autônomos uma parte integrante de diversos setores.",
+        ],
+
+        buyPrice: 30000,
+        rentPrice: 10000,
+        cartQuantity: 0,
+
+        producerName: "Laboratório Human Robotics",
+        productOrigin: "Curitiba, Paraná, Brasil",
+        productOriginCoordinates: "-23.5505199,-46.6333094",
+
+        sellerName: "Comercial Human Robotics",
+        sellerOrigin: "Curitiba, Paraná, Brasil",
+        sellerOriginCoordinates: "-23.5505199,-46.6333094",
+        relatedSectors: [],
+        useCases: [],
+        capacities: [],
+        specifications: [
+            {
+                title: "Disponível para Download",
+                description: "Aplicação disponível para download em Google PlayStore.",
+                icon: <Icon_Download />,
+            },
+            {
+                title: "Disponível como Serviço Web",
+                description: "Aplicação disponível também em formato web em nosso site.",
+                icon: <Icon_OpenWebLink />,
+            },
+            {
+                title: "Desenvolvido no Brasil",
+                description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
+                icon: <Icon_Brasil />,
+            },
+        ],
+        interactions: [
+            {
+                title: "Solicite uma Cotação",
+                icon: <Icon_QuotePrice />,
+            },
+            {
+                title: "Agende uma Demonstração",
+                icon: <Icon_Demo />,
+            },
+        ],
+        roboTags: [
+            "Robô",
+            "Autônomo",
+            "Interativo",
+            "Móvel",
+            "Navegação",
+            "Reconhecimento Facial",
+            "Reconhecimento de Objetos",
+            "Reconhecimento de Voz",
+        ],
+    },
+    {
+        domId: "produto-05",
+        id: 6,
+        prename: "RobiOS",
+        name: "AVATAR",
+        class: "softwares",
+        type: "essential",
+        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image",
+        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image/",
+        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01", "./imgs/products/RobiOS_Avatar_Detail_Image_02"],
+        object3D: "./objects3D/products/robios_avatar.gltf",
+        textIntro: "Software capaz de emular Avatares - assistentes virtuais que podem ser acessados em qualquer dispositivo móvel ou inteligente.",
+        textDetail: [
+            "O RobiOS AVATAR é um software inovador que permite emular Avatares - assistentes virtuais acessíveis em dispositivos móveis ou inteligentes.",
+            "O RobiOS AVATAR é uma solução que transcende os robôs físicos. Ele oferece assistentes virtuais que podem ser acessados em dispositivos móveis e inteligentes, tornando a interação com os serviços da Human Robotics mais conveniente do que nunca.",
+            "Esses avatares podem ser personalizados e oferecem suporte, informações e interações adaptadas às necessidades dos usuários em diferentes setores, como atendimento ao cliente e entretenimento.",
+        ],
+
+        buyPrice: 30000,
+        rentPrice: 10000,
+        cartQuantity: 0,
+
+        producerName: "Laboratório Human Robotics",
+        productOrigin: "Curitiba, Paraná, Brasil",
+        productOriginCoordinates: "-23.5505199,-46.6333094",
+
+        sellerName: "Comercial Human Robotics",
+        sellerOrigin: "Curitiba, Paraná, Brasil",
+        sellerOriginCoordinates: "-23.5505199,-46.6333094",
+        relatedSectors: [
+            {
+                title: "Varejo",
+                description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
+                icon: <Icon_Varejo />,
+            },
+            {
+                title: "Saúde e Cuidado",
+                description:
+                    "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
+                icon: <Icon_SaudeCuidado />,
+            },
+            {
+                title: "Cultura",
+                description:
+                    "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
+                icon: <Icon_Cultura />,
+            },
+            {
+                title: "Hospitalidade",
+                description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
+                icon: <Icon_Hospitalidade />,
+            },
+        ],
+        useCases: [
+            {
+                title: "Atendimento ao Cliente",
+                description: "Pode oferecer suporte e informações aos clientes.",
+                icon: <Icon_Atendimento />,
+            },
+            {
+                title: "Acompanhamento de Compras",
+                description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
+                icon: <Icon_Compras />,
+            },
+            {
+                title: "Exposição de Peças Publicitárias",
+                description: "Exibe publicidade e informações promocionais.",
+                icon: <Icon_ExpPubli />,
+            },
+        ],
+        capacities: [
+            {
+                title: "Interações Personalizáveis",
+                description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
+                icon: <Icon_Interacoes />,
+            },
+            {
+                title: "Reconhecimento Facial e de Objetos",
+                description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
+                icon: <Icon_ReconhecimentoVisao />,
+            },
+            {
+                title: "Reconhecimento de Fala",
+                description: "Compreensão de comandos de voz para interações mais naturais.",
+                icon: <Icon_ReconhecimentoFala />,
+            },
+            {
+                title: "Disponível em 3 Idiomas",
+                description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
+                icon: <Icon_Idioma />,
+            },
+            {
+                title: "Coleta de Dados, Pesquisa, CRM",
+                description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
+                icon: <Icon_ColetaDados />,
+            },
+            {
+                title: "Reprodução de Mídia, Fotos e Vídeos",
+                description: "Reproduz conteúdo multimídia para entretenimento e informação.",
+                icon: <Icon_Midia />,
+            },
+            {
+                title: "Acesso Remoto e Chamadas por Vídeo",
+                description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
+                icon: <Icon_VideoChamada />,
+            },
+        ],
+        specifications: [
+            {
+                title: "Disponível para Download",
+                description: "Aplicação disponível para download em Google PlayStore.",
+                icon: <Icon_Download />,
+            },
+            {
+                title: "Disponível como Serviço Web",
+                description: "Aplicação disponível também em formato web em nosso site.",
+                icon: <Icon_OpenWebLink />,
             },
             {
                 title: "Desenvolvido no Brasil",

@@ -1,16 +1,16 @@
 export default interface ProductType {
     domId: string;
-
     id: number;
     prename: string;
     name: string;
-    type: string;
     class: string;
-    description: string;
-    fullDescription: Array<string>;
-    bgImgSrc: string;
-    imgSrc: Array<string>;
-
+    type: string;
+    heroImg: string;
+    backgroundImg: string;
+    detail_Images: string[];
+    object3D: string;
+    textIntro: string;
+    textDetail: string[];
     buyPrice: number;
     rentPrice: number;
     cartQuantity: number;
@@ -22,7 +22,29 @@ export default interface ProductType {
     sellerName: string;
     sellerOrigin: string;
     sellerOriginCoordinates: string;
-
-    components: Array<object>;
-    solutions: Array<object>;
+    relatedSectors: {
+        title: string;
+        description: string;
+        icon: React.JSX.Element;
+    }[];
+    useCases: {
+        title: string;
+        description: string;
+        icon: React.JSX.Element;
+    }[];
+    capacities: {
+        title: string;
+        description: string;
+        icon: React.JSX.Element;
+    }[];
+    specifications: {
+        title: string;
+        description: string;
+        icon: React.JSX.Element;
+    }[];
+    interactions: {
+        title: string;
+        icon: React.JSX.Element;
+    }[];
+    roboTags: string[];
 }

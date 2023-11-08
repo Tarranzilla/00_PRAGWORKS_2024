@@ -1,4 +1,5 @@
 export default interface Product {
+    domId: string;
     id: number;
     prename: string;
     name: string;
