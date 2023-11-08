@@ -8,6 +8,10 @@ import { motion as m, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveSection, setActiveProductClass, toggleSolutionDetails } from "../../context/main-context";
 
+import GoThumb from "../../assets/produtos/RobiOS_Go_Thumb_Image_01.png";
+import InspectorThumb from "../../assets/produtos/RobiOS_Inspector_Thumb_Image_01.png";
+import CargoThumb from "../../assets/produtos/RobiOS_Cargo_Thumb_Image_01.png";
+
 const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
     const dispatch = useDispatch();
     const activeSolution = useSelector((state: any) => state.activeSolution);
@@ -93,16 +97,34 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
             <div className="Solution_Detail_Content">
                 <div className="Solution_Detail_Text_Container">
                     <div className="Solution_Detail_Text_Wrapper">
-                        <h1 className="Solution_Detail_Content_Title">{activeSolution.name}</h1>
+                        <h1 className="Solution_Card_Detail_Title">{activeSolution.name}</h1>
                         <p className="Solution_Detail_Description">{activeSolution.description}</p>
                         <p className="Solution_Detail_FullDescription">{activeSolution.fullDescription}</p>
                         <h4 className="Solution_Recommended_Products_Title">Produtos que atuam nesta solução:</h4>
                         <div className="Solution_Recommended_Products_Container">
-                            <h3 className="Solution_Recommended_Product">RobiOS GO</h3>
-                            <h3 className="Solution_Recommended_Product">RobiOS INPSECTOR</h3>
-                            <h3 className="Solution_Recommended_Product">RobiOS CARGO</h3>
+                            <div className="Solution_Recommended_Product hoverable">
+                                <img className="Solution_Recommended_Product_Img" src={GoThumb} alt="RobiOS GO" />
+                                <div className="Solution_Recommended_Product_Title">
+                                    <h3 className="Solution_Recommended_Product_Prename">RobiOS</h3>
+                                    <h3 className="Solution_Recommended_ProductName">GO</h3>
+                                </div>
+                            </div>
+                            <div className="Solution_Recommended_Product hoverable">
+                                <img className="Solution_Recommended_Product_Img" src={InspectorThumb} alt="RobiOS INSPECTOR" />
+                                <div className="Solution_Recommended_Product_Title">
+                                    <h3 className="Solution_Recommended_Product_Prename">RobiOS</h3>
+                                    <h3 className="Solution_Recommended_ProductName">INSPECTOR</h3>
+                                </div>
+                            </div>
+                            <div className="Solution_Recommended_Product hoverable">
+                                <img className="Solution_Recommended_Product_Img" src={CargoThumb} alt="RobiOS CARGO" />
+                                <div className="Solution_Recommended_Product_Title">
+                                    <h3 className="Solution_Recommended_Product_Prename">RobiOS</h3>
+                                    <h3 className="Solution_Recommended_ProductName">CARGO</h3>
+                                </div>
+                            </div>
                         </div>
-                        <h4 className="Solution_Partner_Title">Parceiros que utilizam nossos serviços:</h4>
+                        <h4 className="Solution_Partner_Title">Parceiros que utilizam estes serviços:</h4>
                         <div className="Solution_Partner_Container">
                             <AnimatePresence mode="wait">
                                 {activeSolution.partners.map(

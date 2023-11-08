@@ -93,8 +93,8 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
             </div>
             <div className="Product_Detail_Content">
                 <div className="Product_Detail_Text_Container">
-                    {/* Tipo do Produto */}
                     <div className="Product_Detail_Text_Wrapper">
+                        {/* Tipo do Produto */}
                         <div className="Product_Detail_Text_Item">
                             <div className="Product_Detail_Text_Item_Header">
                                 <h3 className="Product_Detail_Subtitle">{activeProduct.prename}</h3>
@@ -119,58 +119,71 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                             </div>
                         </div>
 
-                        {activeProduct.relatedSectors.length > 0 && <h2 className="Product_Information_Title">Indicado para os Setores</h2>}
-                        {activeProduct.relatedSectors.map((sector, index) => {
-                            return (
-                                <div className="Produto_Container_Text_RelatedSectors" key={"related_sector_" + index}>
-                                    <div className="Produto_Container_Text_Header">
-                                        <Icon_HR_All iconName={sector.icon} />
-                                        <h2 className="Produto_Container_Titulo">{sector.title}</h2>
+                        {/* Indicado para os Setores*/}
+                        <div className="Product_Detail_Text_Item">
+                            {activeProduct.relatedSectors.length > 0 && <h2 className="Product_Information_Title">Indicado para os Setores</h2>}
+                            {activeProduct.relatedSectors.map((sector, index) => {
+                                return (
+                                    <div className="Produto_Container_Text_RelatedSectors" key={"related_sector_" + index}>
+                                        <div className="Produto_Container_Text_Header">
+                                            <Icon_HR_All iconName={sector.icon} />
+                                            <h2 className="Produto_Container_Titulo">{sector.title}</h2>
+                                        </div>
+                                        <p className="Produto_Information_Description">{sector.description}</p>
                                     </div>
-                                    <p className="Produto_Information_Description">{sector.description}</p>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </div>
 
-                        {activeProduct.useCases.length > 0 && <h2 className="Product_Information_Title">Aplicações</h2>}
-                        {activeProduct.useCases.map((useCase, index) => {
-                            return (
-                                <div className="Produto_Container_Text_UseCases" key={"useCase_" + index}>
-                                    <div className="Produto_Container_Text_Header">
-                                        <Icon_HR_All iconName={useCase.icon} />
-                                        <h2 className="Produto_Container_Titulo">{useCase.title}</h2>
+                        {/* Aplicações */}
+                        <div className="Product_Detail_Text_Item">
+                            {activeProduct.useCases.length > 0 && <h2 className="Product_Information_Title">Aplicações</h2>}
+                            {activeProduct.useCases.map((useCase, index) => {
+                                return (
+                                    <div className="Produto_Container_Text_UseCases" key={"useCase_" + index}>
+                                        <div className="Produto_Container_Text_Header">
+                                            <Icon_HR_All iconName={useCase.icon} />
+                                            <h2 className="Produto_Container_Titulo">{useCase.title}</h2>
+                                        </div>
+                                        <p className="Produto_Information_Description">{useCase.description}</p>
                                     </div>
-                                    <p className="Produto_Information_Description">{useCase.description}</p>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </div>
 
-                        {activeProduct.capacities.length > 0 && <h2 className="Product_Information_Title">Capacidades</h2>}
-                        {activeProduct.capacities.map((capacity, index) => {
-                            return (
-                                <div className="Produto_Container_Text_Capacities" key={"capacities_" + index}>
-                                    <div className="Produto_Container_Text_Header">
-                                        <Icon_HR_All iconName={capacity.icon} />
-                                        <h2 className="Produto_Container_Titulo">{capacity.title}</h2>
+                        {/* Capacidades */}
+                        <div className="Product_Detail_Text_Item">
+                            {activeProduct.capacities.length > 0 && <h2 className="Product_Information_Title">Capacidades</h2>}
+                            {activeProduct.capacities.map((capacity, index) => {
+                                return (
+                                    <div className="Produto_Container_Text_Capacities" key={"capacities_" + index}>
+                                        <div className="Produto_Container_Text_Header">
+                                            <Icon_HR_All iconName={capacity.icon} />
+                                            <h2 className="Produto_Container_Titulo">{capacity.title}</h2>
+                                        </div>
+                                        <p className="Produto_Information_Description">{capacity.description}</p>
                                     </div>
-                                    <p className="Produto_Information_Description">{capacity.description}</p>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </div>
 
-                        {activeProduct.specifications.length > 0 && <h2 className="Product_Information_Title">Especificações</h2>}
-                        {activeProduct.specifications.map((specification, index) => {
-                            return (
-                                <div className="Produto_Container_Text_Specifications" key={"spec_" + index}>
-                                    <div className="Produto_Container_Text_Header">
-                                        <Icon_HR_All iconName={specification.icon} />
-                                        <h2 className="Produto_Container_Titulo">{specification.title}</h2>
+                        {/* Especificações */}
+                        <div className="Product_Detail_Text_Item">
+                            {activeProduct.specifications.length > 0 && <h2 className="Product_Information_Title">Especificações</h2>}
+                            {activeProduct.specifications.map((specification, index) => {
+                                return (
+                                    <div className="Produto_Container_Text_Specifications" key={"spec_" + index}>
+                                        <div className="Produto_Container_Text_Header">
+                                            <Icon_HR_All iconName={specification.icon} />
+                                            <h2 className="Produto_Container_Titulo">{specification.title}</h2>
+                                        </div>
+                                        <p className="Produto_Information_Description">{specification.description}</p>
                                     </div>
-                                    <p className="Produto_Information_Description">{specification.description}</p>
-                                </div>
-                            );
-                        })}
+                                );
+                            })}
+                        </div>
 
+                        {/* Footer */}
                         <div className="Produto_Detalhe_Footer">
                             {activeProduct.interactions.map((interaction, index) => {
                                 return (

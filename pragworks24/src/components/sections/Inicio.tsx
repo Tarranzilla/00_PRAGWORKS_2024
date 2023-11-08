@@ -19,30 +19,30 @@ const springTransition = {
     velocity: 50,
 };
 
-import exp_activa_id from "../../assets/experiencia/exp_activa_id.png";
-import exp_bioos from "../../assets/experiencia/exp_bioos.png";
-import exp_caixa from "../../assets/experiencia/exp_caixa.png";
-import exp_cajuru from "../../assets/experiencia/exp_cajuru.png";
-import epx_condor from "../../assets/experiencia/exp_condor.png";
-import exp_inno from "../../assets/experiencia/exp_inno.png";
-import exp_lab from "../../assets/experiencia/exp_lab.png";
-import exp_montagem from "../../assets/experiencia/exp_montagem.png";
-import exp_novo from "../../assets/experiencia/exp_novo.png";
-import exp_pipefy_1 from "../../assets/experiencia/exp_pipefy_1.png";
-import exp_pipefy_2 from "../../assets/experiencia/exp_pipefy_2.png";
-import exp_shopping from "../../assets/experiencia/exp_shopping.png";
-import exp_teatro from "../../assets/experiencia/exp_teatro.png";
-import exp_terca_da_terra from "../../assets/experiencia/exp_terca_da_terra.png";
-import exp_topmed from "../../assets/experiencia/exp_topmed.png";
-import exp_valedopinhao from "../../assets/experiencia/exp_valedopinhao.png";
-import exp_varejo from "../../assets/experiencia/exp_varejo.png";
+import epx_carrefour from "../../assets/experiencias/Experience_01_Hero_Image.png";
+import exp_activa_id from "../../assets/experiencias/Experience_02_Hero_Image.png";
+import exp_varejo from "../../assets/experiencias/Experience_03_Hero_Image.png";
+import exp_novo from "../../assets/experiencias/Experience_04_Hero_Image.png";
+import exp_pipefy_1 from "../../assets/experiencias/Experience_05_Hero_Image.png";
+import exp_pipefy_2 from "../../assets/experiencias/Experience_06_Hero_Image.png";
+import exp_montagem from "../../assets/experiencias/Experience_07_Hero_Image.png";
+import exp_lab from "../../assets/experiencias/Experience_08_Hero_Image.png";
+import exp_cajuru from "../../assets/experiencias/Experience_09_Hero_Image.png";
+import exp_inno from "../../assets/experiencias/Experience_10_Hero_Image.png";
+import exp_teatro from "../../assets/experiencias/Experience_11_Hero_Image.png";
+import exp_bioos from "../../assets/experiencias/Experience_12_Hero_Image.png";
+import exp_shopping from "../../assets/experiencias/Experience_13_Hero_Image.png";
+import exp_valedopinhao from "../../assets/experiencias/Experience_14_Hero_Image.png";
+import exp_topmed from "../../assets/experiencias/Experience_15_Hero_Image.png";
+import exp_terca_da_terra from "../../assets/experiencias/Experience_16_Hero_Image.png";
+import exp_caixa from "../../assets/experiencias/Experience_17_Hero_Image.png";
 
 const baseExperiencias = [
     { id: nanoid(), type: "exp", indx: 1, text: "Activa Id", description: "Campanha de Marketing", image: exp_activa_id },
     { id: nanoid(), type: "exp", indx: 2, text: "Bioos", description: "Campanha de Marketing", image: exp_bioos },
     { id: nanoid(), type: "exp", indx: 3, text: "Caixa", description: "Campanha de Marketing", image: exp_caixa },
     { id: nanoid(), type: "exp", indx: 4, text: "Cajuru", description: "Campanha de Marketing", image: exp_cajuru },
-    { id: nanoid(), type: "exp", indx: 5, text: "Condor", description: "Campanha de Marketing", image: epx_condor },
+    { id: nanoid(), type: "exp", indx: 5, text: "Carrefour", description: "Campanha de Marketing", image: epx_carrefour },
     { id: nanoid(), type: "exp", indx: 6, text: "Inno", description: "Campanha de Marketing", image: exp_inno },
     { id: nanoid(), type: "exp", indx: 7, text: "Lab", description: "Campanha de Marketing", image: exp_lab },
     { id: nanoid(), type: "exp", indx: 8, text: "Montagem", description: "Campanha de Marketing", image: exp_montagem },
@@ -57,18 +57,18 @@ const baseExperiencias = [
     { id: nanoid(), type: "exp", indx: 17, text: "Varejo", description: "Campanha de Marketing", image: exp_varejo },
 ];
 
-import tresM from "../../assets/parceiros/3M.webp";
-import ambev from "../../assets/parceiros/ambev.webp";
-import brmalls from "../../assets/parceiros/brmalls.webp";
-import cajuru from "../../assets/parceiros/cajuru_2.png";
-import ebanx from "../../assets/parceiros/ebanx.webp";
-import finep from "../../assets/parceiros/finep.webp";
-import nivea from "../../assets/parceiros/nivea.png";
-import ntu from "../../assets/parceiros/ntu.webp";
-import sao_cristovao from "../../assets/parceiros/sao_cristovao.webp";
-import sebrae from "../../assets/parceiros/sebrae.webp";
-import tercadaterra from "../../assets/parceiros/tercadaterra.webp";
-import unimed from "../../assets/parceiros/unimed.webp";
+import ebanx from "../../assets/parceiros/Partner_01_Hero_Image.png";
+import tresM from "../../assets/parceiros/Partner_02_Hero_Image.png";
+import ambev from "../../assets/parceiros/Partner_03_Hero_Image.png";
+import brmalls from "../../assets/parceiros/Partner_04_Hero_Image.png";
+import finep from "../../assets/parceiros/Partner_05_Hero_Image.png";
+import sebrae from "../../assets/parceiros/Partner_06_Hero_Image.png";
+import ntu from "../../assets/parceiros/Partner_07_Hero_Image.png";
+import nivea from "../../assets/parceiros/Partner_08_Hero_Image.png";
+import cajuru from "../../assets/parceiros/Partner_09_Hero_Image.png";
+import sao_cristovao from "../../assets/parceiros/Partner_10_Hero_Image.png";
+import unimed from "../../assets/parceiros/Partner_11_Hero_Image.png";
+import tercadaterra from "../../assets/parceiros/Partner_12_Hero_Image.png";
 
 const baseParceiros = [
     { id: nanoid(), type: "partner", indx: 1, text: "3M", description: "Campanha de Marketing", image: tresM },
