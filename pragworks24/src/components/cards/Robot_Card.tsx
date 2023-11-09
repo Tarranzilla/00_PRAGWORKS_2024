@@ -36,7 +36,7 @@ export default function Robot_Card({ product: { domId, id, prename, name, type, 
     const itemTotalQuantity = getItemTotalQuantity(cartItems, itemId);
 
     return (
-        <div className="Product_Card Robot_Card" id={domId}>
+        <div className="Product_Card Robot_Card hoverable" id={domId}>
             <div className="Product_Card_Header">
                 <h4 className="Card_Product_Prename Robot_Prename">{prename}</h4>
                 <h1 className="Card_Product_Name Robot_Name">{name}</h1>

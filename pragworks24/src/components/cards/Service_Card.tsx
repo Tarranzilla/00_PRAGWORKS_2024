@@ -36,7 +36,7 @@ export default function Service_Card({ product: { domId, id, prename, name, type
     const itemTotalQuantity = getItemTotalQuantity(cartItems, itemId);
 
     return (
-        <div className="Product_Card Service_Card" id={domId}>
+        <div className="Product_Card Service_Card hoverable" id={domId}>
             <div className="Product_Card_Header">
                 <h4 className="Card_Product_Prename Service_Prename">{prename}</h4>
                 <h2 className="Card_Product_Name Service_Name">{name}</h2>

@@ -36,7 +36,7 @@ export default function Experience_Card({ product: { domId, id, prename, name, t
     const itemTotalQuantity = getItemTotalQuantity(cartItems, itemId);
 
     return (
-        <div className="Product_Card Experience_Card" id={domId}>
+        <div className="Product_Card Experience_Card hoverable" id={domId}>
             <div className="Product_Card_Header">
                 <h4 className="Card_Product_Prename Experience_Prename">{prename}</h4>
                 <h2 className="Card_Product_Name Experience_Name">{name}</h2>

@@ -27,8 +27,21 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
         dispatch(toggleProductDetails());
     };
 
+    const quoteMessage = `Olá, eu gostaria de fazer uma solicitação para a cotação do seguinte produto:\n\n${activeProduct.name}\n\n`;
+    const quotePhoneNumber = "+5541999977955"; // Replace with your desired WhatsApp number
+
     const demoMessage = `Olá, eu gostaria de fazer uma solicitação de demonstração para o seguinte produto:\n\n${activeProduct.name}\n\n`;
     const demoPhoneNumber = "+5541999977955"; // Replace with your desired WhatsApp number
+
+    const demoOrderButton = () => {
+        const whatsappUrl = `https://wa.me/${demoPhoneNumber}/?text=${encodeURIComponent(demoMessage)}`;
+        window.open(whatsappUrl, "_blank");
+    };
+
+    const quoteOrderButton = () => {
+        const whatsappUrl = `https://wa.me/${quotePhoneNumber}/?text=${encodeURIComponent(quoteMessage)}`;
+        window.open(whatsappUrl, "_blank");
+    };
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -74,6 +87,22 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                         return <p className="Product_Detail_Text_Content">{paragraph}</p>;
                                     })}
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* Interações - Footer */}
+                        <div className="Produto_Detalhe_Footer">
+                            <div className="Produto_Container_Text_Interactions hoverable" key={"interaction_Container_1"}>
+                                <Icon_HR_All iconName={"quotePrice"} />
+                                <h2 className="Produto_Container_Interaction_Titulo" onClick={quoteOrderButton}>
+                                    Solicite uma Cotação
+                                </h2>
+                            </div>
+                            <div className="Produto_Container_Text_Interactions hoverable" key={"interaction_Container_2"}>
+                                <Icon_HR_All iconName={"demo"} />
+                                <h2 className="Produto_Container_Interaction_Titulo" onClick={demoOrderButton}>
+                                    Agende uma Demonstração
+                                </h2>
                             </div>
                         </div>
 
@@ -136,18 +165,6 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                             <h2 className="Produto_Container_Titulo">{specification.title}</h2>
                                         </div>
                                         <p className="Produto_Information_Description">{specification.description}</p>
-                                    </div>
-                                );
-                            })}
-                        </div>
-
-                        {/* Footer */}
-                        <div className="Produto_Detalhe_Footer">
-                            {activeProduct.interactions.map((interaction, index) => {
-                                return (
-                                    <div className="Produto_Container_Text_Interactions hoverable" key={"interaction_" + index}>
-                                        <Icon_HR_All iconName={interaction.icon} />
-                                        <h2 className="Produto_Container_Interaction_Titulo">{interaction.title}</h2>
                                     </div>
                                 );
                             })}

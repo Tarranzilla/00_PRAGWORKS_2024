@@ -20,6 +20,8 @@ interface ThreeDContainerProps {
 }
 
 const ThreeD_Container = forwardRef(function ThreeD_Container({ ThreeD_URL }: ThreeDContainerProps, ref: any) {
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         const canvasContainer = document.getElementById("ThreeD_Container_id");
 
@@ -32,7 +34,7 @@ const ThreeD_Container = forwardRef(function ThreeD_Container({ ThreeD_URL }: Th
             renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Melhor tipo para suavização de sombras
 
             const scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x3c3c3c);
+            scene.background = new THREE.Color(0x4c4c4c);
             const camera = new THREE.PerspectiveCamera(50, aspectRatio, 1, 1000);
             camera.position.z = 2;
             camera.position.y = 0;
@@ -50,7 +52,6 @@ const ThreeD_Container = forwardRef(function ThreeD_Container({ ThreeD_URL }: Th
                     renderer.setSize(width, height, false);
                     camera.aspect = width / height;
                     camera.updateProjectionMatrix();
-                    console.log(camera.aspect, "camera.aspect");
 
                     // update any render target sizes here
                 }
@@ -77,6 +78,8 @@ const ThreeD_Container = forwardRef(function ThreeD_Container({ ThreeD_URL }: Th
                 });
             });
 
+            setLoading(false);
+
             const animate = () => {
                 resizeCanvasToDisplaySize();
 
@@ -102,6 +105,7 @@ const ThreeD_Container = forwardRef(function ThreeD_Container({ ThreeD_URL }: Th
             id={"ThreeD_Container_id"}
             key={"ThreeD_Container_key"}
         >
+            {loading && <div className="loading">Carregando Modelo 3D ...</div>}
             <canvas id={"ThreeD_Canvas_id"} className="ThreeD_Canvas"></canvas>
         </m.div>
     );
