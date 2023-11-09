@@ -59,7 +59,6 @@ const ThreeD_Container = forwardRef(function ThreeD_Container({ ThreeD_URL }: Th
             window.addEventListener("resize", resizeCanvasToDisplaySize);
 
             const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-            ambientLight.castShadow = true;
             scene.add(ambientLight);
 
             const controls = new OrbitControls(camera, renderer.domElement);
