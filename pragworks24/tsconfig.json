@@ -20,6 +20,8 @@
         "noUnusedLocals": false,
         "noUnusedParameters": false,
 
+        "esModuleInterop": true,
+
         /* Linting */
         "strict": true,
         //"noUnusedLocals": true,
