@@ -27,7 +27,8 @@ const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
             const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(50, aspectRatio, 1, 1000);
-            camera.position.z = 4;
+            camera.position.z = 0;
+            camera.position.y = -2;
 
             function resizeCanvasToDisplaySize() {
                 // look up the size the canvas is being displayed
