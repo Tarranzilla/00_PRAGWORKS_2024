@@ -32,6 +32,7 @@ const ThreeD_Container = forwardRef(function ThreeD_Container({ ThreeD_URL }: Th
             renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Melhor tipo para suavização de sombras
 
             const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x3c3c3c);
             const camera = new THREE.PerspectiveCamera(50, aspectRatio, 1, 1000);
             camera.position.z = 2;
             camera.position.y = 0;

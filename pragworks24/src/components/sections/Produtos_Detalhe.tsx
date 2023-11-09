@@ -74,7 +74,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     };
 
     const handlePrevClick = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + activeProduct.detail_Images.length) % activeProduct.detail_Images.length);
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + (activeProduct.detail_Images.length + 1)) % (activeProduct.detail_Images.length + 1));
     };
 
     const handleNextClick2 = () => {
@@ -200,16 +200,33 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                     </div>
                 </div>
                 <div className="Product_Detail_Image_Container">
-                    <AnimatePresence mode="wait">
-                        <m.div
-                            className="Product_Detail_Image_Block"
-                            key={"ThreeD_Container_" + activeProduct.object3D + "_key"}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                        >
-                            <ThreeD_Container ThreeD_URL={activeProduct.object3D} />
-                        </m.div>
+                    <AnimatePresence mode="popLayout">
+                        {currentImageIndex === 0 && activeProduct.object3D && (
+                            <m.div
+                                className="Product_Detail_Image_Block"
+                                key={"ThreeD_Container_" + activeProduct.object3D + "_key"}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                            >
+                                <ThreeD_Container ThreeD_URL={activeProduct.object3D} />
+                            </m.div>
+                        )}
+
+                        {activeProduct.detail_Images.map(
+                            (imgSrc, index) =>
+                                index + 1 === currentImageIndex && (
+                                    <m.div
+                                        className="Product_Detail_Image_Block"
+                                        key={index}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    >
+                                        <m.img className="Product_Detail_Image" src={imgSrc} alt={activeProduct.name} />
+                                    </m.div>
+                                )
+                        )}
                     </AnimatePresence>
                     <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
                         <span className="material-icons Previous_Btn_Icon">west</span>
@@ -226,20 +243,5 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
 export default Produtos_Detalhe;
 
 /*
-
-                        {activeProduct.detail_Images.map(
-                            (imgSrc, index) =>
-                                index === currentImageIndex && (
-                                    <m.div
-                                        className="Product_Detail_Image_Block"
-                                        key={index}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        <m.img className="Product_Detail_Image" src={imgSrc} alt={activeProduct.name} />
-                                    </m.div>
-                                )
-                        )}
 
 */
