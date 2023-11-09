@@ -413,7 +413,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             key="AC_01"
                         >
                             <div className="About_Card_Content">
-                                <div className="About_Card_Text_Container">
+                                <div className="About_Card_Text_Container" id="Missao_Card_Content">
                                     <div className="About_Card_Text_Wrapper">
                                         <div className="About_Card_Header">
                                             <h3 className="Card_Header_Subtitle">Sobre</h3>
@@ -465,8 +465,8 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             className="About_Card"
                             key="AC_02"
                         >
-                            <div className="About_Card_Content">
-                                <div className="About_Card_Text_Container">
+                            <div className="About_Card_Content" id="Equipe_Card_Content">
+                                <div className="About_Card_Text_Container" id="Equipe_Text_Container">
                                     <div className="About_Card_Text_Wrapper">
                                         <div className="About_Card_Header">
                                             <h3 className="Card_Header_Subtitle">Sobre</h3>
@@ -475,53 +475,60 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         <p className="Sobre_Header_Text">
                                             <strong>
                                                 Nossa Equipe é Multidisciplinar e conta com profissionais de diversas áreas, como Engenharia, Design,
-                                                Administração e Marketing. Sinta-se à vontade para entrar em contato com qualquer um de nós.
+                                                Administração e Marketing.
                                             </strong>
+                                        </p>
+                                        <p>
+                                            Na vanguarda da tecnologia, nossa equipe está empenhada em buscar a excelência e a inovação. Nossos
+                                            membros são pioneiros na adoção de tecnologias de ponta, sempre em busca de maneiras de aplicá-las de
+                                            forma criativa.{" "}
+                                        </p>
+                                        <p className="Sobre_Header_Text">
+                                            <strong>Sinta-se à vontade para entrar em contato com qualquer um de nós.</strong>
                                         </p>
                                     </div>
                                 </div>
-                                <div className="About_Card_Text_Container">
-                                    <div className="Sobre_Member_Container">
-                                        {membrosDaEquipe.map((membro: any) => {
-                                            return (
-                                                <div className="Sobre_Member_Card" key={membro.nome}>
-                                                    <div className="Sobre_Member_Interactions">
-                                                        <a
-                                                            className="Sobre_Interaction_Icon hoverable undecorated"
-                                                            href={membro.linkedin}
-                                                            target="_blank"
-                                                            rel="noreferrer"
-                                                        >
-                                                            <span className="material-icons">share</span>
-                                                        </a>
-                                                        <a
-                                                            className="Sobre_Interaction_Icon hoverable undecorated"
-                                                            href={membro.telephone}
-                                                            target="_blank"
-                                                            rel="noreferrer"
-                                                        >
-                                                            <span className="material-icons">perm_phone_msg</span>
-                                                        </a>
-                                                        <a
-                                                            className="Sobre_Interaction_Icon hoverable undecorated"
-                                                            href={membro.email}
-                                                            target="_blank"
-                                                            rel="noreferrer"
-                                                        >
-                                                            <span className="material-icons">mail</span>
-                                                        </a>
-                                                    </div>
-                                                    <div className="Sobre_Member_Text_Container">
-                                                        <h3 className="Sobre_Member_Name">{membro.nome}</h3>
-                                                        <p className="Sobre_Member_Description">{membro.cargo}</p>
-                                                    </div>
-                                                    <div className="Sobre_Member_Image_Container">
-                                                        <img src={membro.foto} alt={membro.nome} className="Sobre_Member_Image" />
-                                                    </div>
+
+                                <div className="Sobre_Member_Container">
+                                    {membrosDaEquipe.map((membro: any) => {
+                                        return (
+                                            <div className="Sobre_Member_Card" key={membro.nome}>
+                                                <div className="Sobre_Member_Interactions">
+                                                    <a
+                                                        className="Sobre_Interaction_Icon hoverable undecorated"
+                                                        href={membro.linkedin}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
+                                                        <span className="material-icons">share</span>
+                                                    </a>
+                                                    <a
+                                                        className="Sobre_Interaction_Icon hoverable undecorated"
+                                                        href={membro.telephone}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
+                                                        <span className="material-icons">perm_phone_msg</span>
+                                                    </a>
+                                                    <a
+                                                        className="Sobre_Interaction_Icon hoverable undecorated"
+                                                        href={membro.email}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
+                                                        <span className="material-icons">mail</span>
+                                                    </a>
                                                 </div>
-                                            );
-                                        })}
-                                    </div>
+                                                <div className="Sobre_Member_Text_Container">
+                                                    <h3 className="Sobre_Member_Name">{membro.nome}</h3>
+                                                    <p className="Sobre_Member_Description">{membro.cargo}</p>
+                                                </div>
+                                                <div className="Sobre_Member_Image_Container">
+                                                    <img src={membro.foto} alt={membro.nome} className="Sobre_Member_Image" />
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </m.div>
@@ -939,8 +946,8 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         );
                                     })}
                                 </div>
-                                <div className="About_Card_Text_Container">
-                                    <div className="About_Card_Text_Wrapper">
+                                <div className="About_Card_Text_Container" id="Blog_Text_Container">
+                                    <div className="About_Card_Text_Wrapper" id="Blog_Text_Wrapper">
                                         <div className="About_Card_Header">
                                             <h3 className="Card_Header_Subtitle">Sobre</h3>
                                             <h2 className="Card_Header_Title">Blog</h2>

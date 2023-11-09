@@ -11,6 +11,7 @@ import { setActiveSection, setActiveProductClass, toggleSolutionDetails } from "
 import GoThumb from "../../assets/produtos/RobiOS_Go_Thumb_Image_01.png";
 import InspectorThumb from "../../assets/produtos/RobiOS_Inspector_Thumb_Image_01.png";
 import CargoThumb from "../../assets/produtos/RobiOS_Cargo_Thumb_Image_01.png";
+import Icon_HR_All from "../icons/hr/Icon_HR_All";
 
 const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
     const dispatch = useDispatch();
@@ -133,9 +134,9 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                                             <m.div
                                                 key={index}
                                                 className="Solution_Partner"
-                                                initial={{ opacity: 0 }}
-                                                animate={{ opacity: 1 }}
-                                                exit={{ opacity: 0 }}
+                                                initial={{ x: "200%" }}
+                                                animate={{ x: "0" }}
+                                                exit={{ x: "-200%" }}
                                             >
                                                 <img className="Solution_Partner_Img" src={partner.imgSrc} alt={partner.name} />
                                             </m.div>
@@ -151,8 +152,13 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                         </div>
 
                         <div className="Solution_Detail_Footer">
-                            <button className="ScheduleDemo_Btn" onClick={toggleFinishOrderButton}>
-                                Agendar Demonstração
+                            <button className="ScheduleDemo_Btn hoverable" onClick={toggleFinishOrderButton}>
+                                <Icon_HR_All iconName={"demo"} />
+                                Agende uma Demonstração
+                            </button>
+                            <button className="ScheduleDemo_Btn hoverable" onClick={toggleFinishOrderButton}>
+                                <Icon_HR_All iconName={"openWebLink"} />
+                                Entre em Contato
                             </button>
                         </div>
                     </div>

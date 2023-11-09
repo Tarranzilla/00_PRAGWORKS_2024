@@ -262,8 +262,145 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 className="Terms_Container"
                                 key={"Terms_Container"}
                             >
-                                <p>Termos</p>
-                                <p>Nossos Termos de Serviço explicam seus direitos legais e certas obrigações legais que você tem.</p>
+                                <h3>TERMOS DE USO</h3>
+                                <p>
+                                    Informações Legais Propriedade do Site; Acordo com os Termos de Uso Estes Termos e Condições de Uso (estes "Termos
+                                    de Uso") se aplicam ao site da Human Robotics localizado em www.humanrobotics.com e a todos os sites associados
+                                    vinculados a www.humanrobotics.com pela Human Robotics, suas subsidiárias e afiliadas (coletivamente, o "Site"). O
+                                    Site é propriedade da Human Robotics, Inc. ("Human Robotics," “nós” ou “nosso”) e de seus licenciantes. AO USAR O
+                                    SITE, VOCÊ, OU A PESSOA FÍSICA, EMPRESA OU OUTRA ENTIDADE LEGAL QUE VOCÊ REPRESENTA (“VOCÊ” OU “SEU”), CONCORDA
+                                    COM ESTES TERMOS DE USO; SE VOCÊ NÃO CONCORDAR, NÃO UTILIZE O SITE.
+                                </p>
+
+                                <p>
+                                    A Human Robotics se reserva o direito, a seu exclusivo critério, de alterar, modificar, adicionar ou remover
+                                    partes destes Termos de Uso a qualquer momento. É sua responsabilidade verificar periodicamente esses Termos de
+                                    Uso quanto a mudanças. O uso contínuo do Site após a publicação de alterações significará que você aceita e
+                                    concorda com as mudanças. Desde que você cumpra com estes Termos de Uso, a Human Robotics concede a você um
+                                    privilégio pessoal, não exclusivo, não transferível e limitado para acessar e usar o Site.
+                                </p>
+
+                                <p>
+                                    Conteúdo Todo o texto, gráficos, interfaces de usuário, interfaces visuais, fotografias, marcas registradas,
+                                    logotipos, sons, música, arte e código de computador (coletivamente, "Conteúdo"), incluindo, mas não se limitando
+                                    ao design, estrutura, seleção, coordenação, expressão, "visual e estilo" e disposição de tal Conteúdo, contido no
+                                    Site é de propriedade, controlado ou licenciado pela Human Robotics e é protegido por leis de trade dress,
+                                    direitos autorais, patentes e marcas registradas, e várias outras leis de propriedade intelectual e leis de
+                                    concorrência desleal.
+                                </p>
+
+                                <p>
+                                    Exceto conforme expressamente previsto nestes Termos de Uso, nenhuma parte do Site e nenhum Conteúdo podem ser
+                                    copiados, reproduzidos, republicados, carregados, postados, exibidos publicamente, codificados, traduzidos,
+                                    transmitidos ou distribuídos de nenhuma maneira (incluindo "espelhamento") para qualquer outro computador,
+                                    servidor, site ou outro meio de publicação ou distribuição comercial, sem o prévio consentimento por escrito da
+                                    Human Robotics.
+                                </p>
+
+                                <p>
+                                    Você pode usar informações sobre os produtos e serviços da Human Robotics (como fichas técnicas, artigos de base
+                                    de conhecimento e materiais semelhantes) disponibilizados pela Human Robotics para download no Site, desde que
+                                    você (1) não remova nenhum aviso de propriedade nos documentos, (2) não faça modificações em nenhuma dessas
+                                    informações e (3) não faça representações ou garantias adicionais relacionadas a esses documentos.
+                                </p>
+
+                                <p>
+                                    Seu Uso do Site Você não pode usar nenhum "link profundo," "raspagem de página," "robô," "spider" ou outro
+                                    dispositivo automático, programa, algoritmo ou metodologia similar, ou qualquer processo manual similar ou
+                                    equivalente, para acessar, adquirir, copiar ou monitorar qualquer parte do Site ou qualquer Conteúdo, ou de
+                                    qualquer forma reproduzir ou contornar a estrutura de navegação ou apresentação do Site ou qualquer Conteúdo, para
+                                    obter ou tentar obter materiais, documentos ou informações através de meios que não sejam propositadamente
+                                    disponibilizados pelo Site. A Human Robotics se reserva o direito de proibir qualquer atividade desse tipo.
+                                </p>
+
+                                <p>
+                                    Você não pode tentar obter acesso não autorizado a qualquer parte ou recurso do Site ou de qualquer outro sistema
+                                    ou rede conectado ao Site ou a qualquer servidor da Human Robotics, ou a qualquer um dos serviços oferecidos no
+                                    Site, por meio de hacking, "mineração" de senhas ou qualquer outro meio ilegítimo.
+                                </p>
+
+                                <p>
+                                    Você não pode sondar, examinar ou testar a vulnerabilidade do Site ou de qualquer rede conectada ao Site, nem
+                                    violar a segurança ou as medidas de autenticação do Site ou de qualquer rede conectada ao Site. Você não pode
+                                    fazer uma pesquisa reversa, rastrear ou tentar rastrear informações de qualquer outro usuário ou visitante do
+                                    Site, ou de qualquer cliente da Human Robotics, incluindo qualquer conta da Human Robotics que não seja de sua
+                                    propriedade, até a sua origem, ou explorar o Site ou qualquer serviço ou informação disponível ou oferecido pelo
+                                    Site, de qualquer maneira cujo propósito seja revelar informações, incluindo, mas não se limitando a identificação
+                                    pessoal ou informações, que não sejam de sua própria informação, conforme fornecido pelo Site.
+                                </p>
+
+                                <p>
+                                    Você concorda que não tomará nenhuma ação que imponha uma carga irracional ou desproporcional na infraestrutura do
+                                    Site ou nos sistemas ou redes da Human Robotics, ou em quaisquer sistemas ou redes conectados ao Site ou à Human
+                                    Robotics.
+                                </p>
+
+                                <p>
+                                    Você concorda em não usar nenhum dispositivo, software ou rotina para interferir ou tentar interferir no
+                                    funcionamento adequado do Site ou em qualquer transação sendo conduzida no Site, ou na utilização do Site por
+                                    qualquer outra pessoa.
+                                </p>
+
+                                <p>
+                                    Você não pode forjar cabeçalhos ou de outra forma manipular identificadores para disfarçar a origem de qualquer
+                                    mensagem ou transmissão que você envie para a Human Robotics no Site ou por meio de qualquer serviço oferecido no
+                                    Site. Você não pode fingir que é, ou que representa, outra pessoa, ou se passar por qualquer outra pessoa ou
+                                    entidade.
+                                </p>
+
+                                <p>
+                                    Você não pode usar o Site ou qualquer Conteúdo para qualquer finalidade que seja ilegal ou proibida por estes
+                                    Termos de Uso, ou para solicitar a realização de qualquer atividade ilegal ou outra atividade que infrinja os
+                                    direitos da Human Robotics ou de terceiros.
+                                </p>
+
+                                <p>
+                                    Compras; Outros Termos e Condições As obrigações da Human Robotics, se houver, com relação a seus produtos e
+                                    serviços são regidas exclusivamente pelos acordos nos termos dos quais eles são fornecidos, e nada neste Site deve
+                                    ser interpretado como alterar tais acordos.
+                                </p>
+
+                                <p>
+                                    A Human Robotics pode fazer alterações a qualquer momento, sem aviso prévio, a quaisquer produtos ou serviços
+                                    oferecidos no Site. Os materiais no Site relacionados a produtos e serviços podem estar desatualizados, e a Human
+                                    Robotics não se compromete a atualizar os materiais no Site relacionados a esses produtos e serviços.
+                                </p>
+
+                                <p>
+                                    Direitos Autorais e Marcas Registradas As marcas registradas, marcas de serviço e logotipos usados e exibidos no
+                                    Site são da Human Robotics, suas subsidiárias ou afiliadas, registradas e não registradas. A Human Robotics é a
+                                    detentora dos direitos autorais ou licenciada autorizada de todo o texto e todos os gráficos contidos no Site.
+                                    Todas as marcas registradas e marcas de serviço da Human Robotics que podem ser mencionadas no Site são
+                                    propriedade da Human Robotics. As marcas registradas e marcas de serviço de outras partes que podem ser
+                                    mencionadas no Site são de propriedade de seus respectivos proprietários. Nada no Site deve ser interpretado como
+                                    concessão, por implicação ou de outra forma, de qualquer licença ou direito de usar quaisquer marcas registradas
+                                    ou marcas de serviço da Human Robotics sem a permissão prévia por escrito da Human Robotics. A Human Robotics faz
+                                    cumprir vigorosamente seus direitos de propriedade intelectual. Nem o nome da Human Robotics nem quaisquer de suas
+                                    outras marcas registradas, marcas de serviço ou materiais protegidos por direitos autorais podem ser usados de
+                                    forma alguma, incluindo em qualquer publicidade, hiperlink, publicidade ou materiais promocionais de qualquer
+                                    tipo, relacionados ao Site ou não, sem a permissão prévia por escrito da Human Robotics, exceto que um site de
+                                    terceiros que deseje vincular ao Site e que cumpra com os requisitos destes Termos de Uso pode usar o nome "Human
+                                    Robotics" em ou como parte desse link de URL. Se você acredita que qualquer Conteúdo no Site viola qualquer
+                                    direito de propriedade intelectual seu, entre em contato com a Human Robotics no endereço ou e-mail indicado no
+                                    final destes Termos de Uso.
+                                </p>
+
+                                <p>
+                                    Contas, Senhas e Segurança Certos recursos ou serviços oferecidos no Site podem exigir que você abra uma conta
+                                    (incluindo o estabelecimento de um nome de usuário e senha). Você é inteiramente responsável por manter a
+                                    confidencialidade das informações que você detém para a sua conta, incluindo sua senha, e por qualquer atividade
+                                    que ocorra em sua conta como resultado de você não manter essas informações seguras e confidenciais. Você concorda
+                                    em notificar a Human Robotics imediatamente de qualquer uso não autorizado de sua conta ou senha, ou de qualquer
+                                    outra violação de segurança. Você pode ser responsabilizado por perdas incorridas pela Human Robotics ou por
+                                    qualquer outro usuário ou visitante do Site devido ao uso por outra pessoa do seu nome de usuário, senha ou conta
+                                    como resultado de você não manter suas informações de conta seguras e confidenciais.
+                                </p>
+
+                                <p>
+                                    Você não pode usar o nome de usuário, senha ou conta de outra pessoa a qualquer momento sem a permissão e
+                                    consentimento expressos do titular desse nome de usuário, senha ou conta. A Human Robotics não pode e não será
+                                    responsável por qualquer perda ou dano decorrente do seu não cumprimento dessas obrigações.
+                                </p>
                             </m.div>
                         )}
 
