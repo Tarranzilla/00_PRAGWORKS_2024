@@ -14,6 +14,9 @@ import ProductType from "../../types/00_Produto";
 // Custom Icons Imports
 import Icon_HR_All from "../icons/hr/Icon_HR_All";
 
+// ThreeD_Container Import
+import ThreeD_Container from "../main/ThreeD_Container";
+
 const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     const dispatch = useDispatch();
 
@@ -198,20 +201,15 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                 </div>
                 <div className="Product_Detail_Image_Container">
                     <AnimatePresence mode="wait">
-                        {activeProduct.detail_Images.map(
-                            (imgSrc, index) =>
-                                index === currentImageIndex && (
-                                    <m.div
-                                        className="Product_Detail_Image_Block"
-                                        key={index}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        <m.img className="Product_Detail_Image" src={imgSrc} alt={activeProduct.name} />
-                                    </m.div>
-                                )
-                        )}
+                        <m.div
+                            className="Product_Detail_Image_Block"
+                            key={"ThreeD_Container_" + activeProduct.object3D + "_key"}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                        >
+                            <ThreeD_Container ThreeD_URL={activeProduct.object3D} />
+                        </m.div>
                     </AnimatePresence>
                     <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
                         <span className="material-icons Previous_Btn_Icon">west</span>
@@ -226,3 +224,22 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
 });
 
 export default Produtos_Detalhe;
+
+/*
+
+                        {activeProduct.detail_Images.map(
+                            (imgSrc, index) =>
+                                index === currentImageIndex && (
+                                    <m.div
+                                        className="Product_Detail_Image_Block"
+                                        key={index}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    >
+                                        <m.img className="Product_Detail_Image" src={imgSrc} alt={activeProduct.name} />
+                                    </m.div>
+                                )
+                        )}
+
+*/

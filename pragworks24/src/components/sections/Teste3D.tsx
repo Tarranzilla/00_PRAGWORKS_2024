@@ -15,6 +15,8 @@ import Stats from "three/examples/jsm/libs/stats.module.js";
 
 const shibaUrl = "objects3D/shiba/scene.gltf";
 const robiosGoUrl = "objects3D/robios_go/robios_go.gltf";
+const robiosGoUrl2 = "objects3D/robios_go/robios_go_2.gltf";
+const robiosGoUrl3 = "objects3D/robios_go/robios_go_3.gltf";
 
 const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
     useEffect(() => {
@@ -25,10 +27,14 @@ const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
             const canvas = document.getElementById("Test3DCanvas");
             const aspectRatio = canvasContainer!.clientWidth / canvasContainer!.clientHeight;
             const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Melhor tipo para suavização de sombras
+
             const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x3c3c3c);
             const camera = new THREE.PerspectiveCamera(50, aspectRatio, 1, 1000);
-            camera.position.z = 0;
-            camera.position.y = -2;
+            camera.position.z = 2;
+            camera.position.y = 0;
 
             function resizeCanvasToDisplaySize() {
                 // look up the size the canvas is being displayed
@@ -55,24 +61,35 @@ const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
             ambientLight.castShadow = true;
             scene.add(ambientLight);
 
-            const spotLight = new THREE.SpotLight(0xffffff, 1);
-            spotLight.castShadow = true;
-            spotLight.position.set(0, 64, 32);
-
             const controls = new OrbitControls(camera, renderer.domElement);
+
+            const gltfLoader = new GLTFLoader();
+            let robiosModel;
+
+            gltfLoader.load(robiosGoUrl3, (gltfScene) => {
+                robiosModel = gltfScene.scene;
+                scene.add(robiosModel);
+                robiosModel.traverse((child) => {
+                    if (child.isMesh) {
+                        child.castShadow = true;
+                        child.receiveShadow = true;
+                    }
+                });
+            });
 
             const animate = () => {
                 resizeCanvasToDisplaySize();
+
+                // Adicione uma rotação ao modelo
+                if (robiosModel) {
+                    robiosModel.rotation.y += 0.01; // Ajuste a velocidade da rotação conforme necessário
+                }
+
                 controls.update();
                 renderer.render(scene, camera);
                 window.requestAnimationFrame(animate);
             };
             animate();
-
-            const gltfLoader = new GLTFLoader();
-            gltfLoader.load(robiosGoUrl, (gltfScene) => {
-                scene.add(gltfScene.scene);
-            });
         }
     }, []);
 
