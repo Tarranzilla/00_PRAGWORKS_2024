@@ -20,12 +20,6 @@ import ThreeD_Container from "../main/ThreeD_Container";
 const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     const dispatch = useDispatch();
 
-    const openDetailsButton = (id) => {
-        console.log("Opening Product details");
-        dispatch(toggleProductDetails());
-        dispatch(setActiveProduct({ id: id }));
-    };
-
     const activeProduct = useSelector((state: any) => state.activeProduct);
 
     const closeDetailsButton = () => {
@@ -33,41 +27,10 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
         dispatch(toggleProductDetails());
     };
 
-    const addToCartButton = (id, quantity) => {
-        console.log("Adding to cart");
-        dispatch(addToCart({ id, quantity }));
-    };
-
-    const getItemTotalQuantity = (cartItems: ProductType[], itemId: number): number => {
-        let totalQuantity = 0;
-
-        for (const item of cartItems) {
-            if (item.id === itemId) {
-                totalQuantity += item.cartQuantity;
-            }
-        }
-
-        return totalQuantity;
-    };
-
-    const cartIsOpen = useSelector((state: any) => state.cartIsOpen);
-
-    const cartItems = useSelector((state: any) => state.cartItems);
-    const itemId = activeProduct.id;
-    const itemTotalQuantity = getItemTotalQuantity(cartItems, itemId);
-
     const demoMessage = `Olá, eu gostaria de fazer uma solicitação de demonstração para o seguinte produto:\n\n${activeProduct.name}\n\n`;
     const demoPhoneNumber = "+5541999977955"; // Replace with your desired WhatsApp number
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
-
-    const [isAutoPlayActive, setIsAutoPlayActive] = useState(true);
-
-    const toggleFinishOrderButton = () => {
-        const whatsappUrl = `https://wa.me/${demoPhoneNumber}/?text=${encodeURIComponent(demoMessage)}`;
-        window.open(whatsappUrl, "_blank");
-    };
 
     const handleNextClick = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % activeProduct.detail_Images.length);
@@ -75,14 +38,6 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
 
     const handlePrevClick = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex - 1 + (activeProduct.detail_Images.length + 1)) % (activeProduct.detail_Images.length + 1));
-    };
-
-    const handleNextClick2 = () => {
-        setCurrentPartnerIndex((prevIndex) => (prevIndex + 1) % activeProduct.partners.length);
-    };
-
-    const handlePrevClick2 = () => {
-        setCurrentPartnerIndex((prevIndex) => (prevIndex - 1 + activeProduct.partners.length) % activeProduct.partners.length);
     };
 
     return (
