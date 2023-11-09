@@ -16,27 +16,27 @@ const springTransition = {
     velocity: 50,
 };
 
-import fotoEquipe from "../../assets/sobre/Equipe_HR.png";
+import fotoEquipe from "../../assets/sobre/equipe/Equipe_HR.png";
 
-import fotoOlivier from "../../assets/sobre/olivier.jpeg";
-import fotoFranklin from "../../assets/sobre/franklin_link.jpeg";
-import fotoGustavo from "../../assets/sobre/gustavo_da_paz.jpeg";
-import fotoGustavo2 from "../../assets/sobre/gustavo_raposo.jpeg";
-import fotoHelen from "../../assets/sobre/helen_almeida.jpeg";
-import fotoIeda from "../../assets/sobre/ieda_ikuta.jpeg";
-import fotoJean from "../../assets/sobre/jean_soares.jpeg";
-import fotoKarla from "../../assets/sobre/karla_gomes.jpeg";
-import fotoLarissa from "../../assets/sobre/larissa_felix.jpeg";
-import fotoLeticia from "../../assets/sobre/leticia_rodrigues.jpeg";
-import fotoLucas from "../../assets/sobre/lucas_costa.jpeg";
-import fotoMarcos from "../../assets/sobre/marcos_graebin.jpeg";
-import fotoMaria from "../../assets/sobre/maria_oliveira.jpeg";
-import fotoOtoniel from "../../assets/sobre/otoniel_da_rocha.jpeg";
-import fotoRenan from "../../assets/sobre/renan_felipe.jpeg";
-import fotoRodrigo from "../../assets/sobre/rodrigo_zan.jpeg";
-import fotoRonald from "../../assets/sobre/ronald_landaeta.jpeg";
-import fotoSamuel from "../../assets/sobre/samuel_pizzato.jpeg";
-import fotoVitor from "../../assets/sobre/vitor_hirozawa.jpeg";
+import fotoOlivier from "../../assets/sobre/equipe/olivier.png";
+import fotoFranklin from "../../assets/sobre/equipe/franklin_link.png";
+import fotoGustavo from "../../assets/sobre/equipe/gustavo_da_paz.png";
+import fotoGustavo2 from "../../assets/sobre/equipe/gustavo_raposo.png";
+import fotoHelen from "../../assets/sobre/equipe/helen_almeida.png";
+import fotoIeda from "../../assets/sobre/equipe/ieda_ikuta.png";
+import fotoJean from "../../assets/sobre/equipe/jean_soares.png";
+import fotoKarla from "../../assets/sobre/equipe/karla_gomes.png";
+import fotoLarissa from "../../assets/sobre/equipe/larissa_felix.png";
+import fotoLeticia from "../../assets/sobre/equipe/leticia_rodrigues.png";
+import fotoLucas from "../../assets/sobre/equipe/lucas_costa.png";
+import fotoMarcos from "../../assets/sobre/equipe/marcos_graebin.png";
+import fotoMaria from "../../assets/sobre/equipe/maria_oliveira.png";
+import fotoOtoniel from "../../assets/sobre/equipe/otoniel_da_rocha.png";
+import fotoRenan from "../../assets/sobre/equipe/renan_felipe.png";
+import fotoRodrigo from "../../assets/sobre/equipe/rodrigo_zan.png";
+import fotoRonald from "../../assets/sobre/equipe/ronald_landaeta.png";
+import fotoSamuel from "../../assets/sobre/equipe/samuel_pizzato.png";
+import fotoVitor from "../../assets/sobre/equipe/vitor_hirozawa.png";
 
 const membrosDaEquipe = [
     {
@@ -504,16 +504,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                     </a>
                                                     <a
                                                         className="Sobre_Interaction_Icon hoverable undecorated"
-                                                        href={membro.telephone}
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                    >
-                                                        <span className="material-icons">perm_phone_msg</span>
-                                                    </a>
-                                                    <a
-                                                        className="Sobre_Interaction_Icon hoverable undecorated"
-                                                        href={membro.email}
-                                                        target="_blank"
+                                                        href={"mailto:" + membro.email}
                                                         rel="noreferrer"
                                                     >
                                                         <span className="material-icons">mail</span>
