@@ -13,6 +13,9 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import Stats from "three/examples/jsm/libs/stats.module.js";
 
+const shibaUrl = "objects3D/shiba/scene.gltf";
+const robiosGoUrl = "objects3D/robios_go/robios_go.gltf";
+
 const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
     useEffect(() => {
         const canvasContainer = document.getElementById("teste3dteste");
@@ -66,7 +69,7 @@ const Teste3D = forwardRef(function Section_Teste3D(props, ref: any) {
             animate();
 
             const gltfLoader = new GLTFLoader();
-            gltfLoader.load("objects3D/shiba/scene.gltf", (gltfScene) => {
+            gltfLoader.load(robiosGoUrl, (gltfScene) => {
                 scene.add(gltfScene.scene);
             });
         }
