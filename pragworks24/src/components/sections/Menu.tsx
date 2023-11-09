@@ -426,9 +426,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 <p>Início</p>
                             </div>
                             <div className="Menu_Link_Actions">
-                                <a href="#" className="material-icons hoverable undecorated">
-                                    keyboard_double_arrow_up
-                                </a>
+                                <i className="material-icons hoverable undecorated">keyboard_double_arrow_up</i>
                             </div>
                         </a>
                     </div>
@@ -439,7 +437,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                         <div className="LP_Links">
                             <div className="Links_Container">
                                 <m.div className="Links_Header">
-                                    <a href="#menu-inicio" className="Menu_Link hoverable undecorated" onClick={toggleProducts}>
+                                    <div className="Menu_Link hoverable undecorated" onClick={toggleProducts}>
                                         <p>Produtos</p>
 
                                         <div className="Menu_Link_Actions">
@@ -450,7 +448,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                 keyboard_double_arrow_up
                                             </a>
                                         </div>
-                                    </a>
+                                    </div>
                                 </m.div>
                                 <AnimatePresence>
                                     {productsIsOpen && (
@@ -548,7 +546,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                         <p>Soluções</p>
 
                                         <div className="Menu_Link_Actions">
-                                            <a href="#lista-de-solucoes" className="material-icons hoverable undecorated" onClick={toggleSolutions}>
+                                            <a href="#lista-de-solucoes" className="material-icons hoverable undecorated">
                                                 more
                                             </a>
                                             <a href="#solucoes" className="material-icons hoverable undecorated" onClick={toggleMenuButton}>
@@ -632,18 +630,14 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                             <a href="#sobre" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
                                 <p>Sobre</p>
                                 <div className="Menu_Link_Actions">
-                                    <a href="#sobre" className="material-icons hoverable undecorated" onClick={toggleMenuButton}>
-                                        keyboard_double_arrow_up
-                                    </a>
+                                    <i className="material-icons hoverable undecorated">keyboard_double_arrow_up</i>
                                 </div>
                             </a>
 
                             <a href="#contato" className="Menu_Link hoverable undecorated" onClick={toggleMenuButton}>
                                 <p>Contato</p>
                                 <div className="Menu_Link_Actions">
-                                    <a href="#contato" className="material-icons hoverable undecorated" onClick={toggleMenuButton}>
-                                        keyboard_double_arrow_up
-                                    </a>
+                                    <i className="material-icons hoverable undecorated">keyboard_double_arrow_up</i>
                                 </div>
                             </a>
                         </div>
@@ -656,18 +650,14 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 <p>Privacidade</p>
                             </div>
 
-                            <a href="#privacidade" className="material-icons hoverable undecorated" onClick={togglePrivacy}>
-                                more
-                            </a>
+                            <i className="material-icons hoverable undecorated">more</i>
                         </a>
                         <a href="#termos" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleTerms2}>
                             <div className="Header_Link_Organizer">
                                 <span className="material-icons">assignment</span>
                                 <p>Termos</p>
                             </div>
-                            <a href="#termos" className="material-icons hoverable undecorated" onClick={toggleTerms2}>
-                                more
-                            </a>
+                            <i className="material-icons hoverable undecorated">more</i>
                         </a>
                         <a href="#mapa-do-site" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleSiteMap2}>
                             <div className="Header_Link_Organizer">
@@ -675,14 +665,12 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 <p>Mapa do Site</p>
                             </div>
 
-                            <a href="#mapa-do-site" className="material-icons hoverable undecorated" onClick={toggleSiteMap2}>
-                                more
-                            </a>
+                            <i className="material-icons hoverable undecorated">more</i>
                         </a>
                     </div>
 
                     <div className="Configurations">
-                        <m.a className="Configurations_Header hoverable undecorated">
+                        <m.div className="Configurations_Header hoverable undecorated">
                             <div className="Menu_Link" onClick={toggleConfig}>
                                 <div className="Header_Link_Organizer">
                                     <span className="material-icons LP_Links_Icon">settings</span>
@@ -693,7 +681,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                     more
                                 </a>
                             </div>
-                        </m.a>
+                        </m.div>
                         <AnimatePresence>
                             {configIsOpen && (
                                 <m.div
