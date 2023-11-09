@@ -8,9 +8,9 @@ import { motion as m, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveSection, setActiveProductClass, toggleSolutionDetails } from "../../context/main-context";
 
-import GoThumb from "../../assets/produtos/RobiOS_Go_Thumb_Image_01.png";
-import InspectorThumb from "../../assets/produtos/RobiOS_Inspector_Thumb_Image_01.png";
-import CargoThumb from "../../assets/produtos/RobiOS_Cargo_Thumb_Image_01.png";
+import GoThumb from "../../../assets/produtos/RobiOS_Go_Thumb_Image_01.png";
+import InspectorThumb from "../../../assets/produtos/RobiOS_Inspector_Thumb_Image_01.png";
+import CargoThumb from "../../../assets/produtos/RobiOS_Cargo_Thumb_Image_01.png";
 import Icon_HR_All from "../icons/hr/Icon_HR_All";
 
 const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
