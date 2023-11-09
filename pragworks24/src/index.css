@@ -1021,13 +1021,13 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.Product_Detail_Title,
 .Product_Detail_Type {
     font-size: 0.6rem;
     text-transform: uppercase;
     letter-spacing: 6px;
 }
 
+.Solution_Detail_Title,
 .Product_Detail_Title {
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -1041,7 +1041,7 @@ body {
     align-items: center;
     justify-content: space-between;
     gap: var(--gap);
-    padding: var(--gap);
+    padding-top: var(--gap);
     height: 3rem;
 }
 
@@ -1346,6 +1346,10 @@ body {
 }
 
 /* SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS - SEÇÃO DE SOBRE NÓS */
+
+#sobre {
+    gap: 0;
+}
 
 .Card_Header_Subtitle {
     margin-bottom: -0.5rem;

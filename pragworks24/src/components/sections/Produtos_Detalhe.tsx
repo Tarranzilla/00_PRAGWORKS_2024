@@ -83,8 +83,12 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                     <strong>{activeProduct.textIntro}</strong>
                                 </p>
                                 <div className="Product_Detail_FullDescription">
-                                    {activeProduct.textDetail.map((paragraph) => {
-                                        return <p className="Product_Detail_Text_Content">{paragraph}</p>;
+                                    {activeProduct.textDetail.map((paragraph, index) => {
+                                        return (
+                                            <p className="Product_Detail_Text_Content" key={"full_description_paragraph_" + index}>
+                                                {paragraph}
+                                            </p>
+                                        );
                                     })}
                                 </div>
                             </div>
