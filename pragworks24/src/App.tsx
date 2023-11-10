@@ -104,6 +104,7 @@ function App() {
 
                 {/* Progress Bar */}
                 <m.div className="progress-bar" style={{ scaleX: scrollYProgress }} key={"progress_bar_key"} />
+                <m.div className="progress-bar-bg" key={"progress_bar_bg_key"}></m.div>
             </AnimatePresence>
 
             {/* Outlet */}

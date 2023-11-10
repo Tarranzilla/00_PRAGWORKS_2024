@@ -27,17 +27,25 @@
     font-style: normal;
 }
 
+/* Roboto Mono Variable Font */
+@font-face {
+    font-family: "Roboto_Mono";
+    src: url("./assets/fonts/RobotoMono-VariableFont.ttf");
+}
+
+/* Roboto Mono Italic Variable Font */
+@font-face {
+    font-family: "Roboto_Mono_Italic";
+    src: url("./assets/fonts/RobotoMono-Italic-VariableFont.ttf");
+}
+
 /* CONFIGURAÇÕES GERAIS - VARIÁVEIS - A RAIZ DO PROJETO */
 
 :root {
-    font-family: sans-serif;
+    font-family: "Roboto_Mono";
     line-height: 1.5;
     font-weight: 400;
     font-size: 1.25rem;
-
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #242424;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -45,14 +53,30 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
+    --legacy_text-color: rgba(255, 255, 255, 0.8);
+    --legacy_faded_text-color: rgba(255, 255, 255, 0.2);
+    --legacy_background-color: #242424;
+    --legacy_faded_background-color: rgba(60, 60, 60, 0.5);
+    --legacy_btn_color: #6b6b6b;
+    --legacy_card_color: #3c3c3c;
+    --legacy_subcard_color: #4c4c4c;
+    --legacy_seleted-color: #008000;
+
     --text-color: rgba(255, 255, 255, 0.8);
     --faded_text-color: rgba(255, 255, 255, 0.2);
-    --background-color: #242424;
-    --faded_background-color: rgba(60, 60, 60, 0.5);
-    --btn_color: #6b6b6b;
-    --card_color: #3c3c3c;
-    --subcard_color: #4c4c4c;
-    --seleted-color: #008000;
+    --evenmore-faded-text-color: rgba(255, 255, 255, 0.1);
+    --background-color: #000343;
+    --faded_background-color: #00034380;
+    --btn_color: #6b6b6b80;
+    --card_color: #3c3c3c80;
+    --subcard_color: #4c4c4c80;
+    --seleted-color: #00aaff80;
+
+    --faded-black: rgba(0, 0, 0, 0.5);
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--background-color);
 
     --small_gap: 0.5rem;
     --gap: 1rem;
@@ -71,7 +95,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--faded_background-color);
+    background-color: var(--faded-black);
     border-radius: var(--gap);
 }
 
@@ -98,6 +122,12 @@ body {
     min-width: 320px;
     text-align: center;
     overflow: hidden;
+}
+
+button {
+    font-family: "Roboto_Mono";
+    background-color: var(--text-color);
+    color: var(--background-color);
 }
 
 .Body_Active {
@@ -249,6 +279,7 @@ body {
 .Nav_Logotype {
     font-size: clamp(1rem, 2vw, 1.5rem);
     line-height: clamp(1rem, 2vw, 1.5rem);
+    font-family: "Researcher_WOFF2";
 }
 
 .Nav_Links_Container {
@@ -265,7 +296,7 @@ body {
 
 .Nav_Link_Active {
     transform: scale(1.1);
-    color: green;
+    color: var(--seleted-color);
 }
 
 .Nav_Utility {
@@ -545,10 +576,15 @@ body {
     cursor: pointer;
     font-size: clamp(1rem, 1vw, 1.5rem);
     border-radius: var(--gap);
+    font-family: "Roboto_Mono";
 }
 
 .Type_Header {
     margin-bottom: -1rem;
+}
+
+.Type_Viewer_Title {
+    font-family: "Researcher_WOFF2";
 }
 
 .Product_Card,
@@ -641,6 +677,38 @@ body {
     cursor: pointer;
 }
 
+.Product_Detail_Text_Item_Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Product_Detail_Subtitle,
+.Card_Product_Prename {
+    font-family: "Researcher_WOFF2";
+    font-size: clamp(0.75rem, 3vw, 1.5rem);
+}
+
+.Product_Card_Detail_Title,
+.Card_Product_Name {
+    font-family: "Researcher_WOFF2";
+    margin-top: -1rem;
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: -0.5rem;
+}
+
+.Card_Product_Type {
+    font-size: clamp(0.5rem, 1vw, 0.75rem);
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    font-weight: 800;
+}
+
+.Solution_Card_Detail_Title {
+    font-size: clamp(2.4rem, 4vw, 8rem);
+    margin-bottom: -1rem;
+}
+
 .Robot_Card_Main_Image {
     position: absolute;
     top: 1rem;
@@ -716,6 +784,7 @@ body {
     position: absolute;
     padding: var(--small_gap);
     border-radius: 50%;
+    background-color: var(--background-color);
 }
 
 .Previous_Btn {
@@ -809,7 +878,19 @@ body {
     left: 0;
     width: 100%;
     height: 10px;
-    background-color: hotpink;
+    background-color: var(--seleted-color);
+    transform-origin: 0%;
+    outline: none;
+}
+
+.progress-bar-bg {
+    z-index: 97;
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-color: var(--evenmore-faded-text-color);
     transform-origin: 0%;
     outline: none;
 }
@@ -994,15 +1075,18 @@ body {
 }
 
 .Brand_Fixed_Phrase {
-    font-size: clamp(1.5rem, 3vw, 6rem);
+    font-size: clamp(1.2rem, 3vw, 6rem);
+    font-weight: 800;
+    letter-spacing: 0.2rem;
 }
 
 .Brand_Changing_Word {
-    font-size: clamp(4rem, 8vw, 8rem);
-    line-height: 6rem;
+    font-size: clamp(4rem, 10vw, 14rem);
+    line-height: 6.5rem;
     color: var(--seleted-color);
     position: relative;
-    top: -1rem;
+    top: -1.25rem;
+    font-family: "Researcher_WOFF2";
 }
 
 /* SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO */
@@ -1031,7 +1115,8 @@ body {
 .Product_Detail_Title {
     font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 8px;
+    letter-spacing: 2px;
+    font-family: "Researcher_WOFF2";
 }
 
 .Solution_Detail_Header,
@@ -1042,6 +1127,7 @@ body {
     justify-content: space-between;
     gap: var(--gap);
     padding-top: var(--gap);
+    padding-inline: var(--gap);
     height: 3rem;
 }
 
@@ -1182,6 +1268,7 @@ body {
     flex-direction: column;
     gap: var(--small_gap);
     padding-inline: var(--gap);
+    font-size: clamp(0.75rem, 1vw, 1.5rem);
 }
 
 .Product_Detail_FullDescription {
@@ -1270,7 +1357,10 @@ body {
 
 .Solution_Title {
     margin-top: var(--gap);
-    font-size: clamp(2rem, 5vw, 8rem);
+    font-size: clamp(2rem, 8vw, 8rem);
+    font-family: "Researcher_WOFF2";
+    color: var(--text-color);
+    z-index: 2;
 }
 
 .Solution_Video_Fader {
@@ -1281,6 +1371,16 @@ body {
     width: 100%;
     height: 75%;
     background-image: linear-gradient(transparent, var(--background-color));
+}
+
+#Solution_Top_Fader {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75%;
+    background-image: linear-gradient(var(--background-color), transparent);
 }
 
 .Solution_Recommended_Products_Container {
@@ -1356,24 +1456,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 6px;
     font-size: 0.75rem;
-}
-
-.Product_Detail_Subtitle {
-    margin-bottom: -1rem;
-    letter-spacing: 6px;
-    font-size: 0.75rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-.Product_Card_Detail_Title {
-    font-size: clamp(4rem, 4vw, 8rem);
-    margin-bottom: -1rem;
-}
-
-.Solution_Card_Detail_Title {
-    font-size: clamp(2.4rem, 4vw, 8rem);
-    margin-bottom: -1rem;
 }
 
 .Solution_Detail_Description,
@@ -2171,12 +2253,12 @@ body {
     flex-direction: row;
     align-items: center;
     gap: var(--small_gap);
+    color: var(--seleted-color);
 }
 
 .Produto_Container_Text_Header > * > svg {
     width: 4rem;
     height: 4rem;
-    fill: var(--text-color);
 }
 
 .Produto_Container_Titulo {
@@ -2195,6 +2277,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
     padding-inline: var(--gap);
     gap: var(--gap);
@@ -2202,34 +2285,40 @@ body {
 }
 
 .Produto_Container_Text_Interactions {
+    flex: 1;
     display: flex;
     align-items: center;
     padding: var(--gap);
-    background-color: var(--text-color);
-    color: var(--card_color);
+    background-color: var(--seleted-color);
+    color: var(--text-color);
     border-radius: var(--gap);
-    width: 100%;
+    min-width: 10rem;
     cursor: pointer;
+    font-size: clamp(0.8rem, 1.2vw, 1.2rem);
 }
 
 .Produto_Container_Text_Interactions > * > svg {
     width: 4rem;
     height: 4rem;
-    fill: var(--card_color);
+    fill: var(--text-color);
 }
 
 .Produto_Container_Text_Interactions > * > svg > * {
-    fill: var(--card_color);
+    fill: var(--text-color);
 }
 
 .Produto_Container_Interaction_Titulo {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1vw, 1.6rem);
     line-height: 1.2rem;
     text-align: center;
 }
 
 .Icon_Container > svg {
-    width: 3rem;
-    height: 3rem;
-    fill: var(--text-color);
+    width: clamp(1.5rem, 3vw, 4rem);
+    height: clamp(1.5rem, 3vw, 4rem);
+    fill: var(--seleted-color);
+}
+
+.Icon_Container > svg > path {
+    fill: var(--seleted-color);
 }

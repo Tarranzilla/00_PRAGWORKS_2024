@@ -85,6 +85,7 @@ const Section_Solucoes = forwardRef(function Section_Solucoes(props, ref: any) {
                                     <span className="material-icons">info</span>Mais Detalhes
                                 </button>
                                 <div className="Solution_Video_Fader"></div>
+                                <div className="Solution_Video_Fader" id="Solution_Top_Fader"></div>
                                 <video className="Solution_Video" src={solution.videoSrc[0]} autoPlay loop muted />
                             </m.div>
                         );

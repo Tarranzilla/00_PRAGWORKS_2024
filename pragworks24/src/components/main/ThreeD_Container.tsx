@@ -29,12 +29,13 @@ const ThreeD_Container = forwardRef(function ThreeD_Container({ ThreeD_URL }: Th
             const canvasContainer = document.getElementById("ThreeD_Container_id");
             const canvas = document.getElementById("ThreeD_Canvas_id");
             const aspectRatio = canvasContainer!.clientWidth / canvasContainer!.clientHeight;
-            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            renderer.setClearColor(0xffffff, 0.1); // the default
             renderer.shadowMap.enabled = true;
             renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Melhor tipo para suavização de sombras
 
             const scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x4c4c4c);
             const camera = new THREE.PerspectiveCamera(50, aspectRatio, 1, 1000);
             camera.position.z = 2;
             camera.position.y = 0;
