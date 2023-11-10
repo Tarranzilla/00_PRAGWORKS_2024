@@ -292,11 +292,27 @@ button {
 
 .Nav_Link {
     font-size: clamp(0.75rem, 1vw, 1rem);
+    position: relative;
+}
+
+.Nav_Link::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 0.25rem;
+    width: 0;
+    background-color: var(--seleted-color);
+    transition: width 0.2s ease-in-out;
+    bottom: -0.25rem;
 }
 
 .Nav_Link_Active {
     transform: scale(1.1);
     color: var(--seleted-color);
+}
+
+.Nav_Link_Active::before {
+    width: 100%;
 }
 
 .Nav_Utility {
@@ -599,6 +615,8 @@ button {
     border-radius: var(--gap);
     position: relative;
     overflow: hidden;
+    outline: 4px solid var(--background-color);
+    outline-offset: -2px;
 }
 
 .Product_Card:hover,
@@ -785,6 +803,15 @@ button {
     padding: var(--small_gap);
     border-radius: 50%;
     background-color: var(--background-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.Previous_Btn:hover,
+.Previous_Btn:focus-within,
+.Next_Btn:hover,
+.Next_Btn:focus-within {
+    background-color: var(--seleted-color);
+    scale: 1.1;
 }
 
 .Previous_Btn {
@@ -803,6 +830,7 @@ button {
     top: 50%;
     left: var(--gap);
     transform: translateY(-50%);
+    color: var(--text-color);
 }
 
 .Centered_Next_Btn {
@@ -811,6 +839,7 @@ button {
     top: 50%;
     right: var(--gap);
     transform: translateY(-50%);
+    color: var(--text-color);
 }
 
 .Search_Btn {
