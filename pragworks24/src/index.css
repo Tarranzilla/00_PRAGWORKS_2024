@@ -65,7 +65,8 @@
     --text-color: rgba(255, 255, 255, 0.8);
     --faded_text-color: rgba(255, 255, 255, 0.2);
     --evenmore-faded-text-color: rgba(255, 255, 255, 0.1);
-    --background-color: #000343;
+    --background-color-solid: #000343;
+    --background-color: #00034380;
     --faded_background-color: #00034380;
     --btn_color: #6b6b6b80;
     --card_color: #3c3c3c80;
@@ -84,14 +85,14 @@
     --large_gap: 2rem;
     --xlarge_gap: 3rem;
 
-    --auto_slider_card_width: 20vh;
+    --auto_slider_card_width: 25vh;
     --bloposts_ammount: 17;
     --partners_ammount: 12;
 }
 
 ::-webkit-scrollbar {
-    width: 0.5vw;
-    height: 0.5vw;
+    width: 10px;
+    height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -111,6 +112,11 @@
     border: none;
 }
 
+.undecorated {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
 html {
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
@@ -124,21 +130,28 @@ body {
     overflow: hidden;
 }
 
+.Body_Active {
+    overflow: auto;
+}
+
 button {
     font-family: "Roboto_Mono";
     background-color: var(--text-color);
     color: var(--background-color);
 }
 
-.Body_Active {
-    overflow: auto;
-}
-
-#root {
+.Btn_Class {
+    background-color: var(--btn_color);
 }
 
 .hoverable {
     transition: all 0.2s ease-in-out;
+}
+
+.hoverable:hover,
+.hoverable:focus,
+.hoverable:focus-within {
+    transform: scale(1.05);
 }
 
 .small_hoverable {
@@ -151,35 +164,36 @@ button {
     transform: scale(1.01);
 }
 
-.Btn_Class {
-    background-color: var(--btn_color);
+/* ANIMATIONS - ANIMATIONS - ANIMATIONS - ANIMATIONS */
+
+@keyframes rotateZ {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
 }
 
-.undecorated {
-    text-decoration: none;
-    color: var(--text-color);
+@keyframes scrollLeft_Experiencias {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--auto_slider_card_width) * var(--bloposts_ammount) * 1));
+    }
 }
 
-.hoverable:hover,
-.hoverable:focus,
-.hoverable:focus-within {
-    transform: scale(1.05);
+@keyframes scrollRight_Parceiros {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(var(--auto_slider_card_width) * var(--partners_ammount) * -1));
+    }
 }
 
-.Loading_Screen {
-    top: 3rem;
-    left: 0;
-    z-index: 1000;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: calc(100vw - 0.5rem);
-    height: calc(100vh - 6rem);
-    background-color: var(--background-color);
-    opacity: 1;
-}
+/* MODALS - MODALS - MODALS - MODALS - MODALS */
 
 .Cookies_Banner {
     z-index: 1000;
@@ -214,15 +228,6 @@ button {
     animation: rotateZ 10s linear infinite;
 }
 
-@keyframes rotateZ {
-    0% {
-        transform: rotateZ(0deg);
-    }
-    100% {
-        transform: rotateZ(360deg);
-    }
-}
-
 .Cookies_Banner_Text {
     max-width: 30rem;
 }
@@ -232,6 +237,23 @@ button {
     padding-inline: var(--gap);
     border-radius: var(--gap);
     cursor: pointer;
+}
+
+/* MAIN UI - MAIN UI - MAIN UI - MAIN UI - MAIN UI */
+
+.Loading_Screen {
+    top: 3rem;
+    left: 0;
+    z-index: 1000;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: calc(100vw - 0.5rem);
+    height: calc(100vh - 6rem);
+    background-color: var(--background-color);
+    opacity: 1;
 }
 
 .Navbar {
@@ -246,7 +268,7 @@ button {
     align-items: center;
     gap: var(--gap);
     padding-inline: var(--small_gap);
-    background-color: var(--background-color);
+    background-color: var(--background-color-solid);
 }
 
 .Navbar > * {
@@ -366,7 +388,7 @@ button {
     align-items: center;
     justify-content: space-between;
     padding: var(--small_gap);
-    background-color: var(--background-color);
+    background-color: var(--background-color-solid);
 }
 
 .Footer > * {
@@ -516,8 +538,9 @@ button {
 }
 
 .Section_Divider_Text {
-    font-size: clamp(4rem, 10vw, 8rem);
+    font-size: clamp(2rem, 10vw, 8rem);
     outline: none;
+    font-family: "Researcher_WOFF2";
 }
 
 .LP_Section {
@@ -590,6 +613,7 @@ button {
     align-items: center;
     justify-content: center;
     padding: var(--small_gap);
+    padding-inline: var(--gap);
     cursor: pointer;
     font-size: clamp(1rem, 1vw, 1.5rem);
     border-radius: var(--gap);
@@ -623,6 +647,12 @@ button {
 .Product_Card:hover,
 .Product_Card:focus-within > .Product_Bg_Image {
     filter: saturate(2);
+}
+
+.Product_Card:focus-within > .Product_Card_Body > .Card_Product_Description,
+.Product_Card:hover > .Product_Card_Body > .Card_Product_Description {
+    pointer-events: all;
+    opacity: 1;
 }
 
 .Product_Bg_Image {
@@ -723,6 +753,12 @@ button {
     font-weight: 800;
 }
 
+.Card_Product_Description {
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+
 .Solution_Card_Detail_Title {
     font-size: clamp(2.4rem, 4vw, 8rem);
     margin-bottom: -1rem;
@@ -816,13 +852,13 @@ button {
 }
 
 .Previous_Btn {
-    bottom: var(--large_gap);
-    left: var(--large_gap);
+    bottom: var(--medium_gap);
+    left: var(--medium_gap);
 }
 
 .Next_Btn {
-    bottom: var(--large_gap);
-    right: var(--large_gap);
+    bottom: var(--medium_gap);
+    right: var(--medium_gap);
 }
 
 .Centered_Previous_Btn {
@@ -998,24 +1034,6 @@ button {
     object-fit: cover;
 }
 
-@keyframes scrollLeft_Experiencias {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(var(--auto_slider_card_width) * var(--bloposts_ammount) * 1));
-    }
-}
-
-@keyframes scrollRight_Parceiros {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(var(--auto_slider_card_width) * var(--partners_ammount) * -1));
-    }
-}
-
 .slider_experiencias {
     animation: scrollLeft_Experiencias 90s linear infinite;
     justify-content: end;
@@ -1141,12 +1159,21 @@ button {
     letter-spacing: 6px;
 }
 
+.Product_Detail_Title_Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
 .Solution_Detail_Title,
 .Product_Detail_Title {
-    font-size: 0.8rem;
+    font-size: clamp(0.5rem, 1vw, 0.8rem);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-family: "Researcher_WOFF2";
+    line-height: clamp(0.5rem, 1vw, 0.8rem);
 }
 
 .Solution_Detail_Header,
@@ -1171,6 +1198,14 @@ button {
     padding: var(--gap);
 }
 
+.Product_Detail_Content_Header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+}
+
 .About_Card_Image_Container,
 .Solution_Detail_Image_Container,
 .Product_Detail_Image_Container {
@@ -1189,6 +1224,10 @@ button {
     scroll-snap-type: x mandatory;
     border-radius: var(--gap);
     background-color: var(--card_color);
+}
+
+.Mobile_Image_Container {
+    display: none;
 }
 
 .About_Card_Img_Block,
@@ -1764,6 +1803,7 @@ button {
     justify-content: end;
     flex: 1;
     height: 100%;
+    width: 100%;
     gap: var(--gap);
     transition: all 0.2s ease-in-out;
     z-index: 1;
@@ -2091,93 +2131,6 @@ button {
     display: none;
 }
 
-/* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */
-
-@media screen and (max-width: 1200px) {
-    .About_Card_Post_Container {
-        grid-template-columns: repeat(1, 1fr);
-        padding-left: var(--gap);
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .Mobile_Only {
-        display: flex;
-    }
-    .Desktop_Only {
-        display: none;
-    }
-
-    .Nav_Links_Container {
-        overflow: hidden;
-        flex: 2;
-    }
-
-    .Nav_Link {
-        font-size: 0.95rem;
-    }
-
-    .Menu_Container {
-        flex-direction: column;
-        overflow-y: auto;
-    }
-    .Menu_Main_List,
-    .Menu_Options {
-        flex-shrink: 0;
-    }
-
-    .Secondary_Links,
-    .Menu_Options {
-        gap: var(--small_gap);
-    }
-
-    .Menu_Options {
-        display: none;
-    }
-
-    .List_Line_Container {
-        width: 1rem;
-    }
-
-    .Product_Links {
-        gap: var(--small_gap);
-    }
-
-    .Product_Detail_Content {
-        flex-direction: column;
-    }
-
-    .Solution_Detail_Content {
-        flex-direction: column;
-    }
-
-    .About_Card_Content {
-        flex-direction: column;
-    }
-
-    .Contact_Action_Btn {
-        padding: var(--small_gap);
-    }
-
-    .Maps_Master_Container {
-        display: none;
-    }
-
-    .Footer_Copyright {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .Nav_Logotype {
-        display: none;
-    }
-
-    .Product_Card {
-        min-width: 90%;
-    }
-}
-
 #teste3dteste {
     overflow: hidden;
     border-radius: var(--gap);
@@ -2293,7 +2246,7 @@ button {
 
 .Produto_Container_Titulo {
     font-size: 1.2rem;
-    line-height: 1.5rem;
+    line-height: 1.2rem;
     text-align: start;
 }
 
@@ -2301,6 +2254,7 @@ button {
     padding-left: 0.5rem;
     max-width: 30rem;
     text-align: start;
+    font-size: clamp(0.8rem, 1.2vw, 1.5rem);
 }
 
 .Produto_Detalhe_Footer {
@@ -2318,7 +2272,7 @@ button {
     flex: 1;
     display: flex;
     align-items: center;
-    padding: var(--gap);
+    padding: var(--small_gap);
     background-color: var(--seleted-color);
     color: var(--text-color);
     border-radius: var(--gap);
@@ -2341,6 +2295,7 @@ button {
     font-size: clamp(0.8rem, 1vw, 1.6rem);
     line-height: 1.2rem;
     text-align: center;
+    margin-inline: auto;
 }
 
 .Icon_Container > svg {
@@ -2351,4 +2306,149 @@ button {
 
 .Icon_Container > svg > path {
     fill: var(--seleted-color);
+}
+
+/* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */
+
+@media screen and (max-width: 1200px) {
+    .About_Card_Post_Container {
+        grid-template-columns: repeat(1, 1fr);
+        padding-left: var(--gap);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .Mobile_Only {
+        display: flex;
+    }
+    .Desktop_Only {
+        display: none;
+    }
+
+    .Nav_Links_Container {
+        overflow: hidden;
+        flex: 2;
+    }
+
+    .Nav_Link {
+        font-size: 0.95rem;
+    }
+
+    .Menu_Container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+    .Menu_Main_List,
+    .Menu_Options {
+        flex-shrink: 0;
+    }
+
+    .Secondary_Links,
+    .Menu_Options {
+        gap: var(--small_gap);
+    }
+
+    .Menu_Options {
+        display: none;
+    }
+
+    .LP_Section {
+        gap: 0;
+    }
+
+    .List_Line_Container {
+        width: 1rem;
+    }
+
+    .Product_Links {
+        gap: var(--small_gap);
+    }
+
+    .Brand_Declaration {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: -3rem;
+    }
+
+    .Brand_Fixed_Phrase {
+        font-size: clamp(1.2rem, 1vw, 2rem);
+        line-height: clamp(1.2rem, 1vw, 2rem);
+    }
+
+    .Brand_Changing_Word {
+        font-size: clamp(3rem, 5vw, 6rem);
+    }
+
+    .Card_Product_Name {
+        font-size: clamp(2rem, 4vw, 4rem);
+    }
+
+    .Card_Product_Description {
+        font-size: clamp(0.8rem, 1.2vw, 1.5rem);
+    }
+
+    .Product_Card_Header {
+        z-index: 3;
+    }
+
+    .Robot_Card_Main_Image {
+        scale: 0.8;
+        top: -3.5rem;
+    }
+
+    .Product_Detail_Content {
+        padding: 0;
+        padding-block: var(--small_gap);
+        flex-direction: column;
+    }
+
+    .Product_Detail_Text_Container {
+        direction: rtl;
+    }
+
+    .Product_Detail_Text_Wrapper {
+        direction: ltr;
+    }
+
+    .Produto_Detalhe_Footer,
+    .Product_Detail_Text_Item_Content {
+        padding: 0;
+    }
+
+    .Mobile_Image_Container {
+        height: 33vh;
+    }
+
+    .Solution_Detail_Content {
+        flex-direction: column;
+    }
+
+    .About_Card_Content {
+        flex-direction: column;
+    }
+
+    .Contact_Action_Btn {
+        padding: var(--small_gap);
+    }
+
+    .Maps_Master_Container {
+        display: none;
+    }
+
+    .Footer_Copyright {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .Nav_Logotype {
+        display: none;
+    }
+
+    .Product_Card {
+        min-width: 90%;
+    }
 }

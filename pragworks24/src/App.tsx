@@ -16,6 +16,7 @@ import { setLgpdConsent } from "./context/main-context";
 import Navbar from "./components/main/Navbar";
 import Searchbar from "./components/main/Searchbar";
 import Footer from "./components/main/Footer";
+import Section_Menu from "./components/sections/Menu.tsx";
 
 import Icon_HumanRobotics from "./components/icons/Icon_HumanRobotics";
 
@@ -109,6 +110,11 @@ function App() {
 
             {/* Outlet */}
             <Outlet />
+
+            <Section_Menu />
+            <div className="Section_Divider Section_Divider_With_Text" id="SD06" key={"SD06_key"}>
+                <h1 className="Section_Divider_Text">Human Robotics</h1>
+            </div>
 
             <AnimatePresence mode="popLayout">
                 <Footer key="Footer_Component_Key" />

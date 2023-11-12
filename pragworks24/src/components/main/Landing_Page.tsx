@@ -14,7 +14,6 @@ import Section_Produtos from "../sections/Produtos.tsx";
 import Section_Solucoes from "../sections/Solucoes.tsx";
 import Section_Sobre from "../sections/Sobre.tsx";
 import Section_Contato from "../sections/Contato.tsx";
-import Section_Menu from "../sections/Menu.tsx";
 
 const LandingPage = forwardRef(function LandingPage(props, ref: any) {
     return (
@@ -41,10 +40,6 @@ const LandingPage = forwardRef(function LandingPage(props, ref: any) {
             <Section_Contato />
             <div className="Section_Divider Section_Divider_With_Text" id="SD05" key={"SD05_key"}>
                 <h1 className="Section_Divider_Text">Menu</h1>
-            </div>
-            <Section_Menu />
-            <div className="Section_Divider Section_Divider_With_Text" id="SD06" key={"SD06_key"}>
-                <h1 className="Section_Divider_Text">Human Robotics</h1>
             </div>
         </>
     );

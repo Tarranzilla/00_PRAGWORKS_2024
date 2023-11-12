@@ -16,6 +16,7 @@ import Icon_HR_All from "../icons/hr/Icon_HR_All";
 
 // ThreeD_Container Import
 import ThreeD_Container from "../main/ThreeD_Container";
+import ThreeD_Container_Mobile from "../main/ThreeD_Container Mobile";
 
 const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     const dispatch = useDispatch();
@@ -57,7 +58,11 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
         <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Product_Detail">
             <div className="Product_Detail_Header">
                 <span className="material-icons Info_Icon">info</span>
-                <h3 className="Product_Detail_Title">{"Detalhes do Produto: " + activeProduct.prename + " " + activeProduct.name}</h3>
+                <div className="Product_Detail_Title_Container">
+                    <h3 className="Product_Detail_Title">Detalhes do Produto:</h3>
+                    <h3 className="Product_Detail_Title">{activeProduct.prename + " " + activeProduct.name}</h3>
+                </div>
+
                 <button className="Close_Btn_B hoverable" onClick={closeDetailsButton}>
                     <span className="material-icons">close</span>
                 </button>
@@ -66,7 +71,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                 <div className="Product_Detail_Text_Container">
                     <div className="Product_Detail_Text_Wrapper">
                         {/* Tipo do Produto */}
-                        <div className="Product_Detail_Text_Item">
+                        <div className="Product_Detail_Content_Header">
                             <div className="Product_Detail_Text_Item_Header">
                                 <h3 className="Product_Detail_Subtitle">{activeProduct.prename}</h3>
                                 <h1 className="Product_Card_Detail_Title">{activeProduct.name}</h1>
@@ -74,6 +79,56 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                             <div className="Product_Detail_Text_Item_Content">
                                 <p className="Product_Detail_Type">{activeProduct.type}</p>
                             </div>
+                        </div>
+
+                        {/* Imagens do Produto Mobile */}
+                        <div
+                            className="Product_Detail_Image_Container Mobile_Only Mobile_Image_Container"
+                            key={"Mobile_Product_Detail_Image_Container"}
+                        >
+                            <AnimatePresence mode="popLayout">
+                                {currentImageIndex === 0 && activeProduct.object3D && (
+                                    <m.div
+                                        className="Product_Detail_Image_Block"
+                                        key={"ThreeD_Container_" + activeProduct.object3D + "_key_Mobile"}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    >
+                                        <ThreeD_Container_Mobile
+                                            ThreeD_URL={activeProduct.object3D}
+                                            identifier={"mobile"}
+                                            key={"threeD_Container_Mobile"}
+                                        />
+                                    </m.div>
+                                )}
+
+                                {activeProduct.detail_Images.map(
+                                    (imgSrc, index) =>
+                                        index + 1 === currentImageIndex && (
+                                            <m.div
+                                                className="Product_Detail_Image_Block"
+                                                key={index + "_Mobile"}
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                            >
+                                                <m.img
+                                                    className="Product_Detail_Image"
+                                                    src={imgSrc}
+                                                    alt={activeProduct.name}
+                                                    key={index + "img_Key_Mobile"}
+                                                />
+                                            </m.div>
+                                        )
+                                )}
+                            </AnimatePresence>
+                            <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
+                                <span className="material-icons Previous_Btn_Icon">west</span>
+                            </button>
+                            <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
+                                <span className="material-icons Next_Btn_Icon">east</span>
+                            </button>
                         </div>
 
                         {/* Descrição do Produto */}
@@ -175,17 +230,17 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                         </div>
                     </div>
                 </div>
-                <div className="Product_Detail_Image_Container">
+                <div className="Product_Detail_Image_Container Desktop_Only" key={"Desktop_Product_Detail_Image_Container"}>
                     <AnimatePresence mode="popLayout">
                         {currentImageIndex === 0 && activeProduct.object3D && (
                             <m.div
                                 className="Product_Detail_Image_Block"
-                                key={"ThreeD_Container_" + activeProduct.object3D + "_key"}
+                                key={"ThreeD_Container_" + activeProduct.object3D + "_key_Desktop"}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                             >
-                                <ThreeD_Container ThreeD_URL={activeProduct.object3D} />
+                                <ThreeD_Container ThreeD_URL={activeProduct.object3D} identifier={"desktop"} key={"threeD_Container_Desktop"} />
                             </m.div>
                         )}
 
@@ -194,7 +249,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                 index + 1 === currentImageIndex && (
                                     <m.div
                                         className="Product_Detail_Image_Block"
-                                        key={index}
+                                        key={index + "_Desktop"}
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}

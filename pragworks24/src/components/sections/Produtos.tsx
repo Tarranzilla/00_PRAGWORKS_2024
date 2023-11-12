@@ -63,6 +63,7 @@ const Section_Produtos = forwardRef(function Section_Produtos(props, ref: any) {
 
             <h1 className="LP_Section_Title">Produtos</h1>
 
+            {/* Header */}
             <div className="Type_Header" key={"Product_Type_Header_A"}>
                 <AnimatePresence mode="popLayout">
                     {activeProductClass === null && (
@@ -93,6 +94,7 @@ const Section_Produtos = forwardRef(function Section_Produtos(props, ref: any) {
                 </AnimatePresence>
             </div>
 
+            {/* Produtos */}
             <AnimatePresence mode="popLayout">
                 {activeProductClass === null && (
                     <m.div className="Products_Container" key={"Product_Container_A"}>
