@@ -498,6 +498,42 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 Administração e Marketing.
                                             </strong>
                                         </p>
+
+                                        {/* Mobile Image Container */}
+                                        {isMobile && (
+                                            <div className="Sobre_Member_Container">
+                                                {membrosDaEquipe.map((membro: any) => {
+                                                    return (
+                                                        <div className="Sobre_Member_Card" key={membro.nome}>
+                                                            <div className="Sobre_Member_Interactions">
+                                                                <a
+                                                                    className="Sobre_Interaction_Icon hoverable undecorated"
+                                                                    href={membro.linkedin}
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    <span className="material-icons">share</span>
+                                                                </a>
+                                                                <a
+                                                                    className="Sobre_Interaction_Icon hoverable undecorated"
+                                                                    href={"mailto:" + membro.email}
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    <span className="material-icons">mail</span>
+                                                                </a>
+                                                            </div>
+                                                            <div className="Sobre_Member_Text_Container">
+                                                                <h3 className="Sobre_Member_Name">{membro.nome}</h3>
+                                                                <p className="Sobre_Member_Description">{membro.cargo}</p>
+                                                            </div>
+                                                            <div className="Sobre_Member_Image_Container">
+                                                                <img src={membro.foto} alt={membro.nome} className="Sobre_Member_Image" />
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        )}
                                         <p>
                                             Na vanguarda da tecnologia, nossa equipe está empenhada em buscar a excelência e a inovação. Nossos
                                             membros são pioneiros na adoção de tecnologias de ponta, sempre em busca de maneiras de aplicá-las de
@@ -509,38 +545,41 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                     </div>
                                 </div>
 
-                                <div className="Sobre_Member_Container">
-                                    {membrosDaEquipe.map((membro: any) => {
-                                        return (
-                                            <div className="Sobre_Member_Card" key={membro.nome}>
-                                                <div className="Sobre_Member_Interactions">
-                                                    <a
-                                                        className="Sobre_Interaction_Icon hoverable undecorated"
-                                                        href={membro.linkedin}
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                    >
-                                                        <span className="material-icons">share</span>
-                                                    </a>
-                                                    <a
-                                                        className="Sobre_Interaction_Icon hoverable undecorated"
-                                                        href={"mailto:" + membro.email}
-                                                        rel="noreferrer"
-                                                    >
-                                                        <span className="material-icons">mail</span>
-                                                    </a>
+                                {/* Desktop Image Container */}
+                                {!isMobile && (
+                                    <div className="Sobre_Member_Container">
+                                        {membrosDaEquipe.map((membro: any) => {
+                                            return (
+                                                <div className="Sobre_Member_Card" key={membro.nome}>
+                                                    <div className="Sobre_Member_Interactions">
+                                                        <a
+                                                            className="Sobre_Interaction_Icon hoverable undecorated"
+                                                            href={membro.linkedin}
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                        >
+                                                            <span className="material-icons">share</span>
+                                                        </a>
+                                                        <a
+                                                            className="Sobre_Interaction_Icon hoverable undecorated"
+                                                            href={"mailto:" + membro.email}
+                                                            rel="noreferrer"
+                                                        >
+                                                            <span className="material-icons">mail</span>
+                                                        </a>
+                                                    </div>
+                                                    <div className="Sobre_Member_Text_Container">
+                                                        <h3 className="Sobre_Member_Name">{membro.nome}</h3>
+                                                        <p className="Sobre_Member_Description">{membro.cargo}</p>
+                                                    </div>
+                                                    <div className="Sobre_Member_Image_Container">
+                                                        <img src={membro.foto} alt={membro.nome} className="Sobre_Member_Image" />
+                                                    </div>
                                                 </div>
-                                                <div className="Sobre_Member_Text_Container">
-                                                    <h3 className="Sobre_Member_Name">{membro.nome}</h3>
-                                                    <p className="Sobre_Member_Description">{membro.cargo}</p>
-                                                </div>
-                                                <div className="Sobre_Member_Image_Container">
-                                                    <img src={membro.foto} alt={membro.nome} className="Sobre_Member_Image" />
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                )}
                             </div>
                         </m.div>
                     )}
@@ -562,6 +601,14 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             <h3 className="Card_Header_Subtitle">Sobre</h3>
                                             <h2 className="Card_Header_Title">A Fundação</h2>
                                         </div>
+                                        {/* Desktop Image Container */}
+                                        {isMobile && (
+                                            <div className="About_Card_Image_Container">
+                                                <div className="About_Card_Img_Block">
+                                                    <img className="About_Card_Img" src={fotoFundacao1}></img>
+                                                </div>
+                                            </div>
+                                        )}
                                         <p className="Sobre_Description_Text">
                                             Nossa história começa em março de 2017, quando Olivier Smadja teve a ideia de criar um robô para cuidar de
                                             pessoas idosas. Com o passar do tempo, a ideia foi ganhando forma e se transformando em algo muito maior:
@@ -581,11 +628,15 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="About_Card_Image_Container">
-                                    <div className="About_Card_Img_Block">
-                                        <img className="About_Card_Img" src={fotoFundacao1}></img>
+
+                                {/* Desktop Image Container */}
+                                {!isMobile && (
+                                    <div className="About_Card_Image_Container">
+                                        <div className="About_Card_Img_Block">
+                                            <img className="About_Card_Img" src={fotoFundacao1}></img>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </m.div>
                     )}
@@ -611,7 +662,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                     </p>
 
                                     <div className="Sobre_Partners_Container">
-                                        <m.div drag dragSnapToOrigin className="Sobre_Partners_Description_Text">
+                                        <m.div className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">memory</span>
                                             <h3 className="Partners_Description_Title">Parceiros de Produção</h3>
 
@@ -628,7 +679,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 </button>
                                             </div>
                                         </m.div>
-                                        <m.div drag dragSnapToOrigin className="Sobre_Partners_Description_Text">
+                                        <m.div className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">loyalty</span>
                                             <h3 className="Partners_Description_Title">Parceiros de Distribuição</h3>
                                             <p className="Partners_Description_Detail">
@@ -645,7 +696,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 </button>
                                             </div>
                                         </m.div>
-                                        <m.div drag dragSnapToOrigin className="Sobre_Partners_Description_Text">
+                                        <m.div className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">handyman</span>
                                             <h3 className="Partners_Description_Title">Parceiros de Assistência Técnica</h3>
                                             <p className="Partners_Description_Detail">
@@ -661,7 +712,7 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 </button>
                                             </div>
                                         </m.div>
-                                        <m.div drag dragSnapToOrigin className="Sobre_Partners_Description_Text">
+                                        <m.div className="Sobre_Partners_Description_Text">
                                             <span className="material-icons Partners_Icons">recycling</span>
                                             <h3 className="Partners_Description_Title">Parceiros de Reciclagem</h3>
                                             <p className="Partners_Description_Detail">
@@ -700,6 +751,13 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             <h3 className="Card_Header_Subtitle">Sobre</h3>
                                             <h2 className="Card_Header_Title">A História da Robótica</h2>
                                         </div>
+                                        {isMobile && (
+                                            <div className="About_Card_Image_Container">
+                                                <div className="About_Card_Img_Block">
+                                                    <img className="About_Card_Img" src={fotoRUR}></img>
+                                                </div>
+                                            </div>
+                                        )}
                                         <p className="Sobre_Header_Text">
                                             <strong>
                                                 Aristóteles, em sua obra Política de 322 a.C, especulou que autômatos poderiam, um dia, trazer a
@@ -838,11 +896,14 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="About_Card_Image_Container">
-                                    <div className="About_Card_Img_Block">
-                                        <img className="About_Card_Img" src={fotoRUR}></img>
+
+                                {!isMobile && (
+                                    <div className="About_Card_Image_Container">
+                                        <div className="About_Card_Img_Block">
+                                            <img className="About_Card_Img" src={fotoRUR}></img>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </m.div>
                     )}
@@ -864,6 +925,13 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             <h3 className="Card_Header_Subtitle">Sobre</h3>
                                             <h2 className="Card_Header_Title">A Robótica e o Brasil</h2>
                                         </div>
+                                        {isMobile && (
+                                            <div className="About_Card_Image_Container">
+                                                <div className="About_Card_Img_Block">
+                                                    <img className="About_Card_Img" src={fotoCHICO}></img>
+                                                </div>
+                                            </div>
+                                        )}
                                         <p className="Sobre_Header_Text">
                                             <strong>
                                                 A robótica poder ser uma força transformadora para a sociedade brasileira, ajudando a criar empregos
@@ -903,11 +971,14 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="About_Card_Image_Container">
-                                    <div className="About_Card_Img_Block">
-                                        <img className="About_Card_Img" src={fotoCHICO}></img>
+
+                                {!isMobile && (
+                                    <div className="About_Card_Image_Container">
+                                        <div className="About_Card_Img_Block">
+                                            <img className="About_Card_Img" src={fotoCHICO}></img>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </m.div>
                     )}
@@ -923,40 +994,43 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             key="AC_07"
                         >
                             <div className="About_Card_Content" id="Blog_Card_Content">
-                                <div className="About_Card_Post_Container">
-                                    {blogPosts.map((post: any) => {
-                                        return (
-                                            <div className="Post_Card small_hoverable">
-                                                <div className="Post_Card_Image_Container">
-                                                    <img className="Post_Card_Image" src={post.image}></img>
-                                                </div>
-                                                <div className="Post_Card_Text_Container">
-                                                    <h3 className="Post_Card_Title">{post.title}</h3>
-                                                    <p className="Post_Card_Description">{post.description}</p>
-                                                    <div className="Post_Card_Actions">
-                                                        <button
-                                                            className="Post_Card_KnowMore_Btn hoverable"
-                                                            onClick={() => {
-                                                                setActiveBlogPostFunction(post.id);
-                                                            }}
-                                                        >
-                                                            Saiba Mais
-                                                        </button>
-                                                        <button className="Post_Card_Action_Btn hoverable undecorated">
-                                                            <span className="material-icons">share</span>
-                                                        </button>
-                                                        <button className="Post_Card_Action_Btn hoverable undecorated">
-                                                            <span className="material-icons">favorite</span>
-                                                        </button>
-                                                        <button className="Post_Card_Action_Btn hoverable undecorated">
-                                                            <span className="material-icons">comment</span>
-                                                        </button>
+                                {!isMobile && (
+                                    <div className="About_Card_Post_Container">
+                                        {blogPosts.map((post: any) => {
+                                            return (
+                                                <div className="Post_Card small_hoverable">
+                                                    <div className="Post_Card_Image_Container">
+                                                        <img className="Post_Card_Image" src={post.image}></img>
+                                                    </div>
+                                                    <div className="Post_Card_Text_Container">
+                                                        <h3 className="Post_Card_Title">{post.title}</h3>
+                                                        <p className="Post_Card_Description">{post.description}</p>
+                                                        <div className="Post_Card_Actions">
+                                                            <button
+                                                                className="Post_Card_KnowMore_Btn hoverable"
+                                                                onClick={() => {
+                                                                    setActiveBlogPostFunction(post.id);
+                                                                }}
+                                                            >
+                                                                Saiba Mais
+                                                            </button>
+                                                            <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                                <span className="material-icons">share</span>
+                                                            </button>
+                                                            <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                                <span className="material-icons">favorite</span>
+                                                            </button>
+                                                            <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                                <span className="material-icons">comment</span>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+
                                 <div className="About_Card_Text_Container" id="Blog_Text_Container">
                                     <div className="About_Card_Text_Wrapper" id="Blog_Text_Wrapper">
                                         <div className="About_Card_Header">
@@ -975,6 +1049,43 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             Acreditamos que um canal cultural como um blog pode ser útil para gerar discussões e reflexões sobre o
                                             futuro da tecnologia e como ela pode ser usada para melhorar a vida das pessoas.
                                         </p>
+
+                                        {isMobile && (
+                                            <div className="About_Card_Post_Container">
+                                                {blogPosts.map((post: any) => {
+                                                    return (
+                                                        <div className="Post_Card small_hoverable">
+                                                            <div className="Post_Card_Image_Container">
+                                                                <img className="Post_Card_Image" src={post.image}></img>
+                                                            </div>
+                                                            <div className="Post_Card_Text_Container">
+                                                                <h3 className="Post_Card_Title">{post.title}</h3>
+                                                                <p className="Post_Card_Description">{post.description}</p>
+                                                                <div className="Post_Card_Actions">
+                                                                    <button
+                                                                        className="Post_Card_KnowMore_Btn hoverable"
+                                                                        onClick={() => {
+                                                                            setActiveBlogPostFunction(post.id);
+                                                                        }}
+                                                                    >
+                                                                        Saiba Mais
+                                                                    </button>
+                                                                    <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                                        <span className="material-icons">share</span>
+                                                                    </button>
+                                                                    <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                                        <span className="material-icons">favorite</span>
+                                                                    </button>
+                                                                    <button className="Post_Card_Action_Btn hoverable undecorated">
+                                                                        <span className="material-icons">comment</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>

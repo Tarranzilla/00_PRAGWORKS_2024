@@ -1781,6 +1781,7 @@ button {
 
 .Sobre_Img {
     border-radius: var(--gap);
+    max-width: 100%;
 }
 
 .WideImg {
@@ -2517,6 +2518,8 @@ button {
         padding: 0;
     }
 
+    #Equipe_Text_Container,
+    #Blog_Text_Container,
     #Missao_Card_Content {
         width: 100%;
         min-width: unset;
