@@ -20,7 +20,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import LandingPage from "./components/main/Landing_Page.tsx";
 import Error from "./components/sections/Error.tsx";
 import Register from "./components/sections/Register.tsx";
-import Teste3D from "./components/sections/Teste3D.tsx";
 import ThreeD_Container_Fiber from "./components/main/ThreeD_Container_Fiber.tsx";
 import TesteProdutos from "./components/sections/TesteProdutos.tsx";
 
