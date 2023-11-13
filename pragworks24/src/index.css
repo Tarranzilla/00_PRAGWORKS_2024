@@ -227,7 +227,7 @@ button {
     left: 0;
     width: 100vw;
     height: calc(100vh - 6rem);
-    height: calc(100dvh - 6rem);
+    height: calc(100svh - 6rem);
     backdrop-filter: blur(10px);
 
     display: flex;
@@ -278,7 +278,7 @@ button {
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    height: 100dvh;
+    height: 100svh;
     background-color: var(--background-color-solid);
     opacity: 1;
 }
@@ -492,7 +492,7 @@ button {
     left: 0;
     width: 100%;
     height: calc(100vh - 6rem);
-    height: calc(100dvh - 6rem);
+    height: calc(100svh - 6rem);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -598,7 +598,7 @@ button {
     scroll-margin: 3rem;
     position: relative;
     height: calc(100vh - 6rem);
-    height: calc(100dvh - 6rem);
+    height: calc(100svh - 6rem);
     display: flex;
     flex: 1;
     flex-direction: column;
