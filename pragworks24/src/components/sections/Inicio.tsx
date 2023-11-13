@@ -120,33 +120,52 @@ const Section_Inicio = forwardRef(function Section_Inicio(props, ref: any) {
     const [text, setText] = useState("Agora");
     const textArray = ["Agora", "Interativo", "Humano"];
     let index = 0;
-    let intervalId: number;
-
-    const animateText = () => {
-        setText(textArray[index]);
-        index = (index + 1) % textArray.length;
-    };
-
-    const handleVisibilityChange = () => {
-        if (document.hidden) {
-            // Page is not visible, clear the interval
-            clearInterval(intervalId);
-        } else {
-            // Page is visible, restart the interval
-            intervalId = setInterval(animateText, 2000);
-        }
-    };
+    let animationFrameId;
 
     useEffect(() => {
+        let lastTimestamp = performance.now();
+        const interval = 2000; // 2 seconds
+
+        const animateText = (timestamp) => {
+            // Calculate time elapsed
+            const elapsed = timestamp - lastTimestamp;
+
+            // If 2 seconds have passed, update text and reset timer
+            if (elapsed >= interval) {
+                setText(textArray[index]);
+                index = (index + 1) % textArray.length;
+                lastTimestamp = timestamp;
+            }
+
+            // Request the next frame
+            animationFrameId = requestAnimationFrame(animateText);
+        };
+
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                // Page is not visible, clear the animation frame
+                cancelAnimationFrame(animationFrameId);
+            } else {
+                // Page is visible, restart the animation frame
+                lastTimestamp = performance.now(); // Reset timestamp to avoid sudden changes
+                animationFrameId = requestAnimationFrame(animateText);
+            }
+        };
+
+        // Function to start the animation loop
+        const startAnimation = () => {
+            animationFrameId = requestAnimationFrame(animateText);
+        };
+
         // Start the animation loop
-        intervalId = setInterval(animateText, 2000);
+        startAnimation();
 
         // Add visibility change event listener
         document.addEventListener("visibilitychange", handleVisibilityChange);
 
         // Cleanup function
         return () => {
-            clearInterval(intervalId);
+            cancelAnimationFrame(animationFrameId);
             document.removeEventListener("visibilitychange", handleVisibilityChange);
             index = 0; // Reset the index
         };

@@ -67,27 +67,27 @@ const Section_Produtos = forwardRef(function Section_Produtos(props, ref: any) {
             <div className="Type_Header" key={"Product_Type_Header_A"}>
                 <AnimatePresence mode="popLayout">
                     {activeProductClass === null && (
-                        <m.h3 initial={{ y: 50 }} animate={{ y: 0 }} exit={{ y: -50 }} key="NPSelected" className="Type_Viewer_Title">
+                        <m.h3 initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: -100 }} key="NPSelected" className="Type_Viewer_Title">
                             Nenhum Produto Selecionado
                         </m.h3>
                     )}
                     {activeProductClass === "robos" && (
-                        <m.h3 initial={{ y: 50 }} animate={{ y: 0 }} exit={{ y: -50 }} key="ROBOS_Type" className="Type_Viewer_Title">
+                        <m.h3 initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: -100 }} key="ROBOS_Type" className="Type_Viewer_Title">
                             ROBÔS
                         </m.h3>
                     )}
                     {activeProductClass === "softwares" && (
-                        <m.h3 initial={{ y: 50 }} animate={{ y: 0 }} exit={{ y: -50 }} key="SOFTWARES_TYPE" className="Type_Viewer_Title">
+                        <m.h3 initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: -100 }} key="SOFTWARES_TYPE" className="Type_Viewer_Title">
                             SOFTWARES
                         </m.h3>
                     )}
                     {activeProductClass === "servicos" && (
-                        <m.h3 initial={{ y: 50 }} animate={{ y: 0 }} exit={{ y: -50 }} key="SERVICOS_TYPE" className="Type_Viewer_Title">
+                        <m.h3 initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: -100 }} key="SERVICOS_TYPE" className="Type_Viewer_Title">
                             RobiOS UNIVERSE
                         </m.h3>
                     )}
                     {activeProductClass === "experiencias" && (
-                        <m.h3 initial={{ y: 50 }} animate={{ y: 0 }} exit={{ y: -50 }} key="EXPERIENCIAS_TYPE" className="Type_Viewer_Title">
+                        <m.h3 initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: -100 }} key="EXPERIENCIAS_TYPE" className="Type_Viewer_Title">
                             EXPERIÊNCIAS
                         </m.h3>
                     )}

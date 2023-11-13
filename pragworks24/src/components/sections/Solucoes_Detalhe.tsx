@@ -8,38 +8,23 @@ import { motion as m, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveSection, setActiveProductClass, toggleSolutionDetails } from "../../context/main-context";
 
+// React Responsive Imports
+import { useMediaQuery } from "react-responsive";
+
 import GoThumb from "../../assets/produtos/RobiOS_Go_Thumb_Image_01.png";
 import InspectorThumb from "../../assets/produtos/RobiOS_Inspector_Thumb_Image_01.png";
 import CargoThumb from "../../assets/produtos/RobiOS_Cargo_Thumb_Image_01.png";
 import Icon_HR_All from "../icons/hr/Icon_HR_All";
 
 const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 700px)",
+    });
+
     const dispatch = useDispatch();
     const activeSolution = useSelector((state: any) => state.activeSolution);
-
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
     const [isAutoPlayActive, setIsAutoPlayActive] = useState(true);
-
-    let index = 0;
-    let intervalId: number;
-
-    const currentPartners = activeSolution.partners;
-    const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
-
-    const animatePartner = () => {
-        setCurrentPartnerIndex((prevIndex) => (prevIndex + 1) % currentPartners.length);
-    };
-
-    const handleVisibilityChange = () => {
-        if (document.hidden) {
-            // Page is not visible, clear the interval
-            clearInterval(intervalId);
-        } else {
-            // Page is visible, restart the interval
-            intervalId = setInterval(animatePartner, 2000);
-        }
-    };
 
     const demoMessage = `Olá, eu gostaria de fazer uma solicitação de demonstração para a seguinte Solução:\n\n${activeSolution.name}\n\n`;
     const demoPhoneNumber = "+5541999977955"; // Replace with your desired WhatsApp number
@@ -69,20 +54,60 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
         dispatch(toggleSolutionDetails());
     };
 
+    let index = 0;
+    let intervalId: number;
+
+    const currentPartners = activeSolution.partners;
+    const [currentPartnerIndex, setCurrentPartnerIndex] = useState(0);
+
     useEffect(() => {
+        let animationFrameId;
+        let lastTimestamp = 0;
+        const interval = 2000; // 2 seconds
+
+        // Function to animate partner
+        const animatePartner = (timestamp) => {
+            if (!lastTimestamp) {
+                lastTimestamp = timestamp;
+            }
+
+            // Calculate time elapsed
+            const elapsed = timestamp - lastTimestamp;
+
+            // If 2 seconds have passed, update partner and reset timer
+            if (elapsed >= interval) {
+                setCurrentPartnerIndex((prevIndex) => (prevIndex + 1) % currentPartners.length);
+                lastTimestamp = timestamp;
+            }
+
+            // Request the next frame
+            animationFrameId = requestAnimationFrame(animatePartner);
+        };
+
+        const handleVisibilityChange = () => {
+            if (document.hidden) {
+                // Page is not visible, clear the animation frame
+                cancelAnimationFrame(animationFrameId);
+            } else {
+                // Page is visible, restart the animation frame
+                lastTimestamp = performance.now(); // Reset timestamp to avoid sudden changes
+                animationFrameId = requestAnimationFrame(animatePartner);
+            }
+        };
+
         // Start the animation loop
-        intervalId = setInterval(animatePartner, 2000);
+        animationFrameId = requestAnimationFrame(animatePartner);
 
         // Add visibility change event listener
         document.addEventListener("visibilitychange", handleVisibilityChange);
 
         // Cleanup function
         return () => {
-            clearInterval(intervalId);
+            cancelAnimationFrame(animationFrameId);
             document.removeEventListener("visibilitychange", handleVisibilityChange);
-            index = 0; // Reset the index
+            setCurrentPartnerIndex(0); // Reset the index or perform other cleanup if needed
         };
-    }, []); // Run once on mount
+    }, [currentPartners]); // Include any dependencies for the effect
 
     return (
         <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Solution_Detail Product_Detail">
@@ -99,8 +124,36 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                 <div className="Solution_Detail_Text_Container">
                     <div className="Solution_Detail_Text_Wrapper">
                         <h1 className="Solution_Card_Detail_Title">{activeSolution.name}</h1>
+                        {/* Desktop Image Container */}
+                        {isMobile && (
+                            <div className="Solution_Detail_Image_Container Mobile_Image_Container">
+                                <AnimatePresence mode="wait">
+                                    {activeSolution.imgSrc.map(
+                                        (imgSrc, index) =>
+                                            index === currentImageIndex && (
+                                                <m.div
+                                                    className="Solution_Detail_Image_Block"
+                                                    key={index}
+                                                    initial={{ opacity: 0 }}
+                                                    animate={{ opacity: 1 }}
+                                                    exit={{ opacity: 0 }}
+                                                >
+                                                    <m.img className="Solution_Detail_Image" src={imgSrc} alt={activeSolution.name} />
+                                                </m.div>
+                                            )
+                                    )}
+                                </AnimatePresence>
+                                <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
+                                    <span className="material-icons Previous_Btn_Icon">west</span>
+                                </button>
+                                <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
+                                    <span className="material-icons Next_Btn_Icon">east</span>
+                                </button>
+                            </div>
+                        )}
                         <p className="Solution_Detail_Description">{activeSolution.description}</p>
                         <p className="Solution_Detail_FullDescription">{activeSolution.fullDescription}</p>
+
                         <h4 className="Solution_Recommended_Products_Title">Produtos que atuam nesta solução:</h4>
                         <div className="Solution_Recommended_Products_Container">
                             <div className="Solution_Recommended_Product hoverable">
@@ -163,30 +216,34 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                         </div>
                     </div>
                 </div>
-                <div className="Solution_Detail_Image_Container">
-                    <AnimatePresence mode="wait">
-                        {activeSolution.imgSrc.map(
-                            (imgSrc, index) =>
-                                index === currentImageIndex && (
-                                    <m.div
-                                        className="Solution_Detail_Image_Block"
-                                        key={index}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        <m.img className="Solution_Detail_Image" src={imgSrc} alt={activeSolution.name} />
-                                    </m.div>
-                                )
-                        )}
-                    </AnimatePresence>
-                    <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
-                        <span className="material-icons Previous_Btn_Icon">west</span>
-                    </button>
-                    <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
-                        <span className="material-icons Next_Btn_Icon">east</span>
-                    </button>
-                </div>
+
+                {/* Desktop Image Container */}
+                {!isMobile && (
+                    <div className="Solution_Detail_Image_Container">
+                        <AnimatePresence mode="wait">
+                            {activeSolution.imgSrc.map(
+                                (imgSrc, index) =>
+                                    index === currentImageIndex && (
+                                        <m.div
+                                            className="Solution_Detail_Image_Block"
+                                            key={index}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                        >
+                                            <m.img className="Solution_Detail_Image" src={imgSrc} alt={activeSolution.name} />
+                                        </m.div>
+                                    )
+                            )}
+                        </AnimatePresence>
+                        <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
+                            <span className="material-icons Previous_Btn_Icon">west</span>
+                        </button>
+                        <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
+                            <span className="material-icons Next_Btn_Icon">east</span>
+                        </button>
+                    </div>
+                )}
             </div>
         </m.div>
     );

@@ -672,7 +672,8 @@ button {
 }
 
 .Type_Header {
-    margin-bottom: -1rem;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
 }
 
 .Type_Viewer_Title {
@@ -812,7 +813,7 @@ button {
 }
 
 .Solution_Card_Detail_Title {
-    font-size: clamp(2.4rem, 4vw, 8rem);
+    font-size: clamp(2rem, 4vw, 8rem);
     margin-bottom: -1rem;
 }
 
@@ -950,7 +951,8 @@ button {
     padding: 0.25rem;
     border-radius: var(--gap);
     height: auto;
-    width: 100%;
+    flex: 1;
+    min-width: 10rem;
     text-align: start;
     font-size: 1rem;
     gap: 0.25rem;
@@ -1387,6 +1389,8 @@ button {
     width: 100%;
 }
 
+.Solution_Detail_Description,
+.Solution_Detail_FullDescription,
 .Product_Detail_Text_Item_Content {
     display: flex;
     flex-direction: column;
@@ -1866,6 +1870,7 @@ button {
     gap: var(--gap);
     transition: all 0.2s ease-in-out;
     z-index: 1;
+    overflow-y: auto;
 }
 
 .Contact_CallToAction {
@@ -2257,8 +2262,11 @@ button {
 .Solution_Recommended_Products_Title,
 .Product_Information_Title {
     font-size: clamp(1rem, 1.5vw, 1.6rem);
+    line-height: 1.2rem;
     position: relative;
+    padding-bottom: 0.5rem;
     margin-bottom: var(--gap);
+    text-align: start;
 }
 
 .Solution_Partner_Title::before,
@@ -2313,6 +2321,7 @@ button {
     font-size: clamp(0.8rem, 1.2vw, 1.5rem);
 }
 
+.Solution_Detail_Footer,
 .Produto_Detalhe_Footer {
     display: flex;
     flex-direction: row;
@@ -2456,18 +2465,27 @@ button {
         top: -3.5rem;
     }
 
+    .Solution_Detail_Content,
     .Product_Detail_Content {
         padding: 0;
         padding-block: var(--small_gap);
         flex-direction: column;
     }
 
+    .Solution_Detail_Text_Container,
     .Product_Detail_Text_Container {
         direction: rtl;
     }
 
+    .Solution_Detail_Text_Wrapper,
     .Product_Detail_Text_Wrapper {
         direction: ltr;
+    }
+
+    .Solution_Detail_Description,
+    .Solution_Detail_FullDescription,
+    .Product_Detail_Text_Item_Content {
+        padding-inline: 0;
     }
 
     .Produto_Detalhe_Footer,
@@ -2476,7 +2494,9 @@ button {
     }
 
     .Mobile_Image_Container {
+        display: flex;
         height: 33vh;
+        flex-shrink: 0;
     }
 
     .Solution_Detail_Content {
