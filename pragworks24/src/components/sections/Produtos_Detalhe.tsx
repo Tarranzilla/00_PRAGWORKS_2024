@@ -15,8 +15,7 @@ import ProductType from "../../types/00_Produto";
 import Icon_HR_All from "../icons/hr/Icon_HR_All";
 
 // ThreeD_Container Import
-import ThreeD_Container from "../main/ThreeD_Container";
-import ThreeD_Container_Mobile from "../main/ThreeD_Container Mobile";
+import ThreeD_Container_Fiber from "../main/ThreeD_Container_Fiber";
 
 const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     const dispatch = useDispatch();
@@ -95,11 +94,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                         animate={{ opacity: 1 }}
                                         exit={{ opacity: 0 }}
                                     >
-                                        <ThreeD_Container_Mobile
-                                            ThreeD_URL={activeProduct.object3D}
-                                            identifier={"mobile"}
-                                            key={"threeD_Container_Mobile"}
-                                        />
+                                        <ThreeD_Container_Fiber />
                                     </m.div>
                                 )}
 
@@ -240,7 +235,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                             >
-                                <ThreeD_Container ThreeD_URL={activeProduct.object3D} identifier={"desktop"} key={"threeD_Container_Desktop"} />
+                                <ThreeD_Container_Fiber />
                             </m.div>
                         )}
 

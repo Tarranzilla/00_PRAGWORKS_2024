@@ -1812,7 +1812,7 @@ button {
 }
 
 .Contact_CallToAction {
-    font-size: clamp(1.2rem, 2.2vw, 2.4rem);
+    font-size: clamp(1.2rem, 1.8vw, 2rem);
     margin-block: auto;
     margin-inline: auto;
     max-width: 40rem;
@@ -2276,16 +2276,6 @@ button {
     font-size: clamp(0.8rem, 1.2vw, 1.2rem);
 }
 
-.Produto_Container_Text_Interactions > * > svg {
-    width: 4rem;
-    height: 4rem;
-    fill: var(--text-color);
-}
-
-.Produto_Container_Text_Interactions > * > svg > * {
-    fill: var(--text-color);
-}
-
 .Produto_Container_Interaction_Titulo {
     font-size: clamp(0.8rem, 1vw, 1.6rem);
     line-height: 1.2rem;
@@ -2301,6 +2291,16 @@ button {
 
 .Icon_Container > svg > path {
     fill: var(--seleted-color);
+}
+
+.Produto_Container_Text_Interactions > * > svg {
+    width: 4rem;
+    height: 4rem;
+    fill: var(--text-color);
+}
+
+.Produto_Container_Text_Interactions > * > svg > * {
+    fill: var(--text-color) !important;
 }
 
 /* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */

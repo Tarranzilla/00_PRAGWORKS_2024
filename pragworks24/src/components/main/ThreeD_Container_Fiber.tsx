@@ -35,7 +35,7 @@ const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     );
 };
 
-const GLTFModelViewer = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
+export const GLTFModelViewer = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     return (
         <Suspense fallback={null}>
             <GLTFModel modelPath={modelPath} scale={scale} position={position} />
@@ -58,20 +58,22 @@ export default function ThreeD_Container_Fiber() {
     const [loading, setLoading] = useState(false);
 
     return (
-        <m.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.0, type: "tween" }}
-            className="LP_Section ThreeD_Container"
-            id={"ThreeD_Container_id"}
-            key={"ThreeD_Container_key"}
-        >
-            {loading && <div className="loading">Carregando Modelo 3D ...</div>}
-            <Canvas>
-                <ambientLight intensity={0.1} />
-                <directionalLight color="red" position={[0, 0, 5]} />
-                <GLTFModelViewer modelPath="objects3D/robios_go/robios_go_3.gltf" scale={12} position={[0, 0, 0]} />
-            </Canvas>
-        </m.div>
+        <>
+            <m.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1.0, type: "tween" }}
+                className="LP_Section ThreeD_Container"
+                id={"ThreeD_Container_id"}
+                key={"ThreeD_Container_key"}
+            >
+                {loading && <div className="loading">Carregando Modelo 3D ...</div>}
+                <Canvas>
+                    <ambientLight intensity={0.1} />
+                    <directionalLight color="red" position={[0, 0, 5]} />
+                    <GLTFModelViewer modelPath="objects3D/robios_go/robios_go_3.gltf" scale={4} position={[0, 0, 0]} />
+                </Canvas>
+            </m.div>
+        </>
     );
 }
