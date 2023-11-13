@@ -8,6 +8,9 @@ import { motion as m, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, toggleProductDetails, toggleCart, toggleSolutionDetails, setActiveProduct } from "../../context/main-context";
 
+// React Responsive Imports
+import { useMediaQuery } from "react-responsive";
+
 // Product Type Import
 import ProductType from "../../types/00_Produto";
 
@@ -16,8 +19,13 @@ import Icon_HR_All from "../icons/hr/Icon_HR_All";
 
 // ThreeD_Container Import
 import ThreeD_Container_Fiber from "../main/ThreeD_Container_Fiber";
+import ThreeD_Container_Fiber_Mobile from "../main/ThreeD_Container_Fiber_Mobile";
 
 const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 700px)",
+    });
+
     const dispatch = useDispatch();
 
     const activeProduct = useSelector((state: any) => state.activeProduct);
@@ -81,50 +89,52 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                         </div>
 
                         {/* Imagens do Produto Mobile */}
-                        <div
-                            className="Product_Detail_Image_Container Mobile_Only Mobile_Image_Container"
-                            key={"Mobile_Product_Detail_Image_Container"}
-                        >
-                            <AnimatePresence mode="popLayout">
-                                {currentImageIndex === 0 && activeProduct.object3D && (
-                                    <m.div
-                                        className="Product_Detail_Image_Block"
-                                        key={"ThreeD_Container_" + activeProduct.object3D + "_key_Mobile"}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        <ThreeD_Container_Fiber />
-                                    </m.div>
-                                )}
+                        {isMobile && (
+                            <div
+                                className="Product_Detail_Image_Container Mobile_Only Mobile_Image_Container"
+                                key={"Mobile_Product_Detail_Image_Container"}
+                            >
+                                <AnimatePresence mode="popLayout">
+                                    {currentImageIndex === 0 && activeProduct.object3D && (
+                                        <m.div
+                                            className="Product_Detail_Image_Block"
+                                            key={"ThreeD_Container_" + activeProduct.object3D + "_key_Mobile"}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                        >
+                                            <ThreeD_Container_Fiber_Mobile />
+                                        </m.div>
+                                    )}
 
-                                {activeProduct.detail_Images.map(
-                                    (imgSrc, index) =>
-                                        index + 1 === currentImageIndex && (
-                                            <m.div
-                                                className="Product_Detail_Image_Block"
-                                                key={index + "_Mobile"}
-                                                initial={{ opacity: 0 }}
-                                                animate={{ opacity: 1 }}
-                                                exit={{ opacity: 0 }}
-                                            >
-                                                <m.img
-                                                    className="Product_Detail_Image"
-                                                    src={imgSrc}
-                                                    alt={activeProduct.name}
-                                                    key={index + "img_Key_Mobile"}
-                                                />
-                                            </m.div>
-                                        )
-                                )}
-                            </AnimatePresence>
-                            <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
-                                <span className="material-icons Previous_Btn_Icon">west</span>
-                            </button>
-                            <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
-                                <span className="material-icons Next_Btn_Icon">east</span>
-                            </button>
-                        </div>
+                                    {activeProduct.detail_Images.map(
+                                        (imgSrc, index) =>
+                                            index + 1 === currentImageIndex && (
+                                                <m.div
+                                                    className="Product_Detail_Image_Block"
+                                                    key={index + "_Mobile"}
+                                                    initial={{ opacity: 0 }}
+                                                    animate={{ opacity: 1 }}
+                                                    exit={{ opacity: 0 }}
+                                                >
+                                                    <m.img
+                                                        className="Product_Detail_Image"
+                                                        src={imgSrc}
+                                                        alt={activeProduct.name}
+                                                        key={index + "img_Key_Mobile"}
+                                                    />
+                                                </m.div>
+                                            )
+                                    )}
+                                </AnimatePresence>
+                                <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
+                                    <span className="material-icons Previous_Btn_Icon">west</span>
+                                </button>
+                                <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
+                                    <span className="material-icons Next_Btn_Icon">east</span>
+                                </button>
+                            </div>
+                        )}
 
                         {/* Descrição do Produto */}
                         <div className="Product_Detail_Text_Item">
@@ -225,42 +235,45 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                         </div>
                     </div>
                 </div>
-                <div className="Product_Detail_Image_Container Desktop_Only" key={"Desktop_Product_Detail_Image_Container"}>
-                    <AnimatePresence mode="popLayout">
-                        {currentImageIndex === 0 && activeProduct.object3D && (
-                            <m.div
-                                className="Product_Detail_Image_Block"
-                                key={"ThreeD_Container_" + activeProduct.object3D + "_key_Desktop"}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                            >
-                                <ThreeD_Container_Fiber />
-                            </m.div>
-                        )}
 
-                        {activeProduct.detail_Images.map(
-                            (imgSrc, index) =>
-                                index + 1 === currentImageIndex && (
-                                    <m.div
-                                        className="Product_Detail_Image_Block"
-                                        key={index + "_Desktop"}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        <m.img className="Product_Detail_Image" src={imgSrc} alt={activeProduct.name} />
-                                    </m.div>
-                                )
-                        )}
-                    </AnimatePresence>
-                    <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
-                        <span className="material-icons Previous_Btn_Icon">west</span>
-                    </button>
-                    <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
-                        <span className="material-icons Next_Btn_Icon">east</span>
-                    </button>
-                </div>
+                {!isMobile && (
+                    <div className="Product_Detail_Image_Container Desktop_Only" key={"Desktop_Product_Detail_Image_Container"}>
+                        <AnimatePresence mode="popLayout">
+                            {currentImageIndex === 0 && activeProduct.object3D && (
+                                <m.div
+                                    className="Product_Detail_Image_Block"
+                                    key={"ThreeD_Container_" + activeProduct.object3D + "_key_Desktop"}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                >
+                                    <ThreeD_Container_Fiber />
+                                </m.div>
+                            )}
+
+                            {activeProduct.detail_Images.map(
+                                (imgSrc, index) =>
+                                    index + 1 === currentImageIndex && (
+                                        <m.div
+                                            className="Product_Detail_Image_Block"
+                                            key={index + "_Desktop"}
+                                            initial={{ opacity: 0 }}
+                                            animate={{ opacity: 1 }}
+                                            exit={{ opacity: 0 }}
+                                        >
+                                            <m.img className="Product_Detail_Image" src={imgSrc} alt={activeProduct.name} />
+                                        </m.div>
+                                    )
+                            )}
+                        </AnimatePresence>
+                        <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
+                            <span className="material-icons Previous_Btn_Icon">west</span>
+                        </button>
+                        <button className="Next_Btn hoverable undecorated" onClick={handleNextClick}>
+                            <span className="material-icons Next_Btn_Icon">east</span>
+                        </button>
+                    </div>
+                )}
             </div>
         </m.div>
     );

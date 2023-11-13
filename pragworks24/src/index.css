@@ -1865,7 +1865,7 @@ button {
 }
 
 .Contact_CallToAction {
-    font-size: clamp(1.2rem, 1.8vw, 2rem);
+    font-size: clamp(1rem, 1.8vw, 2rem);
     margin-block: auto;
     margin-inline: auto;
     max-width: 40rem;
@@ -1992,6 +1992,7 @@ button {
     align-items: center;
     justify-content: start;
     gap: var(--gap);
+    width: 100%;
 }
 
 .Menu_Link,
@@ -2004,6 +2005,7 @@ button {
     padding: var(--small_gap);
     cursor: pointer;
     width: 100%;
+    text-align: start;
 }
 
 .Menu_Link_Actions {
@@ -2099,6 +2101,7 @@ button {
     width: 100%;
     max-width: 20rem;
     margin-top: auto;
+    text-align: start;
 }
 
 #PragLogo {
@@ -2424,7 +2427,7 @@ button {
     }
 
     .Brand_Fixed_Phrase {
-        font-size: clamp(1.2rem, 1vw, 2rem);
+        font-size: clamp(1rem, 1vw, 2rem);
         line-height: clamp(1.2rem, 1vw, 2rem);
     }
 

@@ -787,12 +787,10 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                     </g>
                                 </g>
                             </svg>
-                            <p>
-                                Webdesign por{" "}
-                                <a className="undecorated" href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer">
-                                    P R A G M A T A
-                                </a>
-                            </p>
+
+                            <a className="undecorated" href="https://pragmata.ninja" target="_blank" rel="noopener noreferrer">
+                                Webdesign por PRAGMATA
+                            </a>
                         </div>
                     </div>
                 </m.div>
