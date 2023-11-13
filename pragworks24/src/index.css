@@ -62,18 +62,32 @@
     --legacy_subcard_color: #4c4c4c;
     --legacy_seleted-color: #008000;
 
-    --text-color: rgba(255, 255, 255, 0.8);
-    --faded_text-color: rgba(255, 255, 255, 0.2);
-    --evenmore-faded-text-color: rgba(255, 255, 255, 0.1);
-    --background-color-solid: #180347;
-    --background-color: #18034780;
-    --faded_background-color: #18034780;
-    --btn_color: #6b6b6b80;
-    --card_color: #3c3c3c80;
-    --subcard_color: #4c4c4c80;
-    --seleted-color: #00aaff;
+    --FederalBlue: #000343;
+    --FederalBlueFaded: #00034380;
+    --Ultramarine: #1d0289;
+    --UltramarineFaded: #1d028980;
+    --PictonBlue: #00aaff;
+    --PictonBlueFaded: #00aaff80;
+    --LavenderBlush: #eee5e9;
+    --LavenderBlushFaded: #eee5e980;
+    --LavenderBlushEvenMoreFaded: #eee5e910;
+    --RoseQuartz: #9a8c98;
+    --RoseQuartzFaded: #9a8c9880;
+    --ElectricViolet: #8e00ff;
+    --ElectricVioletFaded: #8e00ff80;
 
-    --faded-black: rgba(0, 0, 0, 0.5);
+    --text-color: rgba(255, 255, 255, 0.8);
+    --faded_text-color: var(--LavenderBlushFaded);
+    --evenmore-faded-text-color: var(--LavenderBlushEvenMoreFaded);
+    --background-color-solid: var(--FederalBlue);
+    --background-color: var(--FederalBlueFaded);
+    --faded_background-color: var(--FederalBlueFaded);
+    --btn_color: var(--PictonBlueFaded);
+    --card_color: var(--RoseQuartzFaded);
+    --subcard_color: var(--LavenderBlushFaded);
+    --seleted-color: var(--PictonBlue);
+
+    --faded-black: var(--UltramarineFaded);
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.8);
@@ -96,7 +110,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--faded-black);
+    background-color: var(--evenmore-faded-text-color);
     border-radius: var(--gap);
 }
 
@@ -123,16 +137,24 @@ html {
     background-color: var(--background-color-solid);
 }
 
+html::-webkit-scrollbar {
+}
+
 body {
     margin: 0;
     margin-block: 3rem;
     min-width: 320px;
     text-align: center;
     overflow: hidden;
+    background-image: linear-gradient(to bottom right, var(--FederalBlue), var(--ElectricViolet));
 }
 
 .Body_Active {
     overflow: auto;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 button {
@@ -269,7 +291,7 @@ button {
     align-items: center;
     gap: var(--gap);
     padding-inline: var(--small_gap);
-    background-color: var(--background-color-solid);
+    background-color: var(--background-color);
 }
 
 .Navbar > * {
@@ -398,7 +420,7 @@ button {
     align-items: center;
     justify-content: space-between;
     padding: var(--small_gap);
-    background-color: var(--background-color-solid);
+    background-color: var(--background-color);
 }
 
 .Footer > * {
@@ -536,8 +558,17 @@ button {
 
 .Section_Divider {
     width: 100%;
-    height: 25vh;
-    background-color: var(--faded_text-color);
+    background-color: var(--card_color);
+    background-image: linear-gradient(transparent, var(--card_color));
+    background: repeating-linear-gradient(
+        90deg,
+        var(--seleted-color),
+        var(--seleted-color) 1px,
+        transparent 2px,
+        transparent calc(100vw / 100 + 2px),
+        var(--seleted-color) calc(100vw / 100 + 3px)
+    );
+    margin-block: 3rem;
 }
 
 .Section_Divider_With_Text {
@@ -551,6 +582,10 @@ button {
     font-size: clamp(2rem, 10vw, 8rem);
     outline: none;
     font-family: "Researcher_WOFF2";
+    color: white;
+    background-image: linear-gradient(to right, transparent, var(--PictonBlueFaded) 10%, var(--PictonBlueFaded) 90%, transparent);
+    width: 100%;
+    text-shadow: 0 0 10px var(--Ultramarine);
 }
 
 .LP_Section {
@@ -650,8 +685,8 @@ button {
     border-radius: var(--gap);
     position: relative;
     overflow: hidden;
-    outline: 4px solid var(--background-color);
-    outline-offset: -2px;
+    outline: 1px solid var(--PictonBlue);
+    outline-offset: -1px;
 }
 
 .Product_Card:hover,
@@ -722,6 +757,7 @@ button {
 }
 
 .About_Card {
+    outline: none;
 }
 
 .Card_Product_Detail_Button {
@@ -1142,10 +1178,11 @@ button {
 .Brand_Changing_Word {
     font-size: clamp(4rem, 10vw, 14rem);
     line-height: 6.5rem;
-    color: var(--seleted-color);
+    color: var(--PictonBlueFaded);
     position: relative;
     top: -1.25rem;
     font-family: "Researcher_WOFF2";
+    text-shadow: 0 0 10px var(--PictonBlueFaded);
 }
 
 /* SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO - SEÇÃO DE PRODUTO */
@@ -1629,7 +1666,8 @@ button {
     font-size: clamp(0.5rem, 0.8vw, 1rem);
     line-height: clamp(0.8rem, 1vw, 1rem);
     background-color: var(--text-color);
-    color: var(--card_color);
+    color: var(--background-color);
+    margin-inline: 4rem;
 }
 
 .Sobre_Member_Interactions {
