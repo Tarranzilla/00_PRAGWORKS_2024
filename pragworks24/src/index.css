@@ -1514,6 +1514,7 @@ button {
 
 .Solution_Recommended_Products_Container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -2505,6 +2506,28 @@ button {
 
     .About_Card_Content {
         flex-direction: column;
+        padding-block: var(--small_gap);
+    }
+
+    .About_Card {
+        padding: 0;
+        border-radius: 0;
+    }
+    #sobre {
+        padding: 0;
+    }
+
+    #Missao_Card_Content {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .About_Card_Text_Container {
+        direction: rtl;
+    }
+
+    .About_Card_Text_Wrapper {
+        direction: ltr;
     }
 
     .Contact_Action_Btn {

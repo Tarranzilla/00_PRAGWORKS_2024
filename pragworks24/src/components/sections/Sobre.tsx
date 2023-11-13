@@ -4,6 +4,9 @@ import { useEffect, useState, forwardRef } from "react";
 //Framer Motion Imports
 import { motion as m, AnimatePresence } from "framer-motion";
 
+// React Responsive Imports
+import { useMediaQuery } from "react-responsive";
+
 //React Redux Imports
 import { useDispatch } from "react-redux";
 import { setActiveSection } from "../../context/main-context.tsx";
@@ -343,6 +346,9 @@ const blogPosts = [
 const customTransition = springTransition;
 
 const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 700px)",
+    });
     const dispatch = useDispatch();
     const setActiveSectionFunction = (id: number) => {
         dispatch(setActiveSection(id));
@@ -426,6 +432,16 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 Cultura.
                                             </strong>
                                         </p>
+
+                                        {/* Mobile Image Container */}
+                                        {isMobile && (
+                                            <div className="About_Card_Image_Container">
+                                                <div className="About_Card_Img_Block">
+                                                    <img className="About_Card_Img" src={fotoEquipe}></img>
+                                                </div>
+                                            </div>
+                                        )}
+
                                         <p className="Sobre_Description_Text">
                                             Inspirados pela Subjetividade que a nossa Cultura tem a oferecer e na Precisão que nossas Tecnologias
                                             desbloqueiam, confecionamos assistentes virtuais e robôs que se destacam pela sua capacidade de interagir
@@ -446,11 +462,15 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="About_Card_Image_Container">
-                                    <div className="About_Card_Img_Block">
-                                        <img className="About_Card_Img" src={fotoEquipe}></img>
+
+                                {/* Desktop Image Container */}
+                                {!isMobile && (
+                                    <div className="About_Card_Image_Container">
+                                        <div className="About_Card_Img_Block">
+                                            <img className="About_Card_Img" src={fotoEquipe}></img>
+                                        </div>
                                     </div>
-                                </div>
+                                )}
                             </div>
                         </m.div>
                     )}
