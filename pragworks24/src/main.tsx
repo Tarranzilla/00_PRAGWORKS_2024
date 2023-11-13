@@ -21,6 +21,7 @@ import LandingPage from "./components/main/Landing_Page.tsx";
 import Error from "./components/sections/Error.tsx";
 import Register from "./components/sections/Register.tsx";
 import Teste3D from "./components/sections/Teste3D.tsx";
+import ThreeD_Container_Fiber from "./components/main/ThreeD_Container_Fiber.tsx";
 import TesteProdutos from "./components/sections/TesteProdutos.tsx";
 
 // Router Creation
@@ -33,11 +34,11 @@ const router = createBrowserRouter([
                 element: <LandingPage />,
             },
             {
-                path: "/3dteste",
-                element: <Teste3D />,
+                path: "/3dcanvas",
+                element: <ThreeD_Container_Fiber />,
             },
             {
-                path: "/produtosteste",
+                path: "/robios-go",
                 element: <TesteProdutos />,
             },
             {

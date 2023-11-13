@@ -65,13 +65,13 @@
     --text-color: rgba(255, 255, 255, 0.8);
     --faded_text-color: rgba(255, 255, 255, 0.2);
     --evenmore-faded-text-color: rgba(255, 255, 255, 0.1);
-    --background-color-solid: #000343;
-    --background-color: #00034380;
-    --faded_background-color: #00034380;
+    --background-color-solid: #180347;
+    --background-color: #18034780;
+    --faded_background-color: #18034780;
     --btn_color: #6b6b6b80;
     --card_color: #3c3c3c80;
     --subcard_color: #4c4c4c80;
-    --seleted-color: #00aaff80;
+    --seleted-color: #00aaff;
 
     --faded-black: rgba(0, 0, 0, 0.5);
 
@@ -120,6 +120,7 @@
 html {
     scroll-behavior: smooth;
     scroll-snap-type: y proximity;
+    background-color: var(--background-color-solid);
 }
 
 body {
@@ -250,9 +251,9 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: calc(100vw - 0.5rem);
+    width: 100vw;
     height: calc(100vh - 6rem);
-    background-color: var(--background-color);
+    background-color: var(--background-color-solid);
     opacity: 1;
 }
 
@@ -962,7 +963,8 @@ button {
 }
 
 .selected {
-    color: var(--seleted-color);
+    background-color: var(--seleted-color);
+    color: var(--text-color);
     transform: translateY(-0.125rem) !important;
 }
 
@@ -2142,13 +2144,6 @@ button {
 }
 
 .ThreeD_Container {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
 }
 
 .ThreeD_Canvas {
