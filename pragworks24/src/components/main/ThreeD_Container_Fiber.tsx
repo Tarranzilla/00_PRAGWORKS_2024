@@ -70,7 +70,10 @@ export default function ThreeD_Container_Fiber() {
                 {loading && <div className="loading">Carregando Modelo 3D ...</div>}
                 <Canvas>
                     <ambientLight intensity={0.1} />
-                    <directionalLight color="red" position={[0, 0, 5]} />
+                    <directionalLight color="#8e00ff" position={[5, 5, 0]} />
+                    <directionalLight color="#00aaff" position={[-5, 5, 0]} />
+                    <directionalLight color="#ffffff" position={[0, 0, 30]} />
+
                     <GLTFModelViewer modelPath="objects3D/robios_go/robios_go_3.gltf" scale={4} position={[0, 0, 0]} />
                 </Canvas>
             </m.div>

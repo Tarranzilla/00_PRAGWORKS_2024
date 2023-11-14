@@ -66,13 +66,17 @@
     --FederalBlueFaded: #00034380;
     --Ultramarine: #1d0289;
     --UltramarineFaded: #1d028980;
+    --DeepBlue: #4400ff;
+    --DeepBlueFaded: #4400ff80;
     --PictonBlue: #00aaff;
     --PictonBlueFaded: #00aaff80;
     --LavenderBlush: #eee5e9;
     --LavenderBlushFaded: #eee5e980;
     --LavenderBlushEvenMoreFaded: #eee5e910;
+
     --RoseQuartz: #9a8c98;
     --RoseQuartzFaded: #9a8c9880;
+
     --ElectricViolet: #8e00ff;
     --ElectricVioletFaded: #8e00ff80;
 
@@ -83,8 +87,8 @@
     --background-color: var(--FederalBlueFaded);
     --faded_background-color: var(--FederalBlueFaded);
     --btn_color: var(--text-color);
-    --card_color: var(--RoseQuartzFaded);
-    --subcard_color: var(--LavenderBlushFaded);
+    --card_color: var(--LavenderBlushFaded);
+    --subcard_color: var(--LavenderBlushEvenMoreFaded);
     --seleted-color: var(--PictonBlue);
     --faded_selected-color: var(--PictonBlueFaded);
     --evenmore-faded-selected-color: #00aaff33;
@@ -148,7 +152,7 @@ body {
     min-width: 320px;
     text-align: center;
     overflow: hidden;
-    background-image: linear-gradient(to bottom right, var(--FederalBlue), var(--ElectricViolet));
+    background-image: linear-gradient(to bottom right, var(--FederalBlue) 0%, var(--Ultramarine) 33%, var(--DeepBlue) 100%);
 }
 
 .Body_Active {
@@ -952,7 +956,7 @@ button {
     align-items: center;
     justify-content: start;
     cursor: pointer;
-    padding: 0.25rem;
+    padding: var(--small_gap);
     border-radius: var(--gap);
     height: auto;
     flex: 1;
@@ -962,6 +966,10 @@ button {
     gap: 0.25rem;
     background-color: var(--seleted-color);
     color: var(--text-color);
+}
+
+.ScheduleDemo_Btn > .Icon_Container > svg > * {
+    fill: var(--text-color) !important;
 }
 
 .Icon_Container {
