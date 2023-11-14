@@ -448,12 +448,14 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             com as pessoas.
                                         </p>
 
-                                        <p className="Sobre_Header_Text">
-                                            Temos uma visão clara e ambiciosa para o futuro. Nossa meta é liderar a transformação tecnológica no
-                                            Brasil, sendo a vanguarda das tecnologias de atendimento, educação, interação, inspeção e transporte em
-                                            bases robóticas.
+                                        <p className="Sobre_Description_Text">
+                                            <strong>
+                                                Temos uma visão clara e ambiciosa para o futuro. Nossa meta é liderar a transformação tecnológica no
+                                                Brasil.
+                                            </strong>
                                         </p>
-                                        <p className="Sobre_Header_Text">
+
+                                        <p className="Sobre_Description_Text">
                                             Nossa missão é tornar a robótica mais humana, mais acessível e mais presente na vida das pessoas.
                                         </p>
 
@@ -534,10 +536,9 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 })}
                                             </div>
                                         )}
-                                        <p>
-                                            Na vanguarda da tecnologia, nossa equipe está empenhada em buscar a excelência e a inovação. Nossos
-                                            membros são pioneiros na adoção de tecnologias de ponta, sempre em busca de maneiras de aplicá-las de
-                                            forma criativa.{" "}
+                                        <p className="Sobre_Description_Text">
+                                            Nos empenhamos em buscar a excelência e a inovação, nossos membros são pioneiros na adoção de tecnologias
+                                            de ponta, sempre em busca de maneiras de aplicá-las de forma criativa.{" "}
                                         </p>
                                         <p className="Sobre_Header_Text">
                                             <strong>Sinta-se à vontade para entrar em contato com qualquer um de nós.</strong>
@@ -609,11 +610,15 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 </div>
                                             </div>
                                         )}
+                                        <p className="Sobre_Header_Text">
+                                            <strong>
+                                                Nossa história começa em março de 2017, quando Olivier Smadja teve a ideia de criar um robô para
+                                                cuidar de pessoas idosas.
+                                            </strong>
+                                        </p>
                                         <p className="Sobre_Description_Text">
-                                            Nossa história começa em março de 2017, quando Olivier Smadja teve a ideia de criar um robô para cuidar de
-                                            pessoas idosas. Com o passar do tempo, a ideia foi ganhando forma e se transformando em algo muito maior:
-                                            uma linha de robôs capazes de interagir com pessoas de todas as idades, em diferentes contextos e
-                                            situações.
+                                            Com o passar do tempo, a ideia foi ganhando forma e se transformando em algo muito maior: uma linha de
+                                            robôs capazes de interagir com pessoas de todas as idades, em diferentes contextos e situações.
                                         </p>
                                         <p className="Sobre_Description_Text">
                                             Foi assim que nasceu o primeiro robô autônomo de atendimento e telepresença do Brasil. Com a ajuda de
@@ -773,14 +778,20 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         </p>
                                         <p className="Sobre_Description_Text">
                                             No século IV a.C. , o matemático Arquitas de Tarento postulou um dos primei ros registros que temos sobre
-                                            um autômato, neste ele apresenta um pássaro mecânico que ele chamou de "O Pombo" , impulsionado a vapor.
+                                            um autômato, neste ele apresenta um pássaro mecânico que ele chamou de "O Pombo", impulsionado a vapor.
                                         </p>
                                         <img className="Sobre_Img WideImg" src={fotoAlexandria}></img>
                                         <p className="Sobre_Header_Text">
-                                            Quando os gregos controlaram o Egito, uma sucessão de engenheiros que podiam construir autômatos se
-                                            estabeleceram em Alexandria. A partir do polímata Ctesibius (285-222 a.C. ) , os engenheiros alexandrinos
-                                            deixaram textos detalhando autômatos viáveis alimentados por hidráulica ou vapor. Ctesibius construiu
-                                            autômatos semelhantes a humanos, frequentemente usados em cerimônias religiosas e no culto a deuses.
+                                            <strong>
+                                                Quando os gregos controlaram o Egito, uma sucessão de engenheiros que podiam construir autômatos se
+                                                estabeleceram em Alexandria.
+                                            </strong>
+                                        </p>
+                                        <p className="Sobre_Description_Text">
+                                            {" "}
+                                            A partir do polímata Ctesibius (285-222 a.C. ) , os engenheiros alexandrinos deixaram textos detalhando
+                                            autômatos viáveis alimentados por hidráulica ou vapor. Ctesibius construiu autômatos semelhantes a
+                                            humanos, frequentemente usados em cerimônias religiosas e no culto a deuses.
                                         </p>
                                         <img className="Sobre_Img" src={fotoAlexandria2}></img>
                                         <p className="Sobre_Description_Text">
@@ -792,22 +803,33 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             quem fosse rico o suficiente.
                                         </p>
                                         <p className="Sobre_Header_Text">
-                                            Entre as primeiras automações verificáveis está um humanoide desenhado por Leonardo da Vinci (1452-1519)
-                                            em torno de 1495. Os cadernos de Leonardo, redescobertos na década de 1950, contêm desenhos detalhados de
-                                            um cavaleiro mecânico em armadura que era capaz de sentar, acenar com os braços e mover a cabeça e a
-                                            mandíbula.
+                                            <strong>
+                                                Entre as primeiras automações verificáveis está um humanoide desenhado por Leonardo da Vinci
+                                                (1452-1519) em torno de 1495.
+                                            </strong>
                                         </p>
                                         <img className="Sobre_Img WideImg" src={fotoDaVinci}></img>
                                         <p className="Sobre_Description_Text">
-                                            O desenvolvimento inicial dos robôs baseou-se no esforço de automatizar as operações industriais. Este
-                                            esforço foi bastante exarcebado no começou no século XVIII , dentro da indústria têxtil, com o
+                                            Os cadernos de Leonardo, redescobertos na década de 1950, contêm desenhos detalhados de um cavaleiro
+                                            mecânico em armadura que era capaz de sentar, acenar com os braços e mover a cabeça e a mandíbula.
+                                        </p>
+                                        <p className="Sobre_Header_Text">
+                                            <strong>
+                                                O desenvolvimento inicial dos robôs modernos baseou-se no esforço de automatizar as operações
+                                                industriais.
+                                            </strong>
+                                        </p>
+                                        <p className="Sobre_Description_Text">
+                                            Este esforço foi bastante exarcebado no começou no século XVIII , dentro da indústria têxtil, com o
                                             aparecimento dos primeiros teares mecânicos. Com o contínuo progresso da revolução industrial, as fábricas
                                             procuraram equipar-se com máquinas capazes de realizar e reproduzir, automaticamente, determinadas
                                             tarefas.
                                         </p>
                                         <p className="Sobre_Header_Text">
-                                            Nos anos 1770, o suíço Pier re Jaquet-Droz criou autômatos móveis que pareciam crianças, o que encantou
-                                            Mary Shelley, que mais tarde escreveu Frankenstein: O Moderno Prometeu.
+                                            <strong>
+                                                Nos anos 1770, o suíço Pier re Jaquet-Droz criou autômatos móveis que pareciam crianças, o que
+                                                encantou Mary Shelley, que mais tarde escreveu Frankenstein: O Moderno Prometeu.
+                                            </strong>
                                         </p>
                                         <p className="Sobre_Description_Text">
                                             A tentativa final de automação foi O Turco de Wolfgang von Kempelen, uma máquina sofisticada que podia
@@ -816,31 +838,43 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             dispositivos mecânicos raciocinar ou pensar.
                                         </p>
                                         <p className="Sobre_Header_Text">
-                                            Em 1898, Nikola Tesla demonstrou um submarino controlado remotamente no Madison Square Garden como "um
-                                            autômato que, deixado a si mesmo, agirá como se possuísse razão e sem nenhum controle voluntário do
-                                            exterior".
+                                            <strong>
+                                                Em 1898, Nikola Tesla demonstrou um submarino controlado remotamente no Madison Square Garden como "um
+                                                autômato que, deixado a si mesmo, agirá como se possuísse razão e sem nenhum controle voluntário do
+                                                exterior".
+                                            </strong>
                                         </p>
                                         <p className="Sobre_Description_Text">
-                                            Ele defendeu sua invenção cont ra repór teres críticos, argumentando que seus autômatos não eram "torpedos
+                                            Ele defendeu sua invenção contra repórteres críticos, argumentando que seus autômatos não eram "torpedos
                                             sem fio", mas sim "homens mecânicos que farão o trabalho laborioso da raça humana".
                                         </p>
                                         <p className="Sobre_Header_Text">
-                                            O termo "robô" foi usado pela primeira vez em uma peça publicada pelo checo Karel Čapek em 1921. R.U.R.
-                                            (Robôs Universais de Rossum) era uma sátira, os robôs eram seres biológicos fabricados que realizavam todo
-                                            o trabalho manual desagradável. Segundo Čapek, a palavra foi criada por seu irmão Josef a partir da
-                                            palavra checa robota 'corvée', ou em eslovaco ' trabalho' ou 'trabalho braçal '. (Karel Čapek trabalhava
-                                            em sua peça durante sua estadia em Trenčianske Teplice, na Eslováquia, onde seu pai trabalhava como
-                                            médico. ) A peça R.U.R. substituiu o uso popular da palavra "autômato".
+                                            <strong>
+                                                O termo "robô" foi usado pela primeira vez em uma peça publicada pelo checo Karel Čapek em 1921.
+                                                R.U.R. (Robôs Universais de Rossum) era uma sátira, os robôs eram seres biológicos fabricados que
+                                                realizavam todo o trabalho manual desagradável.
+                                            </strong>
                                         </p>
                                         <p className="Sobre_Description_Text">
-                                            Em 1939, Konrad Zuse const ruiu o primeiro computador eletromecânico programável, lançando as bases para a
+                                            Segundo Čapek, a palavra foi criada por seu irmão Josef a partir da palavra checa robota 'corvée', ou em
+                                            eslovaco ' trabalho' ou 'trabalho braçal '. (Karel Čapek trabalhava em sua peça durante sua estadia em
+                                            Trenčianske Teplice, na Eslováquia, onde seu pai trabalhava como médico. ) A peça R.U.R. substituiu o uso
+                                            popular da palavra "autômato".
+                                        </p>
+                                        <p className="Sobre_Description_Text">
+                                            Em 1939, Konrad Zuse construiu o primeiro computador eletromecânico programável, lançando as bases para a
                                             construção de uma máquina humanoide e interativa que hoje consideramos ser um robô.
                                         </p>
                                         <p className="Sobre_Header_Text">
-                                            Em 1941 e 1942, Isaac Asimov formulou as Três Leis da Robótica e, no processo, cunhou a palavra "
-                                            robótica". Em 1945, Vannevar Bush publicou Como Podemos Pensar, um ensaio que investigou o potencial do
-                                            processamento eletrônico de dados. Ele previu o surgimento de computadores, processadores de texto
-                                            digital, reconhecimento de voz e tradução automática.
+                                            <strong>
+                                                Em 1941 e 1942, Isaac Asimov formulou as Três Leis da Robótica e, no processo, cunhou a palavra "
+                                                robótica".
+                                            </strong>
+                                        </p>
+                                        <p className="Sobre_Description_Text">
+                                            Em 1945, Vannevar Bush publicou Como Podemos Pensar, um ensaio que investigou o potencial do processamento
+                                            eletrônico de dados. Ele previu o surgimento de computadores, processadores de texto digital,
+                                            reconhecimento de voz e tradução automática.
                                         </p>
                                         <p className="Sobre_Description_Text">
                                             O primeiro robô móvel capaz de raciocinar sobre seu ambiente, Shakey, foi const ruído em 1970 pelo
@@ -859,10 +893,12 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             maior precisão e confiabilidade do que os humanos. Eles também são empregados para tarefas que são muito
                                             sujas, perigosas ou monótonas para serem adequadas para os humanos.
                                         </p>
-                                        <p className="Sobre_Description_Text">
-                                            Nos últimos anos, houve um aumento no interesse pelo desenvolvimento de robôs com capacidades mais
-                                            avançadas, como inteligência artificial ( IA), aprendizado de máquina e processamento de linguagem
-                                            natural.
+                                        <p className="Sobre_Header_Text">
+                                            <strong>
+                                                Nos últimos anos, houve um aumento no interesse pelo desenvolvimento de robôs com capacidades mais
+                                                avançadas, como Inteligência Artificial - IA, aprendizado de máquina e processamento de linguagem
+                                                natural.
+                                            </strong>
                                         </p>
                                         <p className="Sobre_Description_Text">
                                             Esses robôs são projetados para real izar tarefas que exigem habilidades cognitivas de nível mais elevado,
@@ -879,20 +915,26 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             cuidadosamente a integração de robôs na sociedade para garantir que os benefícios sejam maximizados
                                             enquanto as consequências negativas sejam minimizadas.
                                         </p>
-                                        <p className="Sobre_Header_Text">Mas como podemos definir usos éticos e humanos da tecnologia?</p>
+                                        <p className="Sobre_Header_Text">
+                                            <strong>Mas como podemos definir usos éticos e humanos da tecnologia?</strong>
+                                        </p>
                                         <p className="Sobre_Description_Text">
                                             Uma das idealizações para a Quinta Revolução Industrial, ou 5RI, abrange a noção de colaborações
                                             harmoniosas entre humanos e máquinas, com um foco específico no bem-estar dos múltiplos atores de um
                                             ecossistema (ou seja, sociedade, empresas, pessoas, animais, vegetais, minerais, etc… ).
                                         </p>
                                         <p className="Sobre_Header_Text">
-                                            Essa aceitação harmoniosa de colaborações entre humanos e máquinas distingue a 5IR da Quarta Revolução
-                                            Industrial (4IR), que se concentrou predominantemente em alcançar apenas eficiência, e por consequência
-                                            lucro, usando tecnologia.
+                                            <strong>
+                                                Essa aceitação harmoniosa de colaborações entre humanos e máquinas distingue a 5IR da Quarta Revolução
+                                                Industrial (4IR), que se concentrou predominantemente em alcançar apenas eficiência, e por
+                                                consequência lucro, usando tecnologia.
+                                            </strong>
                                         </p>
                                         <p className="Sobre_Header_Text">
-                                            Dessa forma, a 5RI abre caminho para uma (r)evolução no pensamento e na alavancagem de colaborações entre
-                                            humanos e máquinas para um maior bem-estar da sociedade.
+                                            <strong>
+                                                Dessa forma, a 5RI abre caminho para uma (r)evolução no pensamento e na alavancagem de colaborações
+                                                entre humanos e máquinas para um maior bem-estar da sociedade.
+                                            </strong>
                                         </p>
                                     </div>
                                 </div>
@@ -1040,10 +1082,13 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         <p className="Sobre_Header_Text">
                                             <strong>
                                                 Neste blog, exploraremos temas pertinentes à robótica, inteligência artificial, internet das coisas e
-                                                automação e semanalmente trazemos um update de nossos projetos e avanços, convidando você a se juntar
-                                                a nós nessa jornada por uma transformação tecnológica mais centrada no ser humano e ao complexo
-                                                ecossistema que nos envolve.
+                                                automação.
                                             </strong>
+                                        </p>
+                                        <p className="Sobre_Description_Text">
+                                            Semanalmente trazemos um update de nossos projetos e avanços, convidando você a se juntar a nós nessa
+                                            jornada por uma transformação tecnológica mais centrada no ser humano e ao complexo ecossistema que nos
+                                            envolve.
                                         </p>
                                         <p className="Sobre_Description_Text">
                                             Acreditamos que um canal cultural como um blog pode ser útil para gerar discussões e reflexões sobre o

@@ -17,17 +17,17 @@ const TodasAsSolucoes: SolutionType[] = [
         partners: [
             {
                 name: "Unimed",
-                imgSrc: "/partners_images/unimed.webp",
+                imgSrc: "/partners_images/new/Partner_11_Hero_Image.png",
                 description: "https://robios.com.br/",
             },
             {
                 name: "Ambev",
-                imgSrc: "/partners_images/ambev.webp",
+                imgSrc: "/partners_images/new/Partner_03_Hero_Image_Ambev.png",
                 description: "https://robios.com.br/",
             },
             {
                 name: "Ebanx",
-                imgSrc: "/partners_images/ebanx.webp",
+                imgSrc: "/partners_images/new/Partner_01_Hero_Image_Ebanx.png",
                 description: "https://robios.com.br/",
             },
         ],
@@ -49,17 +49,17 @@ const TodasAsSolucoes: SolutionType[] = [
         partners: [
             {
                 name: "Unimed",
-                imgSrc: "/partners_images/unimed.webp",
+                imgSrc: "/partners_images/new/Partner_11_Hero_Image.png",
                 description: "https://robios.com.br/",
             },
             {
                 name: "Ambev",
-                imgSrc: "/partners_images/ambev.webp",
+                imgSrc: "/partners_images/new/Partner_03_Hero_Image_Ambev.png",
                 description: "https://robios.com.br/",
             },
             {
                 name: "Ebanx",
-                imgSrc: "/partners_images/ebanx.webp",
+                imgSrc: "/partners_images/new/Partner_01_Hero_Image_Ebanx.png",
                 description: "https://robios.com.br/",
             },
         ],
@@ -81,17 +81,17 @@ const TodasAsSolucoes: SolutionType[] = [
         partners: [
             {
                 name: "Unimed",
-                imgSrc: "/partners_images/unimed.webp",
+                imgSrc: "/partners_images/new/Partner_11_Hero_Image.png",
                 description: "https://robios.com.br/",
             },
             {
                 name: "Ambev",
-                imgSrc: "/partners_images/ambev.webp",
+                imgSrc: "/partners_images/new/Partner_03_Hero_Image_Ambev.png",
                 description: "https://robios.com.br/",
             },
             {
                 name: "Ebanx",
-                imgSrc: "/partners_images/ebanx.webp",
+                imgSrc: "/partners_images/new/Partner_01_Hero_Image_Ebanx.png",
                 description: "https://robios.com.br/",
             },
         ],
@@ -113,17 +113,17 @@ const TodasAsSolucoes: SolutionType[] = [
         partners: [
             {
                 name: "Unimed",
-                imgSrc: "/partners_images/unimed.webp",
+                imgSrc: "/partners_images/new/Partner_11_Hero_Image.png",
                 description: "https://robios.com.br/",
             },
             {
                 name: "Ambev",
-                imgSrc: "/partners_images/ambev.webp",
+                imgSrc: "/partners_images/new/Partner_03_Hero_Image_Ambev.png",
                 description: "https://robios.com.br/",
             },
             {
                 name: "Ebanx",
-                imgSrc: "/partners_images/ebanx.webp",
+                imgSrc: "/partners_images/new/Partner_01_Hero_Image_Ebanx.png",
                 description: "https://robios.com.br/",
             },
         ],

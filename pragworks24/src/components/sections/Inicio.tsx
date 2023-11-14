@@ -57,10 +57,10 @@ const baseExperiencias = [
     { id: nanoid(), type: "exp", indx: 17, text: "Varejo", description: "Campanha de Marketing", image: exp_varejo },
 ];
 
-import ebanx from "../../assets/parceiros/Partner_01_Hero_Image.png";
-import tresM from "../../assets/parceiros/Partner_02_Hero_Image.png";
-import ambev from "../../assets/parceiros/Partner_03_Hero_Image.png";
-import brmalls from "../../assets/parceiros/Partner_04_Hero_Image.png";
+import ebanx from "../../assets/parceiros/Partner_01_Hero_Image_Ebanx.png";
+import tresM from "../../assets/parceiros/Partner_02_Hero_Image_3M.png";
+import ambev from "../../assets/parceiros/Partner_03_Hero_Image_Ambev.png";
+import brmalls from "../../assets/parceiros/Partner_04_Hero_Image_Brmalls.png";
 import finep from "../../assets/parceiros/Partner_05_Hero_Image.png";
 import sebrae from "../../assets/parceiros/Partner_06_Hero_Image.png";
 import ntu from "../../assets/parceiros/Partner_07_Hero_Image.png";

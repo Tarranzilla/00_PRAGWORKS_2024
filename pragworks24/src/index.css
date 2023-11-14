@@ -1563,7 +1563,6 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: var(--gap);
     border-radius: var(--gap);
     background-color: var(--subcard_color);
     width: 100%;
@@ -1652,11 +1651,11 @@ button {
 }
 
 .Sobre_Header_Text {
-    font-size: clamp(0.8rem, 3vw, 1.2rem);
+    font-size: clamp(0.8rem, 3vw, 1rem);
 }
 
 .Sobre_Description_Text {
-    font-size: clamp(0.7rem, 1vw, 1rem);
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
     text-align: start;
 }
 
@@ -2556,6 +2555,7 @@ button {
     .Solution_Detail_Text_Container,
     .Product_Detail_Text_Container {
         direction: rtl;
+        padding-inline: var(--small_gap);
     }
 
     .Solution_Detail_Text_Wrapper,
@@ -2619,6 +2619,8 @@ button {
 
     .About_Card_Text_Container {
         direction: rtl;
+        padding-inline: var(--small_gap);
+        margin-top: var(--small_gap);
     }
 
     .About_Card_Text_Wrapper {
