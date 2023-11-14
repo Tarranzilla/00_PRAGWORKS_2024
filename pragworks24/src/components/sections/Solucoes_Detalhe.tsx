@@ -14,6 +14,9 @@ import { useMediaQuery } from "react-responsive";
 import GoThumb from "../../assets/produtos/RobiOS_Go_Thumb_Image_01.png";
 import InspectorThumb from "../../assets/produtos/RobiOS_Inspector_Thumb_Image_01.png";
 import CargoThumb from "../../assets/produtos/RobiOS_Cargo_Thumb_Image_01.png";
+import GoBackground from "/imgs/products/RobiOS_GO_Bg_Image.png";
+import InspectorBackground from "/imgs/products/RobiOS_Inspector_Bg_Image.png";
+import CargoBackground from "/imgs/products/RobiOS_Cargo_Bg_Image.png";
 import Icon_HR_All from "../icons/hr/Icon_HR_All";
 
 const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
@@ -157,6 +160,7 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                         <h4 className="Solution_Recommended_Products_Title">Produtos que atuam nesta solução:</h4>
                         <div className="Solution_Recommended_Products_Container">
                             <div className="Solution_Recommended_Product hoverable">
+                                <img className="Solution_Recommended_Product_Bg_Img" src={GoBackground} alt="Robios GO Background" />
                                 <img className="Solution_Recommended_Product_Img" src={GoThumb} alt="RobiOS GO" />
                                 <div className="Solution_Recommended_Product_Title">
                                     <h3 className="Solution_Recommended_Product_Prename">RobiOS</h3>
@@ -164,6 +168,7 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                                 </div>
                             </div>
                             <div className="Solution_Recommended_Product hoverable">
+                                <img className="Solution_Recommended_Product_Bg_Img" src={InspectorBackground} alt="Robios Inspector Background" />
                                 <img className="Solution_Recommended_Product_Img" src={InspectorThumb} alt="RobiOS INSPECTOR" />
                                 <div className="Solution_Recommended_Product_Title">
                                     <h3 className="Solution_Recommended_Product_Prename">RobiOS</h3>
@@ -171,6 +176,7 @@ const Solucoes_Detalhe = forwardRef(function Solucoes_Detalhe(props, ref: any) {
                                 </div>
                             </div>
                             <div className="Solution_Recommended_Product hoverable">
+                                <img className="Solution_Recommended_Product_Bg_Img" src={CargoBackground} alt="Robios Cargo Background" />
                                 <img className="Solution_Recommended_Product_Img" src={CargoThumb} alt="RobiOS CARGO" />
                                 <div className="Solution_Recommended_Product_Title">
                                     <h3 className="Solution_Recommended_Product_Prename">RobiOS</h3>
