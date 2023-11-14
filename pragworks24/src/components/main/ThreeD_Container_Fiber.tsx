@@ -37,7 +37,7 @@ const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
 
 export const GLTFModelViewer = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     return (
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
             <GLTFModel modelPath={modelPath} scale={scale} position={position} />
             <OrbitControls />
         </Suspense>

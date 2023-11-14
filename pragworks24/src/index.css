@@ -72,7 +72,13 @@
     --PictonBlueFaded: #00aaff80;
     --LavenderBlush: #eee5e9;
     --LavenderBlushFaded: #eee5e980;
+    --LavenderBlushFaded2: #eee5e940;
     --LavenderBlushEvenMoreFaded: #eee5e910;
+
+    --newcardcolor: #404ab6;
+    --newcardcolorfaded: #404ab680;
+    --newcardcolorfaded2: #1a206480;
+    --newcardcolorfaded3: #404ab610;
 
     --RoseQuartz: #9a8c98;
     --RoseQuartzFaded: #9a8c9880;
@@ -87,8 +93,8 @@
     --background-color: var(--FederalBlueFaded);
     --faded_background-color: var(--FederalBlueFaded);
     --btn_color: var(--text-color);
-    --card_color: var(--LavenderBlushFaded);
-    --subcard_color: var(--LavenderBlushEvenMoreFaded);
+    --card_color: var(--newcardcolorfaded);
+    --subcard_color: var(--newcardcolorfaded2);
     --seleted-color: var(--PictonBlue);
     --faded_selected-color: var(--PictonBlueFaded);
     --evenmore-faded-selected-color: #00aaff33;
@@ -285,6 +291,11 @@ button {
     height: 100svh;
     background-color: var(--background-color-solid);
     opacity: 1;
+}
+
+.Loading_Screen > .Loading_Screen_Logo > .Nav_Logo > .Navbar_Logo_Vector {
+    width: 10rem;
+    height: 10rem;
 }
 
 .Navbar {
@@ -2355,7 +2366,7 @@ button {
 
 .Produto_Information_Description {
     padding-left: 0.5rem;
-    max-width: 30rem;
+    max-width: 35rem;
     text-align: start;
     font-size: clamp(0.8rem, 1.2vw, 1.5rem);
 }
@@ -2463,6 +2474,11 @@ button {
     .LP_Section {
         gap: 0;
         justify-content: space-between;
+    }
+
+    .Menu_Main_List_Wrapper,
+    .LP_Links {
+        gap: var(--small_gap);
     }
 
     .List_Line_Container {
