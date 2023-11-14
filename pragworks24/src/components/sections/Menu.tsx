@@ -437,7 +437,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                             <a href="#" className="Menu_Link Header_Link hoverable undecorated" onClick={toggleMenuButton} id="menu-inicio">
                                 <div className="Header_Link_Organizer">
                                     <span className="material-icons LP_Links_Icon">flag_circle</span>
-                                    <p>Início</p>
+                                    <p className="bold_text">Início</p>
                                 </div>
                                 <div className="Menu_Link_Actions">
                                     <i className="material-icons hoverable undecorated">keyboard_double_arrow_up</i>
@@ -501,7 +501,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                 >
                                                     <a
                                                         href="#produtos"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("robos", 0);
                                                         }}
@@ -510,7 +510,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                     </a>
                                                     <a
                                                         href="#produtos"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("robos", 1);
                                                         }}
@@ -519,7 +519,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                     </a>
                                                     <a
                                                         href="#produtos"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("robos", 2);
                                                         }}
@@ -528,7 +528,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                     </a>
                                                     <a
                                                         href="#produtos"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("softwares", 3);
                                                         }}
@@ -537,7 +537,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                     </a>
                                                     <a
                                                         href="#produtos"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("softwares", 4);
                                                         }}
@@ -546,7 +546,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                     </a>
                                                     <a
                                                         href="#produtos"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("softwares", 5);
                                                         }}
@@ -606,7 +606,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                 >
                                                     <a
                                                         href="#solucoes"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("robos", 0);
                                                         }}
@@ -615,7 +615,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                     </a>
                                                     <a
                                                         href="#solucoes"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("robos", 1);
                                                         }}
@@ -624,7 +624,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                     </a>
                                                     <a
                                                         href="#solucoes"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("robos", 2);
                                                         }}
@@ -633,7 +633,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                                     </a>
                                                     <a
                                                         href="#solucoes"
-                                                        className="Menu_Link hoverable undecorated"
+                                                        className="Menu_Link hoverable undecorated light_text"
                                                         onClick={() => {
                                                             toggleProductDetailsButton("softwares", 3);
                                                         }}
@@ -665,7 +665,7 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                             <a href="#privacidade" className="Menu_Link_Secondary hoverable undecorated" onClick={togglePrivacy}>
                                 <div className="Header_Link_Organizer">
                                     <span className="material-icons">privacy_tip</span>
-                                    <p>Privacidade</p>
+                                    <p className="bold_text">Privacidade</p>
                                 </div>
 
                                 <i className="material-icons hoverable undecorated">more</i>
@@ -673,21 +673,21 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                             <a href="#termos" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleTerms2}>
                                 <div className="Header_Link_Organizer">
                                     <span className="material-icons">assignment</span>
-                                    <p>Termos</p>
+                                    <p className="bold_text">Termos</p>
                                 </div>
                                 <i className="material-icons hoverable undecorated">more</i>
                             </a>
                             <a href="#mapa-do-site" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleSiteMap2}>
                                 <div className="Header_Link_Organizer">
                                     <span className="material-icons">map</span>
-                                    <p>Mapa do Site</p>
+                                    <p className="bold_text">Mapa do Site</p>
                                 </div>
 
                                 <i className="material-icons hoverable undecorated">more</i>
                             </a>
                         </div>
 
-                        <div className="Configurations">
+                        <div className="Configurations bold_text">
                             <m.div className="Configurations_Header hoverable undecorated">
                                 <div className="Menu_Link" onClick={toggleConfig}>
                                     <div className="Header_Link_Organizer">
