@@ -2506,10 +2506,12 @@ button {
     .Menu_Container {
         flex-direction: column;
         overflow-y: auto;
+        padding: 0;
     }
     .Menu_Main_List,
     .Menu_Options {
         flex-shrink: 0;
+        padding-inline: var(--small_gap);
     }
 
     .Secondary_Links,
