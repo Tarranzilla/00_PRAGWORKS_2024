@@ -64,7 +64,7 @@ export default function ThreeD_Container_Fiber() {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1.0, type: "tween" }}
                 className="LP_Section ThreeD_Container"
-                id={"ThreeD_Container_id"}
+                id={"ThreeD_Container"}
                 key={"ThreeD_Container_key"}
             >
                 {loading && <div className="loading">Carregando Modelo 3D ...</div>}

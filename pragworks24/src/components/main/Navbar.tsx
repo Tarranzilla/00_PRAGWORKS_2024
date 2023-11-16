@@ -8,6 +8,9 @@ import { motion as m, AnimatePresence } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSearch } from "../../context/main-context.tsx";
 
+//React Router Imports
+import { Link } from "react-router-dom";
+
 // Icons Imports
 import Icon_HumanRobotics from "../icons/Icon_HumanRobotics";
 
@@ -21,7 +24,7 @@ const Navbar = forwardRef(function Navbar(props, ref: any) {
 
     return (
         <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Navbar" key={"navbar_key"}>
-            <a href="#" className="Nav_Logo_Container undecorated">
+            <Link to="/#inicio" className="Nav_Logo_Container undecorated">
                 <Icon_HumanRobotics />
                 <h1 className="Nav_Logotype">
                     <div className="human">
@@ -85,118 +88,76 @@ const Navbar = forwardRef(function Navbar(props, ref: any) {
                         </svg>
                     </div>
                 </h1>
-            </a>
+            </Link>
             <div className="Nav_Links_Container Desktop_Only">
-                <a
-                    href="#inicio"
+                <Link
+                    to="/#inicio"
                     className={activeSection === 1 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
                 >
                     Início
-                </a>
-                <a
-                    href="#produtos"
+                </Link>
+                <Link
+                    to="/#produtos"
                     className={activeSection === 2 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
                 >
                     Produtos
-                </a>
-                <a
-                    href="#solucoes"
+                </Link>
+                <Link
+                    to="/#solucoes"
                     className={activeSection === 3 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
                 >
                     Soluções
-                </a>
-                <a
-                    href="#sobre"
+                </Link>
+                <Link
+                    to="#sobre"
                     className={activeSection === 4 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
                 >
                     Sobre
-                </a>
-                <a
-                    href="#contato"
+                </Link>
+                <Link
+                    to="/#contato"
                     className={activeSection === 5 ? "Nav_Link hoverable undecorated Nav_Link_Active" : "Nav_Link hoverable undecorated"}
                 >
                     Contato
-                </a>
+                </Link>
             </div>
 
             <m.div className="Nav_Links_Container Mobile_Only">
                 <AnimatePresence mode="popLayout">
                     {activeSection === 1 && (
-                        <m.a
-                            initial={{ y: 25, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -25, opacity: 0 }}
-                            href="#inicio"
-                            className="Nav_Link hoverable undecorated Nav_Link_Active"
-                            key="Nav_Link_1A"
-                        >
+                        <Link to="#inicio" className="Nav_Link hoverable undecorated Nav_Link_Active" key="Nav_Link_1A">
                             Início
-                        </m.a>
+                        </Link>
                     )}
 
                     {activeSection === 2 && (
-                        <m.a
-                            initial={{ y: 25, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -25, opacity: 0 }}
-                            href="#produtos"
-                            className="Nav_Link hoverable undecorated Nav_Link_Active"
-                            key="Nav_Link_2A"
-                        >
+                        <Link to="#produtos" className="Nav_Link hoverable undecorated Nav_Link_Active" key="Nav_Link_2A">
                             Produtos
-                        </m.a>
+                        </Link>
                     )}
 
                     {activeSection === 3 && (
-                        <m.a
-                            initial={{ y: 25, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -25, opacity: 0 }}
-                            href="#solucoes"
-                            className="Nav_Link hoverable undecorated Nav_Link_Active"
-                            key="Nav_Link_3A"
-                        >
+                        <Link to="#solucoes" className="Nav_Link hoverable undecorated Nav_Link_Active" key="Nav_Link_3A">
                             Soluções
-                        </m.a>
+                        </Link>
                     )}
 
                     {activeSection === 4 && (
-                        <m.a
-                            initial={{ y: 25, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -25, opacity: 0 }}
-                            href="#sobre"
-                            className="Nav_Link hoverable undecorated Nav_Link_Active"
-                            key="Nav_Link_4A"
-                        >
+                        <Link to="#sobre" className="Nav_Link hoverable undecorated Nav_Link_Active" key="Nav_Link_4A">
                             Sobre
-                        </m.a>
+                        </Link>
                     )}
 
                     {activeSection === 5 && (
-                        <m.a
-                            initial={{ y: 25, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -25, opacity: 0 }}
-                            href="#contato"
-                            className="Nav_Link hoverable undecorated Nav_Link_Active"
-                            key="Nav_Link_5A"
-                        >
+                        <Link to="#contato" className="Nav_Link hoverable undecorated Nav_Link_Active" key="Nav_Link_5A">
                             Contato
-                        </m.a>
+                        </Link>
                     )}
 
                     {activeSection === 6 && (
-                        <m.a
-                            initial={{ y: 25, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -25, opacity: 0 }}
-                            href="#menu"
-                            className="Nav_Link hoverable undecorated Nav_Link_Active"
-                            key="Nav_Link_6A"
-                        >
+                        <Link to="#menu" className="Nav_Link hoverable undecorated Nav_Link_Active" key="Nav_Link_6A">
                             Menu
-                        </m.a>
+                        </Link>
                     )}
                 </AnimatePresence>
             </m.div>

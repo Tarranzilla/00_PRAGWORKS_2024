@@ -12,6 +12,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { setLgpdConsent } from "./context/main-context";
 
+import ScrollToHashElement from "./utils/ScrollToHashElement.tsx";
+
 //Components Imports
 import Navbar from "./components/main/Navbar";
 import Searchbar from "./components/main/Searchbar";
@@ -47,6 +49,7 @@ function App() {
 
     return (
         <>
+            <ScrollToHashElement />
             <AnimatePresence mode="popLayout">
                 {/* Loading Screen */}
                 {isLocalLoading && (

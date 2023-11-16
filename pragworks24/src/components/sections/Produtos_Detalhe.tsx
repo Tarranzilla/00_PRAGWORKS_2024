@@ -21,6 +21,8 @@ import Icon_HR_All from "../icons/hr/Icon_HR_All";
 import ThreeD_Container_Fiber from "../main/ThreeD_Container_Fiber";
 import ThreeD_Container_Fiber_Mobile from "../main/ThreeD_Container_Fiber_Mobile";
 
+import { Link } from "react-router-dom";
+
 const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
     const isMobile = useMediaQuery({
         query: "(max-width: 700px)",
@@ -127,6 +129,12 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                             )
                                     )}
                                 </AnimatePresence>
+                                {currentImageIndex === 0 && activeProduct.object3D && (
+                                    <Link to="/3dcanvas#ThreeD_Container" className="open3dCanvas_Btn undecorated">
+                                        <span className="material-icons">fullscreen</span>
+                                    </Link>
+                                )}
+
                                 <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
                                     <span className="material-icons Previous_Btn_Icon">west</span>
                                 </button>
@@ -266,6 +274,9 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                     )
                             )}
                         </AnimatePresence>
+                        <Link to="/3dcanvas#ThreeD_Container" className="open3dCanvas_Btn undecorated">
+                            <span className="material-icons">fullscreen</span>
+                        </Link>
                         <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
                             <span className="material-icons Previous_Btn_Icon">west</span>
                         </button>

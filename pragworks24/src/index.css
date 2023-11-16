@@ -912,6 +912,7 @@ button {
     border-radius: 0.25rem;
 }
 
+.open3dCanvas_Btn,
 .Previous_Btn,
 .Next_Btn {
     display: flex;
@@ -926,12 +927,19 @@ button {
     transition: all 0.2s ease-in-out;
 }
 
+.open3dCanvas_Btn:hover,
+.open3dCanvas_Btn:focus-within,
 .Previous_Btn:hover,
 .Previous_Btn:focus-within,
 .Next_Btn:hover,
 .Next_Btn:focus-within {
     background-color: var(--seleted-color);
     scale: 1.1;
+}
+
+.open3dCanvas_Btn {
+    top: var(--medium_gap);
+    right: var(--medium_gap);
 }
 
 .Previous_Btn {
