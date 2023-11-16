@@ -546,10 +546,12 @@ button {
 .Search_Results_Container {
     display: flex;
     flex-direction: column;
-    padding: var(--gap);
+    padding: var(--small_gap);
+    padding-block: var(--gap);
     border-radius: var(--gap);
     gap: var(--gap);
-    width: 30rem;
+    width: 100%;
+    max-width: 30rem;
     height: 80%;
     background-color: var(--card_color);
     position: relative;
@@ -579,10 +581,12 @@ button {
     flex-direction: row;
     align-items: center;
     padding: var(--small_gap);
+    width: 100%;
     max-width: 30rem;
     text-align: start;
     cursor: pointer;
     gap: var(--small_gap);
+    font-size: clamp(0.75rem, 1vw, 1rem);
 }
 
 .Section_Divider {
@@ -1068,6 +1072,7 @@ button {
 
 .Post_Detail_Container,
 .Experience_Detail_Container {
+    left: 0;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1256,6 +1261,7 @@ button {
     gap: 0.3rem;
 }
 
+.Map_Title,
 .Solution_Detail_Title,
 .Product_Detail_Title {
     font-size: clamp(0.5rem, 1vw, 0.8rem);
@@ -1718,7 +1724,7 @@ button {
 }
 
 .Sobre_Member_Name {
-    font-size: clamp(1.2rem, 1vw, 1.4rem);
+    font-size: clamp(0.8rem, 1vw, 1.4rem);
 }
 
 .Sobre_Member_Description {
@@ -2001,6 +2007,20 @@ button {
     flex: 1;
     height: 100%;
     gap: var(--gap);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.Maps_Master_Container_Mobile {
+    position: absolute;
+    top: var(--small_gap);
+    height: calc(100% - var(--small_gap));
+    left: 0;
+    width: 100%;
+}
+
+.Maps_Master_Container_Mobile > .Map_Container {
+    background-color: #000343;
 }
 
 .Map_Container {
@@ -2011,7 +2031,8 @@ button {
     transition: width 0.2s ease-in-out;
     border-radius: var(--gap);
     overflow: hidden;
-    outline: 1px solid var(--text-color);
+    outline: 1px solid var(--seleted-color);
+    pointer-events: all;
 }
 
 .Map_Header {
@@ -2436,6 +2457,20 @@ button {
 
 /* MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES - MEDIA QUERIES */
 
+@media screen and (max-width: 1400px) {
+    .Maps_Master_Container {
+        flex-direction: column;
+    }
+
+    .Contact_Action_Btn {
+        padding: var(--small_gap);
+    }
+
+    .Contact_Info {
+        padding: var(--small_gap);
+    }
+}
+
 @media screen and (max-width: 1200px) {
     .About_Card_Post_Container {
         grid-template-columns: repeat(1, 1fr);
@@ -2628,7 +2663,6 @@ button {
     }
 
     .Maps_Master_Container {
-        display: none;
     }
 
     .Footer_Copyright {

@@ -8,7 +8,13 @@ import { motion as m, AnimatePresence, LayoutGroup } from "framer-motion";
 import { useDispatch } from "react-redux";
 import { setActiveSection } from "../../context/main-context.tsx";
 
+// React Responsive Imports
+import { useMediaQuery } from "react-responsive";
+
 const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
+    const isMobile = useMediaQuery({
+        query: "(max-width: 700px)",
+    });
     const dispatch = useDispatch();
     const setActiveSectionFunction = (id: number) => {
         dispatch(setActiveSection(id));
@@ -76,7 +82,7 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                 <div className="Contact_Action_Container">
                     <a className="Contact_Action_Btn Btn_Class hoverable undecorated" href="mailto:recipient@example.com">
                         <i className="material-icons">email</i>
-                        <p>Enviar Email</p>
+                        <p>Envie um Email</p>
                     </a>
                     <a
                         className="Contact_Action_Btn Btn_Class hoverable undecorated"
@@ -84,7 +90,7 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                         target="_blank"
                     >
                         <span className="material-icons">perm_phone_msg</span>
-                        <p>Entre em contato pelo WhatsApp</p>
+                        <p>Fale pelo WhatsApp</p>
                     </a>
                     <a
                         className="Contact_Action_Btn Btn_Class hoverable undecorated"
@@ -96,7 +102,7 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                     </a>
                 </div>
             </div>
-            <m.div layout layoutRoot className="Maps_Master_Container">
+            <m.div layout layoutRoot className={isMobile ? "Maps_Master_Container Maps_Master_Container_Mobile" : "Maps_Master_Container"}>
                 {map1isOpen && (
                     <m.div
                         layout="preserve-aspect"
@@ -122,7 +128,7 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}
-                                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDyXfuRSunXyy-YO9HSag0AFrMJexBPcZA&q=Curitiba`}
+                                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyDyXfuRSunXyy-YO9HSag0AFrMJexBPcZA&q=HumanRoboticsCuritiba`}
                                 allowFullScreen
                                 key="mapa_02_iframe"
                             ></iframe>
