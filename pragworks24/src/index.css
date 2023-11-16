@@ -1687,6 +1687,7 @@ button {
 .Sobre_Member_Card {
     scroll-margin-inline: var(--gap);
     scroll-snap-align: start;
+    min-height: 12rem;
     height: 100%;
     aspect-ratio: 1/1;
     min-width: 150px;
@@ -1695,7 +1696,8 @@ button {
     flex-direction: column;
     flex-shrink: 0;
     border-radius: var(--gap);
-    outline: 1px solid var(--text-color);
+    outline-offset: -1px;
+    outline: 2px solid var(--seleted-color);
     position: relative;
 }
 
@@ -1707,7 +1709,6 @@ button {
     align-items: center;
     justify-content: center;
     z-index: 0;
-    outline: 1px solid var(--text-color);
     border-radius: var(--gap);
     overflow: hidden;
 }
@@ -1724,15 +1725,17 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     gap: 0.25rem;
     padding: var(--small_gap);
     position: absolute;
-    bottom: 0;
+    top: 0;
+    height: 100%;
 }
 
 .Sobre_Member_Name {
     font-size: clamp(0.8rem, 1vw, 1.4rem);
+    color: var(--seleted-color);
 }
 
 .Sobre_Member_Description {
@@ -1744,11 +1747,11 @@ button {
     padding-inline: var(--gap);
     padding-block: 0.5rem;
     outline: 1px solid var(--text-color);
-    font-size: clamp(0.5rem, 0.8vw, 1rem);
-    line-height: clamp(0.8rem, 1vw, 1rem);
+    font-size: clamp(0.45rem, 0.8vw, 1rem);
+    line-height: clamp(0.6rem, 1vw, 1rem);
     background-color: var(--text-color);
     color: var(--background-color);
-    margin-inline: 4rem;
+    margin-inline: 3rem;
 }
 
 .Sobre_Member_Interactions {
@@ -1772,7 +1775,7 @@ button {
     justify-content: center;
     padding: var(--small_gap);
     border-radius: 50%;
-    background-color: var(--btn_color);
+    background-color: var(--faded_selected-color);
 }
 
 .Sobre_Interaction_Icon > * {
