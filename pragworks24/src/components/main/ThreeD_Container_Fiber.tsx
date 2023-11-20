@@ -54,7 +54,7 @@ function Loader() {
     return <Html center>{progress} % loaded</Html>;
 }
 
-export default function ThreeD_Container_Fiber() {
+export default function ThreeD_Container_Fiber({ modelPath }) {
     const [loading, setLoading] = useState(false);
 
     return (
@@ -74,7 +74,7 @@ export default function ThreeD_Container_Fiber() {
                     <directionalLight color="#00aaff" position={[-5, 5, 0]} />
                     <directionalLight color="#ffffff" position={[0, 0, 30]} />
 
-                    <GLTFModelViewer modelPath="objects3D/robios_go/robios_go_3.gltf" scale={4} position={[0, 0, 0]} />
+                    <GLTFModelViewer modelPath={modelPath} scale={4} position={[0, 0, 0]} />
                 </Canvas>
             </m.div>
         </>

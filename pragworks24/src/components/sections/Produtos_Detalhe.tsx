@@ -105,7 +105,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
                                         >
-                                            <ThreeD_Container_Fiber_Mobile />
+                                            <ThreeD_Container_Fiber_Mobile modelPath="objects3D/robios_go/robios_go_3.gltf" />
                                         </m.div>
                                     )}
 
@@ -255,7 +255,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                     animate={{ opacity: 1 }}
                                     exit={{ opacity: 0 }}
                                 >
-                                    <ThreeD_Container_Fiber />
+                                    <ThreeD_Container_Fiber modelPath="objects3D/robios_go/robios_go_3.gltf" />
                                 </m.div>
                             )}
 

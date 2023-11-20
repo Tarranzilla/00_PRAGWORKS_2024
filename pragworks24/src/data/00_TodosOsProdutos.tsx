@@ -269,7 +269,7 @@ const TodosOsProdutos: ProductType[] = [
             "./imgs/products/RobiOS_Inspector_Detail_Image_02.png",
             "./imgs/products/RobiOS_Inspector_Detail_Image_03.png",
         ],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_totem/robios_totem.glb",
         textIntro: "Um robô interativo para a inspeção de ambientes, produtos e equipamentos.",
         textDetail: [
             "O RobiOS INSPECTOR é um robô interativo desenvolvido para inspecionar ambientes, produtos e equipamentos de maneira eficiente. Ele é uma ferramenta valiosa para garantir qualidade e segurança.",
@@ -475,7 +475,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Cargo_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Cargo_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Cargo_Detail_Image_01.png", "./imgs/products/RobiOS_Cargo_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_cargo/robios_cargo.glb",
         textIntro: "Um robô interativo que lhe permite armazenar e transportar objetos e ferramentas.",
         textDetail: [
             "O RobiOS CARGO é um robô interativo versátil que oferece armazenamento e transporte de objetos e ferramentas de forma autônoma. Ele é a escolha ideal para otimizar a logística e a movimentação de materiais.",
