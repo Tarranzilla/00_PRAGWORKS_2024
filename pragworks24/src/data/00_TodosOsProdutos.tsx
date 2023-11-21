@@ -269,7 +269,7 @@ const TodosOsProdutos: ProductType[] = [
             "./imgs/products/RobiOS_Inspector_Detail_Image_02.png",
             "./imgs/products/RobiOS_Inspector_Detail_Image_03.png",
         ],
-        object3D: "./objects3D/robios_totem/robios_totem.glb",
+        object3D: "./objects3D/robios_inspector/robios_inspector.glb",
         textIntro: "Um robô interativo para a inspeção de ambientes, produtos e equipamentos.",
         textDetail: [
             "O RobiOS INSPECTOR é um robô interativo desenvolvido para inspecionar ambientes, produtos e equipamentos de maneira eficiente. Ele é uma ferramenta valiosa para garantir qualidade e segurança.",
