@@ -20,7 +20,7 @@ const Section_Contato = forwardRef(function Section_Contato(props, ref: any) {
         dispatch(setActiveSection(id));
     };
 
-    const [map1isOpen, setMap1isOpen] = useState(true);
+    const [map1isOpen, setMap1isOpen] = useState(!isMobile);
     const [map2isOpen, setMap2isOpen] = useState(false);
 
     const toggleMap1 = () => {

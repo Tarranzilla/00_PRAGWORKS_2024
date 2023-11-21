@@ -638,6 +638,10 @@ button {
     overflow-x: hidden;
 }
 
+#produtos {
+    gap: 0;
+}
+
 .LP_Section_Title {
     position: absolute;
     top: var(--gap);
@@ -704,7 +708,10 @@ button {
 }
 
 .Type_Viewer_Title {
+    font-size: clamp(1.5rem, 1vw, 2rem);
     font-family: "Researcher_WOFF2";
+    color: var(--seleted-color);
+    text-shadow: 0 0 10px var(--PictonBlueFaded);
 }
 
 .Product_Card,
@@ -843,6 +850,7 @@ button {
 .Solution_Card_Detail_Title {
     font-size: clamp(2rem, 4vw, 8rem);
     margin-bottom: -1rem;
+    font-family: "Researcher_WOFF2";
 }
 
 .Robot_Card_Main_Image {
@@ -2032,6 +2040,7 @@ button {
 
 .Maps_Master_Container_Mobile > .Map_Container {
     background-color: #000343;
+    border-radius: 0;
 }
 
 .Map_Container {

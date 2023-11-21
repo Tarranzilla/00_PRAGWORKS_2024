@@ -173,9 +173,6 @@ const Navbar = forwardRef(function Navbar(props, ref: any) {
                     <a href="#perfil" className="Nav_Tool undecorated" title="Perfil">
                         <i className="material-icons hoverable">person</i>
                     </a>
-                    <a href="#lista-de-compras" className="Nav_Tool undecorated" title="Lista de Compras">
-                        <i className="material-icons hoverable">shopping_cart</i>
-                    </a>
                 </div>
                 <a
                     href="#menu"
