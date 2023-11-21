@@ -81,6 +81,8 @@ export const clearPersistedData = createAction("persist/clearPersistedData");
 import "@material-design-icons/font";
 import "./index.css";
 
+clearPersistedData();
+
 // Render, Provider and PersistGate (?)
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>

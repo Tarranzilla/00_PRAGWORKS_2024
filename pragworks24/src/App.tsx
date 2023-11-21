@@ -24,7 +24,6 @@ import Icon_HumanRobotics from "./components/icons/Icon_HumanRobotics";
 import { clearPersistedData } from "./main.tsx";
 
 function App() {
-    clearPersistedData();
     const dispatch = useDispatch();
 
     const isLoading = useSelector((state: any) => state.isLoading);
