@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/3dcanvas",
-                element: <ThreeD_Container_Fiber />,
+                element: <ThreeD_Container_Fiber modelPath={"./objects3D/robios_go/Icon_HumanRobotics.go.glb"} />,
             },
             {
                 path: "/robios-go",
