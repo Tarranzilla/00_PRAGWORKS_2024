@@ -1,19 +1,12 @@
 import { useState, Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 
-import { useFBX, Html, useProgress, OrbitControls } from "@react-three/drei";
+import { Html, useProgress, OrbitControls } from "@react-three/drei";
 
-import { FBXLoader } from "three/addons/loaders/FBXLoader.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import { useLoader } from "@react-three/fiber";
 
 import { motion as m } from "framer-motion";
-
-function GLTFScene() {
-    const gltf = useLoader(GLTFLoader, "/Poimandres.gltf");
-    return <primitive object={gltf.scene} />;
-}
 
 const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     const ref = useRef<any>();
@@ -37,17 +30,11 @@ const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
 
 export const GLTFModelViewer = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     return (
-        <Suspense fallback={null}>
+        <Suspense fallback={<Loader />}>
             <GLTFModel modelPath={modelPath} scale={scale} position={position} />
-            <OrbitControls />
         </Suspense>
     );
 };
-
-function FBXScene() {
-    const fbx = useFBX("/Poimandres.fbx");
-    return <primitive object={fbx} />;
-}
 
 function Loader() {
     const { progress } = useProgress();
@@ -72,6 +59,7 @@ export default function ThreeD_Container_Fiber_Mobile({ modelPath }) {
                     <ambientLight intensity={0.1} />
                     <directionalLight color="red" position={[0, 0, 5]} />
                     <GLTFModelViewer modelPath={modelPath} scale={2} position={[0, 0, 0]} />
+                    <OrbitControls />
                 </Canvas>
             </m.div>
         </>
