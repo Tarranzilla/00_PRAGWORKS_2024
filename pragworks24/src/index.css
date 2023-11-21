@@ -822,7 +822,7 @@ button {
 .Card_Product_Name {
     font-family: "Researcher_WOFF2";
     margin-top: -1rem;
-    font-size: clamp(3rem, 5vw, 4rem);
+    font-size: clamp(2.4rem, 5vw, 4rem);
     margin-bottom: -0.5rem;
 }
 
@@ -2620,7 +2620,7 @@ button {
 
     .Mobile_Image_Container {
         display: flex;
-        height: 33vh;
+        height: 45vh;
         flex-shrink: 0;
     }
 

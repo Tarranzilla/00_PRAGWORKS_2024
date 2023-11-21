@@ -7,6 +7,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { useLoader } from "@react-three/fiber";
 
 import { motion as m } from "framer-motion";
+import { degToRad } from "three/src/math/MathUtils.js";
 
 const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     const ref = useRef<any>();
@@ -14,7 +15,7 @@ const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     const [hovered, setHovered] = useState(false);
 
     useFrame((state, delta) => {
-        ref.current.rotation.y += 0.001;
+        ref.current.rotation.z += 0.001;
     });
     return (
         <primitive
@@ -38,7 +39,7 @@ export const GLTFModelViewer = ({ modelPath, scale = 10, position = [0, 0, 0] })
 
 function Loader() {
     const { progress } = useProgress();
-    return <Html center>{progress} % loaded</Html>;
+    return <Html center>Carregando Modelo 3D</Html>;
 }
 
 export default function ThreeD_Container_Fiber_Mobile({ modelPath }) {
@@ -57,8 +58,12 @@ export default function ThreeD_Container_Fiber_Mobile({ modelPath }) {
                 {loading && <div className="loading">Carregando Modelo 3D ...</div>}
                 <Canvas>
                     <ambientLight intensity={0.1} />
-                    <directionalLight color="red" position={[0, 0, 5]} />
-                    <GLTFModelViewer modelPath={modelPath} scale={2} position={[0, 0, 0]} />
+                    <directionalLight color="#8e00ff" position={[5, 5, 0]} />
+                    <directionalLight color="#00aaff" position={[-5, 5, 0]} />
+                    <directionalLight color="#ffffff" position={[0, 0, 30]} />
+                    <group rotation-x={degToRad(270)}>
+                        <GLTFModelViewer modelPath={modelPath} scale={2} position={[0, 0, 0]} />
+                    </group>
                     <OrbitControls />
                 </Canvas>
             </m.div>

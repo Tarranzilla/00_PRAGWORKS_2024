@@ -7,7 +7,7 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { useLoader } from "@react-three/fiber";
 
 import { motion as m } from "framer-motion";
-import { degToRad, radToDeg } from "three/src/math/MathUtils.js";
+import { degToRad } from "three/src/math/MathUtils.js";
 
 const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     const ref = useRef<any>();
@@ -39,7 +39,7 @@ export const GLTFModelViewer = ({ modelPath, scale = 10, position = [0, 0, 0] })
 
 function Loader() {
     const { progress } = useProgress();
-    return <Html center>Modelo 3D {progress} % Carregado</Html>;
+    return <Html center>Carregando Modelo 3D</Html>;
 }
 
 export default function ThreeD_Container_Fiber({ modelPath }) {

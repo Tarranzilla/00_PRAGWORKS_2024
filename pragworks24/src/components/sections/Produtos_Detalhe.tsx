@@ -274,9 +274,11 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                     )
                             )}
                         </AnimatePresence>
-                        <Link to="/3dcanvas#ThreeD_Container" className="open3dCanvas_Btn undecorated">
-                            <span className="material-icons">fullscreen</span>
-                        </Link>
+                        {currentImageIndex === 0 && activeProduct.object3D && (
+                            <Link to="/3dcanvas#ThreeD_Container" className="open3dCanvas_Btn undecorated">
+                                <span className="material-icons">fullscreen</span>
+                            </Link>
+                        )}
                         <button className="Previous_Btn hoverable undecorated" onClick={handlePrevClick}>
                             <span className="material-icons Previous_Btn_Icon">west</span>
                         </button>
