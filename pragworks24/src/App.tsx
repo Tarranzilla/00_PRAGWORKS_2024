@@ -12,6 +12,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { setLgpdConsent } from "./context/main-context";
 
+import { useLocation } from "react-router-dom";
 import ScrollToHashElement from "./utils/ScrollToHashElement.tsx";
 
 //Components Imports
@@ -25,6 +26,7 @@ import { clearPersistedData } from "./main.tsx";
 
 function App() {
     const dispatch = useDispatch();
+    const location = useLocation();
 
     const isLoading = useSelector((state: any) => state.isLoading);
     const menuIsOpen = useSelector((state: any) => state.menuIsOpen);
@@ -40,6 +42,15 @@ function App() {
     const { scrollYProgress } = useScroll();
 
     const [isLocalLoading, setIsLocalLoading] = useState(true);
+
+    const root = document.getElementById("root");
+
+    useEffect(() => {
+        console.log(location.pathname);
+        if (location.pathname === "/3dcanvas") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }, [location]);
 
     useEffect(() => {
         setTimeout(() => {

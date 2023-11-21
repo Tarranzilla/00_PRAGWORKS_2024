@@ -45,6 +45,7 @@ import Icon_QuotePrice from "../components/icons/hr/Icon_QuotePrice";
 import Icon_Demo from "../components/icons/hr/Icon_Demo";
 
 const TodosOsProdutos: ProductType[] = [
+    //RobiOS GO
     {
         domId: "produto-00",
         id: 1,
@@ -255,6 +256,8 @@ const TodosOsProdutos: ProductType[] = [
             "Reconhecimento de Voz",
         ],
     },
+
+    //RobiOS INSPECTOR
     {
         domId: "produto-01",
         id: 2,
@@ -465,6 +468,8 @@ const TodosOsProdutos: ProductType[] = [
             "Reconhecimento de Voz",
         ],
     },
+
+    //RobiOS CARGO
     {
         domId: "produto-02",
         id: 3,
@@ -664,6 +669,8 @@ const TodosOsProdutos: ProductType[] = [
             "Reconhecimento de Voz",
         ],
     },
+
+    //RobiOS
     {
         domId: "produto-03",
         id: 4,
@@ -735,6 +742,8 @@ const TodosOsProdutos: ProductType[] = [
             "Reconhecimento de Voz",
         ],
     },
+
+    //RobiOS Studio
     {
         domId: "produto-00",
         id: 5,
@@ -805,6 +814,8 @@ const TodosOsProdutos: ProductType[] = [
             "Reconhecimento de Voz",
         ],
     },
+
+    //RobiOS AVATAR
     {
         domId: "produto-05",
         id: 6,
@@ -950,6 +961,8 @@ const TodosOsProdutos: ProductType[] = [
             "Reconhecimento de Voz",
         ],
     },
+
+    //Customização
     {
         domId: "produto-06",
 
@@ -958,7 +971,7 @@ const TodosOsProdutos: ProductType[] = [
         name: "Customização",
         type: "Serviço Adicional",
         class: "servicos",
-        heroImg: "./imgs/products/Customizacao_Hero_Image.png",
+        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["/robots_images/new8/07_Customizacao.png", "/robots_images/new8/07_Customizacao.png"],
         object3D: "./objects3D/robios_go/robios_go.glb",
@@ -1099,17 +1112,18 @@ const TodosOsProdutos: ProductType[] = [
         ],
     },
 
+    //Mapeamento de Ambientes
     {
         domId: "produto-07",
 
         id: 7,
         prename: "",
-        name: "Mapeamento de Ambientes",
+        name: "Mapeamento",
         type: "Serviço Adicional",
         class: "servicos",
 
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Mapeie ambientes internos e externos com LIDAR e os compile um arquivo digital em conjunto com percursos personalizados.",
@@ -1243,17 +1257,163 @@ const TodosOsProdutos: ProductType[] = [
         ],
     },
 
+    // Integração de Serviços
+    {
+        domId: "produto-08",
+
+        id: 8,
+        prename: "",
+        name: "Integração",
+        type: "Serviço Adicional",
+        class: "servicos",
+
+        heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
+        detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
+        object3D: "./objects3D/robios_go/robios_go.glb",
+        textIntro: "Integre ao seu assistente serviços como WhatsApp, ChatGPT, Oracle e SAP.",
+        textDetail: [" "],
+
+        buyPrice: 30000,
+        rentPrice: 10000,
+        cartQuantity: 0,
+
+        producerName: "Laboratório Human Robotics",
+        productOrigin: "Curitiba, Paraná, Brasil",
+        productOriginCoordinates: "-23.5505199,-46.6333094",
+
+        sellerName: "Comercial Human Robotics",
+        sellerOrigin: "Curitiba, Paraná, Brasil",
+        sellerOriginCoordinates: "-23.5505199,-46.6333094",
+        relatedSectors: [
+            {
+                title: "Varejo",
+                description: "No varejo, os robôs podem ajudar com tarefas como atendimento ao cliente, entrega de produtos e inspeção de lojas.",
+                icon: "varejo",
+            },
+            {
+                title: "Saúde e Cuidado",
+                description:
+                    "Na área de saúde, os robôs podem ser usados para entrega de suprimentos, assistência a pacientes, monitoramento e videochamadas.",
+                icon: "saudeCuidado",
+            },
+            {
+                title: "Cultura",
+                description:
+                    "Em ambientes culturais, robôs autônomos podem fornecer informações turísticas, interações lúdicas e até mesmo apresentações artísticas.",
+                icon: "cultura",
+            },
+            {
+                title: "Hospitalidade",
+                description: "Na hospitalidade, eles auxiliam em tarefas como serviço de quarto, transporte de bagagem e orientação aos hóspedes.",
+                icon: "hospitalidade",
+            },
+        ],
+        useCases: [
+            {
+                title: "Atendimento ao Cliente",
+                description: "Pode oferecer suporte e informações aos clientes.",
+                icon: "atendimento",
+            },
+            {
+                title: "Acompanhamento de Compras",
+                description: "Pode auxiliar os clientes durante suas compras, fornecendo orientação e informações.",
+                icon: "compras",
+            },
+            {
+                title: "Exposição de Peças Publicitárias",
+                description: "Exibe publicidade e informações promocionais.",
+                icon: "expPubli",
+            },
+        ],
+        capacities: [
+            {
+                title: "Interações Personalizáveis",
+                description: "Cada interação com as pessoas pode ser personalizada de maneira customizada com a experiência a ser oferecida.",
+                icon: "interacoes",
+            },
+            {
+                title: "Reconhecimento Facial e de Objetos",
+                description: "Reconhecemimento de rostos e objetos para tarefas de segurança e assistência.",
+                icon: "reconhecimentoVisao",
+            },
+            {
+                title: "Reconhecimento de Fala",
+                description: "Compreensão de comandos de voz para interações mais naturais.",
+                icon: "reconhecimentoFala",
+            },
+            {
+                title: "Disponível em 3 Idiomas",
+                description: "Suporte de interação para Inglês, Português e Espanhol, tornando-os mais acessíveis globalmente.",
+                icon: "idioma",
+            },
+            {
+                title: "Coleta de Dados, Pesquisa, CRM",
+                description: "Pode captar dados relevantes para pesquisa de mercado e gestão de relacionamento com clientes.",
+                icon: "coletaDados",
+            },
+            {
+                title: "Reprodução de Mídia, Fotos e Vídeos",
+                description: "Reproduz conteúdo multimídia para entretenimento e informação.",
+                icon: "midia",
+            },
+            {
+                title: "Acesso Remoto e Chamadas por Vídeo",
+                description: "Permitem comunicação por vídeo para reuniões ou assistência remota.",
+                icon: "videoChamada",
+            },
+        ],
+        specifications: [
+            {
+                title: "Disponível para Download",
+                description: "Aplicação disponível para download em Google PlayStore.",
+                icon: "download",
+            },
+            {
+                title: "Disponível como Serviço Web",
+                description: "Aplicação disponível também em formato web em nosso site.",
+                icon: "openWebLink",
+            },
+            {
+                title: "Desenvolvido no Brasil",
+                description: "Produto feito localmente, com suporte e desenvolvimento no Brasil.",
+                icon: "brasil",
+            },
+        ],
+        interactions: [
+            {
+                title: "Solicite uma Cotação",
+                icon: "quotePrice",
+            },
+            {
+                title: "Agende uma Demonstração",
+                icon: "demo",
+            },
+        ],
+        roboTags: [
+            "Robô",
+            "Autônomo",
+            "Interativo",
+            "Móvel",
+            "Navegação",
+            "Reconhecimento Facial",
+            "Reconhecimento de Objetos",
+            "Reconhecimento de Voz",
+        ],
+    },
+
+    //Experiencia Ativação de Marca
     {
         domId: "produto-09",
 
         id: 9,
         prename: "",
-        name: "Varejo",
+        name: "Ativação de Marca",
         type: "Experiência",
         class: "experiencias",
 
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Proporcione experiências capazes de engajar o público, ativar produtos e aprimorar seu fluxo de distribuição.",
@@ -1387,17 +1547,18 @@ const TodosOsProdutos: ProductType[] = [
         ],
     },
 
+    //Experiencia Tour Guiado
     {
         domId: "produto-10",
 
         id: 10,
         prename: "",
-        name: "Indústria",
+        name: "Tour Guiado",
         type: "Experiência",
         class: "experiencias",
 
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Proporcione experiências capazes de facilitar o atendimento de clientes, a inspeção de recursos e transporte de equipamento.",
@@ -1531,17 +1692,18 @@ const TodosOsProdutos: ProductType[] = [
         ],
     },
 
+    //Experiencia Assistente de Compras
     {
         domId: "produto-11",
 
         id: 11,
         prename: "",
-        name: "Cultura",
+        name: "Assistente de Compras",
         type: "Experiência",
         class: "experiencias",
 
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
-        backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
+        backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
         object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Proporcione experiências que estimulam aprendizados mais humanizados, criativos e informatizados.",
