@@ -59,7 +59,7 @@ const TodosOsProdutos: ProductType[] = [
             "./imgs/products/RobiOS_GO_Detail_Image_02.png",
             "./imgs/products/RobiOS_GO_Detail_Image_03.png",
         ],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Um robô interativo capaz de se locomover de forma autônoma e inteligente.",
         textDetail: [
             "O RobiOS GO é um robô interativo avançado que pode se mover de forma autônoma e inteligente. Ele foi projetado para atender a uma variedade de necessidades em diferentes setores, oferecendo um nível excepcional de autonomia e personalização.",
@@ -674,7 +674,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Detail_Image_01.png", "./imgs/products/RobiOS_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro:
             "Um sistema operacional robótico capaz de gerenciar e controlar robôs autônomos móveis, com uma interface gráfica intuitiva e de fácil utilização.",
         textDetail: [
@@ -745,7 +745,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Studio_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Studio_Detail_Image_01.png", "./imgs/products/RobiOS_Studio_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Plataforma para a personalização das ações dos robôs e assistentes, com uma interface gráfica intuitiva e fácil de usar.",
         textDetail: [
             "O RobiOS Studio é uma plataforma de personalização que permite definir as ações e comportamentos dos robôs e assistentes. Ele possui uma interface gráfica intuitiva para simplificar o processo de personalização.",
@@ -815,7 +815,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Software capaz de emular Avatares - assistentes virtuais que podem ser acessados em qualquer dispositivo móvel ou inteligente.",
         textDetail: [
             "O RobiOS AVATAR é um software inovador que permite emular Avatares - assistentes virtuais acessíveis em dispositivos móveis ou inteligentes.",
@@ -961,7 +961,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/Customizacao_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["/robots_images/new8/07_Customizacao.png", "/robots_images/new8/07_Customizacao.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro:
             "Customize seu robô visualmente aplicando a sua marca e identidade visual, estuturalmente com módulos e comportamentalmente com uma personalidade única.",
         textDetail: [
@@ -1111,7 +1111,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Mapeie ambientes internos e externos com LIDAR e os compile um arquivo digital em conjunto com percursos personalizados.",
         textDetail: [" "],
 
@@ -1255,7 +1255,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Proporcione experiências capazes de engajar o público, ativar produtos e aprimorar seu fluxo de distribuição.",
         textDetail: [" "],
 
@@ -1399,7 +1399,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Proporcione experiências capazes de facilitar o atendimento de clientes, a inspeção de recursos e transporte de equipamento.",
         textDetail: [" "],
 
@@ -1543,7 +1543,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Avatar_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go_3.gltf",
+        object3D: "./objects3D/robios_go/robios_go.glb",
         textIntro: "Proporcione experiências que estimulam aprendizados mais humanizados, criativos e informatizados.",
         textDetail: [" "],
 

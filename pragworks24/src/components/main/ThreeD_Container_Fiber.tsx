@@ -9,6 +9,8 @@ import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
 import { useLoader } from "@react-three/fiber";
 
 import { motion as m } from "framer-motion";
+import { Group } from "three/examples/jsm/libs/tween.module.js";
+import { degToRad, radToDeg } from "three/src/math/MathUtils.js";
 
 function GLTFScene() {
     const gltf = useLoader(GLTFLoader, "/Poimandres.gltf");
@@ -21,7 +23,7 @@ const GLTFModel = ({ modelPath, scale = 10, position = [0, 0, 0] }) => {
     const [hovered, setHovered] = useState(false);
 
     useFrame((state, delta) => {
-        ref.current.rotation.y += 0.001;
+        ref.current.rotation.z += 0.001;
     });
     return (
         <primitive
@@ -39,7 +41,6 @@ export const GLTFModelViewer = ({ modelPath, scale = 10, position = [0, 0, 0] })
     return (
         <Suspense fallback={<Loader />}>
             <GLTFModel modelPath={modelPath} scale={scale} position={position} />
-            <OrbitControls />
         </Suspense>
     );
 };
@@ -73,8 +74,10 @@ export default function ThreeD_Container_Fiber({ modelPath }) {
                     <directionalLight color="#8e00ff" position={[5, 5, 0]} />
                     <directionalLight color="#00aaff" position={[-5, 5, 0]} />
                     <directionalLight color="#ffffff" position={[0, 0, 30]} />
-
-                    <GLTFModelViewer modelPath={modelPath} scale={4} position={[0, 0, 0]} />
+                    <group rotation-x={degToRad(270)}>
+                        <GLTFModelViewer modelPath={modelPath} scale={3} position={[0, 0, 0]} />
+                    </group>
+                    <OrbitControls />
                 </Canvas>
             </m.div>
         </>
