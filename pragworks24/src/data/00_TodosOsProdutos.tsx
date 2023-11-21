@@ -1,49 +1,5 @@
 import ProductType from "../types/00_Produto"; // Import the Product interface
 
-import React from "react";
-
-import Icon_Industria from "../components/icons/hr/Icon_Industria";
-import Icon_Varejo from "../components/icons/hr/Icon_Varejo";
-import Icon_SaudeCuidado from "../components/icons/hr/Icon_SaudeCuidado";
-import Icon_Cultura from "../components/icons/hr/Icon_Cultura";
-import Icon_Hospitalidade from "../components/icons/hr/Icon_Hospitalidade";
-
-import Icon_Atendimento from "../components/icons/hr/Icon_Atendimento";
-import Icon_Compras from "../components/icons/hr/Icon_Compras";
-import Icon_ExpPubli from "../components/icons/hr/Icon_ExpPubli";
-import Icon_Inspecao from "../components/icons/hr/Icon_Inspecao";
-import Icon_Transporte from "../components/icons/hr/Icon_Transporte";
-
-import Icon_Navegação from "../components/icons/hr/Icon_Navegação";
-import Icon_Interacoes from "../components/icons/hr/Icon_Interacoes";
-import Icon_Rotas from "../components/icons/hr/Icon_Rotas";
-import Icon_Recarrega from "../components/icons/hr/Icon_Recarrega";
-import Icon_ReconhecimentoVisao from "../components/icons/hr/Icon_ReconhecimentoVisao";
-import Icon_ReconhecimentoFala from "../components/icons/hr/Icon_ReconhecimentoFala";
-import Icon_Idioma from "../components/icons/hr/Icon_Idioma";
-import Icon_ColetaDados from "../components/icons/hr/Icon_ColetaDados";
-import Icon_Midia from "../components/icons/hr/Icon_Midia";
-import Icon_VideoChamada from "../components/icons/hr/Icon_VideoChamada";
-
-import Icon_IntelNUC from "../components/icons/hr/Icon_IntelNUC";
-import Icon_LIDAR from "../components/icons/hr/Icon_LIDAR";
-import Icon_Ultrasom from "../components/icons/hr/Icon_Ultrasom";
-import Icon_Camera from "../components/icons/hr/Icon_Camera";
-import Icon_Tela from "../components/icons/hr/Icon_Tela";
-import Icon_Som from "../components/icons/hr/Icon_Som";
-import Icon_Bateria from "../components/icons/hr/Icon_Bateria";
-import Icon_Wifi4gBlue from "../components/icons/hr/Icon_Wifi4gBlue";
-import Icon_Modularidade from "../components/icons/hr/Icon_Modularidade";
-import Icon_Customizacao from "../components/icons/hr/Icon_Customizacao";
-import Icon_Brasil from "../components/icons/hr/Icon_Brasil";
-import Icon_HarwareEspecial from "../components/icons/hr/Icon_HardwareEspecial";
-import Icon_Carga from "../components/icons/hr/Icon_Carga";
-import Icon_Download from "../components/icons/hr/Icon_Download";
-import Icon_OpenWebLink from "../components/icons/hr/Icon_OpenWebLink";
-
-import Icon_QuotePrice from "../components/icons/hr/Icon_QuotePrice";
-import Icon_Demo from "../components/icons/hr/Icon_Demo";
-
 const TodosOsProdutos: ProductType[] = [
     //RobiOS GO
     {
