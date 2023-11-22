@@ -317,6 +317,8 @@ button {
     gap: var(--gap);
     padding-inline: var(--small_gap);
     background-color: var(--background-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .Navbar > * {
@@ -450,6 +452,8 @@ button {
     justify-content: space-between;
     padding: var(--small_gap);
     background-color: var(--background-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .Footer > * {

@@ -677,14 +677,6 @@ const Section_Menu = forwardRef(function Section_Menu(props, ref: any) {
                                 </div>
                                 <i className="material-icons hoverable undecorated">more</i>
                             </a>
-                            <a href="#mapa-do-site" className="Menu_Link_Secondary hoverable undecorated" onClick={toggleSiteMap2}>
-                                <div className="Header_Link_Organizer">
-                                    <span className="material-icons">map</span>
-                                    <p className="bold_text">Mapa do Site</p>
-                                </div>
-
-                                <i className="material-icons hoverable undecorated">more</i>
-                            </a>
                         </div>
 
                         <div className="Configurations bold_text">

@@ -21,6 +21,7 @@ import LandingPage from "./components/main/Landing_Page.tsx";
 import Error from "./components/sections/Error.tsx";
 import Register from "./components/sections/Register.tsx";
 import ThreeD_Container_Fiber from "./components/main/ThreeD_Container_Fiber.tsx";
+import Pagina_Produto from "./components/sections/Pagina_Produto.tsx";
 import TesteProdutos from "./components/sections/TesteProdutos.tsx";
 
 // Router Creation
@@ -37,8 +38,16 @@ const router = createBrowserRouter([
                 element: <ThreeD_Container_Fiber modelPath={"./objects3D/robios_go/robios_go.glb"} />,
             },
             {
-                path: "/robios-go",
-                element: <TesteProdutos />,
+                path: "/go",
+                element: <Pagina_Produto />,
+            },
+            {
+                path: "/inspector",
+                element: <Pagina_Produto />,
+            },
+            {
+                path: "/cargo",
+                element: <Pagina_Produto />,
             },
             {
                 path: "/registro",
@@ -67,13 +76,16 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, mainContext);
 const store = configureStore({
     reducer: persistedReducer,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-            },
-        }),
 });
+
+/*
+middleware: (getDefaultMiddleware) =>
+getDefaultMiddleware({
+    serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+    },
+}),
+*/
 
 export const persistor = persistStore(store);
 export const clearPersistedData = createAction("persist/clearPersistedData");
