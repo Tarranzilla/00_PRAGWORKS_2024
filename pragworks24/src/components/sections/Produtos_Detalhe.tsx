@@ -130,7 +130,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                                     )}
                                 </AnimatePresence>
                                 {currentImageIndex === 0 && activeProduct.object3D && (
-                                    <Link to="/3dcanvas#" className="open3dCanvas_Btn undecorated">
+                                    <Link to={`/3dcanvas/${activeProduct.webname}`} className="open3dCanvas_Btn undecorated">
                                         <span className="material-icons">fullscreen</span>
                                     </Link>
                                 )}
@@ -275,7 +275,7 @@ const Produtos_Detalhe = forwardRef(function Produtos_Detalhe(props, ref: any) {
                             )}
                         </AnimatePresence>
                         {currentImageIndex === 0 && activeProduct.object3D && (
-                            <Link to="/3dcanvas#" className="open3dCanvas_Btn undecorated">
+                            <Link to={`/3dcanvas/${activeProduct.webname}`} className="open3dCanvas_Btn undecorated">
                                 <span className="material-icons">fullscreen</span>
                             </Link>
                         )}

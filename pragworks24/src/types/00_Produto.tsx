@@ -3,6 +3,7 @@ export default interface ProductType {
     id: number;
     prename: string;
     name: string;
+    webname: string;
     class: string;
     type: string;
     heroImg: string;

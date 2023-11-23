@@ -1803,6 +1803,7 @@ button {
     padding-bottom: var(--small_gap);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    direction: ltr;
 }
 
 .Partners_Text_Container {
@@ -1810,6 +1811,7 @@ button {
     line-height: 1.2rem;
     margin-inline: auto;
     margin-bottom: var(--gap);
+    direction: ltr;
 }
 
 .Sobre_Partners_Description_Text {
@@ -1823,7 +1825,7 @@ button {
     border-radius: var(--gap);
     background-color: var(--subcard_color);
     width: 100%;
-    min-width: 300px;
+    min-width: 350px;
 }
 
 .Partners_Description_Title {
@@ -1847,6 +1849,7 @@ button {
     align-items: center;
     justify-content: center;
     gap: var(--small_gap);
+    width: 100%;
 }
 
 .Partner_Description_Action_Btn {
@@ -2312,6 +2315,11 @@ button {
 }
 
 .ThreeD_Container {
+    padding: 0;
+}
+
+#HR_ThreeDCanvas {
+    padding: 0;
 }
 
 .ThreeD_Canvas {

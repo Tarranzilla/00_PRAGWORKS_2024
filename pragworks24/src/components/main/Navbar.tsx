@@ -170,9 +170,9 @@ const Navbar = forwardRef(function Navbar(props, ref: any) {
                     <a href="#busca" className="Nav_Tool undecorated" title="Busca" onClick={toggleSearchBarFunction}>
                         <i className="material-icons hoverable">search</i>
                     </a>
-                    <a href="#perfil" className="Nav_Tool undecorated" title="Perfil">
+                    <Link to="/registro" className="Nav_Tool undecorated" title="Perfil">
                         <i className="material-icons hoverable">person</i>
-                    </a>
+                    </Link>
                 </div>
                 <a
                     href="#menu"

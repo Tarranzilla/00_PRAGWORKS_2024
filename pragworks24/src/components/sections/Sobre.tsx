@@ -343,6 +343,37 @@ const blogPosts = [
     },
 ];
 
+const demoMessageProduction = `Olá, eu gostaria de ser parceiro na área de Produção`;
+const demoMessageDistribution = `Olá, eu gostaria de ser parceiro na área de Distribuição`;
+const demoMessageAssistance = `Olá, eu gostaria de ser parceiro na área de Assistência Técnica`;
+const demoMessageRecycle = `Olá, eu gostaria de ser parceiro na área de Reciclagem`;
+const demoPhoneNumber = "+5541999977955"; // Replace with your desired WhatsApp number
+
+const getInContact = (contactType) => {
+    let demoMessage;
+
+    switch (contactType) {
+        case "production":
+            demoMessage = demoMessageProduction;
+
+            break;
+        case "distribution":
+            demoMessage = demoMessageDistribution;
+            break;
+        case "assistance":
+            demoMessage = demoMessageAssistance;
+            break;
+        case "recycle":
+            demoMessage = demoMessageRecycle;
+            break;
+        default:
+            demoMessage = demoMessageProduction;
+    }
+
+    const whatsappUrl = `https://wa.me/${demoPhoneNumber}/?text=${encodeURIComponent(demoMessage)}`;
+    window.open(whatsappUrl, "_blank");
+};
+
 const customTransition = springTransition;
 
 const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
@@ -676,10 +707,12 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 Manejo Industrial (CMI), que garantem a sustentabilidade e qualidade da produção de hardwares.
                                             </p>
                                             <div className="Partner_Description_Actions">
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
-                                                    <span className="material-icons">info</span>Saiba mais
-                                                </button>
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
+                                                <button
+                                                    className="Partner_Description_Action_Btn KnowMore_Button hoverable"
+                                                    onClick={() => {
+                                                        getInContact("production");
+                                                    }}
+                                                >
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
@@ -693,10 +726,12 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 Robotics em suas lojas físicas e virtuais.
                                             </p>
                                             <div className="Partner_Description_Actions">
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
-                                                    <span className="material-icons">info</span>Saiba mais
-                                                </button>
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
+                                                <button
+                                                    className="Partner_Description_Action_Btn KnowMore_Button hoverable"
+                                                    onClick={() => {
+                                                        getInContact("distribution");
+                                                    }}
+                                                >
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
@@ -709,10 +744,12 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 treinamento para o uso dos robôs.
                                             </p>
                                             <div className="Partner_Description_Actions">
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
-                                                    <span className="material-icons">info</span>Saiba mais
-                                                </button>
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
+                                                <button
+                                                    className="Partner_Description_Action_Btn KnowMore_Button hoverable"
+                                                    onClick={() => {
+                                                        getInContact("assistance");
+                                                    }}
+                                                >
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>
@@ -725,10 +762,12 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                                 estruturais de nossos robôs, garantindo que nossos produtos causem menos danos ao meio ambiente.
                                             </p>
                                             <div className="Partner_Description_Actions">
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
-                                                    <span className="material-icons">info</span>Saiba mais
-                                                </button>
-                                                <button className="Partner_Description_Action_Btn KnowMore_Button hoverable">
+                                                <button
+                                                    className="Partner_Description_Action_Btn KnowMore_Button hoverable"
+                                                    onClick={() => {
+                                                        getInContact("recycle");
+                                                    }}
+                                                >
                                                     <span className="material-icons">handshake</span>Quero ser um Parceiro
                                                 </button>
                                             </div>

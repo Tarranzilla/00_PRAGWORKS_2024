@@ -23,6 +23,7 @@ import Register from "./components/sections/Register.tsx";
 import ThreeD_Container_Fiber from "./components/main/ThreeD_Container_Fiber.tsx";
 import Pagina_Produto from "./components/sections/Pagina_Produto.tsx";
 import TesteProdutos from "./components/sections/TesteProdutos.tsx";
+import HR_3DCanvas from "./components/main/HR_3DCanvas.tsx";
 
 // Router Creation
 const router = createBrowserRouter([
@@ -34,8 +35,8 @@ const router = createBrowserRouter([
                 element: <LandingPage />,
             },
             {
-                path: "/3dcanvas",
-                element: <ThreeD_Container_Fiber modelPath={"./objects3D/robios_go/robios_go.glb"} />,
+                path: "/3dcanvas/:model",
+                element: <HR_3DCanvas />,
             },
             {
                 path: "/go",

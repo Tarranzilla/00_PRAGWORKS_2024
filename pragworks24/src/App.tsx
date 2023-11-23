@@ -47,7 +47,10 @@ function App() {
 
     useEffect(() => {
         console.log(location.pathname);
-        if (location.pathname === "/3dcanvas") {
+
+        // Check if the pathname starts with "/3dcanvas/"
+        const regex = /^\/3dcanvas\//;
+        if (regex.test(location.pathname)) {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     }, [location]);
