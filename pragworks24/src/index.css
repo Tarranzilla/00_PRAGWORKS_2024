@@ -1814,6 +1814,12 @@ button {
     direction: ltr;
 }
 
+.Partners_Description_Header {
+    margin-top: var(--gap);
+    display: flex;
+    flex-direction: column;
+}
+
 .Sobre_Partners_Description_Text {
     scroll-snap-align: start;
     display: flex;
@@ -1826,20 +1832,24 @@ button {
     background-color: var(--subcard_color);
     width: 100%;
     min-width: 350px;
+    box-shadow: 0px 3px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
 .Partners_Description_Title {
     font-size: clamp(1rem, 1.2vw, 4rem);
+    max-width: 12rem;
 }
 
 .Partners_Description_Detail {
-    font-size: clamp(0.8rem, 1vw, 0.9rem);
+    font-size: clamp(0.7rem, 1.8vh, 0.9rem);
     overflow-y: auto;
+    padding-inline: var(--small_gap);
+    text-align: center;
+    margin-block: auto;
 }
 
 .Partners_Icons {
-    margin-top: 2rem;
-    font-size: clamp(4rem, 8vw, 6rem);
+    font-size: clamp(3rem, 8vw, 6rem);
 }
 
 .Partner_Description_Actions {
@@ -1863,6 +1873,7 @@ button {
     cursor: pointer;
     width: 100%;
     height: 3rem;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
 }
 
 .Sobre_Img {
@@ -1912,7 +1923,7 @@ button {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: var(--max-lines);
     max-width: 20rem;
-    font-size: clamp(0.75rem, 1vw, 1.5rem);
+    font-size: clamp(0.7rem, 1vw, 1.5rem);
 }
 
 .Post_Card_Actions {
@@ -2690,6 +2701,13 @@ button {
 
     .About_Card_Text_Wrapper {
         direction: ltr;
+    }
+
+    .Partners_Description_Header {
+        flex-direction: row;
+        padding-inline: var(--gap);
+        align-items: center;
+        justify-content: center;
     }
 
     .Contact_Action_Btn {

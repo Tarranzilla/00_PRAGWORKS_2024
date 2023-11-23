@@ -699,8 +699,10 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
 
                                     <div className="Sobre_Partners_Container">
                                         <m.div className="Sobre_Partners_Description_Text">
-                                            <span className="material-icons Partners_Icons">memory</span>
-                                            <h3 className="Partners_Description_Title">Parceiros de Produção</h3>
+                                            <div className="Partners_Description_Header">
+                                                <span className="material-icons Partners_Icons">memory</span>
+                                                <h3 className="Partners_Description_Title">Parceiros de Produção</h3>
+                                            </div>
 
                                             <p className="Partners_Description_Detail">
                                                 Nossos parceiros de produção são laboratórios de eletrônica e robótica certificados pelo Conselho de
@@ -718,8 +720,11 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             </div>
                                         </m.div>
                                         <m.div className="Sobre_Partners_Description_Text">
-                                            <span className="material-icons Partners_Icons">loyalty</span>
-                                            <h3 className="Partners_Description_Title">Parceiros de Distribuição</h3>
+                                            <div className="Partners_Description_Header">
+                                                <span className="material-icons Partners_Icons">loyalty</span>
+                                                <h3 className="Partners_Description_Title">Parceiros de Distribuição</h3>
+                                            </div>
+
                                             <p className="Partners_Description_Detail">
                                                 Nossos parceiros de distribuição são empresas que nos ajudam a levar nossos produtos para todo o
                                                 Brasil. Eles são responsáveis pela logística de entrega e pela comercialização dos produtos da Human
@@ -737,8 +742,11 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             </div>
                                         </m.div>
                                         <m.div className="Sobre_Partners_Description_Text">
-                                            <span className="material-icons Partners_Icons">handyman</span>
-                                            <h3 className="Partners_Description_Title">Parceiros de Assistência Técnica</h3>
+                                            <div className="Partners_Description_Header">
+                                                <span className="material-icons Partners_Icons">handyman</span>
+                                                <h3 className="Partners_Description_Title">Parceiros de Assistência</h3>
+                                            </div>
+
                                             <p className="Partners_Description_Detail">
                                                 Nossos parceiros de assistência técnica são capazes de oferecer serviços de reparo, configuração e
                                                 treinamento para o uso dos robôs.
@@ -755,8 +763,11 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             </div>
                                         </m.div>
                                         <m.div className="Sobre_Partners_Description_Text">
-                                            <span className="material-icons Partners_Icons">recycling</span>
-                                            <h3 className="Partners_Description_Title">Parceiros de Reciclagem</h3>
+                                            <div className="Partners_Description_Header">
+                                                <span className="material-icons Partners_Icons">recycling</span>
+                                                <h3 className="Partners_Description_Title">Parceiros de Reciclagem</h3>
+                                            </div>
+
                                             <p className="Partners_Description_Detail">
                                                 Nossos parceiros de reciclagem são empresas que nos ajudam a reciclar as partes eletrônicas e
                                                 estruturais de nossos robôs, garantindo que nossos produtos causem menos danos ao meio ambiente.
