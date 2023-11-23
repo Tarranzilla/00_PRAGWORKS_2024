@@ -194,7 +194,7 @@ button {
 .hoverable:hover,
 .hoverable:focus,
 .hoverable:focus-within {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .small_hoverable {
@@ -1413,6 +1413,10 @@ button {
     direction: ltr;
 }
 
+.Menu_Options_Wrapper {
+    position: relative;
+}
+
 .Product_Detail_Text_Wrapper {
     align-items: start;
 }
@@ -2555,7 +2559,19 @@ button {
     }
 
     .Menu_Options {
-        display: none;
+        z-index: 100;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 0;
+    }
+
+    .Menu_Options_Wrapper {
+        border-radius: 0;
     }
 
     .LP_Section {
