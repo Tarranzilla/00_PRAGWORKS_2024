@@ -63,8 +63,8 @@ export default function ThreeD_Container_Fiber({ modelPath }) {
                     <directionalLight color="#ffffff" position={[0, 0, 30]} />
                     <group rotation-x={degToRad(270)}>
                         <GLTFModelViewer modelPath={modelPath} scale={3} position={[0, 0, 0]} />
+                        <OrbitControls />
                     </group>
-                    <OrbitControls />
                 </Canvas>
             </m.div>
         </>
