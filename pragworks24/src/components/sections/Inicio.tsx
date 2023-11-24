@@ -57,32 +57,42 @@ const baseExperiencias = [
     { id: nanoid(), type: "exp", indx: 17, text: "Varejo", description: "Campanha de Marketing", image: exp_varejo },
 ];
 
-import ebanx from "../../assets/parceiros/Partner_01_Hero_Image_Ebanx.png";
-import tresM from "../../assets/parceiros/Partner_02_Hero_Image_3M.png";
-import ambev from "../../assets/parceiros/Partner_03_Hero_Image_Ambev.png";
-import brmalls from "../../assets/parceiros/Partner_04_Hero_Image_Brmalls.png";
-import finep from "../../assets/parceiros/Partner_05_Hero_Image.png";
-import sebrae from "../../assets/parceiros/Partner_06_Hero_Image.png";
-import ntu from "../../assets/parceiros/Partner_07_Hero_Image.png";
-import nivea from "../../assets/parceiros/Partner_08_Hero_Image.png";
-import cajuru from "../../assets/parceiros/Partner_09_Hero_Image.png";
-import sao_cristovao from "../../assets/parceiros/Partner_10_Hero_Image.png";
-import unimed from "../../assets/parceiros/Partner_11_Hero_Image.png";
-import tercadaterra from "../../assets/parceiros/Partner_12_Hero_Image.png";
+import intel from "../../assets/parceiros/Partner_00_Hero_Image_Intel.png";
+import globo from "../../assets/parceiros/Partner_01_Hero_Image_Globo.png";
+import carrefour from "../../assets/parceiros/Partner_02_Hero_Image_Carrefour.png";
+import sap from "../../assets/parceiros/Partner_03_Hero_Image_SAP.png";
+import pipefy from "../../assets/parceiros/Partner_04_Hero_Image_Pipefy.png";
+import ebanx from "../../assets/parceiros/Partner_05_Hero_Image_Ebanx.png";
+import tresM from "../../assets/parceiros/Partner_06_Hero_Image_3M.png";
+import ambev from "../../assets/parceiros/Partner_07_Hero_Image_Ambev.png";
+import brmalls from "../../assets/parceiros/Partner_08_Hero_Image_Brmalls.png";
+import finep from "../../assets/parceiros/Partner_09_Hero_Image_Finep.png";
+import sebrae from "../../assets/parceiros/Partner_10_Hero_Image_Sebrae.png";
+import ntu from "../../assets/parceiros/Partner_11_Hero_Image_NTU.png";
+import nivea from "../../assets/parceiros/Partner_12_Hero_Image_Nivea.png";
+import cajuru from "../../assets/parceiros/Partner_13_Hero_Image_Cajuru.png";
+import sao_cristovao from "../../assets/parceiros/Partner_14_Hero_Image_SaoCristovao.png";
+import unimed from "../../assets/parceiros/Partner_15_Hero_Image_Unimed.png";
+import tercadaterra from "../../assets/parceiros/Partner_16_Hero_Image_TercaDaSerra.png";
 
 const baseParceiros = [
-    { id: nanoid(), type: "partner", indx: 1, text: "3M", description: "Campanha de Marketing", image: tresM },
-    { id: nanoid(), type: "partner", indx: 2, text: "Ambev", description: "Campanha de Marketing", image: ambev },
-    { id: nanoid(), type: "partner", indx: 3, text: "BRMalls", description: "Campanha de Marketing", image: brmalls },
-    { id: nanoid(), type: "partner", indx: 4, text: "Cajuru", description: "Campanha de Marketing", image: cajuru },
-    { id: nanoid(), type: "partner", indx: 5, text: "Ebanx", description: "Campanha de Marketing", image: ebanx },
-    { id: nanoid(), type: "partner", indx: 6, text: "Finep", description: "Campanha de Marketing", image: finep },
-    { id: nanoid(), type: "partner", indx: 7, text: "Nivea", description: "Campanha de Marketing", image: nivea },
-    { id: nanoid(), type: "partner", indx: 8, text: "NTU", description: "Campanha de Marketing", image: ntu },
-    { id: nanoid(), type: "partner", indx: 9, text: "São Cristovão", description: "Campanha de Marketing", image: sao_cristovao },
-    { id: nanoid(), type: "partner", indx: 10, text: "Sebrae", description: "Campanha de Marketing", image: sebrae },
-    { id: nanoid(), type: "partner", indx: 11, text: "Terca da Terra", description: "Campanha de Marketing", image: tercadaterra },
-    { id: nanoid(), type: "partner", indx: 12, text: "Unimed", description: "Campanha de Marketing", image: unimed },
+    { id: nanoid(), type: "partner", indx: 1, text: "NTU", description: "Campanha de Marketing", image: ntu },
+    { id: nanoid(), type: "partner", indx: 2, text: "Intel", description: "Campanha de Marketing", image: intel },
+    { id: nanoid(), type: "partner", indx: 3, text: "3M", description: "Campanha de Marketing", image: tresM },
+    { id: nanoid(), type: "partner", indx: 4, text: "SAP", description: "Campanha de Marketing", image: sap },
+    { id: nanoid(), type: "partner", indx: 5, text: "Globo", description: "Campanha de Marketing", image: globo },
+    { id: nanoid(), type: "partner", indx: 6, text: "Ambev", description: "Campanha de Marketing", image: ambev },
+    { id: nanoid(), type: "partner", indx: 7, text: "BRMalls", description: "Campanha de Marketing", image: brmalls },
+    { id: nanoid(), type: "partner", indx: 8, text: "Carrefour", description: "Campanha de Marketing", image: carrefour },
+    { id: nanoid(), type: "partner", indx: 9, text: "Pipefy", description: "Campanha de Marketing", image: pipefy },
+    { id: nanoid(), type: "partner", indx: 10, text: "Cajuru", description: "Campanha de Marketing", image: cajuru },
+    { id: nanoid(), type: "partner", indx: 11, text: "Ebanx", description: "Campanha de Marketing", image: ebanx },
+    { id: nanoid(), type: "partner", indx: 12, text: "Finep", description: "Campanha de Marketing", image: finep },
+    { id: nanoid(), type: "partner", indx: 13, text: "Nivea", description: "Campanha de Marketing", image: nivea },
+    { id: nanoid(), type: "partner", indx: 14, text: "São Cristovão", description: "Campanha de Marketing", image: sao_cristovao },
+    { id: nanoid(), type: "partner", indx: 15, text: "Sebrae", description: "Campanha de Marketing", image: sebrae },
+    { id: nanoid(), type: "partner", indx: 16, text: "Terca da Terra", description: "Campanha de Marketing", image: tercadaterra },
+    { id: nanoid(), type: "partner", indx: 17, text: "Unimed", description: "Campanha de Marketing", image: unimed },
 ];
 
 const customTransition = springTransition;

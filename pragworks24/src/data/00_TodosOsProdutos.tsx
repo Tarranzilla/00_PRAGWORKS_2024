@@ -788,7 +788,7 @@ const TodosOsProdutos: ProductType[] = [
         heroImg: "./imgs/products/RobiOS_Avatar_Hero_Image.png",
         backgroundImg: "./imgs/products/RobiOS_Bg_Image.png",
         detail_Images: ["./imgs/products/RobiOS_Avatar_Detail_Image_01.png", "./imgs/products/RobiOS_Avatar_Detail_Image_02.png"],
-        object3D: "./objects3D/robios_go/robios_go.glb",
+        object3D: "./objects3D/robios_avatar/robios_avatar.glb",
         textIntro: "Software capaz de emular Avatares - assistentes virtuais que podem ser acessados em qualquer dispositivo móvel ou inteligente.",
         textDetail: [
             "O RobiOS AVATAR é um software inovador que permite emular Avatares - assistentes virtuais acessíveis em dispositivos móveis ou inteligentes.",
