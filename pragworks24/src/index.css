@@ -143,6 +143,25 @@
     color: var(--text-color);
 }
 
+@keyframes ScaleUpDown {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+.loading {
+    animation: ScaleUpDown 1s ease-in-out infinite;
+}
+
 .bold_text {
     font-weight: 900;
 }
@@ -1124,6 +1143,27 @@ button {
 }
 
 .Post_Detail {
+    justify-content: start;
+}
+
+.Post_Detail::-webkit-scrollbar-track {
+    margin-block: 1rem;
+}
+
+.Post_Detail_Title {
+    font-size: clamp(1.2rem, 3vh, 2rem);
+}
+
+.Post_Detail_Text {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--small_gap);
+}
+
+.Post_Detail_Description {
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
+    text-align: start;
 }
 
 .Post_Detail_Image_Block,
@@ -1910,6 +1950,24 @@ button {
     background-color: var(--card_color);
     border-radius: var(--gap);
     position: relative;
+    flex: 1;
+}
+
+.Post_Card_Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 10%;
+    filter: saturate(200%);
+    border-radius: var(--gap);
+}
+
+.Post_Card_Title {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+    line-height: clamp(1.4rem, 1.5vw, 2rem);
 }
 
 .Post_Card_Text_Container {
@@ -1918,6 +1976,7 @@ button {
     align-items: start;
     gap: var(--small_gap);
     text-align: start;
+    z-index: 1;
 }
 
 .Post_Card_Description {
@@ -1934,6 +1993,7 @@ button {
     display: flex;
     align-items: center;
     gap: var(--small_gap);
+    margin-top: auto;
 }
 
 .Post_Card_Action_Btn {
@@ -1953,6 +2013,10 @@ button {
     padding-inline: var(--gap);
     border-radius: var(--gap);
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--small_gap);
 }
 
 /* SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO - SEÇÃO DE CONTATO */
@@ -2670,6 +2734,12 @@ button {
         display: flex;
         height: 45vh;
         flex-shrink: 0;
+    }
+
+    .About_Card_Image_Container,
+    .Solution_Detail_Image_Container,
+    .Product_Detail_Image_Container {
+        padding: var(--small_gap);
     }
 
     .Solution_Detail_Content {
