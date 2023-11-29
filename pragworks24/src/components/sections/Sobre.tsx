@@ -344,6 +344,27 @@ const blogPosts = [
     },
 ];
 
+import { client } from "../../lib/contentful.js";
+import CTFL_RichText from "../contentful/CTFL_RichText.tsx";
+
+const fetchBlogPostsContenful = async () => {
+    try {
+        const response = await client.getEntries({
+            content_type: "blogPost",
+        });
+
+        if (response.items) {
+            console.log(response.items);
+            return response.items;
+        } else {
+            console.log("Error getting entries from Contentful");
+            console.log(response);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 const demoMessageProduction = `Olá, eu gostaria de ser parceiro na área de Produção`;
 const demoMessageDistribution = `Olá, eu gostaria de ser parceiro na área de Distribuição`;
 const demoMessageAssistance = `Olá, eu gostaria de ser parceiro na área de Assistência Técnica`;
@@ -392,18 +413,45 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
     };
 
     const [activeBlogPost, setActiveBlogPost] = useState(null as any);
-
-    const setActiveBlogPostFunction = (id: number) => {
-        blogPosts.map((card: any) => {
-            if (card.id === id) {
-                setActiveBlogPost(card);
-                console.log(card);
+    const closeBlogPostDetail = () => {
+        setActiveBlogPost(null);
+    };
+    const setActiveBlogPostFunction = (slug: string) => {
+        blogPostsArray.map((blogPost: any) => {
+            if (blogPost.slug === slug) {
+                setActiveBlogPost(blogPost);
+                console.log(blogPost);
             }
         });
     };
-    const closeDetailCard = () => {
-        setActiveBlogPost(null);
-    };
+    const [isFetchingPosts, setIsFetchingPosts] = useState(true);
+    const [blogPostsArray, setBlogPostsArray] = useState([] as any);
+
+    useEffect(() => {
+        fetchBlogPostsContenful().then((posts) => {
+            console.log("fetch successfull");
+            setIsFetchingPosts(false);
+
+            const postsArrayMemory: any[] = [];
+            const postsArray = posts?.map((post: any) => {
+                const postObject = {
+                    autor: post.fields.autor,
+                    titulo: post.fields.titulo,
+                    data: post.fields.data,
+                    intro: post.fields.introducao,
+                    slug: post.fields.slug,
+                    imgThumb: post.fields.imgThumb.fields.file.url,
+                    conteudo: post.fields.conteudo,
+                };
+
+                postsArrayMemory.push(postObject);
+            });
+
+            console.log("posts array memory:");
+            console.table(postsArrayMemory);
+            setBlogPostsArray(postsArrayMemory);
+        });
+    }, []);
 
     return (
         <m.div
@@ -422,19 +470,20 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                 {activeBlogPost && (
                     <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="Post_Detail_Container">
                         <m.div drag dragSnapToOrigin className="Post_Detail">
-                            <button className="Close_Btn hoverable" onClick={closeDetailCard}>
-                                <i className="material-icons">close</i>
-                            </button>
+                            <div className="Post_Detail_Header">
+                                <button className="Close_Btn Post_Detail_Close_Btn hoverable" onClick={closeBlogPostDetail}>
+                                    <i className="material-icons">close</i>
+                                </button>
+                                <h2 className="Post_Detail_Title">{activeBlogPost.titulo}</h2>
+                                <h3 className="Post_Detail_Author">{activeBlogPost.autor}</h3>
+                                <h4 className="Post_Detail_Date">{activeBlogPost.data}</h4>
+                            </div>
+
                             <div className="Post_Detail_Text">
-                                <h2 className="Post_Detail_Title">{activeBlogPost.title}</h2>
-                                <h3 className="Post_Detail_Author">{activeBlogPost.author}</h3>
-                                <h4 className="Post_Detail_Date">{activeBlogPost.date}</h4>
-                                {activeBlogPost.description.map((paragraph: any) => {
-                                    return <p className="Post_Detail_Description">{paragraph}</p>;
-                                })}
+                                <CTFL_RichText document={activeBlogPost.conteudo} />
                             </div>
                             <div className="Post_Detail_Image_Block hoverable">
-                                <img src={activeBlogPost.img} alt={activeBlogPost.title} />
+                                <img src={activeBlogPost.imgThumb} alt={activeBlogPost.titulo} />
                             </div>
                         </m.div>
                     </m.div>
@@ -490,12 +539,8 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             </strong>
                                         </p>
 
-                                        <p className="Sobre_Description_Text">
-                                            Nossa missão é tornar a robótica mais humana, mais acessível e mais presente na vida das pessoas.
-                                        </p>
-
                                         <p className="Sobre_Header_Text">
-                                            <strong>Junte-se a nós nesta jornada por uma transformação tecnológica mais humana!</strong>
+                                            <strong>Junte-se a nós nesta jornada por um futuro mais humano!</strong>
                                         </p>
                                     </div>
                                 </div>
@@ -575,9 +620,6 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                             Nos empenhamos em buscar a excelência e a inovação, nossos membros são pioneiros na adoção de tecnologias
                                             de ponta, sempre em busca de maneiras de aplicá-las de forma criativa.{" "}
                                         </p>
-                                        <p className="Sobre_Header_Text">
-                                            <strong>Sinta-se à vontade para entrar em contato com qualquer um de nós.</strong>
-                                        </p>
                                     </div>
                                 </div>
 
@@ -648,23 +690,29 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                                         <p className="Sobre_Header_Text">
                                             <strong>
                                                 Nossa história começa em março de 2017, quando Olivier Smadja teve a ideia de criar um robô para
-                                                cuidar de pessoas idosas.
+                                                ajudar no cuidado de pessoas.
                                             </strong>
+                                        </p>
+
+                                        <p className="Sobre_Description_Text">
+                                            Durante a pandemia de 2020 nosso robôs foram utilizados para monitorar e estabelecer laços de afeto entre
+                                            pacientes e seus familiares.
                                         </p>
                                         <p className="Sobre_Description_Text">
                                             Com o passar do tempo, a ideia foi ganhando forma e se transformando em algo muito maior: uma linha de
-                                            robôs capazes de interagir com pessoas de todas as idades, em diferentes contextos e situações.
+                                            robôs capazes de interagir com gente de todas as idades, em diferentes contextos e situações.
                                         </p>
                                         <p className="Sobre_Description_Text">
                                             Foi assim que nasceu o primeiro robô autônomo de atendimento e telepresença do Brasil. Com a ajuda de
-                                            Rodrigo, Otoniel, Leandro, Larissa, Lucas, Hellen, Alexandre e Vitor, a equipe da Human Robotics cresceu e
-                                            trabalhou incansavelmente para criar assistentes virtuais que pudessem auxiliar pessoas em diversas áreas,
-                                            desde a educação infantil até a assistência médica remota.
+                                            Rodrigo, Otoniel, Leandro, Larissa, Lucas, Hellen, Alexandre, Vitor e inúmeros parceiros, a equipe da
+                                            Human Robotics cresceu e trabalhou incansavelmente para criar assistentes virtuais que pudessem auxiliar
+                                            pessoas nas mais diversas áreas, desde experiencias culturais, à assistência médica remota à inspeção
+                                            industrial.
                                         </p>
                                         <p className="Sobre_Description_Text">
-                                            Após anos de experiência em engenharia e automação rodoviária, Olivier decidiu fundar a Human Robotics,
-                                            uma empresa que tem como objetivo oferecer as melhores experiências para seus clientes, ao mesmo tempo que
-                                            promove a responsabilidade social e ambiental em cada etapa da produção.
+                                            Agora estamos focados no desenvolvimento de uma linha inteira de robôs autônomos e assistentes virtuais
+                                            interativos, que ao funcionarem de maneira integrada serão capazes de transformar a forma como o trabalho
+                                            é feito em diversos setores.
                                         </p>
                                     </div>
                                 </div>
@@ -1092,22 +1140,22 @@ const Section_Sobre = forwardRef(function Section_Sobre(props, ref: any) {
                             <div className="About_Card_Content" id="Blog_Card_Content">
                                 {!isMobile && (
                                     <div className="About_Card_Post_Container">
-                                        {blogPosts.map((post: any) => {
+                                        {blogPostsArray.map((post: any) => {
                                             return (
                                                 <div className="Post_Card small_hoverable">
                                                     <div className="Post_Card_Image_Container">
-                                                        <img className="Post_Card_Image" src={post.mainImg}></img>
+                                                        <img className="Post_Card_Image" src={post.imgThumb}></img>
                                                     </div>
                                                     <div className="Post_Card_Text_Container">
-                                                        <h3 className="Post_Card_Title">{post.title}</h3>
-                                                        <h4 className="Post_Card_Author">{post.author}</h4>
-                                                        <h5 className="Post_Card_Date">{post.date}</h5>
-                                                        <p className="Post_Card_Description">{post.description[1]}</p>
+                                                        <h3 className="Post_Card_Title">{post.titulo}</h3>
+                                                        <h4 className="Post_Card_Author">{post.autor}</h4>
+                                                        <h5 className="Post_Card_Date">{post.data}</h5>
+                                                        <CTFL_RichText document={post.intro} />
                                                         <div className="Post_Card_Actions">
                                                             <button
                                                                 className="Post_Card_KnowMore_Btn hoverable"
                                                                 onClick={() => {
-                                                                    setActiveBlogPostFunction(post.id);
+                                                                    setActiveBlogPostFunction(post.slug);
                                                                 }}
                                                             >
                                                                 Ler

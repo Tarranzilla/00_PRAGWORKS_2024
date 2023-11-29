@@ -76,7 +76,7 @@
     --LavenderBlushEvenMoreFaded: #eee5e910;
 
     --newcardcolor: #404ab6;
-    --newcardcolorfaded: #404ab680;
+    --newcardcolorfaded: #404ab6bd;
     --newcardcolorfaded2: #1a206480;
     --newcardcolorfaded3: #404ab610;
 
@@ -933,6 +933,11 @@ button {
     border-radius: 0.25rem;
 }
 
+.Post_Detail_Close_Btn {
+    margin-left: auto;
+    position: unset;
+}
+
 .Close_Btn_B,
 .Map_Close_Btn {
     display: flex;
@@ -1150,6 +1155,13 @@ button {
     margin-block: 1rem;
 }
 
+.Post_Detail_Header {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+}
+
 .Post_Detail_Title {
     font-size: clamp(1.2rem, 3vh, 2rem);
 }
@@ -1184,6 +1196,22 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.RichText_Container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    text-align: start;
+}
+
+.RichText_Img {
+    border-radius: var(--gap);
+}
+
+iframe {
+    border-radius: var(--gap);
+    width: 100%;
 }
 
 .slider_experiencias {
@@ -1918,6 +1946,7 @@ button {
     width: 100%;
     height: 3rem;
     box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+    font-size: clamp(0.7rem, 1vw, 1rem);
 }
 
 .Sobre_Img {
@@ -2157,6 +2186,7 @@ button {
 .Map_Body {
     width: 100%;
     height: 100%;
+    background-color: var(--background-color);
 }
 
 .Map_Iframe {

@@ -14,6 +14,8 @@
         "noEmit": true,
         "jsx": "react-jsx",
 
+        "types": ["node"],
+
         //Teste
         "allowJs": true,
         "noImplicitAny": false,
